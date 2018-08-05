@@ -1,16 +1,16 @@
 {
-  "name": "gatsby-starter-2column-portfolio",
-  "description": "Gatsby 2 Column Portfolio Starter",
+  "name": "portfolio",
+  "description": "My personal portfolio website",
   "repository": {
     "type": "git",
-    "url": "https://github.com/praagyajoshi/gatsby-starter-2column-portfolio"
+    "url": "https://github.com/juniorxsound/website"
   },
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "format": "prettier --write 'src/**/*.js'"
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
