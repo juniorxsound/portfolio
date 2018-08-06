@@ -1,8 +1,6 @@
 import React from 'react'
-import ExperienceSection from '../components/ExperienceSection'
 import GridUnit from '../components/GridUnit'
 import Section from '../components/Section'
-import Links from '../components/Sidebar/Links'
 import Button from '../components/Button'
 
 import './style.scss'
@@ -52,8 +50,6 @@ const IndexPage = props => {
             })}
           </div>
           </Section>
-
-        {/* <ExperienceSection /> */}
       </div>
     </div>
   )
