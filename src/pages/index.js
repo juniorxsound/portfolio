@@ -39,7 +39,8 @@ const IndexPage = props => {
               }
               return (
                 <GridUnit key={post.frontmatter.path}
-                logo={frontmatter.thumbnail}
+                alt_text={post.frontmatter.path}
+                logo={require("../assets/images/gifs" + frontmatter.path + ".gif")}
                 colour="#BDBDBD"
                 title={frontmatter.title}
                 link={frontmatter.path}
@@ -58,7 +59,7 @@ const IndexPage = props => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query pageQuery {
+  query pageAndImageQuery {
     allMarkdownRemark {
       totalCount
       edges {
@@ -76,4 +77,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
