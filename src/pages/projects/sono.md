@@ -1,6 +1,6 @@
 ---
 path: "/sono"
-date: "2018-05-23T12:34:00+00:00"
+date: "2018-05-23T12:29:00+00:00"
 title: "Sono"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/w7W6t2J.gif"

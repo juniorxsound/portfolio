@@ -1,6 +1,6 @@
 ---
 path: "/pulp-fiction"
-date: "2018-04-23T12:34:00+00:02"
+date: "2018-04-23T12:31:00+00:02"
 title: "Inside Pulp Fiction"
 tags: ["Augmented Reality", "Machine Learning"]
 thumbnail: "https://i.imgur.com/TMOGIv6.gif"

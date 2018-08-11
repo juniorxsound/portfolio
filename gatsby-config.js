@@ -19,19 +19,6 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-remark',
-    'gatsby-plugin-manifest',
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: "Or Fleisher",
-        short_name: "Or Fleisher",
-        start_url: "/",
-        background_color: "#f7f0eb",
-        theme_color: "#000000",
-        display: "minimal-ui",
-        icon: "src/assets/images/experience/kayako-logo.png", // This path is relative to the root of the site.
-      },
-    },
     `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-source-filesystem',
