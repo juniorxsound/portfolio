@@ -1,6 +1,6 @@
 ---
 path: "/soundobjects"
-date: "2018-05-23T12:34:00+00:00"
+date: "2018-05-23T12:22:00+00:00"
 title: "Sound Objects"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/YePz195.gif"

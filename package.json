@@ -20,7 +20,6 @@
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.277",
     "gatsby-cli": "^1.1.58",
-    "gatsby-plugin-manifest": "^1.0.27",
     "gatsby-plugin-offline": "^1.0.18",
     "global": "^4.3.2"
   },
