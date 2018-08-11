@@ -32,7 +32,7 @@ const Template = ({data, location, pathContext}) => {
           {title}
         </h3>
         <p style={{marginTop: '-14px'}} className="bold gray_text">{tags}</p>
-        <img className="img_banner" src={require("../assets/images/projects/" + post.frontmatter.cover)}></img>
+        <img alt={post.frontmatter.title} className="img_banner" src={require("../assets/images/headers/" + post.frontmatter.cover)}></img>
         <div>
           <div dangerouslySetInnerHTML={{__html: post.frontmatter.embed}} />
           <div dangerouslySetInnerHTML={{__html: html}} />
