@@ -72,15 +72,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _apiRunnerSsr2 = _interopRequireDefault(_apiRunnerSsr);
 	
-	var _pages = __webpack_require__(232);
+	var _pages = __webpack_require__(233);
 	
 	var _pages2 = _interopRequireDefault(_pages);
 	
-	var _syncRequires = __webpack_require__(233);
+	var _syncRequires = __webpack_require__(234);
 	
 	var _syncRequires2 = _interopRequireDefault(_syncRequires);
 	
-	var _testRequireError = __webpack_require__(467);
+	var _testRequireError = __webpack_require__(469);
 	
 	var _testRequireError2 = _interopRequireDefault(_testRequireError);
 	
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  Html = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../src/html\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	} catch (err) {
 	  if ((0, _testRequireError2.default)("../src/html", err)) {
-	    Html = __webpack_require__(468);
+	    Html = __webpack_require__(470);
 	  } else {
 	    console.log("\n\nThere was an error requiring \"src/html.js\"\n\n", err, "\n\n");
 	    process.exit();
@@ -213,7 +213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  var stats = void 0;
 	  try {
-	    stats = __webpack_require__(470);
+	    stats = __webpack_require__(472);
 	  } catch (e) {}
 	  // ignore
 	
@@ -252,7 +252,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  });
 	
 	  // Add the chunk-manifest at the end of body element.
-	  var chunkManifest = __webpack_require__(471);
+	  var chunkManifest = __webpack_require__(473);
 	  postBodyComponents.unshift(_react2.default.createElement("script", {
 	    id: "webpack-manifest",
 	    key: "webpack-manifest",
@@ -41007,6 +41007,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	}, {
 	  plugin: __webpack_require__(230),
 	  options: { "plugins": [] }
+	}, {
+	  plugin: __webpack_require__(231),
+	  options: { "plugins": [] }
 	}];
 	// During bootstrap, we write requires at top of this file which looks like:
 	// var plugins = [
@@ -41020,7 +41023,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   },
 	// ]
 	
-	var apis = __webpack_require__(231);
+	var apis = __webpack_require__(232);
 	
 	// Run the specified API in any plugins that have implemented it
 	module.exports = function (api, args, defaultReturn) {
@@ -43656,6 +43659,40 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.onRenderBody = function (_ref, pluginOptions) {
+	  var setHeadComponents = _ref.setHeadComponents;
+	
+	  var offsetY = 0;
+	  if (pluginOptions.offsetY) {
+	    offsetY = pluginOptions.offsetY;
+	  }
+	
+	  var styles = "\n    .anchor {\n      float: left;\n      padding-right: 4px;\n      margin-left: -20px;\n    }\n    h1 .anchor svg,\n    h2 .anchor svg,\n    h3 .anchor svg,\n    h4 .anchor svg,\n    h5 .anchor svg,\n    h6 .anchor svg {\n      visibility: hidden;\n    }\n    h1:hover .anchor svg,\n    h2:hover .anchor svg,\n    h3:hover .anchor svg,\n    h4:hover .anchor svg,\n    h5:hover .anchor svg,\n    h6:hover .anchor svg,\n    h1 .anchor:focus svg,\n    h2 .anchor:focus svg,\n    h3 .anchor:focus svg,\n    h4 .anchor:focus svg,\n    h5 .anchor:focus svg,\n    h6 .anchor:focus svg {\n      visibility: visible;\n    }\n  ";
+	
+	  var script = "\n    document.addEventListener(\"DOMContentLoaded\", function(event) {\n      var hash = window.decodeURI(location.hash.replace('#', ''))\n      if (hash !== '') {\n        var element = document.getElementById(hash)\n        if (element) {\n          var offset = element.offsetTop\n          // Wait for the browser to finish rendering before scrolling.\n          setTimeout((function() {\n            window.scrollTo(0, offset - " + offsetY + ")\n          }), 0)\n        }\n      }\n    })\n  ";
+	
+	  return setHeadComponents([_react2.default.createElement(
+	    "style",
+	    { key: "gatsby-remark-autolink-headers-style", type: "text/css" },
+	    styles
+	  ), _react2.default.createElement("script", {
+	    key: "gatsby-remark-autolink-headers-script",
+	    dangerouslySetInnerHTML: { __html: script }
+	  })]);
+	};
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
 	var _reactHelmet = __webpack_require__(221);
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
@@ -43674,7 +43711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -43776,13 +43813,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.onRenderBody = true;
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
-	module.exports = [{"componentChunkName":"component---node-modules-gatsby-plugin-offline-app-shell-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"offline-plugin-app-shell-fallback.json","path":"/offline-plugin-app-shell-fallback/"},{"componentChunkName":"component---src-templates-all-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags.json","path":"/tags"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-augmented-reality.json","path":"/tags/Augmented Reality"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-experiment.json","path":"/tags/Experiment"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-experiments.json","path":"/tags/Experiments"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-machine-learning.json","path":"/tags/Machine Learning"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-tools.json","path":"/tags/Tools"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-virtual-reality.json","path":"/tags/Virtual Reality"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"myth.json","path":"/myth"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"sono.json","path":"/sono"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"toolstoolstools.json","path":"/toolstoolstools"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"detune.json","path":"/detune"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"1948.json","path":"/1948"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"soundobjects.json","path":"/soundobjects"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"aframe.json","path":"/aframe"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"max.json","path":"/max"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tzina.json","path":"/tzina"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"pulp-fiction.json","path":"/pulp-fiction"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"death-mask.json","path":"/death-mask"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"twit-ar.json","path":"/twit-ar"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"depthkit-js.json","path":"/depthkit-js"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"skeletron.json","path":"/skeletron"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"retouch.json","path":"/retouch"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"visualizer.json","path":"/visualizer"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"trumpet.json","path":"/trumpet"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"dms.json","path":"/dms"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"volume.json","path":"/volume"},{"componentChunkName":"component---src-pages-index-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"index.json","path":"/"}]
+	module.exports = [{"componentChunkName":"component---node-modules-gatsby-plugin-offline-app-shell-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"offline-plugin-app-shell-fallback.json","path":"/offline-plugin-app-shell-fallback/"},{"componentChunkName":"component---src-templates-all-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags.json","path":"/tags"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-augmented-reality.json","path":"/tags/Augmented Reality"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-experiment.json","path":"/tags/Experiment"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-experiments.json","path":"/tags/Experiments"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-machine-learning.json","path":"/tags/Machine Learning"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-tools.json","path":"/tags/Tools"},{"componentChunkName":"component---src-templates-tags-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tags-virtual-reality.json","path":"/tags/Virtual Reality"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"myth.json","path":"/myth"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"sono.json","path":"/sono"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"toolstoolstools.json","path":"/toolstoolstools"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"detune.json","path":"/detune"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"1948.json","path":"/1948"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"bio.json","path":"/bio"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"soundobjects.json","path":"/soundobjects"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"aframe.json","path":"/aframe"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"max.json","path":"/max"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"tzina.json","path":"/tzina"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"pulp-fiction.json","path":"/pulp-fiction"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"death-mask.json","path":"/death-mask"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"twit-ar.json","path":"/twit-ar"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"depthkit-js.json","path":"/depthkit-js"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"skeletron.json","path":"/skeletron"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"retouch.json","path":"/retouch"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"visualizer.json","path":"/visualizer"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"trumpet.json","path":"/trumpet"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"dms.json","path":"/dms"},{"componentChunkName":"component---src-templates-project-page-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"volume.json","path":"/volume"},{"componentChunkName":"component---src-pages-index-js","layout":"layout---index","layoutComponentChunkName":"component---src-layouts-index-js","jsonName":"index.json","path":"/"}]
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43793,51 +43830,52 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	
 	exports.layouts = {
-	  "layout---index": preferDefault(__webpack_require__(234))
+	  "layout---index": preferDefault(__webpack_require__(235))
 	};
 	
 	exports.components = {
-	  "component---node-modules-gatsby-plugin-offline-app-shell-js": preferDefault(__webpack_require__(293)),
-	  "component---src-templates-all-tags-js": preferDefault(__webpack_require__(371)),
-	  "component---src-templates-tags-js": preferDefault(__webpack_require__(383)),
-	  "component---src-templates-project-page-js": preferDefault(__webpack_require__(384)),
-	  "component---src-pages-index-js": preferDefault(__webpack_require__(414))
+	  "component---node-modules-gatsby-plugin-offline-app-shell-js": preferDefault(__webpack_require__(294)),
+	  "component---src-templates-all-tags-js": preferDefault(__webpack_require__(372)),
+	  "component---src-templates-tags-js": preferDefault(__webpack_require__(384)),
+	  "component---src-templates-project-page-js": preferDefault(__webpack_require__(385)),
+	  "component---src-pages-index-js": preferDefault(__webpack_require__(415))
 	};
 	
 	exports.json = {
-	  "layout-index.json": __webpack_require__(292),
-	  "offline-plugin-app-shell-fallback.json": __webpack_require__(439),
-	  "tags.json": __webpack_require__(440),
-	  "tags-augmented-reality.json": __webpack_require__(441),
-	  "tags-experiment.json": __webpack_require__(442),
-	  "tags-experiments.json": __webpack_require__(443),
-	  "tags-machine-learning.json": __webpack_require__(444),
-	  "tags-tools.json": __webpack_require__(445),
-	  "tags-virtual-reality.json": __webpack_require__(446),
-	  "myth.json": __webpack_require__(447),
-	  "sono.json": __webpack_require__(448),
-	  "toolstoolstools.json": __webpack_require__(449),
-	  "detune.json": __webpack_require__(450),
-	  "1948.json": __webpack_require__(451),
-	  "soundobjects.json": __webpack_require__(452),
-	  "aframe.json": __webpack_require__(453),
-	  "max.json": __webpack_require__(454),
-	  "tzina.json": __webpack_require__(455),
-	  "pulp-fiction.json": __webpack_require__(456),
-	  "death-mask.json": __webpack_require__(457),
-	  "twit-ar.json": __webpack_require__(458),
-	  "depthkit-js.json": __webpack_require__(459),
-	  "skeletron.json": __webpack_require__(460),
-	  "retouch.json": __webpack_require__(461),
-	  "visualizer.json": __webpack_require__(462),
-	  "trumpet.json": __webpack_require__(463),
-	  "dms.json": __webpack_require__(464),
-	  "volume.json": __webpack_require__(465),
-	  "index.json": __webpack_require__(466)
+	  "layout-index.json": __webpack_require__(293),
+	  "offline-plugin-app-shell-fallback.json": __webpack_require__(440),
+	  "tags.json": __webpack_require__(441),
+	  "tags-augmented-reality.json": __webpack_require__(442),
+	  "tags-experiment.json": __webpack_require__(443),
+	  "tags-experiments.json": __webpack_require__(444),
+	  "tags-machine-learning.json": __webpack_require__(445),
+	  "tags-tools.json": __webpack_require__(446),
+	  "tags-virtual-reality.json": __webpack_require__(447),
+	  "myth.json": __webpack_require__(448),
+	  "sono.json": __webpack_require__(449),
+	  "toolstoolstools.json": __webpack_require__(450),
+	  "detune.json": __webpack_require__(451),
+	  "1948.json": __webpack_require__(452),
+	  "bio.json": __webpack_require__(453),
+	  "soundobjects.json": __webpack_require__(454),
+	  "aframe.json": __webpack_require__(455),
+	  "max.json": __webpack_require__(456),
+	  "tzina.json": __webpack_require__(457),
+	  "pulp-fiction.json": __webpack_require__(458),
+	  "death-mask.json": __webpack_require__(459),
+	  "twit-ar.json": __webpack_require__(460),
+	  "depthkit-js.json": __webpack_require__(461),
+	  "skeletron.json": __webpack_require__(462),
+	  "retouch.json": __webpack_require__(463),
+	  "visualizer.json": __webpack_require__(464),
+	  "trumpet.json": __webpack_require__(465),
+	  "dms.json": __webpack_require__(466),
+	  "volume.json": __webpack_require__(467),
+	  "index.json": __webpack_require__(468)
 	};
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -43850,11 +43888,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _index = __webpack_require__(235);
+	var _index = __webpack_require__(236);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _layoutIndex = __webpack_require__(292);
+	var _layoutIndex = __webpack_require__(293);
 	
 	var _layoutIndex2 = _interopRequireDefault(_layoutIndex);
 	
@@ -43867,7 +43905,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports["default"];
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43887,21 +43925,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _get = __webpack_require__(236);
+	var _get = __webpack_require__(237);
 	
 	var _get2 = _interopRequireDefault(_get);
 	
-	__webpack_require__(288);
+	__webpack_require__(289);
 	
-	var _praagya = __webpack_require__(289);
+	var _praagya = __webpack_require__(290);
 	
 	var _praagya2 = _interopRequireDefault(_praagya);
 	
-	var _favicon16x = __webpack_require__(290);
+	var _favicon16x = __webpack_require__(291);
 	
 	var _favicon16x2 = _interopRequireDefault(_favicon16x);
 	
-	var _favicon32x = __webpack_require__(291);
+	var _favicon32x = __webpack_require__(292);
 	
 	var _favicon32x2 = _interopRequireDefault(_favicon32x);
 	
@@ -43954,10 +43992,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var pageQuery = exports.pageQuery = '** extracted graphql fragment **';
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseGet = __webpack_require__(237);
+	var baseGet = __webpack_require__(238);
 	
 	/**
 	 * Gets the value at `path` of `object`. If the resolved value is
@@ -43993,11 +44031,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var castPath = __webpack_require__(238),
-	    toKey = __webpack_require__(287);
+	var castPath = __webpack_require__(239),
+	    toKey = __webpack_require__(288);
 	
 	/**
 	 * The base implementation of `_.get` without support for default values.
@@ -44023,13 +44061,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isArray = __webpack_require__(239),
-	    isKey = __webpack_require__(240),
-	    stringToPath = __webpack_require__(249),
-	    toString = __webpack_require__(284);
+	var isArray = __webpack_require__(240),
+	    isKey = __webpack_require__(241),
+	    stringToPath = __webpack_require__(250),
+	    toString = __webpack_require__(285);
 	
 	/**
 	 * Casts `value` to a path array if it's not one.
@@ -44050,7 +44088,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 	/**
@@ -44082,11 +44120,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isArray = __webpack_require__(239),
-	    isSymbol = __webpack_require__(241);
+	var isArray = __webpack_require__(240),
+	    isSymbol = __webpack_require__(242);
 	
 	/** Used to match property names within property paths. */
 	var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
@@ -44117,11 +44155,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseGetTag = __webpack_require__(242),
-	    isObjectLike = __webpack_require__(248);
+	var baseGetTag = __webpack_require__(243),
+	    isObjectLike = __webpack_require__(249);
 	
 	/** `Object#toString` result references. */
 	var symbolTag = '[object Symbol]';
@@ -44152,12 +44190,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(243),
-	    getRawTag = __webpack_require__(246),
-	    objectToString = __webpack_require__(247);
+	var Symbol = __webpack_require__(244),
+	    getRawTag = __webpack_require__(247),
+	    objectToString = __webpack_require__(248);
 	
 	/** `Object#toString` result references. */
 	var nullTag = '[object Null]',
@@ -44186,10 +44224,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(244);
+	var root = __webpack_require__(245);
 	
 	/** Built-in value references. */
 	var Symbol = root.Symbol;
@@ -44198,10 +44236,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(245);
+	var freeGlobal = __webpack_require__(246);
 	
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -44213,7 +44251,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports) {
 
 	/** Detect free variable `global` from Node.js. */
@@ -44223,10 +44261,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(243);
+	var Symbol = __webpack_require__(244);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -44275,7 +44313,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -44303,7 +44341,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports) {
 
 	/**
@@ -44338,10 +44376,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var memoizeCapped = __webpack_require__(250);
+	var memoizeCapped = __webpack_require__(251);
 	
 	/** Used to match property names within property paths. */
 	var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
@@ -44371,10 +44409,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var memoize = __webpack_require__(251);
+	var memoize = __webpack_require__(252);
 	
 	/** Used as the maximum memoize cache size. */
 	var MAX_MEMOIZE_SIZE = 500;
@@ -44403,10 +44441,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var MapCache = __webpack_require__(252);
+	var MapCache = __webpack_require__(253);
 	
 	/** Error message constants. */
 	var FUNC_ERROR_TEXT = 'Expected a function';
@@ -44482,14 +44520,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var mapCacheClear = __webpack_require__(253),
-	    mapCacheDelete = __webpack_require__(278),
-	    mapCacheGet = __webpack_require__(281),
-	    mapCacheHas = __webpack_require__(282),
-	    mapCacheSet = __webpack_require__(283);
+	var mapCacheClear = __webpack_require__(254),
+	    mapCacheDelete = __webpack_require__(279),
+	    mapCacheGet = __webpack_require__(282),
+	    mapCacheHas = __webpack_require__(283),
+	    mapCacheSet = __webpack_require__(284);
 	
 	/**
 	 * Creates a map cache object to store key-value pairs.
@@ -44520,12 +44558,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Hash = __webpack_require__(254),
-	    ListCache = __webpack_require__(269),
-	    Map = __webpack_require__(277);
+	var Hash = __webpack_require__(255),
+	    ListCache = __webpack_require__(270),
+	    Map = __webpack_require__(278);
 	
 	/**
 	 * Removes all key-value entries from the map.
@@ -44547,14 +44585,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var hashClear = __webpack_require__(255),
-	    hashDelete = __webpack_require__(265),
-	    hashGet = __webpack_require__(266),
-	    hashHas = __webpack_require__(267),
-	    hashSet = __webpack_require__(268);
+	var hashClear = __webpack_require__(256),
+	    hashDelete = __webpack_require__(266),
+	    hashGet = __webpack_require__(267),
+	    hashHas = __webpack_require__(268),
+	    hashSet = __webpack_require__(269);
 	
 	/**
 	 * Creates a hash object.
@@ -44585,10 +44623,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var nativeCreate = __webpack_require__(256);
+	var nativeCreate = __webpack_require__(257);
 	
 	/**
 	 * Removes all key-value entries from the hash.
@@ -44606,10 +44644,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(257);
+	var getNative = __webpack_require__(258);
 	
 	/* Built-in method references that are verified to be native. */
 	var nativeCreate = getNative(Object, 'create');
@@ -44618,11 +44656,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseIsNative = __webpack_require__(258),
-	    getValue = __webpack_require__(264);
+	var baseIsNative = __webpack_require__(259),
+	    getValue = __webpack_require__(265);
 	
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -44641,13 +44679,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(259),
-	    isMasked = __webpack_require__(261),
-	    isObject = __webpack_require__(260),
-	    toSource = __webpack_require__(263);
+	var isFunction = __webpack_require__(260),
+	    isMasked = __webpack_require__(262),
+	    isObject = __webpack_require__(261),
+	    toSource = __webpack_require__(264);
 	
 	/**
 	 * Used to match `RegExp`
@@ -44694,11 +44732,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseGetTag = __webpack_require__(242),
-	    isObject = __webpack_require__(260);
+	var baseGetTag = __webpack_require__(243),
+	    isObject = __webpack_require__(261);
 	
 	/** `Object#toString` result references. */
 	var asyncTag = '[object AsyncFunction]',
@@ -44737,7 +44775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports) {
 
 	/**
@@ -44774,10 +44812,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var coreJsData = __webpack_require__(262);
+	var coreJsData = __webpack_require__(263);
 	
 	/** Used to detect methods masquerading as native. */
 	var maskSrcKey = (function() {
@@ -44800,10 +44838,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(244);
+	var root = __webpack_require__(245);
 	
 	/** Used to detect overreaching core-js shims. */
 	var coreJsData = root['__core-js_shared__'];
@@ -44812,7 +44850,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -44844,7 +44882,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports) {
 
 	/**
@@ -44863,7 +44901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports) {
 
 	/**
@@ -44886,10 +44924,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var nativeCreate = __webpack_require__(256);
+	var nativeCreate = __webpack_require__(257);
 	
 	/** Used to stand-in for `undefined` hash values. */
 	var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -44922,10 +44960,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var nativeCreate = __webpack_require__(256);
+	var nativeCreate = __webpack_require__(257);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -44951,10 +44989,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var nativeCreate = __webpack_require__(256);
+	var nativeCreate = __webpack_require__(257);
 	
 	/** Used to stand-in for `undefined` hash values. */
 	var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -44980,14 +45018,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var listCacheClear = __webpack_require__(270),
-	    listCacheDelete = __webpack_require__(271),
-	    listCacheGet = __webpack_require__(274),
-	    listCacheHas = __webpack_require__(275),
-	    listCacheSet = __webpack_require__(276);
+	var listCacheClear = __webpack_require__(271),
+	    listCacheDelete = __webpack_require__(272),
+	    listCacheGet = __webpack_require__(275),
+	    listCacheHas = __webpack_require__(276),
+	    listCacheSet = __webpack_require__(277);
 	
 	/**
 	 * Creates an list cache object.
@@ -45018,7 +45056,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports) {
 
 	/**
@@ -45037,10 +45075,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var assocIndexOf = __webpack_require__(272);
+	var assocIndexOf = __webpack_require__(273);
 	
 	/** Used for built-in method references. */
 	var arrayProto = Array.prototype;
@@ -45078,10 +45116,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var eq = __webpack_require__(273);
+	var eq = __webpack_require__(274);
 	
 	/**
 	 * Gets the index at which the `key` is found in `array` of key-value pairs.
@@ -45105,7 +45143,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports) {
 
 	/**
@@ -45148,10 +45186,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var assocIndexOf = __webpack_require__(272);
+	var assocIndexOf = __webpack_require__(273);
 	
 	/**
 	 * Gets the list cache value for `key`.
@@ -45173,10 +45211,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var assocIndexOf = __webpack_require__(272);
+	var assocIndexOf = __webpack_require__(273);
 	
 	/**
 	 * Checks if a list cache value for `key` exists.
@@ -45195,10 +45233,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var assocIndexOf = __webpack_require__(272);
+	var assocIndexOf = __webpack_require__(273);
 	
 	/**
 	 * Sets the list cache `key` to `value`.
@@ -45227,11 +45265,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(257),
-	    root = __webpack_require__(244);
+	var getNative = __webpack_require__(258),
+	    root = __webpack_require__(245);
 	
 	/* Built-in method references that are verified to be native. */
 	var Map = getNative(root, 'Map');
@@ -45240,10 +45278,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getMapData = __webpack_require__(279);
+	var getMapData = __webpack_require__(280);
 	
 	/**
 	 * Removes `key` and its value from the map.
@@ -45264,10 +45302,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isKeyable = __webpack_require__(280);
+	var isKeyable = __webpack_require__(281);
 	
 	/**
 	 * Gets the data for `map`.
@@ -45288,7 +45326,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports) {
 
 	/**
@@ -45309,10 +45347,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getMapData = __webpack_require__(279);
+	var getMapData = __webpack_require__(280);
 	
 	/**
 	 * Gets the map value for `key`.
@@ -45331,10 +45369,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getMapData = __webpack_require__(279);
+	var getMapData = __webpack_require__(280);
 	
 	/**
 	 * Checks if a map value for `key` exists.
@@ -45353,10 +45391,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var getMapData = __webpack_require__(279);
+	var getMapData = __webpack_require__(280);
 	
 	/**
 	 * Sets the map `key` to `value`.
@@ -45381,10 +45419,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var baseToString = __webpack_require__(285);
+	var baseToString = __webpack_require__(286);
 	
 	/**
 	 * Converts `value` to a string. An empty string is returned for `null`
@@ -45415,13 +45453,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(243),
-	    arrayMap = __webpack_require__(286),
-	    isArray = __webpack_require__(239),
-	    isSymbol = __webpack_require__(241);
+	var Symbol = __webpack_require__(244),
+	    arrayMap = __webpack_require__(287),
+	    isArray = __webpack_require__(240),
+	    isSymbol = __webpack_require__(242);
 	
 	/** Used as references for various `Number` constants. */
 	var INFINITY = 1 / 0;
@@ -45458,7 +45496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports) {
 
 	/**
@@ -45485,10 +45523,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isSymbol = __webpack_require__(241);
+	var isSymbol = __webpack_require__(242);
 	
 	/** Used as references for various `Number` constants. */
 	var INFINITY = 1 / 0;
@@ -45512,52 +45550,52 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports) {
 
 	// empty (null-loader)
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "static/praagya.16f6b85e.jpg";
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADJElEQVQ4jSXQTU8cZQDA8f8zzzOzM7vLAgt0IUbKS2mhtImJejCtjUmjXjTWxouXRr14NJ79EMaP4M2ziY1pQy22lGBQi4kgpFDedgvdF5ZlZ3Zndp7n8dBv8MtPfH3nUyscCHyfoeIQUxOTvHPjJsrzUa5LL46oV19wXD6gcnRIo1andXpGOww560SojKfoy+cYHipy7two05fmaUddVhceEEURfYUshbxHs3ZMpVKmXj+h1TpDa43ysygpJa508TM+o6UxHj96zL1fF2ietuglCb20hzaaD29cwcsowtMWSTdBZTJI6aIcBMZakl6PMAxZXHxE+7TO1fEx+rIBSgrWtp6z/6LOzEQJpVwcJ8XzfKRUKGNBa00SJ4RRyEm9xg/ffsHl6+/jZHL0ahXWlu7z/c+/IYSDtQYpHZRUOI5EWQTaGHppShzHvHl1lrGRIq7nY5WLozz6BwZxrEEIUFKQOgJXKXAECmsxxqJTTafbYXpinOW//0Wv/MVb85e5+/B3NitVAqu5/2SdOElIkpSPPngdaw0KwBhDojVxN2ZyaICiZ3BzRUoXZrmVz9NJEhaXlth48BTlOSgXJidm2N3dwrGAsZY01a8ivYCZ6TkunD9P9fiIjfX/yAgJQY5vvvqMK9PjxFHEu9evURodRSEE1r5S9FLNaSfm3sIveI5LM4yoH9fY2NvmeaiYkx591vDlrY/ZWVulQILSxoKwaG1IU83JSYMf7y7z3Z3bzF0s0Xh5yE9P/mRp9R8eOoKgMMhOtc7CsqVab6CsTtFCYIzl8GAD6TjMTk2x/myLWqtFrdFge2+fl5Fl+o1rDOQH8JNDOmGboNCH0jqlGydsP9sm7KTg5slnA26/9zZHB9u8LO8yMdLP5nHCxHiJZguijuEs6iKlRHz+yU278sdTsoUijpdFILDWgrWM5F0yrmBz/wgjFBfnZxl+7RI76yuEtTKNZgvVDiOE3w/KR6cpUiqk46C1ptIIaUdthBDkcgHlvTLaDtOox4z0D4IwqCAX4GezGKNR0iXt9UBJLAKEJZPJIITAWINNU06q++Aomu02gSv4H8e3kWDqS6aGAAAAAElFTkSuQmCC"
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAKVUlEQVRYhVWXWY8dZ1rHf8+7VJ1zus9xr+52d9vxFjuOgz1MnAwTa3BmBjESzCBxgQTczw18CCIxCD4AlyNxMUiMBAxIgFAEZEaTQDKJHcdL7MRbu53udu/L2Wp7Fy7qJIhS1U2pznne91//reSHf/x7ES0URY4oTSOxdDpHSBNLahOOHZtnamqWM+cuMDE1g9KarY11pmaPYowlxkBV5uTZgGG/z7DfY9Dv0Rv2yLIB+XBIPiwo8pyiKMiLgqIqKaqKvCgw2mqM0YyPtVACSim8dyjTZHJqmhgi1iYcmZymNTaOTRu0xjsorQjeU5UFwZXEGPCupCwysmGfQe+Afr/HcJhRZCV5WeLKiqqqqJyjCh7vHUYrhdEaqxVJktBsNmg1G1ibIEBnYpr2xBTtiSnSNKXIBmxvPafb7XJ0fg68Zzjs46sCV+YUZY7zFcF5CACKECOucmRFQZ4XQERpDSiMUiAiaKVJrCVNUtrjbaamppmYnGF2fpG5xZNoLfzVn/8Zt27e4vjCEofdLv1+nxMnl8iLjJfOnWFqokGZD9jf2+eg16ff75MNa+id8zjngUhnYgKTdBDvMYhCKY2IRiuN0RqtDWmS0mqO02yN8Zc/eovlh084OjtH6eDj2/doJJaDw0N29g7o9ft8dP0OjVRz7Rsv0h5rYSQi3mGNEL3FaENOQYwRYy0iGiUKo0RQAsLoiPUVQsR7z62bH/PB+9fxLvBsdZOyyDHWkmcZWZ6T5TnOO3wICML12yt85+rLpGmCNoYIlOJRohCBxCYYkyJSb9rUg4UosR4aAmVVUZQlRVlw85ObNJtNtra3MUqjJSKhopkmWLE0UktZOQ6HOb1Bxs5+j8oFQnAoEYxJEBzOe6xJEAXGGKIISinMV3uP4EPE+4BzjrIsKYqcW5/cZWdnDytw6cQUF04t8sLxEyTWUgyHHOmMkw+6bO/u8ZN3brDTLxgMchoNi4ga/XuEGFFaiBG0sfigEKUwMUIIgRBjLaWRPMqqoiwL9vb36Q96/On33+B333yDoydfojl/CrEWN+gRiwzf22Nv7TFKK/76X39FjCCiiDESvEckkiSWylUQBaMNIUYEwYAiRggxEGLAe4/zHucqfIhMTEwy3bL8zrVvsnj6AunMIjSaiLaIc0QiDA1po8n8xBgz7ZR+VjA+3kQEfPBorfHeo0TwMaK1QYJDKYUCAamhiTESY8Q7j3cO7z0LC8eYbFlUcEjwEDwiIKqGUAClFUKklSbE4Ak+okRG8lYjg6uZbrSu74sgAioSGZ3EUC8ghIDznqoq+da3ruJ8wLmKGELNFx+IVTlauMKJgdYUjc4MrUTjg8N79xXhapoLRmmMsWhdK0JEMCL1UAKj4SMUvKcqK2bmlkhSy/ODIYePVzi8cZvjU23m5hcJ3rPy+AHv3LjFQVahYwExUgxLHnyxW5tQVVKWDuc8lfOcPfUCaZpSFhWKiJFYQ0EMxKjwwRNCwHtH5Upc1ufssTkePnlKfPKMrZ0dVlqGy+fOMDG3xH+//0tWd3P6VSCWOSePdvCDjJ/d/RSIiEi9QYSqclx8+SJWW5QISgkGgUAcIRvQoZbjl9YZXcnZ6Q5ox8puxlhngvmlBZYuXGDu7CW+pwLBa/Z21ulnQ6KG9z95QmItZVmOKFaLURvN5OQ0vW4PrTXiFPULQgAhRMFFjw61Grx3OGWYOX6KX7t4Hm0aSNpibGKGODhEiWV2eoHOC+cQbXD5gE8//DldWeO1K18nBk+MHu9r4hpl+Pa1awwOu/zqw3drDsTR+BgjkUAMmhhCbUjeUzrHrhfyfp9j51+CVpt4sFUTNknRSYPD1WXaswvEMmd375DTZ0/w6uxMHb/O8Tc//Rcikc54GxtL5o5OsbiwxJNny18iMEIhysiMIj7GmgdVhTTG2NzcYmZmk927H5JlQx6vPGVp6QR/+w8/48z8JK9cOM9Ys8Ot+/eZ/tpVxtptiqxLftBleXUDQbB2n/OXX0MBe90uB4MD9DeuXHpLkJEsagcTEYzRGJuQNpoMq5JHd67TqbrsZn0OewfcevCIt//nOhAovOf2Fxv0Bgdcf/SMrW7FRNNwtOFY3+1zenGRS6dPc/XVr3P//h0WG8L1+3dp6gRDhCABiQIBRGpChhCJIVKVJUWZs5YFNvuHfHDvGfOtNqfn57h8+TKbz77g4YOnXHv9IveerhDHZnnzze8Q8wG/fOffub+8zrFWytUf/D5FkXH8+BKPH33OKck4dBXGh4BStTF86YQhxK/iuKoqBsMB//XRp+w+3+APv/sbXH7lNeLhAGmOc2RYMdNukFvLf9z4jNXNPe7cvoVWMrJiWD/UrPzj39MeH0drzc72Nr3BkGFRoggRiUD8PxcMIRBDIPhAWZTsbG+ztrbF8kHBT95+j4NiyK7r8+6nH3Fvf5MTZ07z8edPWN3PMARU9BAcwTlsa5zFcy8j7Qm2hwXbwwI7MUU6OY0Z72CgNqAYw0gPtQTLqmJjY7n2bqUAxdXLLzLc3uDv/u1t/ui3f5NXzr1I/3CXB2vrvHfrARM2cH+roNloMnfiZUqlEWtpTy3RkB5Plx+hVJ2+1hqazQQTokf+3wKEoihYWX7KcJChtTB/bJ6TL5zme69fweQ7/NO7N/mLH/+UxdlJsqri/tN1QpmzMD3Gyu4AtGW8M8XRc4tkOyWZt2T9NRqNFkqEoiyIMRCJ6FcvnXtLiSKMgmZvb4+HDx/R7Q0oq4rcG7YPK6Io9noZ165c5NKZ4wx6+9x7+ITuYZcjNjDbTtHWsnrgEG05dfY4U0dmGPYq2jOGQbdLdBnWWqxNQBTOe0wIgSB1C1pdW2djYwPvA6ISJGmjdIIa+fkHdx6SZUP+5A9+i+9+8zVeObXA02fPyPOCtb0em/1I6cFaQZsca9tk1T795Yrz5+b5z3++QQyBVqvFkfY4SMRIjAyzjHt3P6c36CMiJM0O2CYxCs5XiKi6wRrDrUdr/PBHP+bM/ATnT8xjxeAl5aOVNR6sH6C1QWvNk8+ecenK6zxZNeAgqkjaGMfEnN6gz/rGFmOtBiYgPHy0zPLKKsYmTB9bwolGQsQohRKDcxWVL1FKo5TCJg0+W93lk0ero/SsvUMpjbUWYwzewQc//5Bff+NrhFzz3i9+QV5FZo+MM95uk6b7lGVVl9Isy0BbjswuEFAoIDiHUwGtDdbUvT7G8FVzSm1KVZWj/uAQEawxNNIUUQYQnq+u0/nsDM839hgO6i+kJGmitNDpOHZ3D1EQaDabTM0tYNMUrRTWGETVxKyqitK5eoeiiETKqiIET5I20FpjjcGYGvpRtNXREgN7m6toLSRpmxACWeVoJBqrodXUqBADnU7tUHVxiPgYsNaitUEpIbi6nMQYUdRZEaKHGLGJxVhbP29M/fvg8c7jnGNrcxlNJElbQOSgl5GXFdYonCsxIUQazXHShqPI87rFKo2YmvmuqgBBaYOP9dePAFEUEkNdMLWu23+Mdb0XEFUnrPcV/d42eQkxCj7AMMvptBRpYvlfuozzk8Dy1O4AAAAASUVORK5CYII="
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports) {
 
 	module.exports = {"data":{"site":{"siteMetadata":{"title":"Or Fleisher","description":"Creative technologist and storyteller","url":"cv.orfleisher.com","keywords":"vr, ar, immersive, creative-technologist, machine-learning, developer, creative director"}}},"layoutContext":{}}
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _classCallCheck2 = __webpack_require__(294);
+	var _classCallCheck2 = __webpack_require__(295);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _possibleConstructorReturn2 = __webpack_require__(295);
+	var _possibleConstructorReturn2 = __webpack_require__(296);
 	
 	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 	
-	var _inherits2 = __webpack_require__(363);
+	var _inherits2 = __webpack_require__(364);
 	
 	var _inherits3 = _interopRequireDefault(_inherits2);
 	
@@ -45585,7 +45623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = AppShell;
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -45599,14 +45637,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _typeof2 = __webpack_require__(296);
+	var _typeof2 = __webpack_require__(297);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -45621,18 +45659,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _iterator = __webpack_require__(297);
+	var _iterator = __webpack_require__(298);
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(348);
+	var _symbol = __webpack_require__(349);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -45647,29 +45685,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 297 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(298), __esModule: true };
-
-/***/ }),
 /* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(299);
-	__webpack_require__(343);
-	module.exports = __webpack_require__(347).f('iterator');
-
+	module.exports = { "default": __webpack_require__(299), __esModule: true };
 
 /***/ }),
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	__webpack_require__(300);
+	__webpack_require__(344);
+	module.exports = __webpack_require__(348).f('iterator');
+
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
-	var $at = __webpack_require__(300)(true);
+	var $at = __webpack_require__(301)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(303)(String, 'String', function (iterated) {
+	__webpack_require__(304)(String, 'String', function (iterated) {
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -45685,11 +45723,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(301);
-	var defined = __webpack_require__(302);
+	var toInteger = __webpack_require__(302);
+	var defined = __webpack_require__(303);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function (TO_STRING) {
@@ -45708,7 +45746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -45720,7 +45758,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -45731,19 +45769,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY = __webpack_require__(304);
-	var $export = __webpack_require__(305);
-	var redefine = __webpack_require__(321);
-	var hide = __webpack_require__(310);
-	var Iterators = __webpack_require__(322);
-	var $iterCreate = __webpack_require__(323);
-	var setToStringTag = __webpack_require__(339);
-	var getPrototypeOf = __webpack_require__(341);
-	var ITERATOR = __webpack_require__(340)('iterator');
+	var LIBRARY = __webpack_require__(305);
+	var $export = __webpack_require__(306);
+	var redefine = __webpack_require__(322);
+	var hide = __webpack_require__(311);
+	var Iterators = __webpack_require__(323);
+	var $iterCreate = __webpack_require__(324);
+	var setToStringTag = __webpack_require__(340);
+	var getPrototypeOf = __webpack_require__(342);
+	var ITERATOR = __webpack_require__(341)('iterator');
 	var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 	var FF_ITERATOR = '@@iterator';
 	var KEYS = 'keys';
@@ -45806,21 +45844,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports) {
 
 	module.exports = true;
 
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(306);
-	var core = __webpack_require__(307);
-	var ctx = __webpack_require__(308);
-	var hide = __webpack_require__(310);
-	var has = __webpack_require__(320);
+	var global = __webpack_require__(307);
+	var core = __webpack_require__(308);
+	var ctx = __webpack_require__(309);
+	var hide = __webpack_require__(311);
+	var has = __webpack_require__(321);
 	var PROTOTYPE = 'prototype';
 	
 	var $export = function (type, name, source) {
@@ -45881,7 +45919,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -45893,7 +45931,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports) {
 
 	var core = module.exports = { version: '2.5.7' };
@@ -45901,11 +45939,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(309);
+	var aFunction = __webpack_require__(310);
 	module.exports = function (fn, that, length) {
 	  aFunction(fn);
 	  if (that === undefined) return fn;
@@ -45927,7 +45965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it) {
@@ -45937,12 +45975,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var dP = __webpack_require__(311);
-	var createDesc = __webpack_require__(319);
-	module.exports = __webpack_require__(315) ? function (object, key, value) {
+	var dP = __webpack_require__(312);
+	var createDesc = __webpack_require__(320);
+	module.exports = __webpack_require__(316) ? function (object, key, value) {
 	  return dP.f(object, key, createDesc(1, value));
 	} : function (object, key, value) {
 	  object[key] = value;
@@ -45951,15 +45989,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var anObject = __webpack_require__(312);
-	var IE8_DOM_DEFINE = __webpack_require__(314);
-	var toPrimitive = __webpack_require__(318);
+	var anObject = __webpack_require__(313);
+	var IE8_DOM_DEFINE = __webpack_require__(315);
+	var toPrimitive = __webpack_require__(319);
 	var dP = Object.defineProperty;
 	
-	exports.f = __webpack_require__(315) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+	exports.f = __webpack_require__(316) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
 	  anObject(O);
 	  P = toPrimitive(P, true);
 	  anObject(Attributes);
@@ -45973,10 +46011,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(313);
+	var isObject = __webpack_require__(314);
 	module.exports = function (it) {
 	  if (!isObject(it)) throw TypeError(it + ' is not an object!');
 	  return it;
@@ -45984,7 +46022,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports) {
 
 	module.exports = function (it) {
@@ -45993,26 +46031,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 314 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = !__webpack_require__(315) && !__webpack_require__(316)(function () {
-	  return Object.defineProperty(__webpack_require__(317)('div'), 'a', { get: function () { return 7; } }).a != 7;
-	});
-
-
-/***/ }),
 /* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(316)(function () {
-	  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+	module.exports = !__webpack_require__(316) && !__webpack_require__(317)(function () {
+	  return Object.defineProperty(__webpack_require__(318)('div'), 'a', { get: function () { return 7; } }).a != 7;
 	});
 
 
 /***/ }),
 /* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(317)(function () {
+	  return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
+	});
+
+
+/***/ }),
+/* 317 */
 /***/ (function(module, exports) {
 
 	module.exports = function (exec) {
@@ -46025,11 +46063,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(313);
-	var document = __webpack_require__(306).document;
+	var isObject = __webpack_require__(314);
+	var document = __webpack_require__(307).document;
 	// typeof document.createElement is 'object' in old IE
 	var is = isObject(document) && isObject(document.createElement);
 	module.exports = function (it) {
@@ -46038,11 +46076,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.1 ToPrimitive(input [, PreferredType])
-	var isObject = __webpack_require__(313);
+	var isObject = __webpack_require__(314);
 	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
 	// and the second argument - flag - preferred type is a string
 	module.exports = function (it, S) {
@@ -46056,7 +46094,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports) {
 
 	module.exports = function (bitmap, value) {
@@ -46070,7 +46108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -46080,31 +46118,31 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(310);
+	module.exports = __webpack_require__(311);
 
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports) {
 
 	module.exports = {};
 
 
 /***/ }),
-/* 323 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create = __webpack_require__(324);
-	var descriptor = __webpack_require__(319);
-	var setToStringTag = __webpack_require__(339);
+	var create = __webpack_require__(325);
+	var descriptor = __webpack_require__(320);
+	var setToStringTag = __webpack_require__(340);
 	var IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(310)(IteratorPrototype, __webpack_require__(340)('iterator'), function () { return this; });
+	__webpack_require__(311)(IteratorPrototype, __webpack_require__(341)('iterator'), function () { return this; });
 	
 	module.exports = function (Constructor, NAME, next) {
 	  Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -46113,27 +46151,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 324 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	var anObject = __webpack_require__(312);
-	var dPs = __webpack_require__(325);
-	var enumBugKeys = __webpack_require__(337);
-	var IE_PROTO = __webpack_require__(334)('IE_PROTO');
+	var anObject = __webpack_require__(313);
+	var dPs = __webpack_require__(326);
+	var enumBugKeys = __webpack_require__(338);
+	var IE_PROTO = __webpack_require__(335)('IE_PROTO');
 	var Empty = function () { /* empty */ };
 	var PROTOTYPE = 'prototype';
 	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function () {
 	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(317)('iframe');
+	  var iframe = __webpack_require__(318)('iframe');
 	  var i = enumBugKeys.length;
 	  var lt = '<';
 	  var gt = '>';
 	  var iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(338).appendChild(iframe);
+	  __webpack_require__(339).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -46160,14 +46198,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 325 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var dP = __webpack_require__(311);
-	var anObject = __webpack_require__(312);
-	var getKeys = __webpack_require__(326);
+	var dP = __webpack_require__(312);
+	var anObject = __webpack_require__(313);
+	var getKeys = __webpack_require__(327);
 	
-	module.exports = __webpack_require__(315) ? Object.defineProperties : function defineProperties(O, Properties) {
+	module.exports = __webpack_require__(316) ? Object.defineProperties : function defineProperties(O, Properties) {
 	  anObject(O);
 	  var keys = getKeys(Properties);
 	  var length = keys.length;
@@ -46179,12 +46217,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 326 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys = __webpack_require__(327);
-	var enumBugKeys = __webpack_require__(337);
+	var $keys = __webpack_require__(328);
+	var enumBugKeys = __webpack_require__(338);
 	
 	module.exports = Object.keys || function keys(O) {
 	  return $keys(O, enumBugKeys);
@@ -46192,13 +46230,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var has = __webpack_require__(320);
-	var toIObject = __webpack_require__(328);
-	var arrayIndexOf = __webpack_require__(331)(false);
-	var IE_PROTO = __webpack_require__(334)('IE_PROTO');
+	var has = __webpack_require__(321);
+	var toIObject = __webpack_require__(329);
+	var arrayIndexOf = __webpack_require__(332)(false);
+	var IE_PROTO = __webpack_require__(335)('IE_PROTO');
 	
 	module.exports = function (object, names) {
 	  var O = toIObject(object);
@@ -46215,23 +46253,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(329);
-	var defined = __webpack_require__(302);
+	var IObject = __webpack_require__(330);
+	var defined = __webpack_require__(303);
 	module.exports = function (it) {
 	  return IObject(defined(it));
 	};
 
 
 /***/ }),
-/* 329 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(330);
+	var cof = __webpack_require__(331);
 	// eslint-disable-next-line no-prototype-builtins
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 	  return cof(it) == 'String' ? it.split('') : Object(it);
@@ -46239,7 +46277,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 330 */
+/* 331 */
 /***/ (function(module, exports) {
 
 	var toString = {}.toString;
@@ -46250,14 +46288,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 331 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// false -> Array#indexOf
 	// true  -> Array#includes
-	var toIObject = __webpack_require__(328);
-	var toLength = __webpack_require__(332);
-	var toAbsoluteIndex = __webpack_require__(333);
+	var toIObject = __webpack_require__(329);
+	var toLength = __webpack_require__(333);
+	var toAbsoluteIndex = __webpack_require__(334);
 	module.exports = function (IS_INCLUDES) {
 	  return function ($this, el, fromIndex) {
 	    var O = toIObject($this);
@@ -46279,11 +46317,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(301);
+	var toInteger = __webpack_require__(302);
 	var min = Math.min;
 	module.exports = function (it) {
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -46291,10 +46329,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(301);
+	var toInteger = __webpack_require__(302);
 	var max = Math.max;
 	var min = Math.min;
 	module.exports = function (index, length) {
@@ -46304,22 +46342,22 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var shared = __webpack_require__(335)('keys');
-	var uid = __webpack_require__(336);
+	var shared = __webpack_require__(336)('keys');
+	var uid = __webpack_require__(337);
 	module.exports = function (key) {
 	  return shared[key] || (shared[key] = uid(key));
 	};
 
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var core = __webpack_require__(307);
-	var global = __webpack_require__(306);
+	var core = __webpack_require__(308);
+	var global = __webpack_require__(307);
 	var SHARED = '__core-js_shared__';
 	var store = global[SHARED] || (global[SHARED] = {});
 	
@@ -46327,13 +46365,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return store[key] || (store[key] = value !== undefined ? value : {});
 	})('versions', []).push({
 	  version: core.version,
-	  mode: __webpack_require__(304) ? 'pure' : 'global',
+	  mode: __webpack_require__(305) ? 'pure' : 'global',
 	  copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 	});
 
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports) {
 
 	var id = 0;
@@ -46344,7 +46382,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports) {
 
 	// IE 8- don't enum bug keys
@@ -46354,20 +46392,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var document = __webpack_require__(306).document;
+	var document = __webpack_require__(307).document;
 	module.exports = document && document.documentElement;
 
 
 /***/ }),
-/* 339 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(311).f;
-	var has = __webpack_require__(320);
-	var TAG = __webpack_require__(340)('toStringTag');
+	var def = __webpack_require__(312).f;
+	var has = __webpack_require__(321);
+	var TAG = __webpack_require__(341)('toStringTag');
 	
 	module.exports = function (it, tag, stat) {
 	  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
@@ -46375,12 +46413,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 340 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var store = __webpack_require__(335)('wks');
-	var uid = __webpack_require__(336);
-	var Symbol = __webpack_require__(306).Symbol;
+	var store = __webpack_require__(336)('wks');
+	var uid = __webpack_require__(337);
+	var Symbol = __webpack_require__(307).Symbol;
 	var USE_SYMBOL = typeof Symbol == 'function';
 	
 	var $exports = module.exports = function (name) {
@@ -46392,13 +46430,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 341 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has = __webpack_require__(320);
-	var toObject = __webpack_require__(342);
-	var IE_PROTO = __webpack_require__(334)('IE_PROTO');
+	var has = __webpack_require__(321);
+	var toObject = __webpack_require__(343);
+	var IE_PROTO = __webpack_require__(335)('IE_PROTO');
 	var ObjectProto = Object.prototype;
 	
 	module.exports = Object.getPrototypeOf || function (O) {
@@ -46411,25 +46449,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(302);
+	var defined = __webpack_require__(303);
 	module.exports = function (it) {
 	  return Object(defined(it));
 	};
 
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(344);
-	var global = __webpack_require__(306);
-	var hide = __webpack_require__(310);
-	var Iterators = __webpack_require__(322);
-	var TO_STRING_TAG = __webpack_require__(340)('toStringTag');
+	__webpack_require__(345);
+	var global = __webpack_require__(307);
+	var hide = __webpack_require__(311);
+	var Iterators = __webpack_require__(323);
+	var TO_STRING_TAG = __webpack_require__(341)('toStringTag');
 	
 	var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
 	  'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
@@ -46447,20 +46485,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(345);
-	var step = __webpack_require__(346);
-	var Iterators = __webpack_require__(322);
-	var toIObject = __webpack_require__(328);
+	var addToUnscopables = __webpack_require__(346);
+	var step = __webpack_require__(347);
+	var Iterators = __webpack_require__(323);
+	var toIObject = __webpack_require__(329);
 	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(303)(Array, 'Array', function (iterated, kind) {
+	module.exports = __webpack_require__(304)(Array, 'Array', function (iterated, kind) {
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -46487,14 +46525,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports) {
 
 	module.exports = function () { /* empty */ };
 
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports) {
 
 	module.exports = function (done, value) {
@@ -46503,60 +46541,60 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 347 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports.f = __webpack_require__(340);
-
-
-/***/ }),
 /* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(349), __esModule: true };
+	exports.f = __webpack_require__(341);
+
 
 /***/ }),
 /* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(350);
-	__webpack_require__(360);
-	__webpack_require__(361);
-	__webpack_require__(362);
-	module.exports = __webpack_require__(307).Symbol;
-
+	module.exports = { "default": __webpack_require__(350), __esModule: true };
 
 /***/ }),
 /* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	__webpack_require__(351);
+	__webpack_require__(361);
+	__webpack_require__(362);
+	__webpack_require__(363);
+	module.exports = __webpack_require__(308).Symbol;
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	// ECMAScript 6 symbols shim
-	var global = __webpack_require__(306);
-	var has = __webpack_require__(320);
-	var DESCRIPTORS = __webpack_require__(315);
-	var $export = __webpack_require__(305);
-	var redefine = __webpack_require__(321);
-	var META = __webpack_require__(351).KEY;
-	var $fails = __webpack_require__(316);
-	var shared = __webpack_require__(335);
-	var setToStringTag = __webpack_require__(339);
-	var uid = __webpack_require__(336);
-	var wks = __webpack_require__(340);
-	var wksExt = __webpack_require__(347);
-	var wksDefine = __webpack_require__(352);
-	var enumKeys = __webpack_require__(353);
-	var isArray = __webpack_require__(356);
-	var anObject = __webpack_require__(312);
-	var isObject = __webpack_require__(313);
-	var toIObject = __webpack_require__(328);
-	var toPrimitive = __webpack_require__(318);
-	var createDesc = __webpack_require__(319);
-	var _create = __webpack_require__(324);
-	var gOPNExt = __webpack_require__(357);
-	var $GOPD = __webpack_require__(359);
-	var $DP = __webpack_require__(311);
-	var $keys = __webpack_require__(326);
+	var global = __webpack_require__(307);
+	var has = __webpack_require__(321);
+	var DESCRIPTORS = __webpack_require__(316);
+	var $export = __webpack_require__(306);
+	var redefine = __webpack_require__(322);
+	var META = __webpack_require__(352).KEY;
+	var $fails = __webpack_require__(317);
+	var shared = __webpack_require__(336);
+	var setToStringTag = __webpack_require__(340);
+	var uid = __webpack_require__(337);
+	var wks = __webpack_require__(341);
+	var wksExt = __webpack_require__(348);
+	var wksDefine = __webpack_require__(353);
+	var enumKeys = __webpack_require__(354);
+	var isArray = __webpack_require__(357);
+	var anObject = __webpack_require__(313);
+	var isObject = __webpack_require__(314);
+	var toIObject = __webpack_require__(329);
+	var toPrimitive = __webpack_require__(319);
+	var createDesc = __webpack_require__(320);
+	var _create = __webpack_require__(325);
+	var gOPNExt = __webpack_require__(358);
+	var $GOPD = __webpack_require__(360);
+	var $DP = __webpack_require__(312);
+	var $keys = __webpack_require__(327);
 	var gOPD = $GOPD.f;
 	var dP = $DP.f;
 	var gOPN = gOPNExt.f;
@@ -46679,11 +46717,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f = $defineProperty;
-	  __webpack_require__(358).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(355).f = $propertyIsEnumerable;
-	  __webpack_require__(354).f = $getOwnPropertySymbols;
+	  __webpack_require__(359).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(356).f = $propertyIsEnumerable;
+	  __webpack_require__(355).f = $getOwnPropertySymbols;
 	
-	  if (DESCRIPTORS && !__webpack_require__(304)) {
+	  if (DESCRIPTORS && !__webpack_require__(305)) {
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
 	  }
 	
@@ -46757,7 +46795,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	
 	// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(310)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(311)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 	// 19.4.3.5 Symbol.prototype[@@toStringTag]
 	setToStringTag($Symbol, 'Symbol');
 	// 20.2.1.9 Math[@@toStringTag]
@@ -46767,18 +46805,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var META = __webpack_require__(336)('meta');
-	var isObject = __webpack_require__(313);
-	var has = __webpack_require__(320);
-	var setDesc = __webpack_require__(311).f;
+	var META = __webpack_require__(337)('meta');
+	var isObject = __webpack_require__(314);
+	var has = __webpack_require__(321);
+	var setDesc = __webpack_require__(312).f;
 	var id = 0;
 	var isExtensible = Object.isExtensible || function () {
 	  return true;
 	};
-	var FREEZE = !__webpack_require__(316)(function () {
+	var FREEZE = !__webpack_require__(317)(function () {
 	  return isExtensible(Object.preventExtensions({}));
 	});
 	var setMeta = function (it) {
@@ -46826,14 +46864,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(306);
-	var core = __webpack_require__(307);
-	var LIBRARY = __webpack_require__(304);
-	var wksExt = __webpack_require__(347);
-	var defineProperty = __webpack_require__(311).f;
+	var global = __webpack_require__(307);
+	var core = __webpack_require__(308);
+	var LIBRARY = __webpack_require__(305);
+	var wksExt = __webpack_require__(348);
+	var defineProperty = __webpack_require__(312).f;
 	module.exports = function (name) {
 	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
 	  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -46841,13 +46879,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
-	var getKeys = __webpack_require__(326);
-	var gOPS = __webpack_require__(354);
-	var pIE = __webpack_require__(355);
+	var getKeys = __webpack_require__(327);
+	var gOPS = __webpack_require__(355);
+	var pIE = __webpack_require__(356);
 	module.exports = function (it) {
 	  var result = getKeys(it);
 	  var getSymbols = gOPS.f;
@@ -46862,37 +46900,37 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
-	var cof = __webpack_require__(330);
+	var cof = __webpack_require__(331);
 	module.exports = Array.isArray || function isArray(arg) {
 	  return cof(arg) == 'Array';
 	};
 
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-	var toIObject = __webpack_require__(328);
-	var gOPN = __webpack_require__(358).f;
+	var toIObject = __webpack_require__(329);
+	var gOPN = __webpack_require__(359).f;
 	var toString = {}.toString;
 	
 	var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -46912,12 +46950,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-	var $keys = __webpack_require__(327);
-	var hiddenKeys = __webpack_require__(337).concat('length', 'prototype');
+	var $keys = __webpack_require__(328);
+	var hiddenKeys = __webpack_require__(338).concat('length', 'prototype');
 	
 	exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 	  return $keys(O, hiddenKeys);
@@ -46925,18 +46963,18 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var pIE = __webpack_require__(355);
-	var createDesc = __webpack_require__(319);
-	var toIObject = __webpack_require__(328);
-	var toPrimitive = __webpack_require__(318);
-	var has = __webpack_require__(320);
-	var IE8_DOM_DEFINE = __webpack_require__(314);
+	var pIE = __webpack_require__(356);
+	var createDesc = __webpack_require__(320);
+	var toIObject = __webpack_require__(329);
+	var toPrimitive = __webpack_require__(319);
+	var has = __webpack_require__(321);
+	var IE8_DOM_DEFINE = __webpack_require__(315);
 	var gOPD = Object.getOwnPropertyDescriptor;
 	
-	exports.f = __webpack_require__(315) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+	exports.f = __webpack_require__(316) ? gOPD : function getOwnPropertyDescriptor(O, P) {
 	  O = toIObject(O);
 	  P = toPrimitive(P, true);
 	  if (IE8_DOM_DEFINE) try {
@@ -46947,42 +46985,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-/* 361 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	__webpack_require__(352)('asyncIterator');
 
 
 /***/ }),
 /* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(352)('observable');
+	__webpack_require__(353)('asyncIterator');
 
 
 /***/ }),
 /* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	__webpack_require__(353)('observable');
+
+
+/***/ }),
+/* 364 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _setPrototypeOf = __webpack_require__(364);
+	var _setPrototypeOf = __webpack_require__(365);
 	
 	var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
 	
-	var _create = __webpack_require__(368);
+	var _create = __webpack_require__(369);
 	
 	var _create2 = _interopRequireDefault(_create);
 	
-	var _typeof2 = __webpack_require__(296);
+	var _typeof2 = __webpack_require__(297);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -47005,36 +47043,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 364 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(365), __esModule: true };
-
-/***/ }),
 /* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(366);
-	module.exports = __webpack_require__(307).Object.setPrototypeOf;
-
+	module.exports = { "default": __webpack_require__(366), __esModule: true };
 
 /***/ }),
 /* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// 19.1.3.19 Object.setPrototypeOf(O, proto)
-	var $export = __webpack_require__(305);
-	$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(367).set });
+	__webpack_require__(367);
+	module.exports = __webpack_require__(308).Object.setPrototypeOf;
 
 
 /***/ }),
 /* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	// 19.1.3.19 Object.setPrototypeOf(O, proto)
+	var $export = __webpack_require__(306);
+	$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(368).set });
+
+
+/***/ }),
+/* 368 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// Works with __proto__ only. Old v8 can't work with null proto objects.
 	/* eslint-disable no-proto */
-	var isObject = __webpack_require__(313);
-	var anObject = __webpack_require__(312);
+	var isObject = __webpack_require__(314);
+	var anObject = __webpack_require__(313);
 	var check = function (O, proto) {
 	  anObject(O);
 	  if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
@@ -47043,7 +47081,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
 	    function (test, buggy, set) {
 	      try {
-	        set = __webpack_require__(308)(Function.call, __webpack_require__(359).f(Object.prototype, '__proto__').set, 2);
+	        set = __webpack_require__(309)(Function.call, __webpack_require__(360).f(Object.prototype, '__proto__').set, 2);
 	        set(test, []);
 	        buggy = !(test instanceof Array);
 	      } catch (e) { buggy = true; }
@@ -47059,33 +47097,33 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 368 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(369), __esModule: true };
-
-/***/ }),
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(370);
-	var $Object = __webpack_require__(307).Object;
+	module.exports = { "default": __webpack_require__(370), __esModule: true };
+
+/***/ }),
+/* 370 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(371);
+	var $Object = __webpack_require__(308).Object;
 	module.exports = function create(P, D) {
 	  return $Object.create(P, D);
 	};
 
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var $export = __webpack_require__(305);
+	var $export = __webpack_require__(306);
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	$export($export.S, 'Object', { create: __webpack_require__(324) });
+	$export($export.S, 'Object', { create: __webpack_require__(325) });
 
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47096,7 +47134,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
@@ -47134,7 +47172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47142,27 +47180,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 	exports.navigateTo = exports.replace = exports.push = undefined;
 	
-	var _extends2 = __webpack_require__(373);
+	var _extends2 = __webpack_require__(374);
 	
 	var _extends3 = _interopRequireDefault(_extends2);
 	
-	var _keys = __webpack_require__(378);
+	var _keys = __webpack_require__(379);
 	
 	var _keys2 = _interopRequireDefault(_keys);
 	
-	var _objectWithoutProperties2 = __webpack_require__(382);
+	var _objectWithoutProperties2 = __webpack_require__(383);
 	
 	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 	
-	var _classCallCheck2 = __webpack_require__(294);
+	var _classCallCheck2 = __webpack_require__(295);
 	
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 	
-	var _possibleConstructorReturn2 = __webpack_require__(295);
+	var _possibleConstructorReturn2 = __webpack_require__(296);
 	
 	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 	
-	var _inherits2 = __webpack_require__(363);
+	var _inherits2 = __webpack_require__(364);
 	
 	var _inherits3 = _interopRequireDefault(_inherits2);
 	
@@ -47380,14 +47418,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	var navigateTo = exports.navigateTo = push;
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _assign = __webpack_require__(374);
+	var _assign = __webpack_require__(375);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
@@ -47408,44 +47446,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 374 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(375), __esModule: true };
-
-/***/ }),
 /* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(376);
-	module.exports = __webpack_require__(307).Object.assign;
-
+	module.exports = { "default": __webpack_require__(376), __esModule: true };
 
 /***/ }),
 /* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(305);
-	
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(377) });
+	__webpack_require__(377);
+	module.exports = __webpack_require__(308).Object.assign;
 
 
 /***/ }),
 /* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(306);
+	
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(378) });
+
+
+/***/ }),
+/* 378 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
-	var getKeys = __webpack_require__(326);
-	var gOPS = __webpack_require__(354);
-	var pIE = __webpack_require__(355);
-	var toObject = __webpack_require__(342);
-	var IObject = __webpack_require__(329);
+	var getKeys = __webpack_require__(327);
+	var gOPS = __webpack_require__(355);
+	var pIE = __webpack_require__(356);
+	var toObject = __webpack_require__(343);
+	var IObject = __webpack_require__(330);
 	var $assign = Object.assign;
 	
 	// should work with symbols and should have deterministic property order (V8 bug)
-	module.exports = !$assign || __webpack_require__(316)(function () {
+	module.exports = !$assign || __webpack_require__(317)(function () {
 	  var A = {};
 	  var B = {};
 	  // eslint-disable-next-line no-undef
@@ -47472,28 +47510,28 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 378 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(379), __esModule: true };
-
-/***/ }),
 /* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(380);
-	module.exports = __webpack_require__(307).Object.keys;
-
+	module.exports = { "default": __webpack_require__(380), __esModule: true };
 
 /***/ }),
 /* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	__webpack_require__(381);
+	module.exports = __webpack_require__(308).Object.keys;
+
+
+/***/ }),
+/* 381 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(342);
-	var $keys = __webpack_require__(326);
+	var toObject = __webpack_require__(343);
+	var $keys = __webpack_require__(327);
 	
-	__webpack_require__(381)('keys', function () {
+	__webpack_require__(382)('keys', function () {
 	  return function keys(it) {
 	    return $keys(toObject(it));
 	  };
@@ -47501,13 +47539,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
-	var $export = __webpack_require__(305);
-	var core = __webpack_require__(307);
-	var fails = __webpack_require__(316);
+	var $export = __webpack_require__(306);
+	var core = __webpack_require__(308);
+	var fails = __webpack_require__(317);
 	module.exports = function (KEY, exec) {
 	  var fn = (core.Object || {})[KEY] || Object[KEY];
 	  var exp = {};
@@ -47517,7 +47555,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -47537,7 +47575,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47548,7 +47586,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
@@ -47594,7 +47632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47606,7 +47644,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
@@ -47614,19 +47652,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _BackArrow = __webpack_require__(385);
+	var _BackArrow = __webpack_require__(386);
 	
 	var _BackArrow2 = _interopRequireDefault(_BackArrow);
 	
-	var _Button = __webpack_require__(387);
+	var _Button = __webpack_require__(388);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	var _reactFontawesome = __webpack_require__(389);
+	var _reactFontawesome = __webpack_require__(390);
 	
-	var _freeSolidSvgIcons = __webpack_require__(391);
+	var _freeSolidSvgIcons = __webpack_require__(392);
 	
-	__webpack_require__(392);
+	__webpack_require__(393);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -47673,7 +47711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      _react2.default.createElement('img', {
 	        alt: post.frontmatter.title,
 	        className: 'img_banner',
-	        src: __webpack_require__(393)("./" + post.frontmatter.cover)
+	        src: __webpack_require__(394)("./" + post.frontmatter.cover)
 	      }),
 	      _react2.default.createElement(
 	        'div',
@@ -47687,11 +47725,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            { className: 'col-xs-12 col-sm-4 col-md-4' },
 	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'h4',
-	              { className: 'bold' },
-	              'About'
-	            ),
+	            function () {
+	              if (post.frontmatter.about && post.frontmatter.about.length > 0) return _react2.default.createElement(
+	                'h4',
+	                { className: 'bold' },
+	                'About'
+	              );
+	            }(),
 	            _react2.default.createElement(
 	              'p',
 	              null,
@@ -47702,11 +47742,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            { className: 'col-xs-12 col-sm-4 col-md-4' },
 	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'h4',
-	              { className: 'bold' },
-	              'Components'
-	            ),
+	            function () {
+	              if (post.frontmatter.components.length > 0) return _react2.default.createElement(
+	                'h4',
+	                { className: 'bold' },
+	                'Components'
+	              );
+	            }(),
 	            _react2.default.createElement(
 	              'ul',
 	              null,
@@ -47773,11 +47815,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            'div',
 	            { className: 'col-xs-12 col-sm-4 col-md-4' },
 	            _react2.default.createElement('br', null),
-	            _react2.default.createElement(
-	              'h4',
-	              { className: 'bold' },
-	              'Links'
-	            ),
+	            function () {
+	              if (post.frontmatter.links && post.frontmatter.links.length > 0) return _react2.default.createElement(
+	                'h4',
+	                { className: 'bold' },
+	                'Links'
+	              );
+	            }(),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'row' },
@@ -47858,7 +47902,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Template;
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47869,11 +47913,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
-	var _leftArrow = __webpack_require__(386);
+	var _leftArrow = __webpack_require__(387);
 	
 	var _leftArrow2 = _interopRequireDefault(_leftArrow);
 	
@@ -47901,7 +47945,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	      _react2.default.createElement(
 	        _gatsbyLink2.default,
 	        { to: '/' },
-	        _react2.default.createElement('img', { style: { width: '20px', marginBottom: '20px' }, src: _leftArrow2.default })
+	        _react2.default.createElement('img', {
+	          style: {
+	            position: 'fixed',
+	            left: '35px',
+	            top: '63px',
+	            width: '20px'
+	          },
+	          src: _leftArrow2.default
+	        })
 	      )
 	    );
 	  };
@@ -47913,13 +47965,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports) {
 
 	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDY0LjM0NCwyMDcuNDE4bDAuNzY4LDAuMTY4SDEzNS44ODhsMTAzLjQ5Ni0xMDMuNzI0YzUuMDY4LTUuMDY0LDcuODQ4LTExLjkyNCw3Ljg0OC0xOS4xMjQNCgkJCWMwLTcuMi0yLjc4LTE0LjAxMi03Ljg0OC0xOS4wODhMMjIzLjI4LDQ5LjUzOGMtNS4wNjQtNS4wNjQtMTEuODEyLTcuODY0LTE5LjAwOC03Ljg2NGMtNy4yLDAtMTMuOTUyLDIuNzgtMTkuMDE2LDcuODQ0DQoJCQlMNy44NDQsMjI2LjkxNEMyLjc2LDIzMS45OTgtMC4wMiwyMzguNzcsMCwyNDUuOTc0Yy0wLjAyLDcuMjQ0LDIuNzYsMTQuMDIsNy44NDQsMTkuMDk2bDE3Ny40MTIsMTc3LjQxMg0KCQkJYzUuMDY0LDUuMDYsMTEuODEyLDcuODQ0LDE5LjAxNiw3Ljg0NGM3LjE5NiwwLDEzLjk0NC0yLjc4OCwxOS4wMDgtNy44NDRsMTYuMTA0LTE2LjExMmM1LjA2OC01LjA1Niw3Ljg0OC0xMS44MDgsNy44NDgtMTkuMDA4DQoJCQljMC03LjE5Ni0yLjc4LTEzLjU5Mi03Ljg0OC0xOC42NTJMMTM0LjcyLDI4NC40MDZoMzI5Ljk5MmMxNC44MjgsMCwyNy4yODgtMTIuNzgsMjcuMjg4LTI3LjZ2LTIyLjc4OA0KCQkJQzQ5MiwyMTkuMTk4LDQ3OS4xNzIsMjA3LjQxOCw0NjQuMzQ0LDIwNy40MTh6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo="
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47930,11 +47982,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
-	__webpack_require__(388);
+	__webpack_require__(389);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -47954,23 +48006,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	
 	  Button.prototype.render = function render() {
+	    var _this2 = this;
+	
 	    var concatanatedClassName = 'col-xs-' + this.props.mobileWidth + ' col-sm-' + this.props.smallWidth + ' col-md-' + this.props.mediumWidth;
 	    return _react2.default.createElement(
 	      'div',
 	      { className: concatanatedClassName },
-	      _react2.default.createElement(
-	        'a',
-	        {
-	          href: this.props.link,
-	          style: { textDecoration: 'none' },
-	          target: '_blank'
-	        },
-	        _react2.default.createElement(
+	      function () {
+	        if (!_this2.props.link) return _react2.default.createElement(
 	          'div',
-	          { className: 'btn' },
-	          this.props.text
-	        )
-	      )
+	          null,
+	          _react2.default.createElement(
+	            'a',
+	            {
+	              href: _this2.props.link,
+	              style: { textDecoration: 'none' },
+	              target: '_blank'
+	            },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'btn' },
+	              _this2.props.text
+	            )
+	          )
+	        );
+	      }(),
+	      function () {
+	        if (_this2.props.link) return _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            _gatsbyLink2.default,
+	            { to: _this2.props.link, style: { textDecoration: 'none' } },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'btn' },
+	              _this2.props.text
+	            )
+	          )
+	        );
+	      }()
 	    );
 	  };
 	
@@ -47981,17 +48056,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports) {
 
 	// empty (null-loader)
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	(function (global, factory) {
-		 true ? factory(exports, __webpack_require__(390), __webpack_require__(169), __webpack_require__(1)) :
+		 true ? factory(exports, __webpack_require__(391), __webpack_require__(169), __webpack_require__(1)) :
 		typeof define === 'function' && define.amd ? define(['exports', '@fortawesome/fontawesome-svg-core', 'prop-types', 'react'], factory) :
 		(factory((global['react-fontawesome'] = {}),global.FontAwesome,global.PropTypes,global.React));
 	}(this, (function (exports,fontawesomeSvgCore,PropTypes,React) { 'use strict';
@@ -48406,7 +48481,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -50353,7 +50428,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*!
@@ -52260,36 +52335,36 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports) {
 
 	// empty (null-loader)
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./1948_header.jpg": 394,
-		"./aframe_cover.jpg": 395,
-		"./deathmask_cover.png": 396,
-		"./depthkitjs_cover.png": 397,
-		"./detune_cover.png": 398,
-		"./dms.png": 399,
-		"./little-nomad.png": 400,
-		"./max.png": 401,
-		"./myth-cover.png": 402,
-		"./pulp_cover.jpg": 403,
-		"./shining.jpg": 404,
-		"./skeletron.jpg": 405,
-		"./so.png": 406,
-		"./sono.png": 407,
-		"./toolstoolstools.png": 408,
-		"./trumpet.png": 409,
-		"./twit.jpg": 410,
-		"./tzina.png": 411,
-		"./visualizer.png": 412,
-		"./volume_cover.jpg": 413
+		"./1948_header.jpg": 395,
+		"./aframe_cover.jpg": 396,
+		"./deathmask_cover.png": 397,
+		"./depthkitjs_cover.png": 398,
+		"./detune_cover.png": 399,
+		"./dms.png": 400,
+		"./little-nomad.png": 401,
+		"./max.png": 402,
+		"./myth-cover.png": 403,
+		"./pulp_cover.jpg": 404,
+		"./shining.jpg": 405,
+		"./skeletron.jpg": 406,
+		"./so.png": 407,
+		"./sono.png": 408,
+		"./toolstoolstools.png": 409,
+		"./trumpet.png": 410,
+		"./twit.jpg": 411,
+		"./tzina.png": 412,
+		"./visualizer.png": 413,
+		"./volume_cover.jpg": 414
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52302,131 +52377,131 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 393;
+	webpackContext.id = 394;
 
-
-/***/ }),
-/* 394 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "static/1948_header.72359eb6.jpg";
 
 /***/ }),
 /* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/aframe_cover.920f7a36.jpg";
+	module.exports = __webpack_require__.p + "static/1948_header.72359eb6.jpg";
 
 /***/ }),
 /* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/deathmask_cover.260c302b.png";
+	module.exports = __webpack_require__.p + "static/aframe_cover.920f7a36.jpg";
 
 /***/ }),
 /* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/depthkitjs_cover.d309981e.png";
+	module.exports = __webpack_require__.p + "static/deathmask_cover.260c302b.png";
 
 /***/ }),
 /* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/detune_cover.99322263.png";
+	module.exports = __webpack_require__.p + "static/depthkitjs_cover.d309981e.png";
 
 /***/ }),
 /* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/dms.7b13031d.png";
+	module.exports = __webpack_require__.p + "static/detune_cover.99322263.png";
 
 /***/ }),
 /* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/little-nomad.ac8c1a83.png";
+	module.exports = __webpack_require__.p + "static/dms.7b13031d.png";
 
 /***/ }),
 /* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/max.d06754a3.png";
+	module.exports = __webpack_require__.p + "static/little-nomad.ac8c1a83.png";
 
 /***/ }),
 /* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/myth-cover.0d2ac5a1.png";
+	module.exports = __webpack_require__.p + "static/max.d06754a3.png";
 
 /***/ }),
 /* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/pulp_cover.f858b5af.jpg";
+	module.exports = __webpack_require__.p + "static/myth-cover.0d2ac5a1.png";
 
 /***/ }),
 /* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/shining.afa55e8a.jpg";
+	module.exports = __webpack_require__.p + "static/pulp_cover.f858b5af.jpg";
 
 /***/ }),
 /* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/skeletron.b65b9738.jpg";
+	module.exports = __webpack_require__.p + "static/shining.afa55e8a.jpg";
 
 /***/ }),
 /* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/so.7efc8759.png";
+	module.exports = __webpack_require__.p + "static/skeletron.b65b9738.jpg";
 
 /***/ }),
 /* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/sono.65d14b66.png";
+	module.exports = __webpack_require__.p + "static/so.7efc8759.png";
 
 /***/ }),
 /* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/toolstoolstools.e4d871c9.png";
+	module.exports = __webpack_require__.p + "static/sono.65d14b66.png";
 
 /***/ }),
 /* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/trumpet.584bed28.png";
+	module.exports = __webpack_require__.p + "static/toolstoolstools.e4d871c9.png";
 
 /***/ }),
 /* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/twit.6479d8f1.jpg";
+	module.exports = __webpack_require__.p + "static/trumpet.584bed28.png";
 
 /***/ }),
 /* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/tzina.42617515.png";
+	module.exports = __webpack_require__.p + "static/twit.6479d8f1.jpg";
 
 /***/ }),
 /* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/visualizer.40946272.png";
+	module.exports = __webpack_require__.p + "static/tzina.42617515.png";
 
 /***/ }),
 /* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/volume_cover.c1f4ff1c.jpg";
+	module.exports = __webpack_require__.p + "static/visualizer.40946272.png";
 
 /***/ }),
 /* 414 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "static/volume_cover.c1f4ff1c.jpg";
+
+/***/ }),
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52438,19 +52513,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _GridUnit = __webpack_require__(415);
+	var _GridUnit = __webpack_require__(416);
 	
 	var _GridUnit2 = _interopRequireDefault(_GridUnit);
 	
-	var _Section = __webpack_require__(417);
+	var _Section = __webpack_require__(418);
 	
 	var _Section2 = _interopRequireDefault(_Section);
 	
-	var _Button = __webpack_require__(387);
+	var _Button = __webpack_require__(388);
 	
 	var _Button2 = _interopRequireDefault(_Button);
 	
-	__webpack_require__(392);
+	__webpack_require__(393);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -52479,13 +52554,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	        { className: 'bold' },
 	        'Director, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.'
 	      ),
-	      _react2.default.createElement(_Button2.default, {
-	        text: 'Resume',
-	        link: 'https://volume.gl',
-	        mobileWidth: '6',
-	        smallWidth: '4',
-	        mediumWidth: '3'
-	      }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'row' },
+	        _react2.default.createElement(_Button2.default, {
+	          text: 'Biography',
+	          link: '/bio',
+	          mobileWidth: '6',
+	          smallWidth: '4',
+	          mediumWidth: '3'
+	        }),
+	        _react2.default.createElement(_Button2.default, {
+	          text: 'Contact',
+	          link: '',
+	          mobileWidth: '6',
+	          smallWidth: '4',
+	          mediumWidth: '3'
+	        })
+	      ),
 	      _react2.default.createElement(
 	        _Section2.default,
 	        { title: 'Projects' },
@@ -52495,6 +52581,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	          posts.map(function (_ref) {
 	            var post = _ref.node;
 	            var frontmatter = post.frontmatter;
+	
+	            //Bio page doesn't get a grid cube
+	
+	            if (post.frontmatter.title == 'Bio') return;
 	
 	            var tags = '';
 	            for (var tag in frontmatter.tags) {
@@ -52507,13 +52597,45 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return _react2.default.createElement(_GridUnit2.default, {
 	              key: post.frontmatter.path,
 	              alt_text: post.frontmatter.path,
-	              logo: __webpack_require__(419)("./gifs" + frontmatter.path + '.gif'),
+	              logo: __webpack_require__(420)("./gifs" + frontmatter.path + '.gif'),
 	              colour: '#BDBDBD',
 	              title: frontmatter.title,
 	              link: frontmatter.path,
 	              subtag: tags,
 	              subtitle: frontmatter.excerpt
 	            });
+	          })
+	        )
+	      ),
+	      _react2.default.createElement(
+	        _Section2.default,
+	        { title: 'Experience' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(_GridUnit2.default, {
+	            alt_text: 'Phenomena Labs',
+	            logo: __webpack_require__(439),
+	            colour: '#BDBDBD',
+	            title: 'Phenomena Labs',
+	            subtag: '2011 - 2016',
+	            subtitle: 'Co-Founder'
+	          }),
+	          _react2.default.createElement(_GridUnit2.default, {
+	            alt_text: 'Viacom',
+	            logo: __webpack_require__(439),
+	            colour: '#BDBDBD',
+	            title: 'Viacom',
+	            subtag: '2017 - 2018',
+	            subtitle: 'VR Research Fellow'
+	          }),
+	          _react2.default.createElement(_GridUnit2.default, {
+	            alt_text: 'Vimeo',
+	            logo: __webpack_require__(439),
+	            colour: '#BDBDBD',
+	            title: 'Vimeo',
+	            subtag: '2018 - current',
+	            subtitle: 'Principle Creative Technologist'
 	          })
 	        )
 	      )
@@ -52525,7 +52647,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var pageQuery = exports.pageQuery = '** extracted graphql fragment **';
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52536,11 +52658,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _gatsbyLink = __webpack_require__(372);
+	var _gatsbyLink = __webpack_require__(373);
 	
 	var _gatsbyLink2 = _interopRequireDefault(_gatsbyLink);
 	
-	__webpack_require__(416);
+	__webpack_require__(417);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -52571,7 +52693,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      _react2.default.createElement(
 	        'div',
 	        { className: 'title bold' },
-	        this.props.title
+	        _react2.default.createElement(
+	          _gatsbyLink2.default,
+	          {
+	            to: this.props.link,
+	            style: { textDecoration: 'none', color: '#000' }
+	          },
+	          this.props.title
+	        )
 	      ),
 	      _react2.default.createElement(
 	        'div',
@@ -52593,13 +52722,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports) {
 
 	// empty (null-loader)
 
 /***/ }),
-/* 417 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52610,7 +52739,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(418);
+	__webpack_require__(419);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -52653,35 +52782,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports) {
 
 	// empty (null-loader)
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./gifs/1948.gif": 420,
-		"./gifs/aframe.gif": 421,
-		"./gifs/death-mask.gif": 422,
-		"./gifs/depthkit-js.gif": 423,
-		"./gifs/detune.gif": 424,
-		"./gifs/dms.gif": 425,
-		"./gifs/max.gif": 426,
-		"./gifs/myth.gif": 427,
-		"./gifs/pulp-fiction.gif": 428,
-		"./gifs/retouch.gif": 429,
-		"./gifs/skeletron.gif": 430,
-		"./gifs/sono.gif": 431,
-		"./gifs/soundobjects.gif": 432,
-		"./gifs/toolstoolstools.gif": 433,
-		"./gifs/trumpet.gif": 434,
-		"./gifs/twit-ar.gif": 435,
-		"./gifs/tzina.gif": 436,
-		"./gifs/visualizer.gif": 437,
-		"./gifs/volume.gif": 438
+		"./gifs/1948.gif": 421,
+		"./gifs/aframe.gif": 422,
+		"./gifs/death-mask.gif": 423,
+		"./gifs/depthkit-js.gif": 424,
+		"./gifs/detune.gif": 425,
+		"./gifs/dms.gif": 426,
+		"./gifs/max.gif": 427,
+		"./gifs/myth.gif": 428,
+		"./gifs/pulp-fiction.gif": 429,
+		"./gifs/retouch.gif": 430,
+		"./gifs/skeletron.gif": 431,
+		"./gifs/sono.gif": 432,
+		"./gifs/soundobjects.gif": 433,
+		"./gifs/toolstoolstools.gif": 434,
+		"./gifs/trumpet.gif": 435,
+		"./gifs/twit-ar.gif": 436,
+		"./gifs/tzina.gif": 437,
+		"./gifs/visualizer.gif": 438,
+		"./gifs/volume.gif": 439
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52694,293 +52823,299 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 419;
+	webpackContext.id = 420;
 
-
-/***/ }),
-/* 420 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "static/1948.22bd4c70.gif";
 
 /***/ }),
 /* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/aframe.cb414c08.gif";
+	module.exports = __webpack_require__.p + "static/1948.22bd4c70.gif";
 
 /***/ }),
 /* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/death-mask.8ea61ccb.gif";
+	module.exports = __webpack_require__.p + "static/aframe.cb414c08.gif";
 
 /***/ }),
 /* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/depthkit-js.377aba95.gif";
+	module.exports = __webpack_require__.p + "static/death-mask.8ea61ccb.gif";
 
 /***/ }),
 /* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/detune.0c7d8122.gif";
+	module.exports = __webpack_require__.p + "static/depthkit-js.377aba95.gif";
 
 /***/ }),
 /* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/dms.b8bdbdfe.gif";
+	module.exports = __webpack_require__.p + "static/detune.0c7d8122.gif";
 
 /***/ }),
 /* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/max.a9c58a6f.gif";
+	module.exports = __webpack_require__.p + "static/dms.b8bdbdfe.gif";
 
 /***/ }),
 /* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/myth.58509734.gif";
+	module.exports = __webpack_require__.p + "static/max.a9c58a6f.gif";
 
 /***/ }),
 /* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/pulp-fiction.3aad9c39.gif";
+	module.exports = __webpack_require__.p + "static/myth.58509734.gif";
 
 /***/ }),
 /* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/retouch.34097c85.gif";
+	module.exports = __webpack_require__.p + "static/pulp-fiction.3aad9c39.gif";
 
 /***/ }),
 /* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/skeletron.e48a91e9.gif";
+	module.exports = __webpack_require__.p + "static/retouch.34097c85.gif";
 
 /***/ }),
 /* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/sono.7f90bd8a.gif";
+	module.exports = __webpack_require__.p + "static/skeletron.e48a91e9.gif";
 
 /***/ }),
 /* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/soundobjects.c8fc14b8.gif";
+	module.exports = __webpack_require__.p + "static/sono.7f90bd8a.gif";
 
 /***/ }),
 /* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/toolstoolstools.49d7eb5f.gif";
+	module.exports = __webpack_require__.p + "static/soundobjects.c8fc14b8.gif";
 
 /***/ }),
 /* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/trumpet.cf7f619f.gif";
+	module.exports = __webpack_require__.p + "static/toolstoolstools.49d7eb5f.gif";
 
 /***/ }),
 /* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/twit-ar.3536a88a.gif";
+	module.exports = __webpack_require__.p + "static/trumpet.cf7f619f.gif";
 
 /***/ }),
 /* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/tzina.d7c0f3e3.gif";
+	module.exports = __webpack_require__.p + "static/twit-ar.3536a88a.gif";
 
 /***/ }),
 /* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/visualizer.c3a68734.gif";
+	module.exports = __webpack_require__.p + "static/tzina.d7c0f3e3.gif";
 
 /***/ }),
 /* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "static/volume.dd96a04c.gif";
+	module.exports = __webpack_require__.p + "static/visualizer.c3a68734.gif";
 
 /***/ }),
 /* 439 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = {"pathContext":{}}
+	module.exports = __webpack_require__.p + "static/volume.dd96a04c.gif";
 
 /***/ }),
 /* 440 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tags":["Augmented Reality","Experiment","Experiments","Machine Learning","Tools","Virtual Reality"]}}
+	module.exports = {"pathContext":{}}
 
 /***/ }),
 /* 441 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Augmented Reality"}}
+	module.exports = {"pathContext":{"tags":["Augmented Reality","Experiment","Experiments","Machine Learning","Tools","Virtual Reality"]}}
 
 /***/ }),
 /* 442 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Experiment"}}
+	module.exports = {"pathContext":{"tagName":"Augmented Reality"}}
 
 /***/ }),
 /* 443 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Experiments"}}
+	module.exports = {"pathContext":{"tagName":"Experiment"}}
 
 /***/ }),
 /* 444 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Machine Learning"}}
+	module.exports = {"pathContext":{"tagName":"Experiments"}}
 
 /***/ }),
 /* 445 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Tools"}}
+	module.exports = {"pathContext":{"tagName":"Machine Learning"}}
 
 /***/ }),
 /* 446 */
 /***/ (function(module, exports) {
 
-	module.exports = {"pathContext":{"tagName":"Virtual Reality"}}
+	module.exports = {"pathContext":{"tagName":"Tools"}}
 
 /***/ }),
 /* 447 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"path":"/myth","about":"‘Myth’, is an interactive web virtual reality short film, featuring the song “Can I peacfuly Love” from Livyatanim’s debut album “After the Waters”. The film takes place in a dark surreal world, which aims to blur the lines between digital and natural imagery.\nThe film uses the composition’s notation, rhythms and melodies (MIDI), to control elements ranging from drums affecting the geometry to transitions between scenes. In effect, using this data transformed from being a musical composition language, to a visual directing language.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","cover":"myth-cover.png","credits":"Developed with Yannis Gravezas, Tomer Rousso and Livyatanim","title":"Myth","press":[["Wired","https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss"],["Creators Project","https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth"],["We and the Color","https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/133824524661/myth-interactive-web-music-video-for-livyatanim'"],["Z","http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html"],["Chrome Experiments","https://experiments.withgoogle.com/livyatanim-myth"],["WorldFest- NASA Remi Award winner","#"],["UrbamMediaMakers Best Interactive Award Winner","#"],["The FWA – WOTD","#"],["CSS Awards – WOTD","#"],["Awwwards – Honorable Mention","#"]],"links":[["Full Experience","http://film.livyatanim.com"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://film.livyatanim.com/media/mediakit.zip"]],"embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/145578640?autoplay=0&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","tags":["Virtual Reality"],"excerpt":"An audio reactive virtual reality short film."}}},"pathContext":{"prev":null,"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:29:00+00:00","path":"/sono","title":"Sono","links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"sono.png","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A cosmic webVR music performance","tags":["Virtual Reality"]}}}}
+	module.exports = {"pathContext":{"tagName":"Virtual Reality"}}
 
 /***/ }),
 /* 448 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"path":"/sono","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","cover":"sono.png","credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","title":"Sono","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Virtual Reality"],"excerpt":"A cosmic webVR music performance"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/myth.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:32:00+00:00","path":"/myth","title":"Myth","links":[["Full Experience","http://film.livyatanim.com"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://film.livyatanim.com/media/mediakit.zip"]],"credits":"Developed with Yannis Gravezas, Tomer Rousso and Livyatanim","press":[["Wired","https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss"],["Creators Project","https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth"],["We and the Color","https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/133824524661/myth-interactive-web-music-video-for-livyatanim'"],["Z","http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html"],["Chrome Experiments","https://experiments.withgoogle.com/livyatanim-myth"],["WorldFest- NASA Remi Award winner","#"],["UrbamMediaMakers Best Interactive Award Winner","#"],["The FWA – WOTD","#"],["CSS Awards – WOTD","#"],["Awwwards – Honorable Mention","#"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"myth-cover.png","about":"‘Myth’, is an interactive web virtual reality short film, featuring the song “Can I peacfuly Love” from Livyatanim’s debut album “After the Waters”. The film takes place in a dark surreal world, which aims to blur the lines between digital and natural imagery.\nThe film uses the composition’s notation, rhythms and melodies (MIDI), to control elements ranging from drums affecting the geometry to transitions between scenes. In effect, using this data transformed from being a musical composition language, to a visual directing language.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/145578640?autoplay=0&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"An audio reactive virtual reality short film.","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:26:00+00:00","path":"/toolstoolstools","title":"ToolsTools.Tools","links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"cover":"toolstoolstools.png","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","embed":"","excerpt":"An installation about design.","tags":["Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"path":"/myth","about":"‘Myth’, is an interactive web virtual reality short film, featuring the song “Can I peacfuly Love” from Livyatanim’s debut album “After the Waters”. The film takes place in a dark surreal world, which aims to blur the lines between digital and natural imagery.\nThe film uses the composition’s notation, rhythms and melodies (MIDI), to control elements ranging from drums affecting the geometry to transitions between scenes. In effect, using this data transformed from being a musical composition language, to a visual directing language.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","cover":"myth-cover.png","credits":"Developed with Yannis Gravezas, Tomer Rousso and Livyatanim","title":"Myth","press":[["Wired","https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss"],["Creators Project","https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth"],["We and the Color","https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/133824524661/myth-interactive-web-music-video-for-livyatanim'"],["Z","http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html"],["Chrome Experiments","https://experiments.withgoogle.com/livyatanim-myth"],["WorldFest- NASA Remi Award winner","#"],["UrbamMediaMakers Best Interactive Award Winner","#"],["The FWA – WOTD","#"],["CSS Awards – WOTD","#"],["Awwwards – Honorable Mention","#"]],"links":[["Full Experience","http://film.livyatanim.com"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://film.livyatanim.com/media/mediakit.zip"]],"embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/145578640?autoplay=0&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","tags":["Virtual Reality"],"excerpt":"An audio reactive virtual reality short film."}}},"pathContext":{"prev":null,"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:29:00+00:00","path":"/sono","title":"Sono","links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"sono.png","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A cosmic webVR music performance","tags":["Virtual Reality"]}}}}
 
 /***/ }),
 /* 449 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"path":"/toolstoolstools","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","cover":"toolstoolstools.png","credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","title":"ToolsTools.Tools","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"embed":"","tags":["Experiment"],"excerpt":"An installation about design."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:29:00+00:00","path":"/sono","title":"Sono","links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"sono.png","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A cosmic webVR music performance","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:25:00+00:00","path":"/detune","title":"detune","links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"cover":"detune_cover.png","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"detune allows users to play music using face impressions.","tags":["Experiments","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"path":"/sono","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","cover":"sono.png","credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","title":"Sono","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Virtual Reality"],"excerpt":"A cosmic webVR music performance"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/myth.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:32:00+00:00","path":"/myth","title":"Myth","links":[["Full Experience","http://film.livyatanim.com"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://film.livyatanim.com/media/mediakit.zip"]],"credits":"Developed with Yannis Gravezas, Tomer Rousso and Livyatanim","press":[["Wired","https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss"],["Creators Project","https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth"],["We and the Color","https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/133824524661/myth-interactive-web-music-video-for-livyatanim'"],["Z","http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html"],["Chrome Experiments","https://experiments.withgoogle.com/livyatanim-myth"],["WorldFest- NASA Remi Award winner","#"],["UrbamMediaMakers Best Interactive Award Winner","#"],["The FWA – WOTD","#"],["CSS Awards – WOTD","#"],["Awwwards – Honorable Mention","#"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"myth-cover.png","about":"‘Myth’, is an interactive web virtual reality short film, featuring the song “Can I peacfuly Love” from Livyatanim’s debut album “After the Waters”. The film takes place in a dark surreal world, which aims to blur the lines between digital and natural imagery.\nThe film uses the composition’s notation, rhythms and melodies (MIDI), to control elements ranging from drums affecting the geometry to transitions between scenes. In effect, using this data transformed from being a musical composition language, to a visual directing language.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/145578640?autoplay=0&title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"An audio reactive virtual reality short film.","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:26:00+00:00","path":"/toolstoolstools","title":"ToolsTools.Tools","links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"cover":"toolstoolstools.png","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","embed":"","excerpt":"An installation about design.","tags":["Experiment"]}}}}
 
 /***/ }),
 /* 450 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"path":"/detune","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","cover":"detune_cover.png","credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","title":"detune","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiments","Tools"],"excerpt":"detune allows users to play music using face impressions."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:26:00+00:00","path":"/toolstoolstools","title":"ToolsTools.Tools","links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"cover":"toolstoolstools.png","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","embed":"","excerpt":"An installation about design.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/1948","title":"1948","links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"cover":"1948_header.jpg","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","embed":"","excerpt":"Remix Israel's decleration of independance to fit your world views","tags":["Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"path":"/toolstoolstools","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","cover":"toolstoolstools.png","credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","title":"ToolsTools.Tools","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"embed":"","tags":["Experiment"],"excerpt":"An installation about design."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:29:00+00:00","path":"/sono","title":"Sono","links":[["Full Experience","http://sono.livyatanim.com/"],["Album","https://livyatanim.bandcamp.com"],["Presskit","http://sono.livyatanim.com/media/sono_mediakit.zip"],["Making-of","https://www.youtube.com/watch?v=5_0eb7B9yoo"]],"credits":"Developed with Yannis Gravezas, Ronen Tanchum, Ilya Marcus and Livyatanim","press":[["Creators Project","https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance"],["WebVR Experiments with Google","https://experiments.withgoogle.com/sono"],["VRRoom","https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show"]],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, TouchDesigner, Autodesk Maya and Ableton Live, Web Audio API, Web MIDI API & WebVR API."],["3d","Three.js"]],"cover":"sono.png","about":"‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.\nThe ‘venue’ in which the band plays is a dark crater located in a surreal outer-space environment, surrounded by cosmic events and astronomical phenomenons. ‘SONO’ features three songs, each of them played by the band as the surrounding world changes around them. The music, like the visuals – is binaural, allowing the audience to move around and hear what they would hear if they were surrounded by the band.\nThe experience can be watched on a wide range of platforms from desktop computers, mobile phones and VR headsets.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A cosmic webVR music performance","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:25:00+00:00","path":"/detune","title":"detune","links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"cover":"detune_cover.png","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"detune allows users to play music using face impressions.","tags":["Experiments","Tools"]}}}}
 
 /***/ }),
 /* 451 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"path":"/1948","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","cover":"1948_header.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","title":"1948","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"embed":"","tags":["Experiment"],"excerpt":"Remix Israel's decleration of independance to fit your world views"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:25:00+00:00","path":"/detune","title":"detune","links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"cover":"detune_cover.png","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"detune allows users to play music using face impressions.","tags":["Experiments","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:22:00+00:00","path":"/soundobjects","title":"Sound Objects","links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","press":[],"components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"cover":"so.png","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Compose music in virtual reality using objects","tags":["Virtual Reality"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"path":"/detune","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","cover":"detune_cover.png","credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","title":"detune","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiments","Tools"],"excerpt":"detune allows users to play music using face impressions."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:26:00+00:00","path":"/toolstoolstools","title":"ToolsTools.Tools","links":[["Website","https://toolstools.tools"],["Tal Baltuch","http://talbaltuch.com/ToolsTools-Tools-2"]],"credits":"Designed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["Uncanny – Holon Design Museum","http://www.dmh.org.il/pages/default.aspx?PageId=858"]],"components":[["code","C++"],["software","ffmpeg"],["3d","openFrameworks"]],"cover":"toolstoolstools.png","about":"This project is a projected interactive installation. An audio-visual instrument of short animated loops. In homage to the digital toolset of the graphic designer.","embed":"","excerpt":"An installation about design.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/1948","title":"1948","links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"cover":"1948_header.jpg","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","embed":"","excerpt":"Remix Israel's decleration of independance to fit your world views","tags":["Experiment"]}}}}
 
 /***/ }),
 /* 452 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"path":"/soundobjects","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","cover":"so.png","credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","title":"Sound Objects","press":[],"links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Virtual Reality"],"excerpt":"Compose music in virtual reality using objects"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/1948","title":"1948","links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"cover":"1948_header.jpg","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","embed":"","excerpt":"Remix Israel's decleration of independance to fit your world views","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:20:00+00:00","path":"/aframe","title":"DepthKit for AFrame","links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"cover":"aframe_cover.jpg","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","embed":"","excerpt":"An AFrame component for rendering volumetric video in WebVR","tags":["Virtual Reality","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"path":"/1948","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","cover":"1948_header.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","title":"1948","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"embed":"","tags":["Experiment"],"excerpt":"Remix Israel's decleration of independance to fit your world views"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:25:00+00:00","path":"/detune","title":"detune","links":[["Website","https://detune.app"],["App store","https://itunes.apple.com/us/app/detune-music-with-your-face/id1370740132?mt=8"],["Github","https://github.com/dodiku/detune"],["Presskit","http://www.detuneapp.com/media.html"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>","press":[["AudioKit","https://audiokitpro.com/detune-play-music-with-your-face/"]],"components":[["code","Swift"],["software","AudioKit"],["3d","iPhoneX TrueDepth"]],"cover":"detune_cover.png","about":"detune uses Apple’s ARKit and the TrueDepth camera (currently available only on iPhone X) to trigger music events, and to allow users to play music using face impressions. The motivation behind the project was to make Apple’s TrueDepth camera more accessible for creative coders.","embed":"<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/7xnZwB00mrE?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"detune allows users to play music using face impressions.","tags":["Experiments","Tools"]}},"next":{"html":"<ol>\n<li><strong><a href=\"#personal-information\">Personal information</a></strong></li>\n<li><strong><a href=\"#short-bio\">Short Bio</a></strong></li>\n<li><strong><a href=\"#education\">Education</a></strong></li>\n<li><strong><a href=\"#work-experience\">Work experience</a></strong></li>\n<li><strong><a href=\"#workshops--talks\">Workshops &#x26; talks</a></strong></li>\n<li><strong><a href=\"#skills\">Skill-set</a></strong></li>\n<li><strong><a href=\"#awards\">Awards, festivals &#x26; exhibitions</a></strong></li>\n<li><strong><a href=\"#press\">Press</a></strong></li>\n<li><strong><a href=\"#publications\">Publications</a></strong></li>\n<li><strong><a href=\"#open-source\">Open Source</a></strong></li>\n</ol>\n<h3 id=\"personal-information\"><a href=\"#personal-information\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Personal information</strong></h3>\n<p><strong>Name:</strong> Or Fleisher</p>\n<p><strong>Phone:</strong> 347.339.9440</p>\n<p><strong>Mail:</strong> <a href=\"mailto:contact@orfleisher.com\">contact@orfleisher.com</a></p>\n<p><a href=\"https://github.com/juniorxsound\">Github</a> | <a href=\"https://twitter.com/juniorxsound\">Twitter</a> | <a href=\"https://www.youtube.com/user/JuniorxSound/\">YouTube</a> | <a href=\"http://vimeo.com/orfleisher\">Vimeo</a> | <a href=\"https://www.linkedin.com/in/orfleisher/\">LinkedIn</a></p>\n<h3 id=\"short-bio\"><a href=\"#short-bio\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Short bio</strong></h3>\n<p>Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. My interests include computer graphics, web development and immersive experience development in virtual, augmented and mixed realities.</p>\n<p>I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.</p>\n<p>Upon graduation, I co-founded <a href=\"http://phenomenalabs.com\">Phenomena Labs</a> an award-winning visual effect and interaction design studio. I worked as a creative and technical director designing, developing and executing interactive experiences. I am a graduate of the Tisch School of the Arts, New York University. Currently, I am the Principle Creative Technologist at <a href=\"https://vimeo.com\">Vimeo</a> Labs and Co-Founder at <a href=\"https://volume.gl\">Volume</a>.</p>\n<p> <strong>Things to know about me</strong> - I am an advanced coffee drinker, cat aficionado, hobbyist musician. I am passionate about cinematography and <a href=\"#open-source\">open source software</a>.</p>\n<h3 id=\"education\"><a href=\"#education\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Education</strong></h3>\n<ul>\n<li>\n<p><strong>New York University</strong> - <em>M.P.S (2016-2018)</em></p>\n<p>Master’s degree, Interactive Telecommunications Program (ITP)</p>\n<ul>\n<li>Specializing in computer graphics, volumetric capturing and immersive experience development</li>\n<li>Worked under Ken Perlin’s acclaimed research group, developing machine learning driven computer graphics software, which was featured in tech magazines, such as Wired</li>\n<li>Worked as a creative coder under Gabe Barcia Columbo developing an interactive installation for SXSW</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li>\n<p><strong>Tel Aviv University</strong> - <em>B.A. (2011-2014)</em></p>\n<p>Bachelor of Arts, Film and television</p>\n<ul>\n<li>Seminar research in interactive storytelling titled \"The Choices we Hear\" examining the use of sound in interactive narrative works.</li>\n</ul>\n</li>\n<li>\n<p><strong>Future Rhythm</strong> - <em>Expert Certification (2010)</em></p>\n<p>Official Avid Expert Certificates in Pro Tools (310M, 310P)  </p>\n<ul>\n<li>Graduated from Future Rhythm, a certified Avid training facility earning 310M and 310P expert certificates. </li>\n<li>Avid’s Pro Tools™ HD expert curriculum in music production and post-production.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"work-experience\"><a href=\"#work-experience\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Work experience</strong></h3>\n<ul>\n<li>\n<p><strong>Principle Creative Technologist</strong> - <em>Vimeo</em> (2018-Current)</p>\n</li>\n<li>\n<p><strong>VR Research Fellow</strong> - <em>Viacom</em> (2017)</p>\n<ul>\n<li>Designed and developed a web based Virtual Reality narrative experience currently in submission to festivals.</li>\n<li>Collabrated in weekly feedback sessions about look-development and technical feedback.</li>\n<li>Presented the project in a private Virtual Reality showcase at Viacom's NY headquarters, also covered by tech websites (e.g UploadVR).</li>\n</ul>\n</li>\n<li>\n<p><strong>Co-Founder</strong> - <em>Phenomena Labs</em> (2010-2016)</p>\n<ul>\n<li>Co-Founded an award winning visual effects and interaction design studio with <em>Ronen Tanchum</em> and <em>Guy Fleisher</em>.</li>\n<li>Directed, developed and published 5 Virtual Reality titles in Oculus, GearVR and WebVR app stores, featured in prestigious international festivals such as Cannes Festival, Game Developers Conference, SIGGRAPH and SXSW</li>\n<li>Received awards such as Design and Art Direction, Urban MediaMakers Best Interactive, Worldfest NASA Remi Award, FWA, Awwwards and CSS Design Awards</li>\n</ul>\n</li>\n<li>\n<p><strong>Sound Supervisor</strong> - <em>Rishon Hall of Arts</em> (2009-2010)</p>\n<ul>\n<li>Sound design and mixing of performances ranging from art installations and theatre to dance groups.</li>\n<li>Daily maintanance of gear and stock.</li>\n<li>Specification sheet preperations and forigen performances coordinator.</li>\n</ul>\n</li>\n<li>\n<p><strong>Recording Engineer</strong> - <em>Savion Studios</em> (2006-2008)</p>\n<ul>\n<li>Preparing, tracking, editing and pre-mixing music recording sessions.</li>\n<li>Overseeing and operating the rehearsal spaces.</li>\n<li>Recruit and train new staff members.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"workshops--talks\"><a href=\"#workshops--talks\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Workshops &#x26; talks</strong></h3>\n<ul>\n<li>\n<p><strong>Volumetric Accessibility with Vimeo</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)<br>\n<a href=\"https://vimeo.com/280815263\">This talk</a> (2:08:40) by Casey Pugh, head of Creator Labs at Vimeo, presents the work we have been doing in volumetric video distribution and live streaming.</p>\n</li>\n<li>\n<p><strong>Making music with social data</strong> - <em>ITP Camp, New York University</em> (2018)\n<a href=\"https://itp.nyu.edu/camp2018/session/81\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>From Tzina to Volume</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)\nA talk in the first <a href=\"https://www.meetup.com/volumetric_filmmakers_vfnyc/\">Volumetric Filmmaking Meetup in NYC</a> about creating <a href=\"http://tzina.space\">Tzina</a> and how it led to developing <a href=\"https://volume.gl\">Volume</a></p>\n</li>\n<li>\n<p><strong>Volume</strong> - <em>Thesis presentation, New York University</em> (2018)\n<a href=\"https://vimeo.com/270479574\">My master's thesis presentation</a> at the Interactive Telecommunications Program, Tisch School of the Arts, NYU</p>\n</li>\n<li>\n<p><strong>Volume - HyperCinema</strong> - <em>New York University</em> (2018)\nA workshop about using <a href=\"https://volume.gl\">Volume</a> in Unity3D to create augmented and virtual reality experiences. The workshop took part at IMA, New York University as a part of a class called HyperCinema taught by Prof. Gabe BC</p>\n</li>\n<li>\n<p><strong>Counter Histories, Alternative Narratives</strong> - <em>Magnum Foundation</em> (2018)\nA presentation and demonstration of <a href=\"https://volume.gl\">Volume</a> in front of Magnum Foundation's current research residents. The presentation took place in Columbia University's Brown Institue for Media Innovation</p>\n</li>\n<li>\n<p><strong>Making music with data</strong> - <em>NYC Media Lab</em> (2017)\n<a href=\"https://github.com/dodiku/music_with_data_workshop\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>Volumetric capture using DepthKit</strong> - <em>ITP Camp, New York University</em> (2016)\n<a href=\"https://itp.nyu.edu/camp2017/session/169\">The goal of this workshop</a> was to learn <em>hands-on</em> how to use DepthKit's software (with a Kinect and a DSLR) to capture a human performance as a volumetric capture and to render it in Unity.</p>\n</li>\n<li>\n<p><strong>Interactive Film (roundtable)</strong> - <em>Anilouge Animation Festival</em> (2015)\n<a href=\"http://urania-nf.hu/en/esemenyek/505/2015/11/25/anilogue-2015-international-animation-film-festival-25-29-11-2015-\">A roundtable</a> about current possibilities in film-making, virtual reality and interactive storytelling</p>\n</li>\n<li>\n<p><strong>Animating with MIDI</strong> - <em>Budapest University</em> (2015)\nDuring Anilouge Animation Festival I conducted a workshop in Budapest University's Interaction Design department about using MIDI in real-time to drive animations and visual effects in WebGL.</p>\n</li>\n</ul>\n<h3 id=\"skills\"><a href=\"#skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Skills</strong></h3>\n<ul>\n<li>Spoken Languages: English, Hebrew.</li>\n<li>Team player who strives for a collabrative work atmosphere.</li>\n<li>Strong networking affinity, with great personal and social skills.</li>\n<li>High tenure under deadlines, with an ability to multitask and simplify problems, finding creative and technical solutions in variegated situations.</li>\n<li>Ability to communicate simple and complex issues in a clear and concice way.</li>\n</ul>\n<h3 id=\"technical-skills\"><a href=\"#technical-skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Technical skills</strong></h3>\n<ul>\n<li>Graphics programmer experienced with <em>WebGL</em>, <em>2D Canvas</em>, <em>OpenGL</em> and advanced <em>shader programming (GLSL, HLSL)</em>.</li>\n<li>Extensive knowledge in <em>Virtual and Augmented Reality</em> content development (WebVR, WebAR, ARKit, Unity for Rift, Vive and GearVR).</li>\n<li>Graphics Libraries: Three.js, openFrameworks, GLEW, GLFW, JUCE</li>\n<li>Software: Unity, TouchDesigner, Nuke, Avid MC, Adobe Creative Cloud, Blender, Octane Renderer, Vue, Pro-Tools, Ableton Live, Max/MSP/Jitter.</li>\n<li>Programming languages: Javascript (ES5/ES6), C++, C#, Swift, python, HTML5, CSS3D</li>\n<li>Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.</li>\n</ul>\n<h3 id=\"awards\"><a href=\"#awards\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Awards</strong></h3>\n<ul>\n<li><strong>WorldFest- NASA Remi Award winner</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>UrbamMediaMakers Best Interactive Award</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>FWA - Website of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Winner - Site of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Awards - Website of the Day</strong> - <a href=\"https://www.cssawards.net/website/livyatanim-myth/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <a href=\"https://www.awwwards.com/sites/livyatanim-myth\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Communication Arts - Webpicks</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <a href=\"https://www.cssdesignawards.com/sites/livyatanim-myth/27440/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>DesignAwards.Asia - Design of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <em>Tzina</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_00b9f17dfb014a71ad0a1fb62b619097.pdf\">Tzina</a></em></li>\n<li><strong>CSS Winner</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_2c4f59c4ec2a4b47be27e635ab09d68c.pdf\">Tzina</a></em></li>\n<li><strong>CSS Awards - Site of the Day</strong> - 1948</li>\n<li><strong>Awwwards - Honorable Mention</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best Innovation</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for UI Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best UX Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - 1948</li>\n<li><strong>Tisch School of the Arts scholarship</strong></li>\n<li><strong>Red Burns scholarship</strong></li>\n<li><strong>Viacom NEXT VR research fellowship</strong></li>\n<li><strong>ITP &#x26; Google XStory rersearch grant</strong></li>\n</ul>\n<h3 id=\"festivals\"><a href=\"#festivals\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Festivals</strong></h3>\n<ul>\n<li><strong>SIGGRAPH 2018 - Posters</strong> - <a href=\"https://s2018.siggraph.org/conference/conference-overview/posters/production/?sess=sess356\">Volume</a></li>\n<li><strong>Cannes Festival - NEXT</strong> - <a href=\"http://www.marchedufilm.com/en/global-events\">Tzina</a></li>\n<li><strong>IDFA DocLab</strong> - <a href=\"https://www.doclab.org/2016/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>ACM SIGGRAPH - Immersive Expressions</strong> - <a href=\"https://immersive-expressions.siggraph.org\">Tzina</a></li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/2017-program/\">Tzina</a></li>\n<li><strong>DocAviv</strong> - <a href=\"http://www.docaviv.co.il/2017-en/films/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>Toronto WebFest</strong> - <a href=\"https://www.towebfest.com/portfolio/tzina-symphony-of-longing\">Tzina</a></li>\n<li><strong>Paris Play Online</strong> - Tzina</li>\n<li><strong>Experience, Brussels VR Film Festival</strong> - Tzina</li>\n<li><strong>SXSW - The Future of Music Artwork is Gamified</strong> - <a href=\"https://schedule.sxsw.com/2017/events/PP59988\">Livyatanim: MYTH</a></li>\n<li><strong>GDC - Mozilla VR booth</strong> - Livyatanim: MYTH</li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/stiff/archives/2016-program/\">Livyatanim: MYTH</a></li>\n<li><strong>LA New Media Film Festival</strong> - <a href=\"http://audnews.com/2016-brings-artificial-intelligence-virtual-reality-3d-content-to-new-media-film-festival/\">Livyatanim: MYTH</a></li>\n<li><strong>File Festival</strong> - <a href=\"https://file.org.br/webgl_2018/or-fleisher/\">LIVYATANIM: MYTH</a></li>\n<li><strong>NuWave - BJFF</strong> - <a href=\"http://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=140822~3a1dbf00-5ad7-4f53-af12-28ba7bfe20f4&#x26;epguid=9c9174b6-d866-4637-9645-7a9d7765dc44\">Livyatanim: MYTH</a></li>\n<li><strong>Patchlab</strong> - <a href=\"http://patchlab.pl/media-labdiscount-for-resolume/\">Livyatanim: MYTH</a></li>\n<li><strong>Miami FILMGATE</strong> - <a href=\"http://www.filmgate.miami/fordistas-vr-pavilion/\">Livyatanim: MYTH</a></li>\n<li><strong>Amsterdam KLIK</strong> - <a href=\"http://www.klik.amsterdam/festival/program-details/326\">Livyatanim: MYTH</a></li>\n<li><strong>TimeWave Festival</strong> - <a href=\"http://timewavefestival.com/virtualrealitylab-2017-projects/\">Livyatanim: MYTH</a></li>\n<li><strong>Google I/O</strong> - <a href=\"https://events.google.com/io/schedule/?section=may-8&#x26;sid=b9b21368-99b9-46f1-9c37-4b62edb853f4\">Livyatanim: SONO</a></li>\n</ul>\n<h3 id=\"exhibitions\"><a href=\"#exhibitions\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Exhibitions</strong></h3>\n<ul>\n<li><strong><a href=\"http://www.dmh.org.il/pages/default.aspx?pageId=858&#x26;catId=5\">Uncanny</a></strong> - Design Museum Holon, 2018<br>\nDeveloped an openFrameworks MIDI controlled music installation <a href=\"http://toolstools.tools\">toolstools.tools</a> with Tal Baltuch</li>\n<li><strong><a href=\"http://whiteboxnyc.org/event/opening-reception-liminal-instruments-panel-discussion/\">Liminal Instruments</a></strong> - Whitebox Gallery, NYC, 2018<br>\nPresented <a href=\"http://orfleisher.com/portfolio-item/sound-objects/\">Sound Objects</a>, a virtual reality music composition application developed in collabration with Scott Reitherman - <a href=\"https://www.eventbrite.com/e/liminal-instruments-exhibition-opening-tickets-47690352127#\">Eventribe</a></li>\n</ul>\n<h3 id=\"press\"><a href=\"#press\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Press</strong></h3>\n<ul>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning\">Volume.gl website</a></li>\n<li><strong>Tecmundo</strong> - <a href=\"https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and\">1948</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/07/intels-vpu-could-save-gamers-from-losing-gpu-power-to-ai-in-the-next-windows-update/\">Expert Opinion</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/\">Skeletron</a></li>\n<li><strong>TechRadar</strong> - <a href=\"http://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect\">Skeletron</a></li>\n<li><strong>Anrdoid Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html\">Skeletron</a></li>\n<li><strong>Geektime</strong> - <a href=\"https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/\">Skeletron</a></li>\n<li><strong>Discovery Channel - Daily Planet</strong> - <a href=\"https://www.youtube.com/watch?v=Zi4yof2yy04\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice Motherboard</strong> - <a href=\"https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Mashable</strong> - <a href=\"http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice</strong> - <a href=\"http://www.vice.cn/read/vice-late-morning-brief-report-20180131\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>VRFocus</strong> - <a href=\"https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Android Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>India Times</strong> - <a href=\"https://www.indiatimes.com/technology/apps/bring-pulp-fiction-s-dance-scene-to-your-living-room-in-3d-using-this-innovative-ai-based-app-340893.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>BestVR</strong> - <a href=\"http://bestvr.tech/new-ai-tool-teleports-2d-images-3d-situations/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/\">Death Mask</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/arkit-death-mask/\">Death Mask</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/\">Death Mask</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and\">TwitAR</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/\">TwitAR</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth\">Livyatanim: MYTH</a></li>\n<li><strong>We and the Color</strong> - <a href=\"https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302\">Livyatanim: MYTH</a></li>\n<li><strong>Z by Ultranoir</strong> - <a href=\"http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance\">Livyatanim: SONO</a></li>\n<li><strong>VRRoom.buzz</strong> - <a href=\"https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show\">Livyatanim: SONO</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv\">Tzina</a></li>\n<li><strong>Ha'aretz</strong> - <a href=\"https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991\">Tzina</a></li>\n<li><strong>Calcalist</strong> - <a href=\"https://www.calcalist.co.il/consumer/articles/0,7340,L-3693396,00.html\">Tzina</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by\">Tzina</a></li>\n<li><strong>Channel 1</strong> - <a href=\"https://www.youtube.com/watch?v=lQYHgwWs1ro\">Tzina</a></li>\n<li><strong>Dot And Line</strong> - <a href=\"http://dotandline.blog.hu/2015/11/30/europai_animaciokat_dijaztak_a_13_anilogue-on\">Judging at Anilouge 2015</a></li>\n<li><strong>AudioKit Pro</strong> - <a href=\"https://audiokitpro.com/detune-play-music-with-your-face/\">detune</a></li>\n</ul>\n<h3 id=\"publications\"><a href=\"#publications\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Publications</strong></h3>\n<ul>\n<li><a href=\"https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d\"><strong>Behind The Scenes of the Worlds Best XR Designers</strong></a></li>\n<li><a href=\"https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer\"><strong>Meet Or Fleisher, A Celebrated WebVR Designer</strong></a></li>\n<li><a href=\"https://www.geektime.co.il/what-is-creative-coding/\"><strong>Code that turns into art: What is creative coding?</strong></a></li>\n<li><a href=\"https://medium.com/@camillamarcal/value-perception-in-multissensorial-art-experiences-90a721b21f6b?email=fleisher.or%40gmail.com&#x26;g-recaptcha-response=03AJpayVFbTUx0I_WB55GNs5DnVNaWEGTX4hMXgLm4Mo9aHeBxoqwSTy_8H5eSOsyESTim3OGnraC0hCJAVPb3yOEiexyq9_u9ba3WM6-1MSSgXnEdC-_tSuFUtxk4zkXsYAlleIkKfklRa_T986RH2xOHVFKmkVBZRFFbT5DtfuwJvF1C2nEzsV97nbPeis0MjQRLwEs2RXTOiNB5WPvTabgFR4cpQcgyhaGeepLR9Cwb-nGsZuRoZZXn0wDMjnr49hD-v11o0fasL-rFWeNxgp9AL_CyC8JUVLs659aDQcudvwnk913C6WhE1yCfomt-SgoEXfMS3K5ZUJ2a1PNgaoFSDoz_EsPRjnhLjO5OXKdrSPd9uzN5QIXC6nuPfauNE1j1hZL3slz3QvbNSwlp59C_PlskTQmUtFS_fVOfjd7X_aj-YWZQfnykLSxrtFJ9ETSyBAdXaJcL\"><strong>Value precption in immersive art</strong></a></li>\n<li><a href=\"https://issuu.com/hminhnhut/docs/uxpin_web_design_book_of_trends_201\"><strong>UXPin - Web Design Book of Trends for 2017 (Page 63)</strong></a></li>\n</ul>\n<h3 id=\"open-source\"><a href=\"#open-source\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Open Source</strong></h3>\n<ul>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit.js\">DepthKit.js</a></strong> - A plugin for rendering DepthKit volumteric video using Three.js in WebGL.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit-A-Frame\">DepthKit for A-Frame</a></strong> - An A-Frame component for rendering DepthKit volumetric videos in WebVR. The A-Frame component wraps DepthKit.js which is a small library that provides the same functionality for Three.js projects.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ReTouch\">ReTouch</a></strong> - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/Volume-GL/Pulp-Fiction-ARKit\">Inside Pulp Fiction</a></strong> - An experiment using Volume to reconstruct Pulp Fiction's dance scene in Augmented Reality.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/kinectron/Three-Kinectron\">THREE.Kinectron</a></strong> - A Three.js plugin for rendering Kinectron feeds.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/THREE.Multiplayer\">THREE.Multiplayer</a></strong> - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/SimileSystems/awesome-volumetric-filmmaking\">Awesome Volumetric Filmmaking</a></strong> - A curated resource for all things pertaining to volumetric filmmaking.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ThreadedDepthCleaner\">Threaded Depth Cleaner</a></strong> - Threaded depth-map cleaning and inpainting using OpenCV.</p>\n</li>\n</ul>","id":"/home/travis/build/juniorxsound/portfolio/src/pages/bio.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/bio","title":"Bio","links":[],"credits":"","press":[],"components":[],"cover":"1948_header.jpg","about":null,"embed":"","excerpt":"","tags":null}}}}
 
 /***/ }),
 /* 453 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"path":"/aframe","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","cover":"aframe_cover.jpg","credits":"","title":"DepthKit for AFrame","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"embed":"","tags":["Virtual Reality","Tools"],"excerpt":"An AFrame component for rendering volumetric video in WebVR"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:22:00+00:00","path":"/soundobjects","title":"Sound Objects","links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","press":[],"components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"cover":"so.png","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Compose music in virtual reality using objects","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:17:00+00:00","path":"/max","title":"DepthKit for Max/MSP","links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","press":[],"components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"cover":"max.png","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","embed":"","excerpt":"Render volumetric video in Max/MSP.","tags":["Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"<ol>\n<li><strong><a href=\"#personal-information\">Personal information</a></strong></li>\n<li><strong><a href=\"#short-bio\">Short Bio</a></strong></li>\n<li><strong><a href=\"#education\">Education</a></strong></li>\n<li><strong><a href=\"#work-experience\">Work experience</a></strong></li>\n<li><strong><a href=\"#workshops--talks\">Workshops &#x26; talks</a></strong></li>\n<li><strong><a href=\"#skills\">Skill-set</a></strong></li>\n<li><strong><a href=\"#awards\">Awards, festivals &#x26; exhibitions</a></strong></li>\n<li><strong><a href=\"#press\">Press</a></strong></li>\n<li><strong><a href=\"#publications\">Publications</a></strong></li>\n<li><strong><a href=\"#open-source\">Open Source</a></strong></li>\n</ol>\n<h3 id=\"personal-information\"><a href=\"#personal-information\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Personal information</strong></h3>\n<p><strong>Name:</strong> Or Fleisher</p>\n<p><strong>Phone:</strong> 347.339.9440</p>\n<p><strong>Mail:</strong> <a href=\"mailto:contact@orfleisher.com\">contact@orfleisher.com</a></p>\n<p><a href=\"https://github.com/juniorxsound\">Github</a> | <a href=\"https://twitter.com/juniorxsound\">Twitter</a> | <a href=\"https://www.youtube.com/user/JuniorxSound/\">YouTube</a> | <a href=\"http://vimeo.com/orfleisher\">Vimeo</a> | <a href=\"https://www.linkedin.com/in/orfleisher/\">LinkedIn</a></p>\n<h3 id=\"short-bio\"><a href=\"#short-bio\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Short bio</strong></h3>\n<p>Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. My interests include computer graphics, web development and immersive experience development in virtual, augmented and mixed realities.</p>\n<p>I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.</p>\n<p>Upon graduation, I co-founded <a href=\"http://phenomenalabs.com\">Phenomena Labs</a> an award-winning visual effect and interaction design studio. I worked as a creative and technical director designing, developing and executing interactive experiences. I am a graduate of the Tisch School of the Arts, New York University. Currently, I am the Principle Creative Technologist at <a href=\"https://vimeo.com\">Vimeo</a> Labs and Co-Founder at <a href=\"https://volume.gl\">Volume</a>.</p>\n<p> <strong>Things to know about me</strong> - I am an advanced coffee drinker, cat aficionado, hobbyist musician. I am passionate about cinematography and <a href=\"#open-source\">open source software</a>.</p>\n<h3 id=\"education\"><a href=\"#education\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Education</strong></h3>\n<ul>\n<li>\n<p><strong>New York University</strong> - <em>M.P.S (2016-2018)</em></p>\n<p>Master’s degree, Interactive Telecommunications Program (ITP)</p>\n<ul>\n<li>Specializing in computer graphics, volumetric capturing and immersive experience development</li>\n<li>Worked under Ken Perlin’s acclaimed research group, developing machine learning driven computer graphics software, which was featured in tech magazines, such as Wired</li>\n<li>Worked as a creative coder under Gabe Barcia Columbo developing an interactive installation for SXSW</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li>\n<p><strong>Tel Aviv University</strong> - <em>B.A. (2011-2014)</em></p>\n<p>Bachelor of Arts, Film and television</p>\n<ul>\n<li>Seminar research in interactive storytelling titled \"The Choices we Hear\" examining the use of sound in interactive narrative works.</li>\n</ul>\n</li>\n<li>\n<p><strong>Future Rhythm</strong> - <em>Expert Certification (2010)</em></p>\n<p>Official Avid Expert Certificates in Pro Tools (310M, 310P)  </p>\n<ul>\n<li>Graduated from Future Rhythm, a certified Avid training facility earning 310M and 310P expert certificates. </li>\n<li>Avid’s Pro Tools™ HD expert curriculum in music production and post-production.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"work-experience\"><a href=\"#work-experience\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Work experience</strong></h3>\n<ul>\n<li>\n<p><strong>Principle Creative Technologist</strong> - <em>Vimeo</em> (2018-Current)</p>\n</li>\n<li>\n<p><strong>VR Research Fellow</strong> - <em>Viacom</em> (2017)</p>\n<ul>\n<li>Designed and developed a web based Virtual Reality narrative experience currently in submission to festivals.</li>\n<li>Collabrated in weekly feedback sessions about look-development and technical feedback.</li>\n<li>Presented the project in a private Virtual Reality showcase at Viacom's NY headquarters, also covered by tech websites (e.g UploadVR).</li>\n</ul>\n</li>\n<li>\n<p><strong>Co-Founder</strong> - <em>Phenomena Labs</em> (2010-2016)</p>\n<ul>\n<li>Co-Founded an award winning visual effects and interaction design studio with <em>Ronen Tanchum</em> and <em>Guy Fleisher</em>.</li>\n<li>Directed, developed and published 5 Virtual Reality titles in Oculus, GearVR and WebVR app stores, featured in prestigious international festivals such as Cannes Festival, Game Developers Conference, SIGGRAPH and SXSW</li>\n<li>Received awards such as Design and Art Direction, Urban MediaMakers Best Interactive, Worldfest NASA Remi Award, FWA, Awwwards and CSS Design Awards</li>\n</ul>\n</li>\n<li>\n<p><strong>Sound Supervisor</strong> - <em>Rishon Hall of Arts</em> (2009-2010)</p>\n<ul>\n<li>Sound design and mixing of performances ranging from art installations and theatre to dance groups.</li>\n<li>Daily maintanance of gear and stock.</li>\n<li>Specification sheet preperations and forigen performances coordinator.</li>\n</ul>\n</li>\n<li>\n<p><strong>Recording Engineer</strong> - <em>Savion Studios</em> (2006-2008)</p>\n<ul>\n<li>Preparing, tracking, editing and pre-mixing music recording sessions.</li>\n<li>Overseeing and operating the rehearsal spaces.</li>\n<li>Recruit and train new staff members.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"workshops--talks\"><a href=\"#workshops--talks\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Workshops &#x26; talks</strong></h3>\n<ul>\n<li>\n<p><strong>Volumetric Accessibility with Vimeo</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)<br>\n<a href=\"https://vimeo.com/280815263\">This talk</a> (2:08:40) by Casey Pugh, head of Creator Labs at Vimeo, presents the work we have been doing in volumetric video distribution and live streaming.</p>\n</li>\n<li>\n<p><strong>Making music with social data</strong> - <em>ITP Camp, New York University</em> (2018)\n<a href=\"https://itp.nyu.edu/camp2018/session/81\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>From Tzina to Volume</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)\nA talk in the first <a href=\"https://www.meetup.com/volumetric_filmmakers_vfnyc/\">Volumetric Filmmaking Meetup in NYC</a> about creating <a href=\"http://tzina.space\">Tzina</a> and how it led to developing <a href=\"https://volume.gl\">Volume</a></p>\n</li>\n<li>\n<p><strong>Volume</strong> - <em>Thesis presentation, New York University</em> (2018)\n<a href=\"https://vimeo.com/270479574\">My master's thesis presentation</a> at the Interactive Telecommunications Program, Tisch School of the Arts, NYU</p>\n</li>\n<li>\n<p><strong>Volume - HyperCinema</strong> - <em>New York University</em> (2018)\nA workshop about using <a href=\"https://volume.gl\">Volume</a> in Unity3D to create augmented and virtual reality experiences. The workshop took part at IMA, New York University as a part of a class called HyperCinema taught by Prof. Gabe BC</p>\n</li>\n<li>\n<p><strong>Counter Histories, Alternative Narratives</strong> - <em>Magnum Foundation</em> (2018)\nA presentation and demonstration of <a href=\"https://volume.gl\">Volume</a> in front of Magnum Foundation's current research residents. The presentation took place in Columbia University's Brown Institue for Media Innovation</p>\n</li>\n<li>\n<p><strong>Making music with data</strong> - <em>NYC Media Lab</em> (2017)\n<a href=\"https://github.com/dodiku/music_with_data_workshop\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>Volumetric capture using DepthKit</strong> - <em>ITP Camp, New York University</em> (2016)\n<a href=\"https://itp.nyu.edu/camp2017/session/169\">The goal of this workshop</a> was to learn <em>hands-on</em> how to use DepthKit's software (with a Kinect and a DSLR) to capture a human performance as a volumetric capture and to render it in Unity.</p>\n</li>\n<li>\n<p><strong>Interactive Film (roundtable)</strong> - <em>Anilouge Animation Festival</em> (2015)\n<a href=\"http://urania-nf.hu/en/esemenyek/505/2015/11/25/anilogue-2015-international-animation-film-festival-25-29-11-2015-\">A roundtable</a> about current possibilities in film-making, virtual reality and interactive storytelling</p>\n</li>\n<li>\n<p><strong>Animating with MIDI</strong> - <em>Budapest University</em> (2015)\nDuring Anilouge Animation Festival I conducted a workshop in Budapest University's Interaction Design department about using MIDI in real-time to drive animations and visual effects in WebGL.</p>\n</li>\n</ul>\n<h3 id=\"skills\"><a href=\"#skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Skills</strong></h3>\n<ul>\n<li>Spoken Languages: English, Hebrew.</li>\n<li>Team player who strives for a collabrative work atmosphere.</li>\n<li>Strong networking affinity, with great personal and social skills.</li>\n<li>High tenure under deadlines, with an ability to multitask and simplify problems, finding creative and technical solutions in variegated situations.</li>\n<li>Ability to communicate simple and complex issues in a clear and concice way.</li>\n</ul>\n<h3 id=\"technical-skills\"><a href=\"#technical-skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Technical skills</strong></h3>\n<ul>\n<li>Graphics programmer experienced with <em>WebGL</em>, <em>2D Canvas</em>, <em>OpenGL</em> and advanced <em>shader programming (GLSL, HLSL)</em>.</li>\n<li>Extensive knowledge in <em>Virtual and Augmented Reality</em> content development (WebVR, WebAR, ARKit, Unity for Rift, Vive and GearVR).</li>\n<li>Graphics Libraries: Three.js, openFrameworks, GLEW, GLFW, JUCE</li>\n<li>Software: Unity, TouchDesigner, Nuke, Avid MC, Adobe Creative Cloud, Blender, Octane Renderer, Vue, Pro-Tools, Ableton Live, Max/MSP/Jitter.</li>\n<li>Programming languages: Javascript (ES5/ES6), C++, C#, Swift, python, HTML5, CSS3D</li>\n<li>Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.</li>\n</ul>\n<h3 id=\"awards\"><a href=\"#awards\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Awards</strong></h3>\n<ul>\n<li><strong>WorldFest- NASA Remi Award winner</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>UrbamMediaMakers Best Interactive Award</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>FWA - Website of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Winner - Site of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Awards - Website of the Day</strong> - <a href=\"https://www.cssawards.net/website/livyatanim-myth/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <a href=\"https://www.awwwards.com/sites/livyatanim-myth\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Communication Arts - Webpicks</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <a href=\"https://www.cssdesignawards.com/sites/livyatanim-myth/27440/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>DesignAwards.Asia - Design of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <em>Tzina</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_00b9f17dfb014a71ad0a1fb62b619097.pdf\">Tzina</a></em></li>\n<li><strong>CSS Winner</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_2c4f59c4ec2a4b47be27e635ab09d68c.pdf\">Tzina</a></em></li>\n<li><strong>CSS Awards - Site of the Day</strong> - 1948</li>\n<li><strong>Awwwards - Honorable Mention</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best Innovation</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for UI Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best UX Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - 1948</li>\n<li><strong>Tisch School of the Arts scholarship</strong></li>\n<li><strong>Red Burns scholarship</strong></li>\n<li><strong>Viacom NEXT VR research fellowship</strong></li>\n<li><strong>ITP &#x26; Google XStory rersearch grant</strong></li>\n</ul>\n<h3 id=\"festivals\"><a href=\"#festivals\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Festivals</strong></h3>\n<ul>\n<li><strong>SIGGRAPH 2018 - Posters</strong> - <a href=\"https://s2018.siggraph.org/conference/conference-overview/posters/production/?sess=sess356\">Volume</a></li>\n<li><strong>Cannes Festival - NEXT</strong> - <a href=\"http://www.marchedufilm.com/en/global-events\">Tzina</a></li>\n<li><strong>IDFA DocLab</strong> - <a href=\"https://www.doclab.org/2016/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>ACM SIGGRAPH - Immersive Expressions</strong> - <a href=\"https://immersive-expressions.siggraph.org\">Tzina</a></li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/2017-program/\">Tzina</a></li>\n<li><strong>DocAviv</strong> - <a href=\"http://www.docaviv.co.il/2017-en/films/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>Toronto WebFest</strong> - <a href=\"https://www.towebfest.com/portfolio/tzina-symphony-of-longing\">Tzina</a></li>\n<li><strong>Paris Play Online</strong> - Tzina</li>\n<li><strong>Experience, Brussels VR Film Festival</strong> - Tzina</li>\n<li><strong>SXSW - The Future of Music Artwork is Gamified</strong> - <a href=\"https://schedule.sxsw.com/2017/events/PP59988\">Livyatanim: MYTH</a></li>\n<li><strong>GDC - Mozilla VR booth</strong> - Livyatanim: MYTH</li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/stiff/archives/2016-program/\">Livyatanim: MYTH</a></li>\n<li><strong>LA New Media Film Festival</strong> - <a href=\"http://audnews.com/2016-brings-artificial-intelligence-virtual-reality-3d-content-to-new-media-film-festival/\">Livyatanim: MYTH</a></li>\n<li><strong>File Festival</strong> - <a href=\"https://file.org.br/webgl_2018/or-fleisher/\">LIVYATANIM: MYTH</a></li>\n<li><strong>NuWave - BJFF</strong> - <a href=\"http://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=140822~3a1dbf00-5ad7-4f53-af12-28ba7bfe20f4&#x26;epguid=9c9174b6-d866-4637-9645-7a9d7765dc44\">Livyatanim: MYTH</a></li>\n<li><strong>Patchlab</strong> - <a href=\"http://patchlab.pl/media-labdiscount-for-resolume/\">Livyatanim: MYTH</a></li>\n<li><strong>Miami FILMGATE</strong> - <a href=\"http://www.filmgate.miami/fordistas-vr-pavilion/\">Livyatanim: MYTH</a></li>\n<li><strong>Amsterdam KLIK</strong> - <a href=\"http://www.klik.amsterdam/festival/program-details/326\">Livyatanim: MYTH</a></li>\n<li><strong>TimeWave Festival</strong> - <a href=\"http://timewavefestival.com/virtualrealitylab-2017-projects/\">Livyatanim: MYTH</a></li>\n<li><strong>Google I/O</strong> - <a href=\"https://events.google.com/io/schedule/?section=may-8&#x26;sid=b9b21368-99b9-46f1-9c37-4b62edb853f4\">Livyatanim: SONO</a></li>\n</ul>\n<h3 id=\"exhibitions\"><a href=\"#exhibitions\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Exhibitions</strong></h3>\n<ul>\n<li><strong><a href=\"http://www.dmh.org.il/pages/default.aspx?pageId=858&#x26;catId=5\">Uncanny</a></strong> - Design Museum Holon, 2018<br>\nDeveloped an openFrameworks MIDI controlled music installation <a href=\"http://toolstools.tools\">toolstools.tools</a> with Tal Baltuch</li>\n<li><strong><a href=\"http://whiteboxnyc.org/event/opening-reception-liminal-instruments-panel-discussion/\">Liminal Instruments</a></strong> - Whitebox Gallery, NYC, 2018<br>\nPresented <a href=\"http://orfleisher.com/portfolio-item/sound-objects/\">Sound Objects</a>, a virtual reality music composition application developed in collabration with Scott Reitherman - <a href=\"https://www.eventbrite.com/e/liminal-instruments-exhibition-opening-tickets-47690352127#\">Eventribe</a></li>\n</ul>\n<h3 id=\"press\"><a href=\"#press\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Press</strong></h3>\n<ul>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning\">Volume.gl website</a></li>\n<li><strong>Tecmundo</strong> - <a href=\"https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and\">1948</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/07/intels-vpu-could-save-gamers-from-losing-gpu-power-to-ai-in-the-next-windows-update/\">Expert Opinion</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/\">Skeletron</a></li>\n<li><strong>TechRadar</strong> - <a href=\"http://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect\">Skeletron</a></li>\n<li><strong>Anrdoid Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html\">Skeletron</a></li>\n<li><strong>Geektime</strong> - <a href=\"https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/\">Skeletron</a></li>\n<li><strong>Discovery Channel - Daily Planet</strong> - <a href=\"https://www.youtube.com/watch?v=Zi4yof2yy04\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice Motherboard</strong> - <a href=\"https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Mashable</strong> - <a href=\"http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice</strong> - <a href=\"http://www.vice.cn/read/vice-late-morning-brief-report-20180131\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>VRFocus</strong> - <a href=\"https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Android Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>India Times</strong> - <a href=\"https://www.indiatimes.com/technology/apps/bring-pulp-fiction-s-dance-scene-to-your-living-room-in-3d-using-this-innovative-ai-based-app-340893.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>BestVR</strong> - <a href=\"http://bestvr.tech/new-ai-tool-teleports-2d-images-3d-situations/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/\">Death Mask</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/arkit-death-mask/\">Death Mask</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/\">Death Mask</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and\">TwitAR</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/\">TwitAR</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth\">Livyatanim: MYTH</a></li>\n<li><strong>We and the Color</strong> - <a href=\"https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302\">Livyatanim: MYTH</a></li>\n<li><strong>Z by Ultranoir</strong> - <a href=\"http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance\">Livyatanim: SONO</a></li>\n<li><strong>VRRoom.buzz</strong> - <a href=\"https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show\">Livyatanim: SONO</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv\">Tzina</a></li>\n<li><strong>Ha'aretz</strong> - <a href=\"https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991\">Tzina</a></li>\n<li><strong>Calcalist</strong> - <a href=\"https://www.calcalist.co.il/consumer/articles/0,7340,L-3693396,00.html\">Tzina</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by\">Tzina</a></li>\n<li><strong>Channel 1</strong> - <a href=\"https://www.youtube.com/watch?v=lQYHgwWs1ro\">Tzina</a></li>\n<li><strong>Dot And Line</strong> - <a href=\"http://dotandline.blog.hu/2015/11/30/europai_animaciokat_dijaztak_a_13_anilogue-on\">Judging at Anilouge 2015</a></li>\n<li><strong>AudioKit Pro</strong> - <a href=\"https://audiokitpro.com/detune-play-music-with-your-face/\">detune</a></li>\n</ul>\n<h3 id=\"publications\"><a href=\"#publications\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Publications</strong></h3>\n<ul>\n<li><a href=\"https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d\"><strong>Behind The Scenes of the Worlds Best XR Designers</strong></a></li>\n<li><a href=\"https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer\"><strong>Meet Or Fleisher, A Celebrated WebVR Designer</strong></a></li>\n<li><a href=\"https://www.geektime.co.il/what-is-creative-coding/\"><strong>Code that turns into art: What is creative coding?</strong></a></li>\n<li><a href=\"https://medium.com/@camillamarcal/value-perception-in-multissensorial-art-experiences-90a721b21f6b?email=fleisher.or%40gmail.com&#x26;g-recaptcha-response=03AJpayVFbTUx0I_WB55GNs5DnVNaWEGTX4hMXgLm4Mo9aHeBxoqwSTy_8H5eSOsyESTim3OGnraC0hCJAVPb3yOEiexyq9_u9ba3WM6-1MSSgXnEdC-_tSuFUtxk4zkXsYAlleIkKfklRa_T986RH2xOHVFKmkVBZRFFbT5DtfuwJvF1C2nEzsV97nbPeis0MjQRLwEs2RXTOiNB5WPvTabgFR4cpQcgyhaGeepLR9Cwb-nGsZuRoZZXn0wDMjnr49hD-v11o0fasL-rFWeNxgp9AL_CyC8JUVLs659aDQcudvwnk913C6WhE1yCfomt-SgoEXfMS3K5ZUJ2a1PNgaoFSDoz_EsPRjnhLjO5OXKdrSPd9uzN5QIXC6nuPfauNE1j1hZL3slz3QvbNSwlp59C_PlskTQmUtFS_fVOfjd7X_aj-YWZQfnykLSxrtFJ9ETSyBAdXaJcL\"><strong>Value precption in immersive art</strong></a></li>\n<li><a href=\"https://issuu.com/hminhnhut/docs/uxpin_web_design_book_of_trends_201\"><strong>UXPin - Web Design Book of Trends for 2017 (Page 63)</strong></a></li>\n</ul>\n<h3 id=\"open-source\"><a href=\"#open-source\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Open Source</strong></h3>\n<ul>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit.js\">DepthKit.js</a></strong> - A plugin for rendering DepthKit volumteric video using Three.js in WebGL.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit-A-Frame\">DepthKit for A-Frame</a></strong> - An A-Frame component for rendering DepthKit volumetric videos in WebVR. The A-Frame component wraps DepthKit.js which is a small library that provides the same functionality for Three.js projects.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ReTouch\">ReTouch</a></strong> - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/Volume-GL/Pulp-Fiction-ARKit\">Inside Pulp Fiction</a></strong> - An experiment using Volume to reconstruct Pulp Fiction's dance scene in Augmented Reality.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/kinectron/Three-Kinectron\">THREE.Kinectron</a></strong> - A Three.js plugin for rendering Kinectron feeds.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/THREE.Multiplayer\">THREE.Multiplayer</a></strong> - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/SimileSystems/awesome-volumetric-filmmaking\">Awesome Volumetric Filmmaking</a></strong> - A curated resource for all things pertaining to volumetric filmmaking.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ThreadedDepthCleaner\">Threaded Depth Cleaner</a></strong> - Threaded depth-map cleaning and inpainting using OpenCV.</p>\n</li>\n</ul>","frontmatter":{"date":"May 23, 2018","components":[],"path":"/bio","about":null,"cover":"1948_header.jpg","credits":"","title":"Bio","press":[],"links":[],"embed":"","tags":null,"excerpt":""}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/1948","title":"1948","links":[["Website","http://www.1948.site/"],["Github","https://github.com/juniorxsound/1948"]],"credits":"Developed with <a target=\"_blank\" href=\"https://talbaltuch.com\">Tal Baltuch</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and"],["Awwwards – Honorable Mention","#"],["CSS Design Awards – Audience Award for Best Innovation","#"],["CSS Design Awards – Audience Award for UI Design","#"],["CSS Design Awards – Audience Award for Best UX Design","#"],["CSS Design Awards – Special Kodus","#"]],"components":[["code","Javascript"],["software","ffmpeg"],["3d","jQuery"]],"cover":"1948_header.jpg","about":"The declaration of independence is Israel’s founding text. This website allows you to remix that document according to your values and world view, and create an image that reflects that.","embed":"","excerpt":"Remix Israel's decleration of independance to fit your world views","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:22:00+00:00","path":"/soundobjects","title":"Sound Objects","links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","press":[],"components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"cover":"so.png","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Compose music in virtual reality using objects","tags":["Virtual Reality"]}}}}
 
 /***/ }),
 /* 454 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"path":"/max","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","cover":"max.png","credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","title":"DepthKit for Max/MSP","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"embed":"","tags":["Tools"],"excerpt":"Render volumetric video in Max/MSP."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:20:00+00:00","path":"/aframe","title":"DepthKit for AFrame","links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"cover":"aframe_cover.jpg","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","embed":"","excerpt":"An AFrame component for rendering volumetric video in WebVR","tags":["Virtual Reality","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:33:00+00:02","path":"/tzina","title":"Tzina","links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"cover":"tzina.png","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"A virtual reality documentary about love and lonliness.","tags":["Virtual Reality"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"path":"/soundobjects","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","cover":"so.png","credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","title":"Sound Objects","press":[],"links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Virtual Reality"],"excerpt":"Compose music in virtual reality using objects"}}},"pathContext":{"prev":{"html":"<ol>\n<li><strong><a href=\"#personal-information\">Personal information</a></strong></li>\n<li><strong><a href=\"#short-bio\">Short Bio</a></strong></li>\n<li><strong><a href=\"#education\">Education</a></strong></li>\n<li><strong><a href=\"#work-experience\">Work experience</a></strong></li>\n<li><strong><a href=\"#workshops--talks\">Workshops &#x26; talks</a></strong></li>\n<li><strong><a href=\"#skills\">Skill-set</a></strong></li>\n<li><strong><a href=\"#awards\">Awards, festivals &#x26; exhibitions</a></strong></li>\n<li><strong><a href=\"#press\">Press</a></strong></li>\n<li><strong><a href=\"#publications\">Publications</a></strong></li>\n<li><strong><a href=\"#open-source\">Open Source</a></strong></li>\n</ol>\n<h3 id=\"personal-information\"><a href=\"#personal-information\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Personal information</strong></h3>\n<p><strong>Name:</strong> Or Fleisher</p>\n<p><strong>Phone:</strong> 347.339.9440</p>\n<p><strong>Mail:</strong> <a href=\"mailto:contact@orfleisher.com\">contact@orfleisher.com</a></p>\n<p><a href=\"https://github.com/juniorxsound\">Github</a> | <a href=\"https://twitter.com/juniorxsound\">Twitter</a> | <a href=\"https://www.youtube.com/user/JuniorxSound/\">YouTube</a> | <a href=\"http://vimeo.com/orfleisher\">Vimeo</a> | <a href=\"https://www.linkedin.com/in/orfleisher/\">LinkedIn</a></p>\n<h3 id=\"short-bio\"><a href=\"#short-bio\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Short bio</strong></h3>\n<p>Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. My interests include computer graphics, web development and immersive experience development in virtual, augmented and mixed realities.</p>\n<p>I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.</p>\n<p>Upon graduation, I co-founded <a href=\"http://phenomenalabs.com\">Phenomena Labs</a> an award-winning visual effect and interaction design studio. I worked as a creative and technical director designing, developing and executing interactive experiences. I am a graduate of the Tisch School of the Arts, New York University. Currently, I am the Principle Creative Technologist at <a href=\"https://vimeo.com\">Vimeo</a> Labs and Co-Founder at <a href=\"https://volume.gl\">Volume</a>.</p>\n<p> <strong>Things to know about me</strong> - I am an advanced coffee drinker, cat aficionado, hobbyist musician. I am passionate about cinematography and <a href=\"#open-source\">open source software</a>.</p>\n<h3 id=\"education\"><a href=\"#education\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Education</strong></h3>\n<ul>\n<li>\n<p><strong>New York University</strong> - <em>M.P.S (2016-2018)</em></p>\n<p>Master’s degree, Interactive Telecommunications Program (ITP)</p>\n<ul>\n<li>Specializing in computer graphics, volumetric capturing and immersive experience development</li>\n<li>Worked under Ken Perlin’s acclaimed research group, developing machine learning driven computer graphics software, which was featured in tech magazines, such as Wired</li>\n<li>Worked as a creative coder under Gabe Barcia Columbo developing an interactive installation for SXSW</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li>\n<p><strong>Tel Aviv University</strong> - <em>B.A. (2011-2014)</em></p>\n<p>Bachelor of Arts, Film and television</p>\n<ul>\n<li>Seminar research in interactive storytelling titled \"The Choices we Hear\" examining the use of sound in interactive narrative works.</li>\n</ul>\n</li>\n<li>\n<p><strong>Future Rhythm</strong> - <em>Expert Certification (2010)</em></p>\n<p>Official Avid Expert Certificates in Pro Tools (310M, 310P)  </p>\n<ul>\n<li>Graduated from Future Rhythm, a certified Avid training facility earning 310M and 310P expert certificates. </li>\n<li>Avid’s Pro Tools™ HD expert curriculum in music production and post-production.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"work-experience\"><a href=\"#work-experience\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Work experience</strong></h3>\n<ul>\n<li>\n<p><strong>Principle Creative Technologist</strong> - <em>Vimeo</em> (2018-Current)</p>\n</li>\n<li>\n<p><strong>VR Research Fellow</strong> - <em>Viacom</em> (2017)</p>\n<ul>\n<li>Designed and developed a web based Virtual Reality narrative experience currently in submission to festivals.</li>\n<li>Collabrated in weekly feedback sessions about look-development and technical feedback.</li>\n<li>Presented the project in a private Virtual Reality showcase at Viacom's NY headquarters, also covered by tech websites (e.g UploadVR).</li>\n</ul>\n</li>\n<li>\n<p><strong>Co-Founder</strong> - <em>Phenomena Labs</em> (2010-2016)</p>\n<ul>\n<li>Co-Founded an award winning visual effects and interaction design studio with <em>Ronen Tanchum</em> and <em>Guy Fleisher</em>.</li>\n<li>Directed, developed and published 5 Virtual Reality titles in Oculus, GearVR and WebVR app stores, featured in prestigious international festivals such as Cannes Festival, Game Developers Conference, SIGGRAPH and SXSW</li>\n<li>Received awards such as Design and Art Direction, Urban MediaMakers Best Interactive, Worldfest NASA Remi Award, FWA, Awwwards and CSS Design Awards</li>\n</ul>\n</li>\n<li>\n<p><strong>Sound Supervisor</strong> - <em>Rishon Hall of Arts</em> (2009-2010)</p>\n<ul>\n<li>Sound design and mixing of performances ranging from art installations and theatre to dance groups.</li>\n<li>Daily maintanance of gear and stock.</li>\n<li>Specification sheet preperations and forigen performances coordinator.</li>\n</ul>\n</li>\n<li>\n<p><strong>Recording Engineer</strong> - <em>Savion Studios</em> (2006-2008)</p>\n<ul>\n<li>Preparing, tracking, editing and pre-mixing music recording sessions.</li>\n<li>Overseeing and operating the rehearsal spaces.</li>\n<li>Recruit and train new staff members.</li>\n</ul>\n</li>\n</ul>\n<h3 id=\"workshops--talks\"><a href=\"#workshops--talks\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Workshops &#x26; talks</strong></h3>\n<ul>\n<li>\n<p><strong>Volumetric Accessibility with Vimeo</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)<br>\n<a href=\"https://vimeo.com/280815263\">This talk</a> (2:08:40) by Casey Pugh, head of Creator Labs at Vimeo, presents the work we have been doing in volumetric video distribution and live streaming.</p>\n</li>\n<li>\n<p><strong>Making music with social data</strong> - <em>ITP Camp, New York University</em> (2018)\n<a href=\"https://itp.nyu.edu/camp2018/session/81\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>From Tzina to Volume</strong> - <em>Volumetric Filmmaking Meetup</em> (2018)\nA talk in the first <a href=\"https://www.meetup.com/volumetric_filmmakers_vfnyc/\">Volumetric Filmmaking Meetup in NYC</a> about creating <a href=\"http://tzina.space\">Tzina</a> and how it led to developing <a href=\"https://volume.gl\">Volume</a></p>\n</li>\n<li>\n<p><strong>Volume</strong> - <em>Thesis presentation, New York University</em> (2018)\n<a href=\"https://vimeo.com/270479574\">My master's thesis presentation</a> at the Interactive Telecommunications Program, Tisch School of the Arts, NYU</p>\n</li>\n<li>\n<p><strong>Volume - HyperCinema</strong> - <em>New York University</em> (2018)\nA workshop about using <a href=\"https://volume.gl\">Volume</a> in Unity3D to create augmented and virtual reality experiences. The workshop took part at IMA, New York University as a part of a class called HyperCinema taught by Prof. Gabe BC</p>\n</li>\n<li>\n<p><strong>Counter Histories, Alternative Narratives</strong> - <em>Magnum Foundation</em> (2018)\nA presentation and demonstration of <a href=\"https://volume.gl\">Volume</a> in front of Magnum Foundation's current research residents. The presentation took place in Columbia University's Brown Institue for Media Innovation</p>\n</li>\n<li>\n<p><strong>Making music with data</strong> - <em>NYC Media Lab</em> (2017)\n<a href=\"https://github.com/dodiku/music_with_data_workshop\">This workshop</a> was focused on creating generative music with Twitter data (Twitter API) using Node.js, Express and Web Audio API (Tone.js)</p>\n</li>\n<li>\n<p><strong>Volumetric capture using DepthKit</strong> - <em>ITP Camp, New York University</em> (2016)\n<a href=\"https://itp.nyu.edu/camp2017/session/169\">The goal of this workshop</a> was to learn <em>hands-on</em> how to use DepthKit's software (with a Kinect and a DSLR) to capture a human performance as a volumetric capture and to render it in Unity.</p>\n</li>\n<li>\n<p><strong>Interactive Film (roundtable)</strong> - <em>Anilouge Animation Festival</em> (2015)\n<a href=\"http://urania-nf.hu/en/esemenyek/505/2015/11/25/anilogue-2015-international-animation-film-festival-25-29-11-2015-\">A roundtable</a> about current possibilities in film-making, virtual reality and interactive storytelling</p>\n</li>\n<li>\n<p><strong>Animating with MIDI</strong> - <em>Budapest University</em> (2015)\nDuring Anilouge Animation Festival I conducted a workshop in Budapest University's Interaction Design department about using MIDI in real-time to drive animations and visual effects in WebGL.</p>\n</li>\n</ul>\n<h3 id=\"skills\"><a href=\"#skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Skills</strong></h3>\n<ul>\n<li>Spoken Languages: English, Hebrew.</li>\n<li>Team player who strives for a collabrative work atmosphere.</li>\n<li>Strong networking affinity, with great personal and social skills.</li>\n<li>High tenure under deadlines, with an ability to multitask and simplify problems, finding creative and technical solutions in variegated situations.</li>\n<li>Ability to communicate simple and complex issues in a clear and concice way.</li>\n</ul>\n<h3 id=\"technical-skills\"><a href=\"#technical-skills\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Technical skills</strong></h3>\n<ul>\n<li>Graphics programmer experienced with <em>WebGL</em>, <em>2D Canvas</em>, <em>OpenGL</em> and advanced <em>shader programming (GLSL, HLSL)</em>.</li>\n<li>Extensive knowledge in <em>Virtual and Augmented Reality</em> content development (WebVR, WebAR, ARKit, Unity for Rift, Vive and GearVR).</li>\n<li>Graphics Libraries: Three.js, openFrameworks, GLEW, GLFW, JUCE</li>\n<li>Software: Unity, TouchDesigner, Nuke, Avid MC, Adobe Creative Cloud, Blender, Octane Renderer, Vue, Pro-Tools, Ableton Live, Max/MSP/Jitter.</li>\n<li>Programming languages: Javascript (ES5/ES6), C++, C#, Swift, python, HTML5, CSS3D</li>\n<li>Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.</li>\n</ul>\n<h3 id=\"awards\"><a href=\"#awards\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Awards</strong></h3>\n<ul>\n<li><strong>WorldFest- NASA Remi Award winner</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>UrbamMediaMakers Best Interactive Award</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>FWA - Website of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Winner - Site of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Awards - Website of the Day</strong> - <a href=\"https://www.cssawards.net/website/livyatanim-myth/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <a href=\"https://www.awwwards.com/sites/livyatanim-myth\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>Communication Arts - Webpicks</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <a href=\"https://www.cssdesignawards.com/sites/livyatanim-myth/27440/\"><em>Livyatanim: MYTH</em></a></li>\n<li><strong>DesignAwards.Asia - Design of the Day</strong> - <em>Livyatanim: MYTH</em></li>\n<li><strong>Awwwards – Honorable Mention</strong> - <em>Tzina</em></li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_00b9f17dfb014a71ad0a1fb62b619097.pdf\">Tzina</a></em></li>\n<li><strong>CSS Winner</strong> - <em><a href=\"https://docs.wixstatic.com/ugd/ca134c_2c4f59c4ec2a4b47be27e635ab09d68c.pdf\">Tzina</a></em></li>\n<li><strong>CSS Awards - Site of the Day</strong> - 1948</li>\n<li><strong>Awwwards - Honorable Mention</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best Innovation</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for UI Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Audience Award for Best UX Design</strong> - 1948</li>\n<li><strong>CSS Design Awards - Special Kodus</strong> - 1948</li>\n<li><strong>Tisch School of the Arts scholarship</strong></li>\n<li><strong>Red Burns scholarship</strong></li>\n<li><strong>Viacom NEXT VR research fellowship</strong></li>\n<li><strong>ITP &#x26; Google XStory rersearch grant</strong></li>\n</ul>\n<h3 id=\"festivals\"><a href=\"#festivals\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Festivals</strong></h3>\n<ul>\n<li><strong>SIGGRAPH 2018 - Posters</strong> - <a href=\"https://s2018.siggraph.org/conference/conference-overview/posters/production/?sess=sess356\">Volume</a></li>\n<li><strong>Cannes Festival - NEXT</strong> - <a href=\"http://www.marchedufilm.com/en/global-events\">Tzina</a></li>\n<li><strong>IDFA DocLab</strong> - <a href=\"https://www.doclab.org/2016/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>ACM SIGGRAPH - Immersive Expressions</strong> - <a href=\"https://immersive-expressions.siggraph.org\">Tzina</a></li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/2017-program/\">Tzina</a></li>\n<li><strong>DocAviv</strong> - <a href=\"http://www.docaviv.co.il/2017-en/films/tzina-symphony-of-longing/\">Tzina</a></li>\n<li><strong>Toronto WebFest</strong> - <a href=\"https://www.towebfest.com/portfolio/tzina-symphony-of-longing\">Tzina</a></li>\n<li><strong>Paris Play Online</strong> - Tzina</li>\n<li><strong>Experience, Brussels VR Film Festival</strong> - Tzina</li>\n<li><strong>SXSW - The Future of Music Artwork is Gamified</strong> - <a href=\"https://schedule.sxsw.com/2017/events/PP59988\">Livyatanim: MYTH</a></li>\n<li><strong>GDC - Mozilla VR booth</strong> - Livyatanim: MYTH</li>\n<li><strong>Seattle Transmedia</strong> - <a href=\"http://trueindependent.org/stiff/archives/2016-program/\">Livyatanim: MYTH</a></li>\n<li><strong>LA New Media Film Festival</strong> - <a href=\"http://audnews.com/2016-brings-artificial-intelligence-virtual-reality-3d-content-to-new-media-film-festival/\">Livyatanim: MYTH</a></li>\n<li><strong>File Festival</strong> - <a href=\"https://file.org.br/webgl_2018/or-fleisher/\">LIVYATANIM: MYTH</a></li>\n<li><strong>NuWave - BJFF</strong> - <a href=\"http://prod1.agileticketing.net/websales/pages/info.aspx?evtinfo=140822~3a1dbf00-5ad7-4f53-af12-28ba7bfe20f4&#x26;epguid=9c9174b6-d866-4637-9645-7a9d7765dc44\">Livyatanim: MYTH</a></li>\n<li><strong>Patchlab</strong> - <a href=\"http://patchlab.pl/media-labdiscount-for-resolume/\">Livyatanim: MYTH</a></li>\n<li><strong>Miami FILMGATE</strong> - <a href=\"http://www.filmgate.miami/fordistas-vr-pavilion/\">Livyatanim: MYTH</a></li>\n<li><strong>Amsterdam KLIK</strong> - <a href=\"http://www.klik.amsterdam/festival/program-details/326\">Livyatanim: MYTH</a></li>\n<li><strong>TimeWave Festival</strong> - <a href=\"http://timewavefestival.com/virtualrealitylab-2017-projects/\">Livyatanim: MYTH</a></li>\n<li><strong>Google I/O</strong> - <a href=\"https://events.google.com/io/schedule/?section=may-8&#x26;sid=b9b21368-99b9-46f1-9c37-4b62edb853f4\">Livyatanim: SONO</a></li>\n</ul>\n<h3 id=\"exhibitions\"><a href=\"#exhibitions\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Exhibitions</strong></h3>\n<ul>\n<li><strong><a href=\"http://www.dmh.org.il/pages/default.aspx?pageId=858&#x26;catId=5\">Uncanny</a></strong> - Design Museum Holon, 2018<br>\nDeveloped an openFrameworks MIDI controlled music installation <a href=\"http://toolstools.tools\">toolstools.tools</a> with Tal Baltuch</li>\n<li><strong><a href=\"http://whiteboxnyc.org/event/opening-reception-liminal-instruments-panel-discussion/\">Liminal Instruments</a></strong> - Whitebox Gallery, NYC, 2018<br>\nPresented <a href=\"http://orfleisher.com/portfolio-item/sound-objects/\">Sound Objects</a>, a virtual reality music composition application developed in collabration with Scott Reitherman - <a href=\"https://www.eventbrite.com/e/liminal-instruments-exhibition-opening-tickets-47690352127#\">Eventribe</a></li>\n</ul>\n<h3 id=\"press\"><a href=\"#press\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Press</strong></h3>\n<ul>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning\">Volume.gl website</a></li>\n<li><strong>Tecmundo</strong> - <a href=\"https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm\">Volume.gl website</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/173098814741/1948-israeli-net-art-project-from-or-fleisher-and\">1948</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/03/07/intels-vpu-could-save-gamers-from-losing-gpu-power-to-ai-in-the-next-windows-update/\">Expert Opinion</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/\">Skeletron</a></li>\n<li><strong>TechRadar</strong> - <a href=\"http://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect\">Skeletron</a></li>\n<li><strong>Anrdoid Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html\">Skeletron</a></li>\n<li><strong>Geektime</strong> - <a href=\"https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/\">Skeletron</a></li>\n<li><strong>Discovery Channel - Daily Planet</strong> - <a href=\"https://www.youtube.com/watch?v=Zi4yof2yy04\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>The Next Web</strong> - <a href=\"https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice Motherboard</strong> - <a href=\"https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Mashable</strong> - <a href=\"http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Vice</strong> - <a href=\"http://www.vice.cn/read/vice-late-morning-brief-report-20180131\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>VRFocus</strong> - <a href=\"https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Android Headlines</strong> - <a href=\"https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>India Times</strong> - <a href=\"https://www.indiatimes.com/technology/apps/bring-pulp-fiction-s-dance-scene-to-your-living-room-in-3d-using-this-innovative-ai-based-app-340893.html\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>BestVR</strong> - <a href=\"http://bestvr.tech/new-ai-tool-teleports-2d-images-3d-situations/\">Volume: Inside Pulp Fiction</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/\">Death Mask</a></li>\n<li><strong>UploadVR</strong> - <a href=\"https://uploadvr.com/arkit-death-mask/\">Death Mask</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/\">Death Mask</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and\">TwitAR</a></li>\n<li><strong>Next Reality</strong> - <a href=\"https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/\">TwitAR</a></li>\n<li><strong>Wired</strong> - <a href=\"https://www.wired.de/collection/life/10-virtual-reality-filme-die-man-gesehen-haben-muss\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/ez5qva/float-through-a-virtual-world-of-hybrid-beings-in-myth\">Livyatanim: MYTH</a></li>\n<li><strong>We and the Color</strong> - <a href=\"https://weandthecolor.com/webgl-short-film-livyatanim-myth/62302\">Livyatanim: MYTH</a></li>\n<li><strong>Z by Ultranoir</strong> - <a href=\"http://z.ultranoir.com/en/articles/1282-livyatanim-myth-a-vr-film-by-or-fleisher.html\">Livyatanim: MYTH</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/aenxpb/sono-livyatanim-audio-reactive-live-vr-performance\">Livyatanim: SONO</a></li>\n<li><strong>VRRoom.buzz</strong> - <a href=\"https://www.vrroom.buzz/vr-news/immersive-arts/cosmic-visuals-react-live-audio-vr-show\">Livyatanim: SONO</a></li>\n<li><strong>Creators Project</strong> - <a href=\"https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv\">Tzina</a></li>\n<li><strong>Ha'aretz</strong> - <a href=\"https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991\">Tzina</a></li>\n<li><strong>Calcalist</strong> - <a href=\"https://www.calcalist.co.il/consumer/articles/0,7340,L-3693396,00.html\">Tzina</a></li>\n<li><strong>prosthetic knowledge</strong> - <a href=\"http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by\">Tzina</a></li>\n<li><strong>Channel 1</strong> - <a href=\"https://www.youtube.com/watch?v=lQYHgwWs1ro\">Tzina</a></li>\n<li><strong>Dot And Line</strong> - <a href=\"http://dotandline.blog.hu/2015/11/30/europai_animaciokat_dijaztak_a_13_anilogue-on\">Judging at Anilouge 2015</a></li>\n<li><strong>AudioKit Pro</strong> - <a href=\"https://audiokitpro.com/detune-play-music-with-your-face/\">detune</a></li>\n</ul>\n<h3 id=\"publications\"><a href=\"#publications\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Publications</strong></h3>\n<ul>\n<li><a href=\"https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d\"><strong>Behind The Scenes of the Worlds Best XR Designers</strong></a></li>\n<li><a href=\"https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer\"><strong>Meet Or Fleisher, A Celebrated WebVR Designer</strong></a></li>\n<li><a href=\"https://www.geektime.co.il/what-is-creative-coding/\"><strong>Code that turns into art: What is creative coding?</strong></a></li>\n<li><a href=\"https://medium.com/@camillamarcal/value-perception-in-multissensorial-art-experiences-90a721b21f6b?email=fleisher.or%40gmail.com&#x26;g-recaptcha-response=03AJpayVFbTUx0I_WB55GNs5DnVNaWEGTX4hMXgLm4Mo9aHeBxoqwSTy_8H5eSOsyESTim3OGnraC0hCJAVPb3yOEiexyq9_u9ba3WM6-1MSSgXnEdC-_tSuFUtxk4zkXsYAlleIkKfklRa_T986RH2xOHVFKmkVBZRFFbT5DtfuwJvF1C2nEzsV97nbPeis0MjQRLwEs2RXTOiNB5WPvTabgFR4cpQcgyhaGeepLR9Cwb-nGsZuRoZZXn0wDMjnr49hD-v11o0fasL-rFWeNxgp9AL_CyC8JUVLs659aDQcudvwnk913C6WhE1yCfomt-SgoEXfMS3K5ZUJ2a1PNgaoFSDoz_EsPRjnhLjO5OXKdrSPd9uzN5QIXC6nuPfauNE1j1hZL3slz3QvbNSwlp59C_PlskTQmUtFS_fVOfjd7X_aj-YWZQfnykLSxrtFJ9ETSyBAdXaJcL\"><strong>Value precption in immersive art</strong></a></li>\n<li><a href=\"https://issuu.com/hminhnhut/docs/uxpin_web_design_book_of_trends_201\"><strong>UXPin - Web Design Book of Trends for 2017 (Page 63)</strong></a></li>\n</ul>\n<h3 id=\"open-source\"><a href=\"#open-source\" aria-hidden=\"true\" class=\"anchor\"><svg aria-hidden=\"true\" height=\"16\" version=\"1.1\" viewBox=\"0 0 16 16\" width=\"16\"><path fill-rule=\"evenodd\" d=\"M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z\"></path></svg></a><strong>Open Source</strong></h3>\n<ul>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit.js\">DepthKit.js</a></strong> - A plugin for rendering DepthKit volumteric video using Three.js in WebGL.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/DepthKit-A-Frame\">DepthKit for A-Frame</a></strong> - An A-Frame component for rendering DepthKit volumetric videos in WebVR. The A-Frame component wraps DepthKit.js which is a small library that provides the same functionality for Three.js projects.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ReTouch\">ReTouch</a></strong> - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/Volume-GL/Pulp-Fiction-ARKit\">Inside Pulp Fiction</a></strong> - An experiment using Volume to reconstruct Pulp Fiction's dance scene in Augmented Reality.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/kinectron/Three-Kinectron\">THREE.Kinectron</a></strong> - A Three.js plugin for rendering Kinectron feeds.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/THREE.Multiplayer\">THREE.Multiplayer</a></strong> - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/SimileSystems/awesome-volumetric-filmmaking\">Awesome Volumetric Filmmaking</a></strong> - A curated resource for all things pertaining to volumetric filmmaking.</p>\n</li>\n<li>\n<p><strong><a href=\"https://github.com/juniorxsound/ThreadedDepthCleaner\">Threaded Depth Cleaner</a></strong> - Threaded depth-map cleaning and inpainting using OpenCV.</p>\n</li>\n</ul>","id":"/home/travis/build/juniorxsound/portfolio/src/pages/bio.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:24:00+00:00","path":"/bio","title":"Bio","links":[],"credits":"","press":[],"components":[],"cover":"1948_header.jpg","about":null,"embed":"","excerpt":"","tags":null}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:20:00+00:00","path":"/aframe","title":"DepthKit for AFrame","links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"cover":"aframe_cover.jpg","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","embed":"","excerpt":"An AFrame component for rendering volumetric video in WebVR","tags":["Virtual Reality","Tools"]}}}}
 
 /***/ }),
 /* 455 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"path":"/tzina","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","cover":"tzina.png","credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","title":"Tzina","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","tags":["Virtual Reality"],"excerpt":"A virtual reality documentary about love and lonliness."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:17:00+00:00","path":"/max","title":"DepthKit for Max/MSP","links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","press":[],"components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"cover":"max.png","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","embed":"","excerpt":"Render volumetric video in Max/MSP.","tags":["Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:31:00+00:02","path":"/pulp-fiction","title":"Inside Pulp Fiction","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"cover":"pulp_cover.jpg","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality.","tags":["Augmented Reality","Machine Learning"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"path":"/aframe","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","cover":"aframe_cover.jpg","credits":"","title":"DepthKit for AFrame","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"embed":"","tags":["Virtual Reality","Tools"],"excerpt":"An AFrame component for rendering volumetric video in WebVR"}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:22:00+00:00","path":"/soundobjects","title":"Sound Objects","links":[["Making-of","https://www.youtube.com/watch?v=giU_hnfS8HQ"]],"credits":"Developed with <a target=\"_blank\" href=\"http://www.scottreitherman.com/\">Scott Reitherman</a>","press":[],"components":[["code","C#, HLSL"],["software","Unity3D, Oculus Rift & Touch SDK"],["3d","Ableton Live, Pure Data, Heavy"]],"cover":"so.png","about":"Sound Objects is a music composition app in virtual reality that uses physical objects and collisions to trigger different instruments. The experience challenges our perception of physics by allowing the Sound Objects to bend and defy them, resulting in playful physics that embed musical concepts such as repetition, indeterminism and evolution.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/EkB9nE-vQhw?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Compose music in virtual reality using objects","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:17:00+00:00","path":"/max","title":"DepthKit for Max/MSP","links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","press":[],"components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"cover":"max.png","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","embed":"","excerpt":"Render volumetric video in Max/MSP.","tags":["Tools"]}}}}
 
 /***/ }),
 /* 456 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"path":"/pulp-fiction","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","cover":"pulp_cover.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","title":"Inside Pulp Fiction","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning"],"excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:33:00+00:02","path":"/tzina","title":"Tzina","links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"cover":"tzina.png","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"A virtual reality documentary about love and lonliness.","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:30:00+00:02","path":"/death-mask","title":"Death Mask","links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"cover":"deathmask_cover.png","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"May 23, 2018","components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"path":"/max","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","cover":"max.png","credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","title":"DepthKit for Max/MSP","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"embed":"","tags":["Tools"],"excerpt":"Render volumetric video in Max/MSP."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:20:00+00:00","path":"/aframe","title":"DepthKit for AFrame","links":[["Github","https://github.com/juniorxsound/DepthKit-A-Frame"],["npm package","https://www.npmjs.com/package/aframe-depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","AFrame"]],"cover":"aframe_cover.jpg","about":"An A-Frame component for rendering Volumetric videos captured using DepthKit (i.e Kinect + DSLR) in WebVR. The component wraps DepthKit.js which provides a similar interface for Three.js projects.","embed":"","excerpt":"An AFrame component for rendering volumetric video in WebVR","tags":["Virtual Reality","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:33:00+00:02","path":"/tzina","title":"Tzina","links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"cover":"tzina.png","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"A virtual reality documentary about love and lonliness.","tags":["Virtual Reality"]}}}}
 
 /***/ }),
 /* 457 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"path":"/death-mask","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","cover":"deathmask_cover.png","credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","title":"Death Mask","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:31:00+00:02","path":"/pulp-fiction","title":"Inside Pulp Fiction","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"cover":"pulp_cover.jpg","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality.","tags":["Augmented Reality","Machine Learning"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:28:00+00:02","path":"/twit-ar","title":"Twit.AR","links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"cover":"twit.jpg","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"path":"/tzina","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","cover":"tzina.png","credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","title":"Tzina","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","tags":["Virtual Reality"],"excerpt":"A virtual reality documentary about love and lonliness."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-05-23T12:17:00+00:00","path":"/max","title":"DepthKit for Max/MSP","links":[["Github","https://github.com/juniorxsound/DepthKit-for-Max"]],"credits":"Developed with <a href=\"https://drorayalon.com\" target=\"_blank\">Dror Ayalon</a>.","press":[],"components":[["code","GLSL"],["software","DepthKit"],["3d","Jitter"]],"cover":"max.png","about":"DepthKit for Max is a sample Max patch demonstrating a workflow for playing volumetric videos in Max/Msp/Jitter using DepthKit combined-per-pixel exports.","embed":"","excerpt":"Render volumetric video in Max/MSP.","tags":["Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:31:00+00:02","path":"/pulp-fiction","title":"Inside Pulp Fiction","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"cover":"pulp_cover.jpg","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality.","tags":["Augmented Reality","Machine Learning"]}}}}
 
 /***/ }),
 /* 458 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"path":"/twit-ar","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","cover":"twit.jpg","credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","title":"Twit.AR","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:30:00+00:02","path":"/death-mask","title":"Death Mask","links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"cover":"deathmask_cover.png","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:27:00+00:02","path":"/depthkit-js","title":"DepthKit.js","links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"cover":"depthkitjs_cover.png","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","embed":"","excerpt":"A WebVR plugin for rendering volumetric video.","tags":["Augmented Reality","Virtual Reality","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"path":"/pulp-fiction","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","cover":"pulp_cover.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","title":"Inside Pulp Fiction","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning"],"excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:33:00+00:02","path":"/tzina","title":"Tzina","links":[["Full Experience","http://tzina.space"],["Making-of","https://www.youtube.com/watch?v=n0IIKgNnctY"],["Github","https://github.com/Avnerus/tzina"]],"credits":"Directed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>. Developed with Avner Peled, Ziv Schneider and Laura Juo-Hsin Chen. <a href=\"http://tzina.space\" target=\"_blank\">For full credit list</a>","press":[["Creators Project","https://creators.vice.com/en_us/article/mg44g4/symphony-of-longing-interactive-vr-doc-tel-aviv"],["IDFA DocLab","https://www.doclab.org/2016/tzina-symphony-of-longing/"],["Haaretz","https://www.haaretz.co.il/gallery/cinema/.premium-1.4083991"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by"],["Cannes NEXT","#"],["Doc-Aviv","#"],["Paris Play Film Festival","#"],["Tornto Web Festival","#"]],"components":[["code","Javascript, GLSL"],["software","DepthKit, e-on Vue, Adobe Photoshop, Autodesk Maya, ffmpeg, Web Audio API and the WebVR API."],["3d","Three.js"]],"cover":"tzina.png","about":"In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.\nI served as the project’s technical director, in which I got to shoot, develop, write music and implement features in the experience.","embed":"<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/187784291?title=0&byline=0&portrait=0\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>","excerpt":"A virtual reality documentary about love and lonliness.","tags":["Virtual Reality"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:30:00+00:02","path":"/death-mask","title":"Death Mask","links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"cover":"deathmask_cover.png","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}}}}
 
 /***/ }),
 /* 459 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"path":"/depthkit-js","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","cover":"depthkitjs_cover.png","credits":"","title":"DepthKit.js","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"embed":"","tags":["Augmented Reality","Virtual Reality","Tools"],"excerpt":"A WebVR plugin for rendering volumetric video."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:28:00+00:02","path":"/twit-ar","title":"Twit.AR","links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"cover":"twit.jpg","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:23:00+00:02","path":"/skeletron","title":"Skeletron","links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"cover":"skeletron.jpg","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict joints and human skeleton position from real-time video.","tags":["Machine Learning","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"path":"/death-mask","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","cover":"deathmask_cover.png","credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","title":"Death Mask","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:31:00+00:02","path":"/pulp-fiction","title":"Inside Pulp Fiction","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL/Pulp-Fiction-ARKit"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/22/ai-rips-objects-from-video-and-reimagines-them-in-3d-ar/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["Vice","https://motherboard.vice.com/en_us/article/gywamy/cue-up-the-pulp-fiction-dance-scene-this-app-3d-projects-2d-movies-in-your-living-room"],["Mashable","http://mashable.france24.com/tech-business/20180130-films-volume-realite-augmentee-cinema-technologie"],["UploadVR","https://uploadvr.com/ar-app-brings-pulp-fiction-characters-living-room/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/170014746561/volume-in-development-project-from-or-fleisher"],["VRFocus","https://www.vrfocus.com/2018/01/reconstruct-your-favourite-movie-in-ar/"],["Android Headlines","https://www.androidheadlines.com/2018/01/volume-ai-program-puts-2d-objects-3d-spaces.html"],["Labroots","https://www.labroots.com/trending/videos/11371/ai-tool-turns-video-into-3d-augmented-reality-experiences"]],"components":[["code","Python, C#, HLSL"],["software","Unity3D, Tensorflow"],["3d","ARKit, Volume"]],"cover":"pulp_cover.jpg","about":"Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality.","tags":["Augmented Reality","Machine Learning"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:28:00+00:02","path":"/twit-ar","title":"Twit.AR","links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"cover":"twit.jpg","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}}}}
 
 /***/ }),
 /* 460 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"path":"/skeletron","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","cover":"skeletron.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","title":"Skeletron","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Machine Learning","Tools"],"excerpt":"Predict joints and human skeleton position from real-time video."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:27:00+00:02","path":"/depthkit-js","title":"DepthKit.js","links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"cover":"depthkitjs_cover.png","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","embed":"","excerpt":"A WebVR plugin for rendering volumetric video.","tags":["Augmented Reality","Virtual Reality","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:21:00+00:02","path":"/retouch","title":"ReTouch","links":[["Github","https://github.com/juniorxsound/ReTouch"]],"credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","press":[],"components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"cover":"shining.jpg","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Edit and retouch any image in 2.5D.","tags":["Machine Learning","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"path":"/twit-ar","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","cover":"twit.jpg","credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","title":"Twit.AR","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:30:00+00:02","path":"/death-mask","title":"Death Mask","links":[["Documentation","http://itp.orfleisher.com/2017/11/17/where-is-the-line-with-public-data/"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["Wired","https://www.wired.it/attualita/tech/2017/12/20/death-mask-realta-morte-previsione/"],["UploadVR","https://uploadvr.com/arkit-death-mask/"],["Next Reailty","https://next.reality.news/news/ar-experiment-adds-life-clock-anyone-with-face-0181330/"],["VRInside","https://vrinside.jp/news/death-mask/"],["Shiropen","https://shiropen.com/2017/11/29/29963"],["Owdin","https://owdin.live/2017/11/24/death-mask-combien-dannees-de-vie-vous-reste-t-il-version-realite-augmentee/"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/167809095736/death-mask-programming-project-from-or-fleisher"],["Realite Virtuelle","https://www.realite-virtuelle.com/death-mask-age-mort-2911"]],"components":[["code","Swift"],["software","Blender, CoreML, AgeNet"],["3d","ARKit"]],"cover":"deathmask_cover.png","about":"‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.\nThe aesthetic inspiration derives from the concept of death masks. These are sculptures meant to symbolize the death of a person by casting his face (i.e creating a mask).","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:27:00+00:02","path":"/depthkit-js","title":"DepthKit.js","links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"cover":"depthkitjs_cover.png","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","embed":"","excerpt":"A WebVR plugin for rendering volumetric video.","tags":["Augmented Reality","Virtual Reality","Tools"]}}}}
 
 /***/ }),
 /* 461 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"path":"/retouch","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","cover":"shining.jpg","credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","title":"ReTouch","press":[],"links":[["Github","https://github.com/juniorxsound/ReTouch"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Machine Learning","Tools"],"excerpt":"Edit and retouch any image in 2.5D."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:23:00+00:02","path":"/skeletron","title":"Skeletron","links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"cover":"skeletron.jpg","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict joints and human skeleton position from real-time video.","tags":["Machine Learning","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:19:00+00:02","path":"/visualizer","title":"Visualizer","links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"cover":"visualizer.png","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","embed":"","excerpt":"A 3D web audio sound visulaizer.","tags":["Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"path":"/depthkit-js","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","cover":"depthkitjs_cover.png","credits":"","title":"DepthKit.js","press":[],"links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"embed":"","tags":["Augmented Reality","Virtual Reality","Tools"],"excerpt":"A WebVR plugin for rendering volumetric video."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:28:00+00:02","path":"/twit-ar","title":"Twit.AR","links":[["Documentation","http://itp.orfleisher.com/2017/10/21/context-with-twitter-ar/"],["Presskit","http://orfleisher.com/twitter_ar/mediakit.zip"]],"credits":"Developed with <a target=\"_blank\" href=\"http://agermanidis.com\">Anastasis Germanidis</a>","press":[["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and"],["Next Reality","https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/"],["Alphr","http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare"]],"components":[["code","Swift"],["software","Inception v3, CoreML, Twitter API & Swifter"],["3d","ARKit"]],"cover":"twit.jpg","about":"TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.\nTwitAR tries to playfully imagine what would happen if Twitter intruded our everyday reality. The experiment uses Apple’s ARKit to visualize tweets in Augmented Reality on the world itself.\nTo match the context to what the user is seeing it uses Machine Learning (Apple’s CoreML) to classify the objects you are looking at and pulls tweets from Twitter based on this classification.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict how long people have to live in augmented reality.","tags":["Augmented Reality","Machine Learning","Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:23:00+00:02","path":"/skeletron","title":"Skeletron","links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"cover":"skeletron.jpg","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict joints and human skeleton position from real-time video.","tags":["Machine Learning","Tools"]}}}}
 
 /***/ }),
 /* 462 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"path":"/visualizer","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","cover":"visualizer.png","credits":"","title":"Visualizer","press":[],"links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"embed":"","tags":["Experiment"],"excerpt":"A 3D web audio sound visulaizer."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:21:00+00:02","path":"/retouch","title":"ReTouch","links":[["Github","https://github.com/juniorxsound/ReTouch"]],"credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","press":[],"components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"cover":"shining.jpg","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Edit and retouch any image in 2.5D.","tags":["Machine Learning","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:18:00+00:02","path":"/trumpet","title":"Trumpet","links":[["Github","https://github.com/dodiku/trumpet"]],"credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","press":[],"components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"cover":"trumpet.png","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"The sound of a protest.","tags":["Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"path":"/skeletron","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","cover":"skeletron.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","title":"Skeletron","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Machine Learning","Tools"],"excerpt":"Predict joints and human skeleton position from real-time video."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:27:00+00:02","path":"/depthkit-js","title":"DepthKit.js","links":[["Github","https://github.com/juniorxsound/DepthKit.js"],["Documentation","https://juniorxsound.github.io/DepthKit.js/"],["npm package","https://www.npmjs.com/package/depthkit"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","DepthKit"],["3d","Three.js"]],"cover":"depthkitjs_cover.png","about":"DepthKit.js is a plugin for visualising DepthKit volumteric captures using Three.js in WebGL. The plugin requires Three.js and a DepthKit combined-per-pixel video export from Visualise.","embed":"","excerpt":"A WebVR plugin for rendering volumetric video.","tags":["Augmented Reality","Virtual Reality","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:21:00+00:02","path":"/retouch","title":"ReTouch","links":[["Github","https://github.com/juniorxsound/ReTouch"]],"credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","press":[],"components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"cover":"shining.jpg","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Edit and retouch any image in 2.5D.","tags":["Machine Learning","Tools"]}}}}
 
 /***/ }),
 /* 463 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"path":"/trumpet","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","cover":"trumpet.png","credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","title":"Trumpet","press":[],"links":[["Github","https://github.com/dodiku/trumpet"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiment"],"excerpt":"The sound of a protest."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:19:00+00:02","path":"/visualizer","title":"Visualizer","links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"cover":"visualizer.png","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","embed":"","excerpt":"A 3D web audio sound visulaizer.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:16:00+00:02","path":"/dms","title":"DMS","links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"credits":"","press":[],"components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"cover":"dms.png","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A different modular synth system.","tags":["Experiment"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"path":"/retouch","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","cover":"shining.jpg","credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","title":"ReTouch","press":[],"links":[["Github","https://github.com/juniorxsound/ReTouch"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Machine Learning","Tools"],"excerpt":"Edit and retouch any image in 2.5D."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:23:00+00:02","path":"/skeletron","title":"Skeletron","links":[["Presskit","https://drive.google.com/drive/folders/18uzf-grMetd9bZPNMHDNs7IZWZHNFmKY"]],"credits":"Developed with <a target=\"_blank\" href=\"https://drorayalon.com\">Dror Ayalon</a>. <br />Attribution: VNect ML Model VNect TensorFlow Port","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/01/30/programmers-use-tensorflow-ai-to-turn-any-webcam-into-microsoft-kinect/"],["Tech Radar","https://www.techradar.com/news/ai-developers-can-turn-any-webcam-into-a-kinect"],["GeekTime","https://www.geektime.co.il/developers-create-kinect-with-tensorflow-and-webcam/"],["Android Headlines","https://www.androidheadlines.com/2018/01/tensorflow-unity-turn-webcams-into-ai-powered-ar-systems.html"],["FossBytes","https://fossbytes.com/programmers-transform-a-10-webcam-into-microsoft-kinect/"]],"components":[["code","C#, HLSL Python"],["software","Unity3D"],["3d","Tensorflow"]],"cover":"skeletron.jpg","about":"Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.\nSkeletron was developed thanks and as a part of NYU ITP Xstory grant (Experiments in Storytelling).","embed":"<iframe width=\"100%\" height=\"500\" src=\"https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Predict joints and human skeleton position from real-time video.","tags":["Machine Learning","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:19:00+00:02","path":"/visualizer","title":"Visualizer","links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"cover":"visualizer.png","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","embed":"","excerpt":"A 3D web audio sound visulaizer.","tags":["Experiment"]}}}}
 
 /***/ }),
 /* 464 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"path":"/dms","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","cover":"dms.png","credits":"","title":"DMS","press":[],"links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiment"],"excerpt":"A different modular synth system."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:18:00+00:02","path":"/trumpet","title":"Trumpet","links":[["Github","https://github.com/dodiku/trumpet"]],"credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","press":[],"components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"cover":"trumpet.png","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"The sound of a protest.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/volume.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-21T12:34:00+00:02","path":"/volume","title":"Volume","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning"],["Tecmundo","https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm"]],"components":[["code","Python, Javascript, GLSL, C#, HLSL"],["software","Three.js, Unity3D, Unreal Engine, Blender"],["3d","Tensorflow, Heroku, Firebase"]],"cover":"volume_cover.jpg","about":"Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch.","embed":"","excerpt":"Reconstruct 2D images and video in 3D using machine learning.","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"]}}}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"path":"/visualizer","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","cover":"visualizer.png","credits":"","title":"Visualizer","press":[],"links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"embed":"","tags":["Experiment"],"excerpt":"A 3D web audio sound visulaizer."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:21:00+00:02","path":"/retouch","title":"ReTouch","links":[["Github","https://github.com/juniorxsound/ReTouch"]],"credits":"Developed by under the advisement of Prof. Ken Perlin and Prof. Daniele Panozzo @ Computer Science Department, New York University","press":[],"components":[["code","C++, GLSL"],["software","Volume"],["3d","OpenGL"]],"cover":"shining.jpg","about":"ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D. The depth maps are generated by Volume, a state of the art tool, that uses a CNN (Convolutional Neural Network) to predict depth-maps from 2D images . ReTouch uses these depth-maps to enable the addition of depth of field and color retouching for the foreground and background separately.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/CAsy_jm85ZY?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"Edit and retouch any image in 2.5D.","tags":["Machine Learning","Tools"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:18:00+00:02","path":"/trumpet","title":"Trumpet","links":[["Github","https://github.com/dodiku/trumpet"]],"credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","press":[],"components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"cover":"trumpet.png","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"The sound of a protest.","tags":["Experiment"]}}}}
 
 /***/ }),
 /* 465 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 21, 2018","components":[["code","Python, Javascript, GLSL, C#, HLSL"],["software","Three.js, Unity3D, Unreal Engine, Blender"],["3d","Tensorflow, Heroku, Firebase"]],"path":"/volume","about":"Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch.","cover":"volume_cover.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","title":"Volume","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning"],["Tecmundo","https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm"]],"links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"embed":"","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"],"excerpt":"Reconstruct 2D images and video in 3D using machine learning."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:16:00+00:02","path":"/dms","title":"DMS","links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"credits":"","press":[],"components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"cover":"dms.png","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A different modular synth system.","tags":["Experiment"]}},"next":null}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"path":"/trumpet","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","cover":"trumpet.png","credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","title":"Trumpet","press":[],"links":[["Github","https://github.com/dodiku/trumpet"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiment"],"excerpt":"The sound of a protest."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:19:00+00:02","path":"/visualizer","title":"Visualizer","links":[["Demo","https://juniorxsound.github.io/ICM-Fall-2016/3D_Web_Audio_Visualiser/"],["Github","https://github.com/juniorxsound/ICM-Fall-2016/tree/master/3D_Web_Audio_Visualiser"]],"credits":"","press":[],"components":[["code","Javascript, GLSL"],["software","Blender, e-on Vue, Adobe Photoshop"],["3d","Three.js"]],"cover":"visualizer.png","about":"‘Visualizer’ was born after an R&D process I did with Roey Tsemah and Ronen Tanchum. Initially our goal was to research how we could use the Web Audio API, to analyse incoming signal (music or microphone inputs), and drive geometry deformations in real-time, while keeping performance optimal so it could run on mobile browsers as well.\nAfter the R&D process was done, I went on to design the concept art for this visualizer, using 3D animation and environment design software packages and then implementing these designs in the web using Three.js. This work was made possible thanks to the amazing post “Experiments with Perlin Noise” examples by Jaume Sanchez.","embed":"","excerpt":"A 3D web audio sound visulaizer.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:16:00+00:02","path":"/dms","title":"DMS","links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"credits":"","press":[],"components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"cover":"dms.png","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A different modular synth system.","tags":["Experiment"]}}}}
 
 /***/ }),
 /* 466 */
 /***/ (function(module, exports) {
 
-	module.exports = {"data":{"allMarkdownRemark":{"totalCount":19,"edges":[{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"1948","thumbnail":"https://i.imgur.com/CWW9DwT.gif","date":"May 23, 2018","path":"/1948","tags":["Experiment"],"excerpt":"Remix Israel's decleration of independance to fit your world views"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit for AFrame","thumbnail":"https://i.imgur.com/QoxC1xD.gif","date":"May 23, 2018","path":"/aframe","tags":["Virtual Reality","Tools"],"excerpt":"An AFrame component for rendering volumetric video in WebVR"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Death Mask","thumbnail":"https://i.imgur.com/KWGMELg.gif","date":"April 23, 2018","path":"/death-mask","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit.js","thumbnail":"https://i.imgur.com/TPAgkmL.gif","date":"April 23, 2018","path":"/depthkit-js","tags":["Augmented Reality","Virtual Reality","Tools"],"excerpt":"A WebVR plugin for rendering volumetric video."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"detune","thumbnail":"https://i.imgur.com/xjgNOfW.gif","date":"May 23, 2018","path":"/detune","tags":["Experiments","Tools"],"excerpt":"detune allows users to play music using face impressions."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DMS","thumbnail":"https://i.imgur.com/BoviwhB.gif","date":"April 23, 2018","path":"/dms","tags":["Experiment"],"excerpt":"A different modular synth system."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit for Max/MSP","thumbnail":"https://i.imgur.com/q3kkj8E.gif","date":"May 23, 2018","path":"/max","tags":["Tools"],"excerpt":"Render volumetric video in Max/MSP."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/myth.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Myth","thumbnail":"https://i.imgur.com/eEoggiG.gif","date":"May 23, 2018","path":"/myth","tags":["Virtual Reality"],"excerpt":"An audio reactive virtual reality short film."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Inside Pulp Fiction","thumbnail":"https://i.imgur.com/TMOGIv6.gif","date":"April 23, 2018","path":"/pulp-fiction","tags":["Augmented Reality","Machine Learning"],"excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"ReTouch","thumbnail":"https://i.imgur.com/4POhrUh.gif","date":"April 23, 2018","path":"/retouch","tags":["Machine Learning","Tools"],"excerpt":"Edit and retouch any image in 2.5D."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Skeletron","thumbnail":"https://i.imgur.com/NgmLuAP.gif","date":"April 23, 2018","path":"/skeletron","tags":["Machine Learning","Tools"],"excerpt":"Predict joints and human skeleton position from real-time video."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Sono","thumbnail":"https://i.imgur.com/w7W6t2J.gif","date":"May 23, 2018","path":"/sono","tags":["Virtual Reality"],"excerpt":"A cosmic webVR music performance"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Sound Objects","thumbnail":"https://i.imgur.com/YePz195.gif","date":"May 23, 2018","path":"/soundobjects","tags":["Virtual Reality"],"excerpt":"Compose music in virtual reality using objects"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"ToolsTools.Tools","thumbnail":"https://i.imgur.com/ZruitjB.gif","date":"May 23, 2018","path":"/toolstoolstools","tags":["Experiment"],"excerpt":"An installation about design."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Trumpet","thumbnail":"https://i.imgur.com/ZL1pTFA.gif","date":"April 23, 2018","path":"/trumpet","tags":["Experiment"],"excerpt":"The sound of a protest."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Twit.AR","thumbnail":"https://i.imgur.com/wVHMNli.gif","date":"April 23, 2018","path":"/twit-ar","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Visualizer","thumbnail":"https://i.imgur.com/qpAr8GX.gif","date":"April 23, 2018","path":"/visualizer","tags":["Experiment"],"excerpt":"A 3D web audio sound visulaizer."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/volume.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Volume","thumbnail":"https://i.imgur.com/t8tIxk2.gif","date":"April 21, 2018","path":"/volume","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"],"excerpt":"Reconstruct 2D images and video in 3D using machine learning."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Tzina","thumbnail":"https://i.imgur.com/ejOHbO0.gif","date":"April 23, 2018","path":"/tzina","tags":["Virtual Reality"],"excerpt":"A virtual reality documentary about love and lonliness."}}}]}},"pathContext":{}}
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 23, 2018","components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"path":"/dms","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","cover":"dms.png","credits":"","title":"DMS","press":[],"links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","tags":["Experiment"],"excerpt":"A different modular synth system."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:18:00+00:02","path":"/trumpet","title":"Trumpet","links":[["Github","https://github.com/dodiku/trumpet"]],"credits":"Developed with <a target=\"_blank\" href=\"http://drorayalon.com\">Dror Ayalon</a>","press":[],"components":[["code","Javascript, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Twitter API"]],"cover":"trumpet.png","about":"‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.\nSince the Hackathon took place on January 21st, 2017, a day after Donald Trump’s inauguration, we knew we wanted to create a generative music composition based on people emotions towards the president elect, and the protests around the inauguration.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"The sound of a protest.","tags":["Experiment"]}},"next":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/volume.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-21T12:34:00+00:02","path":"/volume","title":"Volume","links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning"],["Tecmundo","https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm"]],"components":[["code","Python, Javascript, GLSL, C#, HLSL"],["software","Three.js, Unity3D, Unreal Engine, Blender"],["3d","Tensorflow, Heroku, Firebase"]],"cover":"volume_cover.jpg","about":"Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch.","embed":"","excerpt":"Reconstruct 2D images and video in 3D using machine learning.","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"]}}}}
 
 /***/ }),
 /* 467 */
+/***/ (function(module, exports) {
+
+	module.exports = {"data":{"markdownRemark":{"html":"","frontmatter":{"date":"April 21, 2018","components":[["code","Python, Javascript, GLSL, C#, HLSL"],["software","Three.js, Unity3D, Unreal Engine, Blender"],["3d","Tensorflow, Heroku, Firebase"]],"path":"/volume","about":"Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch.","cover":"volume_cover.jpg","credits":"Developed with <a target=\"_blank\" href=\"https://shirin.works\">~shirin anlen</a>","title":"Volume","press":[["The Next Web","https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/"],["Discovery Channel","https://www.youtube.com/watch?v=Zi4yof2yy04"],["prosthetic knowledge","http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning"],["Tecmundo","https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm"]],"links":[["Website","https://volume.gl"],["Github","https://github.com/Volume-GL"],["Presskit","https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud"],["Presentation","https://vimeo.com/270479574"]],"embed":"","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"],"excerpt":"Reconstruct 2D images and video in 3D using machine learning."}}},"pathContext":{"prev":{"html":"","id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"date":"2018-04-23T12:16:00+00:02","path":"/dms","title":"DMS","links":[["Documentation","http://itp.orfleisher.com/2016/12/14/dms-physical-computing-csound-final/"]],"credits":"","press":[],"components":[["code","Arduino, cSound"],["software","Node.js, cSound Node Bindings"],["3d","Ultimaker 2+, Epilog Laser Cutter"]],"cover":"dms.png","about":"‘DMS’ which stands for Different Modular Synth, is a concept design for a synth system. The concept evolved out self interest in modular synthesis and modular design and became a magnetic module based synth system, which uses body parts terminology as an inspiration for it’s naming convention.","embed":"<iframe width=\"100%\" height=\"450\" src=\"https://www.youtube.com/embed/RrmJT7v-Lfk?rel=0&amp;controls=0&amp;showinfo=0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>","excerpt":"A different modular synth system.","tags":["Experiment"]}},"next":null}}
+
+/***/ }),
+/* 468 */
+/***/ (function(module, exports) {
+
+	module.exports = {"data":{"allMarkdownRemark":{"totalCount":20,"edges":[{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/1948.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"1948","thumbnail":"https://i.imgur.com/CWW9DwT.gif","date":"May 23, 2018","path":"/1948","tags":["Experiment"],"excerpt":"Remix Israel's decleration of independance to fit your world views"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/aframe.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit for AFrame","thumbnail":"https://i.imgur.com/QoxC1xD.gif","date":"May 23, 2018","path":"/aframe","tags":["Virtual Reality","Tools"],"excerpt":"An AFrame component for rendering volumetric video in WebVR"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/deathmask.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Death Mask","thumbnail":"https://i.imgur.com/KWGMELg.gif","date":"April 23, 2018","path":"/death-mask","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/depthkitjs.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit.js","thumbnail":"https://i.imgur.com/TPAgkmL.gif","date":"April 23, 2018","path":"/depthkit-js","tags":["Augmented Reality","Virtual Reality","Tools"],"excerpt":"A WebVR plugin for rendering volumetric video."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/detune.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"detune","thumbnail":"https://i.imgur.com/xjgNOfW.gif","date":"May 23, 2018","path":"/detune","tags":["Experiments","Tools"],"excerpt":"detune allows users to play music using face impressions."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/dms.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DMS","thumbnail":"https://i.imgur.com/BoviwhB.gif","date":"April 23, 2018","path":"/dms","tags":["Experiment"],"excerpt":"A different modular synth system."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/max.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"DepthKit for Max/MSP","thumbnail":"https://i.imgur.com/q3kkj8E.gif","date":"May 23, 2018","path":"/max","tags":["Tools"],"excerpt":"Render volumetric video in Max/MSP."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/myth.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Myth","thumbnail":"https://i.imgur.com/eEoggiG.gif","date":"May 23, 2018","path":"/myth","tags":["Virtual Reality"],"excerpt":"An audio reactive virtual reality short film."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/pulpfiction.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Inside Pulp Fiction","thumbnail":"https://i.imgur.com/TMOGIv6.gif","date":"April 23, 2018","path":"/pulp-fiction","tags":["Augmented Reality","Machine Learning"],"excerpt":"Step inside Pulp Fiction's iconic dance scene using augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/retouch.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"ReTouch","thumbnail":"https://i.imgur.com/4POhrUh.gif","date":"April 23, 2018","path":"/retouch","tags":["Machine Learning","Tools"],"excerpt":"Edit and retouch any image in 2.5D."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/sono.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Sono","thumbnail":"https://i.imgur.com/w7W6t2J.gif","date":"May 23, 2018","path":"/sono","tags":["Virtual Reality"],"excerpt":"A cosmic webVR music performance"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/skeletron.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Skeletron","thumbnail":"https://i.imgur.com/NgmLuAP.gif","date":"April 23, 2018","path":"/skeletron","tags":["Machine Learning","Tools"],"excerpt":"Predict joints and human skeleton position from real-time video."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/soundobjects.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Sound Objects","thumbnail":"https://i.imgur.com/YePz195.gif","date":"May 23, 2018","path":"/soundobjects","tags":["Virtual Reality"],"excerpt":"Compose music in virtual reality using objects"}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/toolstoolstools.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"ToolsTools.Tools","thumbnail":"https://i.imgur.com/ZruitjB.gif","date":"May 23, 2018","path":"/toolstoolstools","tags":["Experiment"],"excerpt":"An installation about design."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/trumpet.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Trumpet","thumbnail":"https://i.imgur.com/ZL1pTFA.gif","date":"April 23, 2018","path":"/trumpet","tags":["Experiment"],"excerpt":"The sound of a protest."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/twit.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Twit.AR","thumbnail":"https://i.imgur.com/wVHMNli.gif","date":"April 23, 2018","path":"/twit-ar","tags":["Augmented Reality","Machine Learning","Experiment"],"excerpt":"Predict how long people have to live in augmented reality."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/tzina.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Tzina","thumbnail":"https://i.imgur.com/ejOHbO0.gif","date":"April 23, 2018","path":"/tzina","tags":["Virtual Reality"],"excerpt":"A virtual reality documentary about love and lonliness."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/visualiser.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Visualizer","thumbnail":"https://i.imgur.com/qpAr8GX.gif","date":"April 23, 2018","path":"/visualizer","tags":["Experiment"],"excerpt":"A 3D web audio sound visulaizer."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/projects/volume.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Volume","thumbnail":"https://i.imgur.com/t8tIxk2.gif","date":"April 21, 2018","path":"/volume","tags":["Augmented Reality","Machine Learning","Virtual Reality","Tools"],"excerpt":"Reconstruct 2D images and video in 3D using machine learning."}}},{"node":{"id":"/home/travis/build/juniorxsound/portfolio/src/pages/bio.md absPath of file >>> MarkdownRemark","frontmatter":{"title":"Bio","thumbnail":null,"date":"May 23, 2018","path":"/bio","tags":null,"excerpt":""}}}]}},"pathContext":{}}
+
+/***/ }),
+/* 469 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -52996,7 +53131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//# sourceMappingURL=test-require-error.js.map
 
 /***/ }),
-/* 468 */
+/* 470 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -53016,7 +53151,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var stylesStr = void 0;
 	if (true) {
 	  try {
-	    stylesStr = __webpack_require__(469);
+	    stylesStr = __webpack_require__(471);
 	  } catch (e) {
 	    console.log(e);
 	  }
@@ -53072,22 +53207,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	}(_react2.default.Component);
 
 /***/ }),
-/* 469 */
+/* 471 */
 /***/ (function(module, exports) {
 
 	module.exports = ".container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex:0 1 auto;flex:0 1 auto;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12{box-sizing:border-box;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-xs{-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-ms-flex-align:start;align-items:flex-start}.middle-xs{-ms-flex-align:center;align-items:center}.bottom-xs{-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-ms-flex-pack:justify;justify-content:space-between}.first-xs{-ms-flex-order:-1;order:-1}.last-xs{-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12{box-sizing:border-box;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-sm{-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-ms-flex-align:start;align-items:flex-start}.middle-sm{-ms-flex-align:center;align-items:center}.bottom-sm{-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-ms-flex-pack:justify;justify-content:space-between}.first-sm{-ms-flex-order:-1;order:-1}.last-sm{-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-10,.col-md-11,.col-md-12,.col-md-offset-0,.col-md-offset-1,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12{box-sizing:border-box;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-md{-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-ms-flex-align:start;align-items:flex-start}.middle-md{-ms-flex-align:center;align-items:center}.bottom-md{-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-ms-flex-pack:justify;justify-content:space-between}.first-md{-ms-flex-order:-1;order:-1}.last-md{-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12{box-sizing:border-box;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-lg{-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-ms-flex-align:start;align-items:flex-start}.middle-lg{-ms-flex-align:center;align-items:center}.bottom-lg{-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-ms-flex-pack:justify;justify-content:space-between}.first-lg{-ms-flex-order:-1;order:-1}.last-lg{-ms-flex-order:1;order:1}}*,:after,:before{box-sizing:inherit}html{box-sizing:border-box;font-size:62.5%}body{margin:0;font-size:1.6em;font-weight:300;letter-spacing:.01em;line-height:1.6;font-family:Open Sans,sans-serif}h1,h2,h3,h4,h5,h6{font-weight:300;letter-spacing:-.1rem;margin-bottom:2rem;margin-top:0}h1{font-size:4.6rem;line-height:1.2}h2{font-size:3.6rem;line-height:1.25}h3{font-size:2.8rem;line-height:1.3}h4{font-size:2.2rem;letter-spacing:-.08rem;line-height:1.35}h5{font-size:1.8rem;letter-spacing:-.05rem;line-height:1.5}h6{font-size:1.6rem;letter-spacing:0;line-height:1.4}.bold{font-weight:600}.btn{border:1px solid #000;color:#000;padding:5px;border-radius:3px;font-weight:800;text-align:center;-webkit-margin-after:7%;margin-block-end:7%}.btn:hover{color:#fff;background:#000}.img_banner{width:100%}.gray_text{color:#bdbdbd}.component{font-size:1.2rem}.main{margin:0 auto}.main h3{font-size:3.4rem;line-height:1.6}@media (max-width:480px){.main h3{font-size:2.8rem}}@media (min-width:980px) and (max-width:1279px){.main h3{font-size:3rem}}.main h5{font-size:1.6rem;line-height:0}@media (max-width:480px){.main h5{font-size:1.8rem}}@media (min-width:980px) and (max-width:1279px){.main h5{font-size:2.1rem}}@media (min-width:1280px){.main{width:100%;margin-right:35%;padding:50px 8%}}@media (min-width:980px) and (max-width:1279px){.main{width:100%;margin-right:30%;padding:50px 8%}}@media (min-width:481px) and (max-width:979px){.main{width:100%;margin-right:0;padding:50px 48px 0}}@media (max-width:480px){.main{width:100%;margin-right:0;padding:50px 24px 0}}.aside{-ms-flex-item-align:stretch;-ms-grid-row-align:stretch;align-self:stretch;margin:0 auto;background-color:#000;color:#fff}@media (min-width:980px){.aside{position:fixed;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:justify;justify-content:space-between;right:0;top:0;height:100%}.aside .top{-ms-flex-positive:1;flex-grow:1}.aside .bottom{width:100%}}@media (max-width:979px){.aside{position:relative;text-align:center;right:auto;top:auto;display:block;padding:50px 64px}.aside .bottom{padding:50px 64px 0}}@media (min-width:1280px){.aside{width:35%;padding:50px 64px}}@media (min-width:980px) and (max-width:1279px){.aside{width:30%;padding:50px 48px}}@media (min-width:481px) and (max-width:979px){.aside{width:100%;padding:50px 48px}}@media (max-width:480px){.aside{width:100%;padding:50px 24px}}.experience-unit{padding-bottom:15px}.experience-unit img{background-size:contain;background-repeat:no-repeat;background-position:50%;border-radius:5px;overflow:hidden;transition:all .6s ease;-webkit-transition:all .6s ease}.experience-unit img:hover{-ms-transform:translateY(-5px);transform:translateY(-5px);box-shadow:0 5px 18px 0 rgba(0,0,0,.3)}.experience-unit .title{padding:8px 0;font-size:1.8rem}.experience-unit .time-period{font-size:1.2rem;line-height:1.5rem;padding-bottom:12px}.experience-unit .subtitle{color:#a5a5a5;font-size:1.4rem}.experience-unit img{width:100%}@media (max-width:980px) and (min-width:481px){.experience-unit{padding-bottom:20px}}@media (max-width:480px){.experience-unit{padding-bottom:20px}}.section{padding-top:20px;padding-bottom:20px}.section h6{font-size:2rem;padding-bottom:5px;margin-bottom:10px}"
 
 /***/ }),
-/* 470 */
+/* 472 */
 /***/ (function(module, exports) {
 
-	module.exports = {"assetsByChunkName":{"path---1948":["path---1948-f046d5f0e2c8b7391328.js","path---1948-f046d5f0e2c8b7391328.js.map"],"path---pulp-fiction":["path---pulp-fiction-92d2e189ad4a91a59dbb.js","path---pulp-fiction-92d2e189ad4a91a59dbb.js.map"],"path---max":["path---max-d9506747f7b4606322a3.js","path---max-d9506747f7b4606322a3.js.map"],"component---src-pages-index-js":["component---src-pages-index-js-a71eb0e166b9b9abf09a.js","component---src-pages-index-js-a71eb0e166b9b9abf09a.js.map"],"component---src-templates-project-page-js":["component---src-templates-project-page-js-e2ee4b397ec2099111cd.js","component---src-templates-project-page-js-e2ee4b397ec2099111cd.js.map"],"component---src-templates-tags-js":["component---src-templates-tags-js-16b627a10d49eff517c4.js","component---src-templates-tags-js-16b627a10d49eff517c4.js.map"],"path---tags":["path---tags-db2aac79aa5079ab2636.js","path---tags-db2aac79aa5079ab2636.js.map"],"path---":["path----0bf8702a61c907690614.js","path----0bf8702a61c907690614.js.map"],"path---volume":["path---volume-a7c0311dfc5a0ed35424.js","path---volume-a7c0311dfc5a0ed35424.js.map"],"path---toolstoolstools":["path---toolstoolstools-6d8f644ed23851cafeeb.js","path---toolstoolstools-6d8f644ed23851cafeeb.js.map"],"path---detune":["path---detune-f7e802d7f4d8c7de2dc9.js","path---detune-f7e802d7f4d8c7de2dc9.js.map"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js","component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"],"path---skeletron":["path---skeletron-d268a42f11895d6f7786.js","path---skeletron-d268a42f11895d6f7786.js.map"],"path---visualizer":["path---visualizer-efef43aba5bb0691225d.js","path---visualizer-efef43aba5bb0691225d.js.map"],"component---src-layouts-index-js":["component---src-layouts-index-js-9d0952e496f0d74db468.js","component---src-layouts-index-js-9d0952e496f0d74db468.js.map"],"path---death-mask":["path---death-mask-248471add244035757a4.js","path---death-mask-248471add244035757a4.js.map"],"path---depthkit-js":["path---depthkit-js-4f2ef2958d45781add5b.js","path---depthkit-js-4f2ef2958d45781add5b.js.map"],"path---tags-virtual-reality":["path---tags-virtual-reality-38226996b47720babc4e.js","path---tags-virtual-reality-38226996b47720babc4e.js.map"],"path---index":["path---index-3aa7108ef42722e2d824.js","path---index-3aa7108ef42722e2d824.js.map"],"path---soundobjects":["path---soundobjects-c295cb5334a4576da55b.js","path---soundobjects-c295cb5334a4576da55b.js.map"],"commons":["commons-f6cd197d86770e878110.js","commons-f6cd197d86770e878110.js.map"],"path---sono":["path---sono-cd2e111728d0d15a04a2.js","path---sono-cd2e111728d0d15a04a2.js.map"],"path---tags-tools":["path---tags-tools-f6753d468f7d52d74d26.js","path---tags-tools-f6753d468f7d52d74d26.js.map"],"path---tags-augmented-reality":["path---tags-augmented-reality-e8495afb3bd49d0b1487.js","path---tags-augmented-reality-e8495afb3bd49d0b1487.js.map"],"path---tags-experiments":["path---tags-experiments-c0ecd1a2fa74d5ea2083.js","path---tags-experiments-c0ecd1a2fa74d5ea2083.js.map"],"component---src-templates-all-tags-js":["component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js","component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js.map"],"path---aframe":["path---aframe-dc3dad4f1d6a9cbed3a1.js","path---aframe-dc3dad4f1d6a9cbed3a1.js.map"],"path---dms":["path---dms-28e94971a633264cfa09.js","path---dms-28e94971a633264cfa09.js.map"],"path---tags-experiment":["path---tags-experiment-be9480454d5b81c1f94d.js","path---tags-experiment-be9480454d5b81c1f94d.js.map"],"path---offline-plugin-app-shell-fallback":["path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js","path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"],"path---twit-ar":["path---twit-ar-46d5b1c36b903e91849d.js","path---twit-ar-46d5b1c36b903e91849d.js.map"],"app":["app-1228aef64ccb730be37e.js","app-1228aef64ccb730be37e.js.map"],"path---tags-machine-learning":["path---tags-machine-learning-fd66fb59ec72c3001ce5.js","path---tags-machine-learning-fd66fb59ec72c3001ce5.js.map"],"path---tzina":["path---tzina-18fd7725855ac7f1d436.js","path---tzina-18fd7725855ac7f1d436.js.map"],"path---retouch":["path---retouch-2c269f011276f0a22fb9.js","path---retouch-2c269f011276f0a22fb9.js.map"],"path---myth":["path---myth-ddd9960d5648c4bbc3a5.js","path---myth-ddd9960d5648c4bbc3a5.js.map"],"path---trumpet":["path---trumpet-ce91b3e10e93d4088935.js","path---trumpet-ce91b3e10e93d4088935.js.map"]}}
+	module.exports = {"assetsByChunkName":{"path---1948":["path---1948-b2b857570c7de36064cc.js","path---1948-b2b857570c7de36064cc.js.map"],"path---pulp-fiction":["path---pulp-fiction-92d2e189ad4a91a59dbb.js","path---pulp-fiction-92d2e189ad4a91a59dbb.js.map"],"path---max":["path---max-d9506747f7b4606322a3.js","path---max-d9506747f7b4606322a3.js.map"],"component---src-pages-index-js":["component---src-pages-index-js-03103f98f58e245961fc.js","component---src-pages-index-js-03103f98f58e245961fc.js.map"],"component---src-templates-project-page-js":["component---src-templates-project-page-js-70e1585d0a6e6b39fda2.js","component---src-templates-project-page-js-70e1585d0a6e6b39fda2.js.map"],"component---src-templates-tags-js":["component---src-templates-tags-js-16b627a10d49eff517c4.js","component---src-templates-tags-js-16b627a10d49eff517c4.js.map"],"path---tags":["path---tags-db2aac79aa5079ab2636.js","path---tags-db2aac79aa5079ab2636.js.map"],"path---":["path----0bf8702a61c907690614.js","path----0bf8702a61c907690614.js.map"],"path---volume":["path---volume-a7c0311dfc5a0ed35424.js","path---volume-a7c0311dfc5a0ed35424.js.map"],"path---toolstoolstools":["path---toolstoolstools-6d8f644ed23851cafeeb.js","path---toolstoolstools-6d8f644ed23851cafeeb.js.map"],"path---detune":["path---detune-f7e802d7f4d8c7de2dc9.js","path---detune-f7e802d7f4d8c7de2dc9.js.map"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js","component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"],"path---skeletron":["path---skeletron-d268a42f11895d6f7786.js","path---skeletron-d268a42f11895d6f7786.js.map"],"path---visualizer":["path---visualizer-efef43aba5bb0691225d.js","path---visualizer-efef43aba5bb0691225d.js.map"],"component---src-layouts-index-js":["component---src-layouts-index-js-9d0952e496f0d74db468.js","component---src-layouts-index-js-9d0952e496f0d74db468.js.map"],"path---death-mask":["path---death-mask-248471add244035757a4.js","path---death-mask-248471add244035757a4.js.map"],"path---depthkit-js":["path---depthkit-js-4f2ef2958d45781add5b.js","path---depthkit-js-4f2ef2958d45781add5b.js.map"],"path---tags-virtual-reality":["path---tags-virtual-reality-38226996b47720babc4e.js","path---tags-virtual-reality-38226996b47720babc4e.js.map"],"path---index":["path---index-74358c82fe13e252ad07.js","path---index-74358c82fe13e252ad07.js.map"],"path---soundobjects":["path---soundobjects-bcc6d82ae017f94dd250.js","path---soundobjects-bcc6d82ae017f94dd250.js.map"],"commons":["commons-f6cd197d86770e878110.js","commons-f6cd197d86770e878110.js.map"],"path---sono":["path---sono-cd2e111728d0d15a04a2.js","path---sono-cd2e111728d0d15a04a2.js.map"],"path---tags-tools":["path---tags-tools-f6753d468f7d52d74d26.js","path---tags-tools-f6753d468f7d52d74d26.js.map"],"path---tags-augmented-reality":["path---tags-augmented-reality-e8495afb3bd49d0b1487.js","path---tags-augmented-reality-e8495afb3bd49d0b1487.js.map"],"path---tags-experiments":["path---tags-experiments-c0ecd1a2fa74d5ea2083.js","path---tags-experiments-c0ecd1a2fa74d5ea2083.js.map"],"component---src-templates-all-tags-js":["component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js","component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js.map"],"path---aframe":["path---aframe-dc3dad4f1d6a9cbed3a1.js","path---aframe-dc3dad4f1d6a9cbed3a1.js.map"],"path---dms":["path---dms-28e94971a633264cfa09.js","path---dms-28e94971a633264cfa09.js.map"],"path---tags-experiment":["path---tags-experiment-be9480454d5b81c1f94d.js","path---tags-experiment-be9480454d5b81c1f94d.js.map"],"path---bio":["path---bio-61a24e861a13e9f13b3f.js","path---bio-61a24e861a13e9f13b3f.js.map"],"path---offline-plugin-app-shell-fallback":["path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js","path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"],"path---twit-ar":["path---twit-ar-46d5b1c36b903e91849d.js","path---twit-ar-46d5b1c36b903e91849d.js.map"],"app":["app-4f7a50711bee9c0d95e7.js","app-4f7a50711bee9c0d95e7.js.map"],"path---tags-machine-learning":["path---tags-machine-learning-fd66fb59ec72c3001ce5.js","path---tags-machine-learning-fd66fb59ec72c3001ce5.js.map"],"path---tzina":["path---tzina-18fd7725855ac7f1d436.js","path---tzina-18fd7725855ac7f1d436.js.map"],"path---retouch":["path---retouch-2c269f011276f0a22fb9.js","path---retouch-2c269f011276f0a22fb9.js.map"],"path---myth":["path---myth-ddd9960d5648c4bbc3a5.js","path---myth-ddd9960d5648c4bbc3a5.js.map"],"path---trumpet":["path---trumpet-ce91b3e10e93d4088935.js","path---trumpet-ce91b3e10e93d4088935.js.map"]}}
 
 /***/ }),
-/* 471 */
+/* 473 */
 /***/ (function(module, exports) {
 
-	module.exports = "{\"231608221292675\":\"app-1228aef64ccb730be37e.js\",\"99219681209289\":\"component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js\",\"205117723866763\":\"component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js\",\"50739212244294\":\"component---src-templates-tags-js-16b627a10d49eff517c4.js\",\"47684285815873\":\"component---src-templates-project-page-js-e2ee4b397ec2099111cd.js\",\"35783957827783\":\"component---src-pages-index-js-a71eb0e166b9b9abf09a.js\",\"60335399758886\":\"path----0bf8702a61c907690614.js\",\"210333531512890\":\"path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js\",\"55702396619907\":\"path---tags-db2aac79aa5079ab2636.js\",\"180636046567252\":\"path---tags-augmented-reality-e8495afb3bd49d0b1487.js\",\"208891142068360\":\"path---tags-experiment-be9480454d5b81c1f94d.js\",\"199860453661355\":\"path---tags-experiments-c0ecd1a2fa74d5ea2083.js\",\"247668456180181\":\"path---tags-machine-learning-fd66fb59ec72c3001ce5.js\",\"179677696783923\":\"path---tags-tools-f6753d468f7d52d74d26.js\",\"130826809424236\":\"path---tags-virtual-reality-38226996b47720babc4e.js\",\"263125549072782\":\"path---myth-ddd9960d5648c4bbc3a5.js\",\"171269200786172\":\"path---sono-cd2e111728d0d15a04a2.js\",\"68671615135808\":\"path---toolstoolstools-6d8f644ed23851cafeeb.js\",\"79842715695271\":\"path---detune-f7e802d7f4d8c7de2dc9.js\",\"17180966150295\":\"path---1948-f046d5f0e2c8b7391328.js\",\"151947219855922\":\"path---soundobjects-c295cb5334a4576da55b.js\",\"208107781704002\":\"path---aframe-dc3dad4f1d6a9cbed3a1.js\",\"34091058181601\":\"path---max-d9506747f7b4606322a3.js\",\"254679725877355\":\"path---tzina-18fd7725855ac7f1d436.js\",\"26983603911290\":\"path---pulp-fiction-92d2e189ad4a91a59dbb.js\",\"119043582109335\":\"path---death-mask-248471add244035757a4.js\",\"213556452041822\":\"path---twit-ar-46d5b1c36b903e91849d.js\",\"121080360342820\":\"path---depthkit-js-4f2ef2958d45781add5b.js\",\"101821273434762\":\"path---skeletron-d268a42f11895d6f7786.js\",\"262858279625854\":\"path---retouch-2c269f011276f0a22fb9.js\",\"109302176427146\":\"path---visualizer-efef43aba5bb0691225d.js\",\"264263139496610\":\"path---trumpet-ce91b3e10e93d4088935.js\",\"208357431000568\":\"path---dms-28e94971a633264cfa09.js\",\"61474902211473\":\"path---volume-a7c0311dfc5a0ed35424.js\",\"142629428675168\":\"path---index-3aa7108ef42722e2d824.js\",\"114276838955818\":\"component---src-layouts-index-js-9d0952e496f0d74db468.js\"}"
+	module.exports = "{\"231608221292675\":\"app-4f7a50711bee9c0d95e7.js\",\"99219681209289\":\"component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js\",\"205117723866763\":\"component---src-templates-all-tags-js-bd4d15a92fdbe44c18fa.js\",\"50739212244294\":\"component---src-templates-tags-js-16b627a10d49eff517c4.js\",\"47684285815873\":\"component---src-templates-project-page-js-70e1585d0a6e6b39fda2.js\",\"35783957827783\":\"component---src-pages-index-js-03103f98f58e245961fc.js\",\"60335399758886\":\"path----0bf8702a61c907690614.js\",\"210333531512890\":\"path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js\",\"55702396619907\":\"path---tags-db2aac79aa5079ab2636.js\",\"180636046567252\":\"path---tags-augmented-reality-e8495afb3bd49d0b1487.js\",\"208891142068360\":\"path---tags-experiment-be9480454d5b81c1f94d.js\",\"199860453661355\":\"path---tags-experiments-c0ecd1a2fa74d5ea2083.js\",\"247668456180181\":\"path---tags-machine-learning-fd66fb59ec72c3001ce5.js\",\"179677696783923\":\"path---tags-tools-f6753d468f7d52d74d26.js\",\"130826809424236\":\"path---tags-virtual-reality-38226996b47720babc4e.js\",\"263125549072782\":\"path---myth-ddd9960d5648c4bbc3a5.js\",\"171269200786172\":\"path---sono-cd2e111728d0d15a04a2.js\",\"68671615135808\":\"path---toolstoolstools-6d8f644ed23851cafeeb.js\",\"79842715695271\":\"path---detune-f7e802d7f4d8c7de2dc9.js\",\"17180966150295\":\"path---1948-b2b857570c7de36064cc.js\",\"208976441253500\":\"path---bio-61a24e861a13e9f13b3f.js\",\"151947219855922\":\"path---soundobjects-bcc6d82ae017f94dd250.js\",\"208107781704002\":\"path---aframe-dc3dad4f1d6a9cbed3a1.js\",\"34091058181601\":\"path---max-d9506747f7b4606322a3.js\",\"254679725877355\":\"path---tzina-18fd7725855ac7f1d436.js\",\"26983603911290\":\"path---pulp-fiction-92d2e189ad4a91a59dbb.js\",\"119043582109335\":\"path---death-mask-248471add244035757a4.js\",\"213556452041822\":\"path---twit-ar-46d5b1c36b903e91849d.js\",\"121080360342820\":\"path---depthkit-js-4f2ef2958d45781add5b.js\",\"101821273434762\":\"path---skeletron-d268a42f11895d6f7786.js\",\"262858279625854\":\"path---retouch-2c269f011276f0a22fb9.js\",\"109302176427146\":\"path---visualizer-efef43aba5bb0691225d.js\",\"264263139496610\":\"path---trumpet-ce91b3e10e93d4088935.js\",\"208357431000568\":\"path---dms-28e94971a633264cfa09.js\",\"61474902211473\":\"path---volume-a7c0311dfc5a0ed35424.js\",\"142629428675168\":\"path---index-74358c82fe13e252ad07.js\",\"114276838955818\":\"component---src-layouts-index-js-9d0952e496f0d74db468.js\"}"
 
 /***/ })
 /******/ ])

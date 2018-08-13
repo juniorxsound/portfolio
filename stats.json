@@ -1,8 +1,8 @@
 {
   "assetsByChunkName": {
     "path---1948": [
-      "path---1948-f046d5f0e2c8b7391328.js",
-      "path---1948-f046d5f0e2c8b7391328.js.map"
+      "path---1948-b2b857570c7de36064cc.js",
+      "path---1948-b2b857570c7de36064cc.js.map"
     ],
     "path---pulp-fiction": [
       "path---pulp-fiction-92d2e189ad4a91a59dbb.js",
@@ -13,12 +13,12 @@
       "path---max-d9506747f7b4606322a3.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-a71eb0e166b9b9abf09a.js",
-      "component---src-pages-index-js-a71eb0e166b9b9abf09a.js.map"
+      "component---src-pages-index-js-03103f98f58e245961fc.js",
+      "component---src-pages-index-js-03103f98f58e245961fc.js.map"
     ],
     "component---src-templates-project-page-js": [
-      "component---src-templates-project-page-js-e2ee4b397ec2099111cd.js",
-      "component---src-templates-project-page-js-e2ee4b397ec2099111cd.js.map"
+      "component---src-templates-project-page-js-70e1585d0a6e6b39fda2.js",
+      "component---src-templates-project-page-js-70e1585d0a6e6b39fda2.js.map"
     ],
     "component---src-templates-tags-js": [
       "component---src-templates-tags-js-16b627a10d49eff517c4.js",
@@ -73,12 +73,12 @@
       "path---tags-virtual-reality-38226996b47720babc4e.js.map"
     ],
     "path---index": [
-      "path---index-3aa7108ef42722e2d824.js",
-      "path---index-3aa7108ef42722e2d824.js.map"
+      "path---index-74358c82fe13e252ad07.js",
+      "path---index-74358c82fe13e252ad07.js.map"
     ],
     "path---soundobjects": [
-      "path---soundobjects-c295cb5334a4576da55b.js",
-      "path---soundobjects-c295cb5334a4576da55b.js.map"
+      "path---soundobjects-bcc6d82ae017f94dd250.js",
+      "path---soundobjects-bcc6d82ae017f94dd250.js.map"
     ],
     "commons": [
       "commons-f6cd197d86770e878110.js",
@@ -116,6 +116,10 @@
       "path---tags-experiment-be9480454d5b81c1f94d.js",
       "path---tags-experiment-be9480454d5b81c1f94d.js.map"
     ],
+    "path---bio": [
+      "path---bio-61a24e861a13e9f13b3f.js",
+      "path---bio-61a24e861a13e9f13b3f.js.map"
+    ],
     "path---offline-plugin-app-shell-fallback": [
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
@@ -125,8 +129,8 @@
       "path---twit-ar-46d5b1c36b903e91849d.js.map"
     ],
     "app": [
-      "app-1228aef64ccb730be37e.js",
-      "app-1228aef64ccb730be37e.js.map"
+      "app-4f7a50711bee9c0d95e7.js",
+      "app-4f7a50711bee9c0d95e7.js.map"
     ],
     "path---tags-machine-learning": [
       "path---tags-machine-learning-fd66fb59ec72c3001ce5.js",
