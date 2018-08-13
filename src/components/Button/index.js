@@ -8,11 +8,24 @@ class Button extends Component {
     const concatanatedClassName = `col-xs-${this.props.mobileWidth} col-sm-${this.props.smallWidth} col-md-${this.props.mediumWidth}`
     return (
       <div className={concatanatedClassName}>
+
+        {/* External button - i.e goes to new tab */}
+        {(() => { if(!this.props.link)return <div>
         <a href={this.props.link} style={{ textDecoration: 'none' }} target="_blank">
           <div className="btn">
               {this.props.text}
           </div>
         </a>
+        </div>})()}
+
+        {/* Internal button - i.e goes to React-Router */}
+        {(() => { if(this.props.link)return <div>
+        <Link to={this.props.link} style={{ textDecoration: 'none' }}>
+          <div className="btn">
+              {this.props.text}
+          </div>
+        </Link>
+        </div>})()}
       </div>
     )
   }

@@ -18,8 +18,12 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-remark',
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -27,6 +31,7 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
   siteMetadata: {
     title: 'Or Fleisher',

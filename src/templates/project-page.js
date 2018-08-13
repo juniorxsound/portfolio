@@ -37,12 +37,17 @@ const Template = ({data, location, pathContext}) => {
           <div dangerouslySetInnerHTML={{__html: post.frontmatter.embed}} />
           <div dangerouslySetInnerHTML={{__html: html}} />
           <div className="row">
+              
+                <div className="col-xs-12 col-sm-4 col-md-4">
+                  <br />
+                  {(() => { if(post.frontmatter.about && post.frontmatter.about.length > 0)return<h4 className="bold">About</h4>})()}
+                  <p>{post.frontmatter.about}</p>
+                </div>
+
+              
               <div className="col-xs-12 col-sm-4 col-md-4">
-                <br /><h4 className="bold">About</h4>
-                <p>{post.frontmatter.about}</p>
-              </div>
-              <div className="col-xs-12 col-sm-4 col-md-4">
-              <br /><h4 className="bold">Components</h4>
+              <br />
+              {(() => { if(post.frontmatter.components.length > 0)return<h4 className="bold">Components</h4>})()}
                 <ul>
                   {post.frontmatter.components.map(node=>{
                       switch (node[0]) {
@@ -61,19 +66,22 @@ const Template = ({data, location, pathContext}) => {
                           break;
                       } 
                   })}
-                
                 </ul>
               </div>
+              
 
               {/* Links */}
+              
               <div className="col-xs-12 col-sm-4 col-md-4">
-              <br /><h4 className="bold">Links</h4>
+              <br />
+              {(() => { if(post.frontmatter.links && post.frontmatter.links.length > 0)return<h4 className="bold">Links</h4>})()}
                 <div className="row">
                   {post.frontmatter.links.map(node=>{
                     return <Button key={node.toString()} text={node[0]} link={node[1]} mobileWidth={'12'} smallWidth={'6'} mediumWidth={'6'}/>
                   })}
                 </div>
               </div>
+              
 
               {/* Press */}
               <div className="col-xs-12 col-sm-8 col-md-8">
