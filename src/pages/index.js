@@ -22,13 +22,21 @@ const IndexPage = props => {
           Director, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
         </h3>
 
-        <Button text='Resume' link='https://volume.gl' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
-
+        <div className="row">
+          <Button text='Biography'link='/bio' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
+          <Button text='Contact' link='' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
+        </div>
+        
         {/* Projects */}
         <Section title="Projects">
         <div className="row">
           {posts.map(({ node: post }) => {
+
               const { frontmatter } = post
+
+              //Bio page doesn't get a grid cube
+              if(post.frontmatter.title == 'Bio') return;
+
               let tags = ''
               for (let tag in frontmatter.tags){
                 if(tag != frontmatter.tags.length - 1){
@@ -49,6 +57,35 @@ const IndexPage = props => {
               />
               )
             })}
+          </div>
+          </Section>
+
+          <Section title="Experience">
+          <div className="row">
+          <GridUnit
+                alt_text="Phenomena Labs"
+                logo={require("../assets/images/gifs/volume.gif")}
+                colour="#BDBDBD"
+                title="Phenomena Labs"
+                subtag="2011 - 2016"
+                subtitle="Co-Founder"
+          />
+          <GridUnit
+                alt_text="Viacom"
+                logo={require("../assets/images/gifs/volume.gif")}
+                colour="#BDBDBD"
+                title="Viacom"
+                subtag="2017 - 2018"
+                subtitle="VR Research Fellow"
+          />
+          <GridUnit
+                alt_text="Vimeo"
+                logo={require("../assets/images/gifs/volume.gif")}
+                colour="#BDBDBD"
+                title="Vimeo"
+                subtag="2018 - current"
+                subtitle="Principle Creative Technologist"
+          />          
           </div>
           </Section>
       </div>

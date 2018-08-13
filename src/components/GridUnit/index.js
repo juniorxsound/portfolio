@@ -11,7 +11,9 @@ class GridUnit extends Component {
           <img alt={this.props.alt_text} src={this.props.logo} />
         </Link>
         <div className="title bold">
+        <Link to={this.props.link} style={{ textDecoration: 'none', color: '#000' }}>
           {this.props.title}
+        </Link>
         </div>
         <div className="time-period">
           {this.props.subtag}
