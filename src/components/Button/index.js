@@ -4,13 +4,20 @@ import Link from "gatsby-link";
 import './style.scss'
 
 class Button extends Component {
+  constructor(props) {
+    super(props);
+    this.showAlert = this.showAlert.bind(this);
+  }
+  showAlert(e){
+    console.log(e);
+  }
   render() {
     const concatanatedClassName = `col-xs-${this.props.mobileWidth} col-sm-${this.props.smallWidth} col-md-${this.props.mediumWidth}`
     return (
       <div className={concatanatedClassName}>
 
         {/* External button - i.e goes to new tab */}
-        {(() => { if(!this.props.link)return <div>
+        {(() => { if(this.props.href)return <div>
         <a href={this.props.link} style={{ textDecoration: 'none' }} target="_blank">
           <div className="btn">
               {this.props.text}
@@ -26,6 +33,12 @@ class Button extends Component {
           </div>
         </Link>
         </div>})()}
+          
+        {/* Scroll button */}
+        {(() => { if(!this.props.link && !this.props.href)return <div onClick={this.showAlert} className="btn">
+          {this.props.text}
+        </div>})()}
+
       </div>
     )
   }

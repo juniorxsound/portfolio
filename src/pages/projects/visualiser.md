@@ -1,6 +1,6 @@
 ---
 path: "/visualizer"
-date: "2018-04-23T12:19:00+00:02"
+date: "2018-06-11T12:19:00+00:02"
 title: "Visualizer"
 tags: ["Experiment"]
 thumbnail: "https://i.imgur.com/qpAr8GX.gif"

@@ -1,6 +1,6 @@
 ---
 path: "/death-mask"
-date: "2018-04-23T12:30:00+00:02"
+date: "2018-06-16T12:30:00+00:02"
 title: "Death Mask"
 tags: ["Augmented Reality", "Machine Learning", "Experiment"]
 thumbnail: "https://i.imgur.com/KWGMELg.gif"

@@ -22,7 +22,8 @@
     "gatsby-cli": "^1.1.58",
     "gatsby-plugin-offline": "^1.0.18",
     "gatsby-remark-autolink-headers": "^1.4.19",
-    "global": "^4.3.2"
+    "global": "^4.3.2",
+    "react-scrollable-anchor": "^0.6.1"
   },
   "devDependencies": {
     "gatsby-link": "^1.6.39",

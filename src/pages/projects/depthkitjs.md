@@ -1,6 +1,6 @@
 ---
 path: "/depthkit-js"
-date: "2018-04-23T12:27:00+00:02"
+date: "2018-06-20T12:27:00+00:02"
 title: "DepthKit.js"
 tags: ["Augmented Reality", "Virtual Reality", "Tools"]
 thumbnail: "https://i.imgur.com/TPAgkmL.gif"

@@ -2,8 +2,10 @@ import React from 'react'
 import GridUnit from '../components/GridUnit'
 import Section from '../components/Section'
 import Button from '../components/Button'
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 import './style.scss'
+import '../components/Button/style.scss'
 
 const IndexPage = props => {
 
@@ -14,17 +16,25 @@ const IndexPage = props => {
       <div className="main">
 
         {/* Header */}
-        <h5>
-          Hi, I'm <span className="bold">Or Fleisher</span>
-        </h5>
+        <div className="row">
+          <div className="col-xs-12 col-sm-8 col-md-9">
+            <h5>
+              Hi, I'm <span className="bold">Or Fleisher</span>
+            </h5>
 
-        <h3 className="bold">
-          Director, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
-        </h3>
+            <h3 className="bold">
+              Director, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
+            </h3>
+          </div>
+        </div>
 
         <div className="row">
-          <Button text='Biography'link='/bio' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
-          <Button text='Contact' link='' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
+          <Button text='Biography' link='/bio' mobileWidth={'6'} smallWidth={'4'} mediumWidth={'3'} />
+          <a href="#contact" style={{ textDecoration: 'none' }} className='col-xs-6 col-sm-4 col-md-3'>
+          <div className="btn">
+              Contact
+          </div>
+        </a>
         </div>
         
         {/* Projects */}
@@ -59,35 +69,11 @@ const IndexPage = props => {
             })}
           </div>
           </Section>
-
-          <Section title="Experience">
-          <div className="row">
-          <GridUnit
-                alt_text="Phenomena Labs"
-                logo={require("../assets/images/gifs/volume.gif")}
-                colour="#BDBDBD"
-                title="Phenomena Labs"
-                subtag="2011 - 2016"
-                subtitle="Co-Founder"
-          />
-          <GridUnit
-                alt_text="Viacom"
-                logo={require("../assets/images/gifs/volume.gif")}
-                colour="#BDBDBD"
-                title="Viacom"
-                subtag="2017 - 2018"
-                subtitle="VR Research Fellow"
-          />
-          <GridUnit
-                alt_text="Vimeo"
-                logo={require("../assets/images/gifs/volume.gif")}
-                colour="#BDBDBD"
-                title="Vimeo"
-                subtag="2018 - current"
-                subtitle="Principle Creative Technologist"
-          />          
-          </div>
+          <ScrollableAnchor id={'contact'}>
+          <Section title="Contact">
+          
           </Section>
+          </ScrollableAnchor>
       </div>
     </div>
   )

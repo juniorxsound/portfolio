@@ -1,6 +1,6 @@
 ---
 path: "/twit-ar"
-date: "2018-04-23T12:28:00+00:02"
+date: "2018-06-14T12:28:00+00:02"
 title: "Twit.AR"
 tags: ["Augmented Reality", "Machine Learning", "Experiment"]
 thumbnail: "https://i.imgur.com/wVHMNli.gif"
