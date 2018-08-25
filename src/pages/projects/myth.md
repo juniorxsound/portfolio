@@ -1,6 +1,6 @@
 ---
 path: "/myth"
-date: "2018-06-24T12:32:00+00:00"
+date: "2018-04-28T22:12:03.284Z"
 title: "Myth"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/eEoggiG.gif"

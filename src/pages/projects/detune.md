@@ -1,6 +1,6 @@
 ---
 path: "/detune"
-date: "2018-06-13T12:25:00+00:00"
+date: "2018-04-17T22:12:03.284Z"
 title: "detune"
 tags: ["Experiments", "Tools"]
 thumbnail: "https://i.imgur.com/xjgNOfW.gif"
