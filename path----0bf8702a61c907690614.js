@@ -1,2 +1,0 @@
-webpackJsonp([60335399758886],{114:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Or Fleisher",description:"Creative technologist and storyteller",url:"cv.orfleisher.com",keywords:"vr, ar, immersive, creative-technologist, machine-learning, developer, creative director"}}},layoutContext:{}}}});
-//# sourceMappingURL=path----0bf8702a61c907690614.js.map
