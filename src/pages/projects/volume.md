@@ -1,6 +1,6 @@
 ---
 path: "/volume"
-date: "2018-04-21T12:34:00+00:02"
+date: "2018-06-25T12:34:00+00:02"
 title: "Volume"
 tags: ["Augmented Reality", "Machine Learning", "Virtual Reality", "Tools"]
 thumbnail: "https://i.imgur.com/t8tIxk2.gif"

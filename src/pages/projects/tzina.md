@@ -1,6 +1,6 @@
 ---
 path: "/tzina"
-date: "2018-04-23T12:33:00+00:02"
+date: "2018-06-22T12:33:00+00:02"
 title: "Tzina"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/ejOHbO0.gif"

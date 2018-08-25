@@ -1,6 +1,6 @@
 ---
 path: "/skeletron"
-date: "2018-04-23T12:23:00+00:02"
+date: "2018-06-17T12:23:00+00:02"
 title: "Skeletron"
 tags: ["Machine Learning", "Tools"]
 thumbnail: "https://i.imgur.com/NgmLuAP.gif"
