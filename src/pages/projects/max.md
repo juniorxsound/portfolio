@@ -1,6 +1,6 @@
 ---
 path: "/max"
-date: "2018-06-02T12:17:00+00:00"
+date: "2018-04-12T22:12:03.284Z"
 title: "DepthKit for Max/MSP"
 tags: ["Tools"]
 thumbnail: "https://i.imgur.com/q3kkj8E.gif"

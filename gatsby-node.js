@@ -60,9 +60,11 @@ exports.createPages = ({boundActionCreators, graphql}) => {
   const {createPage} = boundActionCreators;
   const projectPage = path.resolve (`src/templates/project-page.js`);
 
-  return graphql (
-    `{
-    allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {   
+  return graphql (`{
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+      ){   
       edges {
         node {
           html
@@ -84,8 +86,7 @@ exports.createPages = ({boundActionCreators, graphql}) => {
         }
       }
     }
-  }`
-  ).then (result => {
+  }`).then (result => {
     if (result.errors) {
       return Promise.reject (result.errors);
     }

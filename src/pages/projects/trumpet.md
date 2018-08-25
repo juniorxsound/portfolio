@@ -1,6 +1,6 @@
 ---
 path: "/trumpet"
-date: "2018-06-08T12:18:00+00:02"
+date: "2018-04-13T22:12:03.284Z"
 title: "Trumpet"
 tags: ["Experiment"]
 thumbnail: "https://i.imgur.com/ZL1pTFA.gif"

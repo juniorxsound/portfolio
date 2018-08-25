@@ -1,6 +1,6 @@
 ---
 path: "/aframe"
-date: "2018-06-12T12:20:00+00:00"
+date: "2018-04-16T22:12:03.284Z"
 title: "DepthKit for AFrame"
 tags: ["Virtual Reality", "Tools"]
 thumbnail: "https://i.imgur.com/QoxC1xD.gif"

@@ -1,6 +1,6 @@
 ---
 path: "/retouch"
-date: "2018-06-18T12:21:00+00:02"
+date: "2018-04-23T22:12:03.284Z"
 title: "ReTouch"
 tags: ["Machine Learning", "Tools"]
 thumbnail: "https://i.imgur.com/4POhrUh.gif"

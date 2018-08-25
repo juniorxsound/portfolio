@@ -36,7 +36,7 @@ module.exports = {
   siteMetadata: {
     title: 'Or Fleisher',
     description: 'Creative technologist and storyteller',
-    keywords: 'vr, ar, immersive, creative-technologist, machine-learning, developer, creative director',
+    keywords: 'vr, ar, immersive, creative-technologist, machine-learning, developer, creative director, volumetric, virtual reality, augmented reailty, webgl, opengl',
     url: 'cv.orfleisher.com'
   }
 };
