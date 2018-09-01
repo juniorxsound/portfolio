@@ -1,5 +1,12 @@
 module.exports = {
   pathPrefix: `/portfolio`,
+  siteMetadata: {
+    title: 'Or Fleisher',
+    description: 'Director, developer and artist working at the intersection of technology and storytelling.',
+    keywords: 'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
+    url: 'https://orfleisher.com',
+    siteUrl: 'https://orfleisher.com'
+  },
   plugins: [
     'gatsby-plugin-sass',
     {
@@ -32,6 +39,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `black`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
   ],
   siteMetadata: {
     title: 'Or Fleisher',
