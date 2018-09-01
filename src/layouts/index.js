@@ -5,7 +5,7 @@ import get from 'lodash/get'
 
 import './style.scss'
 
-import profileImage from '../assets/images/praagya.jpg'
+import profileImage from '../assets/images/or_og.jpg'
 import favicon16 from '../assets/favicons/favicon-16x16.png'
 import favicon32 from '../assets/favicons/favicon-32x32.png'
 
@@ -27,6 +27,8 @@ class TemplateWrapper extends React.Component {
             { name: 'keywords', content: siteKeywords },
             { property: 'og:url', content: siteURL },
             { property: 'og:image', content: profileImage },
+            { property: 'og:image:width', content: '608' },
+            { property: 'og:image:height', content: '608' },
             { property: 'og:title', content: siteTitle },
             { property: 'og:description', content: siteDescription },
           ]}
