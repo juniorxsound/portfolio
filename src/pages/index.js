@@ -82,22 +82,24 @@ const IndexPage = props => {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query pageAndImageQuery {
-    allMarkdownRemark {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            thumbnail
-            date(formatString: "MMMM DD, YYYY")
-            path
-            tags
-            excerpt
-          }
+query pageAndImageQuery {
+  allMarkdownRemark(
+    sort: { fields: [frontmatter___date], order: DESC }
+  ) {
+    totalCount
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          thumbnail
+          date(formatString: "MMMM DD, YYYY")
+          path
+          tags
+          excerpt
         }
       }
     }
   }
+}
 `;
