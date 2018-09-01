@@ -31,6 +31,7 @@ class TemplateWrapper extends React.Component {
             { property: 'og:image:height', content: '608' },
             { property: 'og:title', content: siteTitle },
             { property: 'og:description', content: siteDescription },
+            { property: 'og:type', content: 'website' },
           ]}
           link={[
             { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
