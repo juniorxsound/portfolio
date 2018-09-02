@@ -17,8 +17,8 @@ class Button extends Component {
       <div className={concatanatedClassName}>
 
         {/* External button - i.e goes to new tab */}
-        {(() => { if(this.props.href)return <div>
-        <a href={this.props.link} style={{ textDecoration: 'none' }} target="_blank">
+        {(() => { if(this.props.externalLink)return <div>
+        <a href={this.props.externalLink} style={{ textDecoration: 'none' }} target="_blank">
           <div className="btn">
               {this.props.text}
           </div>
@@ -35,7 +35,7 @@ class Button extends Component {
         </div>})()}
           
         {/* Scroll button */}
-        {(() => { if(!this.props.link && !this.props.href)return <div onClick={this.showAlert} className="btn">
+        {(() => { if(!this.props.link && !this.props.externalLink)return <div onClick={this.showAlert} className="btn">
           {this.props.text}
         </div>})()}
 

@@ -77,7 +77,7 @@ const Template = ({data, location, pathContext}) => {
               {(() => { if(post.frontmatter.links && post.frontmatter.links.length > 0)return<h4 className="bold">Links</h4>})()}
                 <div className="row">
                   {post.frontmatter.links.map(node=>{
-                    return <Button key={node.toString()} text={node[0]} link={node[1]} mobileWidth={'12'} smallWidth={'6'} mediumWidth={'6'}/>
+                    return <Button key={node.toString()} text={node[0]} externalLink={node[1]} mobileWidth={'12'} smallWidth={'6'} mediumWidth={'6'}/>
                   })}
                 </div>
               </div>
