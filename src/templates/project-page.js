@@ -27,7 +27,7 @@ const Template = ({data, location, pathContext}) => {
     <div className="index">
       <div className="main">
         <Helmet title={`Or Fleisher | ${title}`} />
-        <BackArrow />
+        {/* <BackArrow /> */}
         <h3 className="bold">
           {title}
         </h3>
