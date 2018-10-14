@@ -196,6 +196,7 @@ Developed an openFrameworks MIDI controlled music installation [toolstools.tools
 Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), a virtual reality music composition application developed in collabration with Scott Reitherman - [Eventribe](https://www.eventbrite.com/e/liminal-instruments-exhibition-opening-tickets-47690352127#)
 
 ### **Press**
+- **Mashable** - [Vimeo volumetric livestreaming](https://mashable.com/article/vimeo-3d-hologram-live-stream/#25TNXnRC9sq3)
 - **The Next Web** - [Volume.gl website](https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/)
 - **prosthetic knowledge** - [Volume.gl website](http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning)
 - **Tecmundo** - [Volume.gl website](https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm)
@@ -236,6 +237,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **How Vimeo can power live streaming holograms** - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)
 - [**Volume: 3D reconstruction of history for immersive platforms**](https://dl.acm.org/citation.cfm?id=3230791)
 - [**Behind The Scenes of the Worlds Best XR Designers**](https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d)
 - [**Meet Or Fleisher, A Celebrated WebVR Designer**](https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer)
@@ -246,23 +248,13 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 ### **Open Source**
 
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
-
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
-
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
-
 - **[DepthKit.js](https://github.com/juniorxsound/DepthKit.js)** - A plugin for rendering DepthKit volumteric video using Three.js in WebGL.
-
 - **[DepthKit for A-Frame](https://github.com/juniorxsound/DepthKit-A-Frame)** - An A-Frame component for rendering DepthKit volumetric videos in WebVR. The A-Frame component wraps DepthKit.js which is a small library that provides the same functionality for Three.js projects.
-
 - **[ReTouch](https://github.com/juniorxsound/ReTouch)** - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.
-
 - **[Inside Pulp Fiction](https://github.com/Volume-GL/Pulp-Fiction-ARKit)** - An experiment using Volume to reconstruct Pulp Fiction's dance scene in Augmented Reality.
-
 - **[THREE.Kinectron](https://github.com/kinectron/Three-Kinectron)** - A Three.js plugin for rendering Kinectron feeds.
-
 - **[THREE.Multiplayer](https://github.com/juniorxsound/THREE.Multiplayer)** - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.
-
 - **[Awesome Volumetric Filmmaking](https://github.com/SimileSystems/awesome-volumetric-filmmaking)** - A curated resource for all things pertaining to volumetric filmmaking.
-
 - **[Threaded Depth Cleaner](https://github.com/juniorxsound/ThreadedDepthCleaner)** - Threaded depth-map cleaning and inpainting using OpenCV.

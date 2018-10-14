@@ -8,7 +8,7 @@ class BackArrow extends Component {
     return (
         <div>
             <Link to='/'>
-                <img style={{position: 'fixed', left: '3.5vw', top: '66px', width: '20px'}} src={Arrow} />
+                <img style={{top: '66px', width: '20px'}} src={Arrow} />
             </Link>
         </div>
     )
