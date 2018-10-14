@@ -28,6 +28,7 @@ const Template = ({data, location, pathContext}) => {
       <div className="main">
         <Helmet title={`Or Fleisher | ${title}`} />
         {/* <BackArrow /> */}
+        <BackArrow />
         <h3 className="bold">
           {title}
         </h3>
@@ -53,17 +54,13 @@ const Template = ({data, location, pathContext}) => {
                       switch (node[0]) {
                         case 'code':
                           return <p key={node.toString()} className="bold"><FontAwesomeIcon icon={faCode} /><span className="component">{' '}{node[1]}</span></p>
-                          break;
                         case 'software':
                           return <p key={node.toString()} className="bold"><FontAwesomeIcon icon={faCodeBranch} /><span className="component">{' '}{node[1]}</span></p>
-                          break;
                         case '3d':
                           return <p key={node.toString()} className="bold"><FontAwesomeIcon icon={faCubes} /><span className="component">{' '}{node[1]}</span></p>
-                          break;
                         default:
                           console.warn('[Website] Icon type not specified in the template, returning default icon');
                           return <p key={node.toString()} className="bold"><FontAwesomeIcon icon={faWrench} /><span className="component">{' '}{node[1]}</span></p>
-                          break;
                       } 
                   })}
                 </ul>
