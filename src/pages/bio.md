@@ -16,6 +16,7 @@ excerpt: ""
 1. **[Work experience](#work-experience)**
 1. **[Workshops & talks](#workshops--talks)**
 1. **[Skill-set](#skills)**
+1. **[Community](#community)**
 1. **[Awards, festivals & exhibitions](#awards)**
 1. **[Press](#press)**
 1. **[Publications](#publications)**
@@ -39,7 +40,7 @@ excerpt: ""
 
 
 ### **Short bio**
-Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. My interests include computer graphics, web development and immersive experience development in virtual, augmented and mixed realities.
+Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. Combining computer graphics, web development and immersive experience development in virtual, augmented and mixed realities. I am particularly 
 
 I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.
 
@@ -142,6 +143,13 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - Programming languages: Javascript (ES5/ES6), C++, C#, Swift, python, HTML5, CSS3D
 - Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.
 
+### **Community**
+- **Design Academy Eindhoven (2018)** - Interactive media mentor
+- **NEW INC (2018)** - [Immersive track mentor](https://www.newinc.org/mentors-or-fleisher/)
+- **ITP xStory: Experiments in Storytelling** - [Co-founder and contributer](https://itpxstory.com)
+- **Shenkar College of Engineering and Design (2017)** - Interactive media mentor
+- **Anilouge (2015)** - [Animated features jury](http://anilogue.com/2015/index.html#news)
+
 ### **Awards**
 
 - **WorldFest- NASA Remi Award winner** - *Livyatanim: MYTH*
@@ -237,7 +245,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
-- **How Vimeo can power live streaming holograms** - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)
+- **How Vimeo can power live streaming holograms - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
 - [**Volume: 3D reconstruction of history for immersive platforms**](https://dl.acm.org/citation.cfm?id=3230791)
 - [**Behind The Scenes of the Worlds Best XR Designers**](https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d)
 - [**Meet Or Fleisher, A Celebrated WebVR Designer**](https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer)
