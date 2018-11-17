@@ -4,7 +4,7 @@ import Button from '../components/Button'
 import Helmet from 'react-helmet'
 import './style.scss'
 
-export default class NotFoundPage extends Component {
+export default class NotFoundRedirect extends Component {
 
   constructor(props) {
     super(props)
