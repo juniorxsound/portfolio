@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import './style.scss'
 
 import profileImage from '../assets/images/profile.jpg'
+import profileFacebookImage from '../assets/images/profile_facebook.jpg'
 import favicon16 from '../assets/favicons/favicon-16x16.png'
 import favicon32 from '../assets/favicons/favicon-32x32.png'
 
@@ -56,7 +57,7 @@ export default class TemplateWrapper extends Component {
             { name: 'description', content: siteDescription },
             { name: 'keywords', content: siteKeywords },
             { property: 'og:url', content: siteURL },
-            { property: 'og:image', content: profileImage },
+            { property: 'og:image', content: profileFacebookImage },
             { property: 'og:image:alt', content: 'Logo' },
             { property: 'og:image:width', content: '1200' },
             { property: 'og:image:height', content: '630' },
@@ -68,7 +69,7 @@ export default class TemplateWrapper extends Component {
             { name: 'twitter:creator', content: 'juniorxsound' },
             { name: 'twitter:title', content: siteTitle },
             { name: 'twitter:description', content: siteDescription },
-            { name: 'twitter:image', content: profileImage }
+            { name: 'twitter:image', content: profileFacebookImage }
           ]}
           link={[
             { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
