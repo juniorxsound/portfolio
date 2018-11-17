@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from "gatsby-link";
+import Link from "gatsby-link"
 import './style.scss'
 
 export default class Button extends Component {
