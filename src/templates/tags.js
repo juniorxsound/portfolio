@@ -1,30 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
-const Tags = ({pathContext}) => {
-  const {posts, tagName} = pathContext;
+export default class Tags extends Component {
 
-  if (posts) {
-    return (
-      <div>
-        <span>
-          Posts about {tagName};
-        </span>
-
-        <ul>
-          {posts.map (post => {
-            return (
-              <li>
-                <Link to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
+  constructor(props) {
+    super(props)
   }
-};
 
-export default Tags;
+  render() {
+    const {posts, tagName} = this.props.pathContext;
+
+    if (posts) {
+      return (
+        <div>
+          <span>
+            Posts about {tagName};
+          </span>
+
+          <ul>
+            {posts.map (post => {
+              return (
+                <li>
+                  <Link to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )
+    }
+  }
+
+}

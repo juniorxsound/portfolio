@@ -31,31 +31,6 @@ exports.modifyWebpackConfig = function ({ config, stage }) {
   return config
 };
 
-const createTagPages = (createPage, tags) => {
-  const tagPageTemplate = path.resolve (`src/templates/tags.js`);
-  const allTagsTemplate = path.resolve (`src/templates/all-tags.js`);
-
-  createPage ({
-    path: `/tags`,
-    component: allTagsTemplate,
-    context: {
-      tags: tags.sort (),
-    },
-  });
-  tags.forEach (tagName => {
-    const posts = tags[tagName];
-
-    createPage ({
-      path: `/tags/${tagName}`,
-      component: tagPageTemplate,
-      context: {
-        posts,
-        tagName,
-      },
-    });
-  });
-};
-
 exports.createPages = ({boundActionCreators, graphql}) => {
   const {createPage} = boundActionCreators;
   const projectPage = path.resolve (`src/templates/project-page.js`);
@@ -93,30 +68,10 @@ exports.createPages = ({boundActionCreators, graphql}) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
-    const postsByTags = {};
-
-    posts.forEach (({node}) => {
-      if (node.frontmatter.tags) {
-        node.frontmatter.tags.forEach (tag => {
-          if (!postsByTags[tag]) {
-            postsByTags[tag] = [];
-          }
-          postsByTags[tag].push (node);
-        });
-      }
-    });
-    const tags = Object.keys (postsByTags);
-
-    createTagPages (createPage, tags);
-
     posts.forEach (({node}, index) => {
       createPage ({
         path: node.frontmatter.path,
-        component: projectPage,
-        context: {
-          prev: index === 0 ? null : posts[index - 1].node,
-          next: index === posts.length - 1 ? null : posts[index + 1].node
-        },
+        component: projectPage
       });
     });
   });

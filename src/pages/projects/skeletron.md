@@ -4,7 +4,7 @@ date: "2018-04-15T22:12:03.284Z"
 title: "Skeletron"
 tags: ["Machine Learning", "Tools"]
 thumbnail: "https://i.imgur.com/NgmLuAP.gif"
-cover: "skeletron.jpg"
+cover: ""
 embed: '<iframe width="100%" height="500" src="https://www.youtube.com/embed/l_owi316cE8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "Skeletron is a system that predicts joints and human skeleton position from real-time video taken by any RGB camera, such as a webcam. The system sends the data about the position of the human body to Unity, a 3D game development engine, to allow engineers, artists, and creative technologists to use it to develop digital experiences.
 

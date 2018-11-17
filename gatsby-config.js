@@ -2,6 +2,7 @@ module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     title: 'Or Fleisher',
+    description: 'Director, developer and artist working at the intersection of technology and storytelling.',
     keywords: 'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
     url: 'https://orfleisher.com',
     siteUrl: 'https://orfleisher.com'
@@ -50,12 +51,5 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`
     },
-  ],
-  siteMetadata: {
-    title: 'Or Fleisher',
-    description: 'Director, developer and artist working at the intersection of technology and storytelling.',
-    keywords: 'vr, ar, immersive, creative-technologist, machine-learning, developer, creative director, volumetric, virtual reality, augmented reailty, webgl, opengl, VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
-    url: 'https://orfleisher.com',
-    siteUrl: 'https://orfleisher.com'
-  }
+  ]
 };

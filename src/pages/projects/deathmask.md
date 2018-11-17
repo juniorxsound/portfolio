@@ -4,7 +4,7 @@ date: "2018-04-22T22:12:03.284Z"
 title: "Death Mask"
 tags: ["Augmented Reality", "Machine Learning", "Experiment"]
 thumbnail: "https://i.imgur.com/KWGMELg.gif"
-cover: "deathmask_cover.png"
+cover: ""
 embed: '<iframe width="100%" height="450" src="https://www.youtube.com/embed/OzndnZuvu2c?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "‘Death-Mask’ predicts how long people have to live and overlays that in the form of a “clock” above they’re heads in augmented reality. The project uses a machine learning model titled AgeNet for the prediction process. Once predicted it uses the average life expectancy in that location to try and estimate how long one has left.
 
