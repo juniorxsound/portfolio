@@ -4,7 +4,7 @@ date: "2018-04-26T22:12:03.284Z"
 title: "Sono"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/w7W6t2J.gif"
-cover: "sono.png"
+cover: ""
 embed: '<iframe width="100%" height="450" src="https://www.youtube.com/embed/e30AUS9HFtE?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "‘SONO’ is a binaural webVR musical performance featuring music from Livyatanim’s debut album ‘After the Waters’.
 

@@ -4,7 +4,7 @@ date: "2018-04-27T22:12:03.284Z"
 title: "Inside Pulp Fiction"
 tags: ["Augmented Reality", "Machine Learning"]
 thumbnail: "https://i.imgur.com/TMOGIv6.gif"
-cover: "pulp_cover.jpg"
+cover: ""
 embed: '<iframe width="100%" height="450" src="https://www.youtube.com/embed/iwJt4DM6mJA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "Inside Pulp Fiction is an experiment that uses machine learning to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality. The experiment is a part of Volume, a machine learning driven tool to reconstruct 3D models from 2D images and video."
 links: [['Website', 'https://volume.gl'], ['Github', 'https://github.com/Volume-GL/Pulp-Fiction-ARKit'], ['Presskit', 'https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud'], ['Presentation', 'https://vimeo.com/270479574']]

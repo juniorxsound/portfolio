@@ -4,7 +4,7 @@ date: "2018-04-13T22:12:03.284Z"
 title: "Trumpet"
 tags: ["Experiment"]
 thumbnail: "https://i.imgur.com/ZL1pTFA.gif"
-cover: "trumpet.png"
+cover: ""
 embed: '<iframe width="100%" height="450" src="https://www.youtube.com/embed/4YlOzWwsXKo?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "‘Trumpet’ is a Node.js server that listens to tweets from NYC that contain the words “trump” and “protest” and plays a note for every tweet. I developed ‘Trumpet’ with Dror Ayalon during Spotify’s NYC Monthly Music Hackathon.
 

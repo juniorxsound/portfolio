@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
-const AllTags = ({pathContext}) => {
-  const {tags} = pathContext;
-
-  if (tags) {
-    return (
-      <div>
-        <ul>
-          {tags.map (tag => {
-            return (
-              <li>
-                <Link to={`tags/${tag}`}>
-                  {tag}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
+export default class AllTags extends Component {
+  
+  constructor(props) {
+    super(props)
   }
-};
 
-export default AllTags;
+  render() {
+
+    const { tags } = this.props.pathContext;
+
+    if (tags) {
+      return (
+        <div>
+          <ul>
+            {tags.map(tag => {
+              return (
+                <li>
+                  <Link to={`tags/${tag}`}>
+                    {tag}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )
+    }
+  }
+
+}

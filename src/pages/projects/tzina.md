@@ -4,7 +4,7 @@ date: "2018-04-29T22:12:03.284Z"
 title: "Tzina"
 tags: ["Virtual Reality"]
 thumbnail: "https://i.imgur.com/ejOHbO0.gif"
-cover: "tzina.png"
+cover: ""
 embed: '<iframe width="100%" height="500" src="https://www.youtube.com/embed/msnwH6hCtO4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "In January 2017, Tzina Dizengoff square, one of Tel Aviv’s emblematic sites, was demolished. The square became a home for the lonely and marginalized characters of the area. This project tells the story of the people who gravitated toward the square and spent their days in it. In this interactive webVR documentary, they talk about their lives and the square. Together, they form a poetic musing on lost loves and things that have passed. Tzina invites you to physically explore the virtual square, combining elements of fantasy, while experiencing the square in different times of the day.
 

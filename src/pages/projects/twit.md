@@ -4,7 +4,7 @@ date: "2018-04-19T22:12:03.284Z"
 title: "Twit.AR"
 tags: ["Augmented Reality", "Machine Learning", "Experiment"]
 thumbnail: "https://i.imgur.com/wVHMNli.gif"
-cover: "twit.jpg"
+cover: ""
 embed: '<iframe width="100%" height="450" src="https://www.youtube.com/embed/LVnUHWsGEaQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
 about: "TwitAR is a speculative satirical experiment that examines how Twitter tweets could be visualized in Augmented Reality.
 
