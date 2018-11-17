@@ -4,7 +4,6 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
 echo "Working directory is $parent_path"
-cd "$parent_path/public"
-touch "CNAME"
-echo 'orfleisher.com' > CNAME
+touch "$parent_path/public/CNAME"
+echo 'orfleisher.com' > "$parent_path/public/CNAME"
 echo "Created CNAME file"

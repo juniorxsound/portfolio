@@ -38,7 +38,6 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -51,5 +50,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Or Fleisher',
+        short_name: 'Or Fleisher',
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#000000`,
+        display: `minimal-ui`,
+        icon: `src/assets/images/or_og.jpg`, // This path is relative to the root of the site.
+      },
+    },
+    `gatsby-plugin-offline`
   ]
 };
