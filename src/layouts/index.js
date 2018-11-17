@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import './style.scss'
 
-import profileImage from '../assets/images/logo_og.jpg'
+import profileImage from '../assets/images/profile.jpg'
 import favicon16 from '../assets/favicons/favicon-16x16.png'
 import favicon32 from '../assets/favicons/favicon-32x32.png'
 
@@ -22,6 +22,31 @@ export default class TemplateWrapper extends Component {
     const siteDescription = get(this, 'props.data.site.siteMetadata.description')
 
     const { children } = this.props
+
+    const schemaOrgJSONLD = [
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        url: "https://orfleisher.com",
+        name: "Or Fleisher"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "CollectionPage",
+        url: "https://orfleisher.com",
+        name: "Works"
+      },
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        image: "https://orfleisher.com/icons/",
+        url: "https://orfleisher.com/bio",
+        name: "Or Fleisher",
+        alumniOf: "New York University",
+        email: "contact@orfleisher.com",
+        gender: "Male"
+      }
+    ];
 
     return (
       <div className="template-wrapper">
@@ -50,6 +75,10 @@ export default class TemplateWrapper extends Component {
             { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 }
           ]}
         >
+        {/* Schema.org tags */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgJSONLD)}
+        </script>
         </Helmet>
 
         <div className="template-wrapper-children">
