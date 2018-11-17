@@ -11,7 +11,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "create_cname": "bash scripts/create-cname.sh",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "build_prefixed_static": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",

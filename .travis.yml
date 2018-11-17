@@ -21,6 +21,7 @@ before_script:
   - "yarn install"
 script:
   - "yarn run format"
+  - "yarn run build_prefixed_static"
   - "yarn run create_cname"
 after_success:
   - "yarn run deploy"
