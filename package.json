@@ -10,7 +10,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "create_cname": "sh scripts/create-cname.sh",
+    "create_cname": "bash scripts/create-cname.sh",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
