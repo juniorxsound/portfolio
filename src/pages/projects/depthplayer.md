@@ -11,5 +11,5 @@ links: [['Blog', 'https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming
 components: [['code', 'Javascript, GLSL, C++'], ['software', 'three.js, OpenGL'], ['3d', 'Blender']]
 credits: ''
 press: [['Mashable', 'https://mashable.com/article/vimeo-3d-hologram-live-stream/#is8ZIB4LIsq8'], ['pcma', 'https://www.pcma.org/telepresence-holograms-vimeo-digital-events/'], ['shacknews', 'https://www.shacknews.com/article/107916/vimeo-lays-groundwork-for-its-users-to-livestream-holograms']]
-excerpt: "Step inside Pulp Fiction's iconic dance scene using augmented reality."
+excerpt: "Playback and live stream volumetric video hosted on Vimeo."
 ---

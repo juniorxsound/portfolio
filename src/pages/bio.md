@@ -204,6 +204,7 @@ Developed an openFrameworks MIDI controlled music installation [toolstools.tools
 Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), a virtual reality music composition application developed in collabration with Scott Reitherman - [Eventribe](https://www.eventbrite.com/e/liminal-instruments-exhibition-opening-tickets-47690352127#)
 
 ### **Press**
+- **Wired** - [Vimeo through the Looking Glass](https://www.wired.it/internet/web/2018/11/07/vimeo-video-ologrammi/)
 - **Engadget** - [Vimeo through the Looking Glass](https://www.engadget.com/2018/11/07/vimeo-launches-hologram-channel/)
 - **TechCrunch** - [Vimeo through the Looking Glass](https://techcrunch.com/2018/11/06/vimeo-adds-a-channel-exclusively-for-holograms/)
 - **No Film School** - [Vimeo through the Looking Glass](https://nofilmschool.com/2018/11/throw-away-your-headsets-future-3d-filmmaking-here)
