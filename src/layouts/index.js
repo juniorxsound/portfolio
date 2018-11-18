@@ -29,18 +29,26 @@ export default class TemplateWrapper extends Component {
       {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        url: "https://orfleisher.com",
-        name: "Or Fleisher"
+        "url": "https://orfleisher.com",
+        "name": "Or Fleisher",
+        "thumbnailUrl": profileFacebookImage,
+        "image": profileFacebookImage
       },
       {
         "@context": "http://schema.org",
         "@type": "Person",
-        image: "https://orfleisher.com/icons/",
-        url: "https://orfleisher.com/bio",
-        name: "Or Fleisher",
-        alumniOf: "New York University",
-        email: "contact@orfleisher.com",
-        gender: "Male"
+        "name": "Or Fleisher",
+        "image": profileFacebookImage,
+        "url": "https://orfleisher.com",
+        "sameAs": [
+          "https://www.facebook.com/or.fleisher",
+          "https://www.instagram.com/juniorxsound/",
+          "https://www.linkedin.com/in/orfleisher/",
+          "https://twitter.com/juniorxsound"
+        ],
+        "alumniOf": "New York University",
+        "email": "contact@orfleisher.com",
+        "gender": "Male"
       }
     ];
 
@@ -59,7 +67,7 @@ export default class TemplateWrapper extends Component {
           "keywords": "Machine Learning, VR, AR, Volumetric, 3D, CG",
           "url": "https://orfleisher.com" + singleProject.frontmatter.path,
           "image": singleProject.frontmatter.thumbnail
-        })        
+        })
       }
 
     }
@@ -91,10 +99,10 @@ export default class TemplateWrapper extends Component {
             { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 }
           ]}
         >
-        {/* Schema.org tags */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
+          {/* Schema.org tags */}
+          <script type="application/ld+json">
+            {JSON.stringify(schemaOrgJSONLD)}
+          </script>
         </Helmet>
 
         <div className="template-wrapper-children">

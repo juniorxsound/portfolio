@@ -17,10 +17,18 @@ export default class NotFoundRedirect extends Component {
         <Helmet>
           <meta http-equiv="refresh" content="2;url=https://orfleisher.com" />
         </Helmet>
-        <Section>
-          <h5>Oops, this page has been moved, if you are not redirected automatically</h5>
-          <Button key="redirect button" text="click here" externalLink="https://orfleisher.com" mobileWidth={'8'} smallWidth={'4'} mediumWidth={'4'} />
-        </Section>
+        <div className="index">
+          <div className="main">
+            {/* Header */}
+            <div className="row">
+              <div className="col-xs-12 col-sm-8 col-md-9">
+                <h3 className="bold">Oops, this page has been moved</h3>
+                <h5 className="bold">If you are not redirected automatically</h5>
+                <Button key="redirect button" text="click here" externalLink="https://orfleisher.com" mobileWidth={'8'} smallWidth={'4'} mediumWidth={'4'} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
