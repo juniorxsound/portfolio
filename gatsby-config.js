@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: `/`,
   siteMetadata: {
     title: 'Or Fleisher',
-    description: 'Director, developer and artist working at the intersection of technology and storytelling.',
+    description: 'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
     keywords: 'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
     url: 'https://orfleisher.com',
     siteUrl: 'https://orfleisher.com'
