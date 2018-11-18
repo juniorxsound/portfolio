@@ -40,7 +40,7 @@ excerpt: ""
 
 
 ### **Short bio**
-Based in NYC, I am a director, developer, artist working at the intersection of technology and storytelling. Combining computer graphics, web development and immersive experience development in virtual, augmented and mixed realities. I am particularly 
+Based in NYC, I am a creative technologist, developer, artist working at the intersection of technology and storytelling. Combining computer graphics, web development and immersive experience development in virtual, augmented and mixed realities. 
 
 I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.
 

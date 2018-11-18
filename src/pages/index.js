@@ -26,7 +26,7 @@ export default class IndexPage extends Component {
               </h5>
 
               <h3 className="bold">
-                Director, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
+                Creative technologist, developer and artist working at the intersection of technology and storytelling. Combining computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
               </h3>
             </div>
           </div>
