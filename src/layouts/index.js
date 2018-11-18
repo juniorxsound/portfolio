@@ -99,6 +99,7 @@ export default class TemplateWrapper extends Component {
             { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 }
           ]}
         >
+          <link rel="canonical" href="https://orfleisher.com"/>
           {/* Schema.org tags */}
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}
