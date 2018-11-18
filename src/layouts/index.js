@@ -21,6 +21,7 @@ export default class TemplateWrapper extends Component {
     const siteKeywords = get(this, 'props.data.site.siteMetadata.keywords')
     const siteURL = get(this, 'props.data.site.siteMetadata.url')
     const siteDescription = get(this, 'props.data.site.siteMetadata.description')
+    const projects = get(this, 'props.data.allMarkdownRemark.edges')
 
     const { children } = this.props
 
@@ -43,11 +44,34 @@ export default class TemplateWrapper extends Component {
         image: "https://orfleisher.com/icons/",
         url: "https://orfleisher.com/bio",
         name: "Or Fleisher",
-        alumniOf: "New York University",
+        alumniOf: {
+          "@type": "University",
+          "name": "New York University"
+        },
         email: "contact@orfleisher.com",
         gender: "Male"
       }
     ];
+
+    for (let i = 0; i < Object.keys(projects).length; i++) {
+
+      const singleProject = projects[Object.keys(projects)[i]]['node'];
+
+      if (singleProject.title != 'Bio') {
+        schemaOrgJSONLD.push({
+          "@context": "http://schema.org",
+          "@type": "CreativeWork",
+          "about": singleProject.frontmatter.excerpt,
+          "author": "Or Fleisher",
+          "creator": "Or Fleisher",
+          "name": singleProject.frontmatter.title,
+          "keywords": "Machine Learning, VR, AR, Volumetric, 3D, CG",
+          "url": "https://orfleisher.com" + singleProject.frontmatter.path,
+          "image": singleProject.frontmatter.thumbnail
+        })        
+      }
+
+    }
 
     return (
       <div className="template-wrapper">
@@ -102,5 +126,21 @@ export const pageQuery = graphql`
         keywords
       }
     }
+  allMarkdownRemark{
+    edges {
+        node {
+          html
+          id
+          frontmatter {
+            path
+            title
+            thumbnail
+            cover
+            excerpt
+            tags
+          }
+        }
+      }
+  }
   }
 `;
