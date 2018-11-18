@@ -94,14 +94,14 @@ export default class TemplateWrapper extends Component {
             { name: 'twitter:creator', content: '@juniorxsound' },
             { name: 'twitter:title', content: siteTitle },
             { name: 'twitter:description', content: siteDescription },
-            { name: 'twitter:image', content: profileFacebookImage }
+            { name: 'twitter:image', content: 'https://i.imgur.com/Gu2tbUp.png' }
           ]}
           link={[
             { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
-            { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 }
+            { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 },
+            { rel: 'canonical', href: 'https://orfleisher.com' }
           ]}
         >
-          <link rel="canonical" href="https://orfleisher.com"/>
           {/* Schema.org tags */}
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}
