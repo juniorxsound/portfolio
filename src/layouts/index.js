@@ -34,20 +34,11 @@ export default class TemplateWrapper extends Component {
       },
       {
         "@context": "http://schema.org",
-        "@type": "CollectionPage",
-        url: "https://orfleisher.com",
-        name: "Works"
-      },
-      {
-        "@context": "http://schema.org",
         "@type": "Person",
         image: "https://orfleisher.com/icons/",
         url: "https://orfleisher.com/bio",
         name: "Or Fleisher",
-        alumniOf: {
-          "@type": "University",
-          "name": "New York University"
-        },
+        alumniOf: "New York University",
         email: "contact@orfleisher.com",
         gender: "Male"
       }
