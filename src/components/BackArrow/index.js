@@ -12,7 +12,7 @@ export default class BackArrow extends Component {
         return (
             <div>
                 <Link to='/'>
-                    <img style={{
+                    <img alt='Home button' style={{
                         top: '66px',
                         width: '20px'
                     }} src={Arrow} />
