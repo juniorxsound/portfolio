@@ -102,6 +102,7 @@ export default class TemplateWrapper extends Component {
             { rel: 'canonical', href: 'https://orfleisher.com' }
           ]}
         >
+          <html lang="en" />
           {/* Schema.org tags */}
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgJSONLD)}

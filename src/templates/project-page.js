@@ -33,7 +33,9 @@ export default class Template extends Component {
     return (
       <div className="index">
         <div className="main">
-          <Helmet title={`Or Fleisher | ${title}`} />
+          <Helmet title={`Or Fleisher | ${title}`}>
+            <html lang="en" />
+          </Helmet>
           <BackArrow />
           <h3 className="bold">
             {title}

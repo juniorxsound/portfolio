@@ -15,6 +15,7 @@ export default class NotFoundRedirect extends Component {
     return (
       <div>
         <Helmet>
+          <html lang="en" />
           <meta http-equiv="refresh" content="2;url=https://orfleisher.com" />
         </Helmet>
         <div className="index">
