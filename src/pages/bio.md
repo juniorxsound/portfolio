@@ -270,6 +270,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[ReTouch](https://github.com/juniorxsound/ReTouch)** - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.
 - **[Inside Pulp Fiction](https://github.com/Volume-GL/Pulp-Fiction-ARKit)** - An experiment using Volume to reconstruct Pulp Fiction's dance scene in Augmented Reality.
 - **[THREE.Kinectron](https://github.com/kinectron/Three-Kinectron)** - A Three.js plugin for rendering Kinectron feeds.
+- **[THREE.Webpack](https://github.com/juniorxsound/THREE.Webpack)** - A Three.js + glslify + webpack boilerplate for quick prototyping
 - **[THREE.Multiplayer](https://github.com/juniorxsound/THREE.Multiplayer)** - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.
 - **[Awesome Volumetric Filmmaking](https://github.com/SimileSystems/awesome-volumetric-filmmaking)** - A curated resource for all things pertaining to volumetric filmmaking.
 - **[Threaded Depth Cleaner](https://github.com/juniorxsound/ThreadedDepthCleaner)** - Threaded depth-map cleaning and inpainting using OpenCV.
