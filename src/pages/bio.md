@@ -262,6 +262,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 ### **Open Source**
 
+- **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a community project to the examples section
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
