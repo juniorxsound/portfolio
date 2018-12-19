@@ -60,13 +60,24 @@ export default class TemplateWrapper extends Component {
         schemaOrgJSONLD.push({
           "@context": "http://schema.org",
           "@type": "CreativeWork",
-          "about": singleProject.frontmatter.excerpt,
+          "description": singleProject.frontmatter.excerpt,
           "author": "Or Fleisher",
           "creator": "Or Fleisher",
           "name": singleProject.frontmatter.title,
           "keywords": "Machine Learning, VR, AR, Volumetric, 3D, CG",
           "url": "https://orfleisher.com" + singleProject.frontmatter.path,
           "image": singleProject.frontmatter.thumbnail
+        })
+      } else {
+        schemaOrgJSONLD.push({
+          "@context": "http://schema.org",
+          "@type": "CreativeWork",
+          "description": "Creative technologist, developer and artist working at the intersection of technology and storytelling.",
+          "author": "Or Fleisher",
+          "creator": "Or Fleisher",
+          "name": "Biography",
+          "keywords": "Machine Learning, VR, AR, Volumetric, 3D, CG",
+          "url": "https://orfleisher.com" + singleProject.frontmatter.path
         })
       }
 
