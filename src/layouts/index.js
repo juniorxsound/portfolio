@@ -61,6 +61,7 @@ export default class TemplateWrapper extends Component {
           "@context": "http://schema.org",
           "@type": "CreativeWork",
           "description": singleProject.frontmatter.excerpt,
+          "about": singleProject.frontmatter.excerpt,
           "author": "Or Fleisher",
           "creator": "Or Fleisher",
           "name": singleProject.frontmatter.title,
@@ -72,7 +73,8 @@ export default class TemplateWrapper extends Component {
         schemaOrgJSONLD.push({
           "@context": "http://schema.org",
           "@type": "CreativeWork",
-          "description": "Creative technologist, developer and artist working at the intersection of technology and storytelling.",
+          "description": "Learn more about me.",
+          "about": "Learn more about me.",
           "author": "Or Fleisher",
           "creator": "Or Fleisher",
           "name": "Biography",
