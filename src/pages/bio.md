@@ -144,6 +144,7 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.
 
 ### **Community**
+- **MIT Media Lab VR Hackathon (2019)** - [Software development mentor](https://realityvirtuallyhack.com/mentors/)
 - **Design Academy Eindhoven (2018)** - Interactive media mentor
 - **NEW INC (2018)** - [Immersive track mentor](https://www.newinc.org/mentors-or-fleisher/)
 - **ITP xStory: Experiments in Storytelling** - [Co-founder and contributer](https://itpxstory.com)
