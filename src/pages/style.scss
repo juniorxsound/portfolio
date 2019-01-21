@@ -21,7 +21,7 @@ $aside-width: 0%;
 .main {
   margin: 0 auto;
 
-  h3 {
+  h1 {
     font-size: 3.4rem;
     line-height: 1.6;
 
@@ -36,7 +36,8 @@ $aside-width: 0%;
 
   h5 {
     font-size: 1.6rem;
-    line-height: 0;
+    line-height: 1.6;
+    font-weight: 800;
 
     @include media('<=xsmall') {
       font-size: 1.8rem;

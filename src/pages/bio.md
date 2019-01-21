@@ -1,7 +1,7 @@
 ---
 path: "/bio"
 date: "2018-05-23T12:24:00+00:00"
-title: "Bio"
+title: "About"
 cover: "or.jpg"
 embed: ''
 links: []
@@ -25,8 +25,6 @@ excerpt: ""
 
 ### **Personal information**
 
-**Name:** Or Fleisher
-
 **Email:** [contact@orfleisher.com](mailto:contact@orfleisher.com)
 
 <a target="_blank" href="http://github.com/juniorxsound"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="></img></a>&nbsp;&nbsp;
@@ -40,15 +38,15 @@ excerpt: ""
 
 
 ### **Short bio**
-Based in NYC, I am a creative technologist, developer, artist working at the intersection of technology and storytelling. Combining computer graphics, web development and immersive experience development in virtual, augmented and mixed realities. 
+Based in NYC, Or Fleisher is an award-winning creative technologist, developer, artist working at the intersection of technology and storytelling. His work combines computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
 
-I started my career as a sound designer and musician. After working in audio post-production for a few years I attended Tel Aviv University film school and started coding, designing and releasing interactive storytelling driven experiences.
+Or's career started as a sound designer and musician. After working in audio post-production he attended Tel Aviv University's film school and started coding, designing and releasing interactive storytelling driven experiences that fuse film and gaming.
 
-Upon graduation, I co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effect and interaction design studio. I worked as a creative and technical director designing, developing and executing interactive experiences. I am a graduate of the Tisch School of the Arts, New York University. Currently, I am the Principle Creative Technologist at [Vimeo](https://vimeo.com) Labs and Co-Founder at [Volume](https://volume.gl).
+Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effect and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, New York University and currently the Principle Creative Technologist at [Vimeo](https://labs.vimeo.com) Creator Labs.
 
 
 
- **Things to know about me** - I am an advanced coffee drinker, cat aficionado, hobbyist musician. I am passionate about cinematography and [open source software](#open-source).
+ **Things to know about Or** - an advanced coffee drinker, cat aficionado, hobbyist musician. Or is also passionate about computational photography and [open source software](#open-source).
 
 ### **Education**
 - **New York University** - *M.P.S (2016-2018)*
