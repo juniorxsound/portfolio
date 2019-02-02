@@ -175,6 +175,7 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - **ITP & Google XStory rersearch grant**
 
 ### **Festivals**
+- **Sundance 2019 - New Frontier** - [Vimeo](https://www.sundance.org/projects/volumetric-filmmaking-artists-shaping-the-future-of-immersive-storytelling)
 - **SIGGRAPH 2018 - Posters** - [Volume](https://s2018.siggraph.org/conference/conference-overview/posters/production/?sess=sess356)
 - **Cannes Festival - NEXT** - [Tzina](http://www.marchedufilm.com/en/global-events)
 - **IDFA DocLab** - [Tzina](https://www.doclab.org/2016/tzina-symphony-of-longing/)
