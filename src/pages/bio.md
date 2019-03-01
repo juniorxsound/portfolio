@@ -267,6 +267,8 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
+- **[Vimeo - AFrame Component](https://github.com/vimeo/aframe-vimeo-component)** - Stream Vimeo videos into WebVR.
+- **[Vimeo three.js player](https://github.com/vimeo/vimeo-threejs-player)** - A plugin for streaming video from Vimeo to WebGL/VR/AR apps.
 - **[DepthKit.js](https://github.com/juniorxsound/DepthKit.js)** - A plugin for rendering DepthKit volumteric video using Three.js in WebGL.
 - **[DepthKit for A-Frame](https://github.com/juniorxsound/DepthKit-A-Frame)** - An A-Frame component for rendering DepthKit volumetric videos in WebVR. The A-Frame component wraps DepthKit.js which is a small library that provides the same functionality for Three.js projects.
 - **[ReTouch](https://github.com/juniorxsound/ReTouch)** - ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.
