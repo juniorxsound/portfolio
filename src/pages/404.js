@@ -5,13 +5,11 @@ import Helmet from 'react-helmet'
 import './style.scss'
 
 export default class NotFoundRedirect extends Component {
-
   constructor(props) {
     super(props)
   }
 
   render() {
-
     return (
       <div>
         <Helmet>
@@ -24,8 +22,17 @@ export default class NotFoundRedirect extends Component {
             <div className="row">
               <div className="col-xs-12 col-sm-8 col-md-9">
                 <h3 className="bold">Oops, this page has been moved</h3>
-                <h5 className="bold">If you are not redirected automatically</h5>
-                <Button key="redirect button" text="click here" externalLink="https://orfleisher.com" mobileWidth={'8'} smallWidth={'4'} mediumWidth={'4'} />
+                <h5 className="bold">
+                  If you are not redirected automatically
+                </h5>
+                <Button
+                  key="redirect button"
+                  text="click here"
+                  externalLink="https://orfleisher.com"
+                  mobileWidth={'8'}
+                  smallWidth={'4'}
+                  mediumWidth={'4'}
+                />
               </div>
             </div>
           </div>
@@ -33,5 +40,4 @@ export default class NotFoundRedirect extends Component {
       </div>
     )
   }
-
 }
