@@ -266,6 +266,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a community project to the examples section
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
+- **[Vimeo - Unity SDK](https://github.com/vimeo/vimeo-unity-sdk)** - Easily stream your Vimeo videos into Unity or record and publish out to Vimeo.
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
 - **[Vimeo - AFrame Component](https://github.com/vimeo/aframe-vimeo-component)** - Stream Vimeo videos into WebVR.
