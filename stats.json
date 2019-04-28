@@ -1,80 +1,80 @@
 {
   "assetsByChunkName": {
     "path---1948": [
-      "path---1948-1544763ebef849f82b4d.js",
-      "path---1948-1544763ebef849f82b4d.js.map"
+      "path---1948-0658e29ff607a16fdf0b.js",
+      "path---1948-0658e29ff607a16fdf0b.js.map"
     ],
     "path---pulp-fiction": [
-      "path---pulp-fiction-714a433bde32a2cf088e.js",
-      "path---pulp-fiction-714a433bde32a2cf088e.js.map"
+      "path---pulp-fiction-df9f51f06d33e812cdf1.js",
+      "path---pulp-fiction-df9f51f06d33e812cdf1.js.map"
     ],
     "path---max": [
-      "path---max-78af00cb542dea6a577c.js",
-      "path---max-78af00cb542dea6a577c.js.map"
+      "path---max-b07a9471e2e9632dc319.js",
+      "path---max-b07a9471e2e9632dc319.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-741f52e2893c61d27f95.js",
       "component---src-pages-index-js-741f52e2893c61d27f95.js.map"
     ],
     "component---src-templates-project-page-js": [
-      "component---src-templates-project-page-js-28a41663d4f9b6d2e67b.js",
-      "component---src-templates-project-page-js-28a41663d4f9b6d2e67b.js.map"
+      "component---src-templates-project-page-js-e6acf27fb1d1d6fe48a3.js",
+      "component---src-templates-project-page-js-e6acf27fb1d1d6fe48a3.js.map"
     ],
     "path---": [
-      "path----e2b4fc137d1eb5731ec4.js",
-      "path----e2b4fc137d1eb5731ec4.js.map"
+      "path----693256f3ce1bc2effd49.js",
+      "path----693256f3ce1bc2effd49.js.map"
     ],
     "path---volume": [
-      "path---volume-7455603828e74971bc91.js",
-      "path---volume-7455603828e74971bc91.js.map"
+      "path---volume-df1e4c3ab0dbf4119105.js",
+      "path---volume-df1e4c3ab0dbf4119105.js.map"
     ],
     "path---toolstoolstools": [
-      "path---toolstoolstools-84594556380ab4ad55a9.js",
-      "path---toolstoolstools-84594556380ab4ad55a9.js.map"
+      "path---toolstoolstools-061498d96f9a8d2aaf53.js",
+      "path---toolstoolstools-061498d96f9a8d2aaf53.js.map"
     ],
     "path---detune": [
-      "path---detune-f2f9ce722ce6897c04bd.js",
-      "path---detune-f2f9ce722ce6897c04bd.js.map"
+      "path---detune-d3d57052bb293ec2a7ab.js",
+      "path---detune-d3d57052bb293ec2a7ab.js.map"
     ],
     "component---node-modules-gatsby-plugin-offline-app-shell-js": [
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js.map"
     ],
     "path---skeletron": [
-      "path---skeletron-7398b89fbff84b2346b3.js",
-      "path---skeletron-7398b89fbff84b2346b3.js.map"
+      "path---skeletron-05be80629d5de1f2bba1.js",
+      "path---skeletron-05be80629d5de1f2bba1.js.map"
     ],
     "path---visualizer": [
-      "path---visualizer-83c7e9cd04734e0043aa.js",
-      "path---visualizer-83c7e9cd04734e0043aa.js.map"
+      "path---visualizer-309a93d61cb8c5e91ef9.js",
+      "path---visualizer-309a93d61cb8c5e91ef9.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-254dd771bfd67cdc2755.js",
-      "component---src-layouts-index-js-254dd771bfd67cdc2755.js.map"
+      "component---src-layouts-index-js-19929b2442a797e3fc3b.js",
+      "component---src-layouts-index-js-19929b2442a797e3fc3b.js.map"
     ],
     "path---death-mask": [
-      "path---death-mask-797e461c23c908e4f17d.js",
-      "path---death-mask-797e461c23c908e4f17d.js.map"
+      "path---death-mask-542ac4ab9271c9fac927.js",
+      "path---death-mask-542ac4ab9271c9fac927.js.map"
     ],
     "path---depthkit-js": [
-      "path---depthkit-js-0e9491fbabdf0640bf2c.js",
-      "path---depthkit-js-0e9491fbabdf0640bf2c.js.map"
+      "path---depthkit-js-4f5e88258a0ecf21d273.js",
+      "path---depthkit-js-4f5e88258a0ecf21d273.js.map"
     ],
     "path---looking-glass": [
-      "path---looking-glass-0bbf61857f5dbadebdf4.js",
-      "path---looking-glass-0bbf61857f5dbadebdf4.js.map"
+      "path---looking-glass-78f13d82cded0702f365.js",
+      "path---looking-glass-78f13d82cded0702f365.js.map"
     ],
     "path---index": [
       "path---index-ada46179d62062ecd467.js",
       "path---index-ada46179d62062ecd467.js.map"
     ],
     "path---depth-player": [
-      "path---depth-player-078940ba87191c9f0efa.js",
-      "path---depth-player-078940ba87191c9f0efa.js.map"
+      "path---depth-player-a3baa810b7cad64fe9ab.js",
+      "path---depth-player-a3baa810b7cad64fe9ab.js.map"
     ],
     "path---soundobjects": [
-      "path---soundobjects-d19ad2113a630ed7a552.js",
-      "path---soundobjects-d19ad2113a630ed7a552.js.map"
+      "path---soundobjects-60ebc1c66abce764e109.js",
+      "path---soundobjects-60ebc1c66abce764e109.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-52d43ed5875d0c4491ba.js",
@@ -85,32 +85,32 @@
       "commons-6cbf8fccc01ac6b5adce.js.map"
     ],
     "path---sono": [
-      "path---sono-9788308598bf649443e3.js",
-      "path---sono-9788308598bf649443e3.js.map"
+      "path---sono-dfae45f7fdca24c108f6.js",
+      "path---sono-dfae45f7fdca24c108f6.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---aframe": [
-      "path---aframe-76d043ec1bb34ec8de96.js",
-      "path---aframe-76d043ec1bb34ec8de96.js.map"
+      "path---aframe-b8c207f45279dcd76d80.js",
+      "path---aframe-b8c207f45279dcd76d80.js.map"
     ],
     "path---dms": [
-      "path---dms-250714973b831b4ab285.js",
-      "path---dms-250714973b831b4ab285.js.map"
+      "path---dms-ed78b05e3d1f311ca584.js",
+      "path---dms-ed78b05e3d1f311ca584.js.map"
     ],
     "path---bio": [
-      "path---bio-26f1f824fd85bc8817b0.js",
-      "path---bio-26f1f824fd85bc8817b0.js.map"
+      "path---bio-270f78f20593743eee4e.js",
+      "path---bio-270f78f20593743eee4e.js.map"
     ],
     "path---offline-plugin-app-shell-fallback": [
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---twit-ar": [
-      "path---twit-ar-14afe6b6cedd5c15cfc8.js",
-      "path---twit-ar-14afe6b6cedd5c15cfc8.js.map"
+      "path---twit-ar-b270749e7774893acb08.js",
+      "path---twit-ar-b270749e7774893acb08.js.map"
     ],
     "app": [
       "app-ba4073044bea3ec16fc3.js",
@@ -121,20 +121,20 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---tzina": [
-      "path---tzina-b2b42d0c0c8295bafc0a.js",
-      "path---tzina-b2b42d0c0c8295bafc0a.js.map"
+      "path---tzina-589422612488e543d1d5.js",
+      "path---tzina-589422612488e543d1d5.js.map"
     ],
     "path---retouch": [
-      "path---retouch-6edd815d9f206867d5b8.js",
-      "path---retouch-6edd815d9f206867d5b8.js.map"
+      "path---retouch-861f700d9c912670a24c.js",
+      "path---retouch-861f700d9c912670a24c.js.map"
     ],
     "path---myth": [
-      "path---myth-acae5f1e510bed24b3a1.js",
-      "path---myth-acae5f1e510bed24b3a1.js.map"
+      "path---myth-1c8a8da6b604e482be8c.js",
+      "path---myth-1c8a8da6b604e482be8c.js.map"
     ],
     "path---trumpet": [
-      "path---trumpet-cf578522395a5a1f967d.js",
-      "path---trumpet-cf578522395a5a1f967d.js.map"
+      "path---trumpet-c1a4914167c554e8a790.js",
+      "path---trumpet-c1a4914167c554e8a790.js.map"
     ]
   }
 }
