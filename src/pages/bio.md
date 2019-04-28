@@ -38,15 +38,15 @@ excerpt: ""
 
 
 ### **Short bio**
-Based in NYC, Or Fleisher is an award-winning creative technologist, developer, artist working at the intersection of technology and storytelling. His work combines computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
+Based in NYC, Or Fleisher is an award-winning developer, interactive creator and artist working at the intersection of technology and storytelling. His work combines computer graphics, machine learning and immersive experience development in virtual, augmented and mixed realities.
 
 Or's career started as a sound designer and musician. After working in audio post-production he attended Tel Aviv University's film school and started coding, designing and releasing interactive storytelling driven experiences that fuse film and gaming.
 
-Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effect and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, New York University and currently the Principle Creative Technologist at [Vimeo](https://labs.vimeo.com) Creator Labs.
+Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, New York University and currently the Principle Creative Technologist at [Vimeo](https://labs.vimeo.com) Creator Labs.
 
 
 
- **Things to know about Or** - an advanced coffee drinker, cat aficionado, hobbyist musician. Or is also passionate about computational photography and [open source software](#open-source).
+ **Things to know about Or** - an advanced coffee drinker, cat aficionado, hobbyist musician. Or is very passionate about computational photography and [open source software](#open-source).
 
 ### **Education**
 - **New York University** - *M.P.S (2016-2018)*
@@ -71,6 +71,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 ### **Work experience**
 
 - **Principle Creative Technologist** - *Vimeo* (2018-Current)
+  - Lead development and maintainence of open-source integrations including [Unity SDK](https://github.com/vimeo/vimeo-unity-sdk), [three.js](https://github.com/vimeo/vimeo-threejs-player), [A-Frame component](https://github.com/vimeo/aframe-vimeo-component), [RealSense Depth Viewer](https://github.com/vimeo/vimeo-depth-viewer) and [Volumetric video player](https://github.com/vimeo/vimeo-depth-player)
+  - Research and implement computer vision and machine learning models
+  - Build experimental video playback apps such as the [Vimeo on The Looking Glass](https://orfleisher.com/looking-glass), covered by major media such as [TechCrunch](https://techcrunch.com/2018/11/06/vimeo-adds-a-channel-exclusively-for-holograms/) and [Forbes](https://www.forbes.com/sites/charliefink/2018/11/02/this-week-in-xr-vrs-big-iaapa-new-rift-augmented-workers-surgical-scores-mayo-clinic-cash)
 
 - **VR Research Fellow** - *Viacom* (2017)
   - Designed and developed a web based Virtual Reality narrative experience currently in submission to festivals.
@@ -254,6 +257,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **[Trend report: Interactive Storytelling - Vimeo Blog](https://vimeo.com/blog/post/interactive-storytelling-video-trends-beyond-360)**   
 - **How Vimeo can power live streaming holograms - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
 - [**Volume: 3D reconstruction of history for immersive platforms**](https://dl.acm.org/citation.cfm?id=3230791)
 - [**Behind The Scenes of the Worlds Best XR Designers**](https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d)
@@ -264,7 +268,8 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 ### **Open Source**
 
-- **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a community project to the examples section
+- **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a threaded depth cleaner project to the community examples section
+- **[librealsense](https://github.com/IntelRealSense/librealsense/pull/3820)** - Contributed a depth viewer project to the community examples section
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[Vimeo - Unity SDK](https://github.com/vimeo/vimeo-unity-sdk)** - Easily stream your Vimeo videos into Unity or record and publish out to Vimeo.
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
@@ -280,3 +285,4 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[THREE.Multiplayer](https://github.com/juniorxsound/THREE.Multiplayer)** - My boilerplate Node.js server and client setup for Three.js multiplayer projects using Socket.io.
 - **[Awesome Volumetric Filmmaking](https://github.com/SimileSystems/awesome-volumetric-filmmaking)** - A curated resource for all things pertaining to volumetric filmmaking.
 - **[Threaded Depth Cleaner](https://github.com/juniorxsound/ThreadedDepthCleaner)** - Threaded depth-map cleaning and inpainting using OpenCV.
+- **[Image Extraction from EXIF Metadata](https://github.com/juniorxsound/EXIF-Metadata-Image-Extraction)** - Jupyter notebooks showing how to extract images from EXIF metadata
