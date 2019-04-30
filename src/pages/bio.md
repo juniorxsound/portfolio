@@ -188,6 +188,7 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - **DocAviv** - [Tzina](http://www.docaviv.co.il/2017-en/films/tzina-symphony-of-longing/)
 - **Toronto WebFest** - [Tzina](https://www.towebfest.com/portfolio/tzina-symphony-of-longing)
 - **Paris Play Online** - Tzina
+- **International Conference on Interactive Digital Storytelling** - [Tzina](https://icids2017.m-iti.org/?page_id=865)   
 - **Experience, Brussels VR Film Festival** - Tzina
 - **SXSW - The Future of Music Artwork is Gamified** - [Livyatanim: MYTH](https://schedule.sxsw.com/2017/events/PP59988)
 - **GDC - Mozilla VR booth** - Livyatanim: MYTH
