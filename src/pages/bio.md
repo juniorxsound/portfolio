@@ -217,6 +217,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **Digital Trends** - [Vimeo through the Looking Glass](https://www.digitaltrends.com/mobile/looking-glass-holographic-display/)
 - **VRRoom** - [Vimeo through the Looking Glass](https://vrroom.buzz/fr/node/40680)
 - **Mashable** - [Vimeo volumetric livestreaming](https://mashable.com/article/vimeo-3d-hologram-live-stream/#25TNXnRC9sq3)
+- **PCMA** - [Is Telepresence Coming to a Screen Near You?](https://www.pcma.org/telepresence-holograms-vimeo-digital-events/)   
 - **The Next Web** - [Volume.gl website](https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/)
 - **prosthetic knowledge** - [Volume.gl website](http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning)
 - **Tecmundo** - [Volume.gl website](https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm)
