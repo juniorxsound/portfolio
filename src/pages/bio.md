@@ -254,15 +254,16 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **Calcalist** - [Tzina](https://www.calcalist.co.il/consumer/articles/0,7340,L-3693396,00.html)
 - **prosthetic knowledge** - [Tzina](http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by)
 - **Channel 1** - [Tzina](https://www.youtube.com/watch?v=lQYHgwWs1ro)
-- **Ynet - Pnai Plus** - [Interview](https://drive.google.com/file/d/1WmxFaRDpv9NX-fPubLF4MVO425RQaJ1D/view?usp=sharing)
+- **Ynet - Pnai Plus** - [Interview about interactive filmmaking](https://drive.google.com/file/d/1WmxFaRDpv9NX-fPubLF4MVO425RQaJ1D/view?usp=sharing)
 - **Dot And Line** - [Judging at Anilouge 2015](http://dotandline.blog.hu/2015/11/30/europai_animaciokat_dijaztak_a_13_anilogue-on)
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
-- **[Almost Human: Goodbye Uncanny Valley](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad) - Immerse**
+- **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
+- **[Almost Human: Goodbye Uncanny Valley - Immerse](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad)**
 - **[Death of The Hologram & The Life That Comes Next - NYU ITP Adjecent](https://itp.nyu.edu/adjacent/issue-5/death-of-the-hologram-the-life-that-comes-next/)**
 - **[Trend report: Interactive Storytelling - Vimeo Blog](https://vimeo.com/blog/post/interactive-storytelling-video-trends-beyond-360)**   
-- **How Vimeo can power live streaming holograms - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
+- **[How Vimeo can power live streaming holograms - Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
 - [**Volume: 3D reconstruction of history for immersive platforms**](https://dl.acm.org/citation.cfm?id=3230791)
 - [**Behind The Scenes of the Worlds Best XR Designers**](https://medium.muz.li/behind-the-scenes-of-the-worlds-best-xr-designers-42a9bbc9b70d)
 - [**Meet Or Fleisher, A Celebrated WebVR Designer**](https://www.vrroom.buzz/vr-news/people/meet-or-fleisher-celebrated-webvr-designer)
