@@ -259,6 +259,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **[Almost Human: Goodbye Uncanny Valley](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad) - Immerse**
 - **[Death of The Hologram & The Life That Comes Next - NYU ITP Adjecent](https://itp.nyu.edu/adjacent/issue-5/death-of-the-hologram-the-life-that-comes-next/)**
 - **[Trend report: Interactive Storytelling - Vimeo Blog](https://vimeo.com/blog/post/interactive-storytelling-video-trends-beyond-360)**   
 - **How Vimeo can power live streaming holograms - [Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
