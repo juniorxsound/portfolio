@@ -70,7 +70,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 ### **Work experience**
 
-- **Principle Creative Technologist** - *Vimeo* (2018-Current)
+- **Sr. Engineer, Emerging Technology** - *Vimeo* (2019-Current)
+
+- **Principle Creative Technologist** - *Vimeo* (2018-2019)
   - Lead development and maintainence of open-source integrations including [Unity SDK](https://github.com/vimeo/vimeo-unity-sdk), [three.js](https://github.com/vimeo/vimeo-threejs-player), [A-Frame component](https://github.com/vimeo/aframe-vimeo-component), [RealSense Depth Viewer](https://github.com/vimeo/vimeo-depth-viewer) and [Volumetric video player](https://github.com/vimeo/vimeo-depth-player)
   - Research and implement computer vision and machine learning models
   - Build experimental video playback apps such as the [Vimeo on The Looking Glass](https://orfleisher.com/looking-glass), covered by major media such as [TechCrunch](https://techcrunch.com/2018/11/06/vimeo-adds-a-channel-exclusively-for-holograms/) and [Forbes](https://www.forbes.com/sites/charliefink/2018/11/02/this-week-in-xr-vrs-big-iaapa-new-rift-augmented-workers-surgical-scores-mayo-clinic-cash)
