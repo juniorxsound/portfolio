@@ -293,3 +293,4 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[Awesome Volumetric Filmmaking](https://github.com/SimileSystems/awesome-volumetric-filmmaking)** - A curated resource for all things pertaining to volumetric filmmaking.
 - **[Threaded Depth Cleaner](https://github.com/juniorxsound/ThreadedDepthCleaner)** - Threaded depth-map cleaning and inpainting using OpenCV.
 - **[Image Extraction from EXIF Metadata](https://github.com/juniorxsound/EXIF-Metadata-Image-Extraction)** - Jupyter notebooks showing how to extract images from EXIF metadata
+- **[libav RTMP Streaming](https://github.com/juniorxsound/libav-RTMP-Streaming)** - A C++ app that streams a video to an RTMP endpoint using libav
