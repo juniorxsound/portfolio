@@ -42,7 +42,7 @@ Based in NYC, Or Fleisher is an award-winning developer, interactive creator and
 
 Or's career started as a sound designer and musician. After working in audio post-production he attended Tel Aviv University's film school and started coding, designing and releasing interactive storytelling driven experiences that fuse film and gaming.
 
-Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, New York University and currently the Principle Creative Technologist at [Vimeo](https://labs.vimeo.com) Creator Labs.
+Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, and has previously worked at Vimeo and Viacom.
 
 
 
@@ -70,7 +70,11 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 ### **Work experience**
 
-- **Sr. Engineer, Emerging Technology** - *Vimeo* (2019-Current)
+- **Sr. Engineer, Emerging Technology** - *Vimeo* (2019)
+  - Establish and implement immersive player product roadmap
+  - Analyze usage data using analytics tools to inform decisions and trends
+  - Implement and maintain spatial playback features such as WebVR into the Vimeo web player
+  - Research and develop internal tools and IP in machine learning and computer vision such as video classification and metadata injection, currently patent pending
 
 - **Principle Creative Technologist** - *Vimeo* (2018-2019)
   - Lead development and maintainence of open-source integrations including [Unity SDK](https://github.com/vimeo/vimeo-unity-sdk), [three.js](https://github.com/vimeo/vimeo-threejs-player), [A-Frame component](https://github.com/vimeo/aframe-vimeo-component), [RealSense Depth Viewer](https://github.com/vimeo/vimeo-depth-viewer) and [Volumetric video player](https://github.com/vimeo/vimeo-depth-player)
