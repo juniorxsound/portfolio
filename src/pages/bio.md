@@ -70,6 +70,8 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 ### **Work experience**
 
+- **Sr. Engineer, Research & Development** - *The New York Times* (2019 - current)
+
 - **Sr. Engineer, Emerging Technology** - *Vimeo* (2019)
   - Establish and implement immersive player product roadmap
   - Analyze usage data using analytics tools to inform decisions and trends
