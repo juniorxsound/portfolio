@@ -1,0 +1,19 @@
+runtime: python27
+service: 'portfolio'
+api_version: 1
+threadsafe: true
+skip_files:
+  - node_modules/*
+  - src/*
+  - ^(.*/)?#.*#$
+  - ^(.*/)?.*~$
+  - ^(.*/)?.*\.py[co]$
+  - ^(.*/)?.*/RCS/.*$
+  - ^(.*/)?\..*$
+
+handlers:
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+- url: /
+  static_dir: public
