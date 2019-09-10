@@ -2,8 +2,8 @@ runtime: python27
 service: 'portfolio'
 api_version: 1
 threadsafe: true
-  handlers:
 
+handlers:
   - url: /(.+)
     static_files: public/\1
     upload: public/(.*)
@@ -12,23 +12,23 @@ threadsafe: true
     static_files: public/index.html
     upload: public/index.html
 
-  skip_files:
-  - ^(.*/)?app\.yaml
-  - ^(.*/)?app\.yml
-  - ^(.*/)?#.*#
-  - ^(.*/)?.*~
-  - ^(.*/)?.*\.py[co]
-  - ^(.*/)?.*/RCS/.*
-  - ^(.*/)?\..*
-  - ^(.*/)?tests$
-  - ^(.*/)?test$
-  - ^test/(.*/)?
-  - ^COPYING.LESSER
-  - ^README\..*
-  - \.gitignore
-  - ^\.git/.*
-  - \.*\.lint$
-  - ^fabfile\.py
-  - ^testrunner\.py
-  - ^grunt\.js
-  - ^node_modules/(.*/)?
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?tests$
+- ^(.*/)?test$
+- ^test/(.*/)?
+- ^COPYING.LESSER
+- ^README\..*
+- \.gitignore
+- ^\.git/.*
+- \.*\.lint$
+- ^fabfile\.py
+- ^testrunner\.py
+- ^grunt\.js
+- ^node_modules/(.*/)?
