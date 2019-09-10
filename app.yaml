@@ -16,6 +16,8 @@ skip_files:
 handlers:
 - url: /
   static_files: public/index.html
-  upload: index.html
-- url: /
-  static_dir: public
+  upload: public/index.html
+
+- url: /(.*)
+  static_files: public/\1
+  upload: public/(.*)
