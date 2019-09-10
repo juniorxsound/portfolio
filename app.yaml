@@ -4,6 +4,8 @@ api_version: 1
 threadsafe: true
 skip_files:
   - node_modules/*
+  - .vscode/*
+  - .cache/*
   - src/*
   - ^(.*/)?#.*#$
   - ^(.*/)?.*~$
@@ -14,6 +16,6 @@ skip_files:
 handlers:
 - url: /
   static_files: public/index.html
-  upload: public/index.html
+  upload: index.html
 - url: /
   static_dir: public
