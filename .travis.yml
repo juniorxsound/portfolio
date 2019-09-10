@@ -6,14 +6,6 @@ node_js:
   - "8"
 cache:
   yarn: true
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  local_dir: public
-  keep-history: true
-  on:
-    branch: master
 before_script:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
@@ -23,5 +15,9 @@ script:
   - "yarn run format"
   - "yarn run build_prefixed_static"
   - "echo 'orfleisher.com' > ./public/CNAME"
-after_success:
-  - "yarn run deploy"
+deploy:
+  provider: gae
+  keyfile: $GAE_TOKEN
+  project: "portfolio"
+  on:
+    branch: master
