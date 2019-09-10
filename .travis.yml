@@ -18,7 +18,7 @@ deploy:
   provider: gae
   keyfile: gae.json
   project: orfleisher-production
-  verbosity: debug
+  default: true
   config: ./public/app.yaml
   on:
     branch: master
