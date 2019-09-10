@@ -18,6 +18,7 @@ deploy:
   provider: gae
   keyfile: gae.json
   project: orfleisher-production
+  default: true
   on:
     branch: master
 before_install:
