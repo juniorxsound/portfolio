@@ -7,6 +7,7 @@ yarn-error.log*
 yarn.lock
 gae.json
 
+
 # Runtime data
 pids
 *.pid
@@ -63,5 +64,6 @@ typings/
 .cache/
 .vscode/
 static/
-public
+public/*
+!app.yaml
 yarn-error.log

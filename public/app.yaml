@@ -4,13 +4,11 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /(.+)
-  static_files: public/\1
-  upload: public/(.*)
-
 - url: /
-  static_files: public/index.html
-  upload: public/index.html
+  static_files: index.html
+  upload: index.html
+- url: /static
+  static_dir: static
 
 skip_files:
 - ^(.*/)?app\.yaml
@@ -26,9 +24,18 @@ skip_files:
 - ^COPYING.LESSER
 - ^README\..*
 - \.gitignore
+- \.travis.yml
+- \gae.json.env
+- \gatsby-config.js
+- \gatsby-node.js
+- \gatsby-ssr.js
+- \README.md
+- \LICENSE
 - ^\.git/.*
 - \.*\.lint$
 - ^fabfile\.py
 - ^testrunner\.py
 - ^grunt\.js
 - ^node_modules/(.*/)?
+- ^src/(.*/)?
+- ^.cache/(.*/)?
