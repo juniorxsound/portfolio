@@ -1,0 +1,13 @@
+steps:
+  - name: node:10.15.1
+    entrypoint: yarn
+    args: ["install"]
+  - name: node:10.15.1
+    entrypoint: yarn
+    args: ["format"]
+  - name: node:10.15.1
+    entrypoint: yarn
+    args: ["build_prefixed_static"]
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: ["app", "deploy"]
+timeout: "1600s"
