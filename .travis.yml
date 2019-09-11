@@ -19,7 +19,7 @@ deploy:
   keyfile: gae.json
   project: orfleisher-production
   default: true
-  config: "./public/app.yaml"
+  config: app.yaml
   on:
     branch: master
 before_install:
