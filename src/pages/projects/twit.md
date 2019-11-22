@@ -15,5 +15,5 @@ links: [['Documentation', 'http://itp.orfleisher.com/2017/10/21/context-with-twi
 components: [['code', 'Swift'], ['software', 'Inception v3, CoreML, Twitter API & Swifter'], ['3d', 'ARKit']]
 credits: 'Developed with <a target="_blank" href="http://agermanidis.com">Anastasis Germanidis</a>'
 press: [['prosthetic knowledge', 'http://prostheticknowledge.tumblr.com/post/166745203731/twitar-coding-experiment-from-or-fleisher-and'], ['Next Reality', 'https://mobile-ar.reality.news/news/bizarre-ar-experiment-serves-tweets-for-everything-your-iphone-can-see-0180743/'], ['Alphr', 'http://www.alphr.com/twitter/1007491/twitter-in-augmented-reality-looks-like-a-living-nightmare']]
-excerpt: "Predict how long people have to live in augmented reality."
+excerpt: "Imagine what would happen if Twitter intruded our everyday augmented reality."
 ---
