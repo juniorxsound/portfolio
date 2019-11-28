@@ -283,6 +283,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a threaded depth cleaner project to the community examples section
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/3820)** - Contributed a depth viewer project to the community examples section
+- **[three.js](https://threejs.org/examples/?q=webxr#webxr_vr_panorama_depth)** - A 6DoF panorama example using 360 images and depth maps
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[ffmpeg-libav-tutorial](https://github.com/leandromoreira/ffmpeg-libav-tutorial/)**
 - **[Vimeo - Unity SDK](https://github.com/vimeo/vimeo-unity-sdk)** - Easily stream your Vimeo videos into Unity or record and publish out to Vimeo.
