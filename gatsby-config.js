@@ -61,7 +61,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/assets/images/profile.jpg`, // This path is relative to the root of the site.
       },
-    },
-    `gatsby-plugin-offline`
+    }
   ]
 };
