@@ -9,4 +9,4 @@ steps:
     entrypoint: yarn
     args: ["build_prefixed_static"]
   - name: "gcr.io/cloud-builders/gcloud"
-    args: ["app", "deploy", "--bucket=gs://orfleisher-production.appspot.com"]
+    args: ["app", "deploy", "--bucket=gs://orfleisher-dot-dom-website-cdn"]
