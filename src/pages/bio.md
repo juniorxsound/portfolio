@@ -157,6 +157,7 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 ### **Community**
 - **New York University ITP (2019)** - Master's thesis reviewer
 - **MIT Media Lab VR Hackathon (2019)** - [Software development mentor](https://realityvirtuallyhack.com/mentors/)
+- **ITP xStory: p5.shader (2018)** - [Mentor](https://itp-xstory.github.io/p5js-shaders/#/) \ [Github](https://github.com/ITP-xStory/p5js-shaders)
 - **Design Academy Eindhoven (2018)** - Interactive media mentor
 - **NEW INC (2018)** - [Immersive track mentor](https://www.newinc.org/mentors)
 - **ITP xStory: Experiments in Storytelling** - [Co-founder and contributer](https://itpxstory.com)
