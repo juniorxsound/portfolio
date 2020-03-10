@@ -158,7 +158,7 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - **New York University ITP (2019)** - Master's thesis reviewer
 - **MIT Media Lab VR Hackathon (2019)** - [Software development mentor](https://realityvirtuallyhack.com/mentors/)
 - **Design Academy Eindhoven (2018)** - Interactive media mentor
-- **NEW INC (2018)** - [Immersive track mentor](https://www.newinc.org/mentors-or-fleisher/)
+- **NEW INC (2018)** - [Immersive track mentor](https://www.newinc.org/mentors)
 - **ITP xStory: Experiments in Storytelling** - [Co-founder and contributer](https://itpxstory.com)
 - **Shenkar College of Engineering and Design (2017)** - Interactive media mentor
 - **Anilouge (2015)** - [Animated features jury](http://anilogue.com/2015/index.html#news)
@@ -272,6 +272,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 ### **Publications**
 - **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
 - **[Almost Human: Goodbye Uncanny Valley - Immerse](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad)**
+- **[Almost Human: Goodbye Uncanny Valley - VRRRoom](https://vrroom.buzz/vr-news/trends/almost-human-goodbye-uncanny-valley)**
 - **[Death of The Hologram & The Life That Comes Next - NYU ITP Adjecent](https://itp.nyu.edu/adjacent/issue-5/death-of-the-hologram-the-life-that-comes-next/)**
 - **[Trend report: Interactive Storytelling - Vimeo Blog](https://vimeo.com/blog/post/interactive-storytelling-video-trends-beyond-360)**   
 - **[How Vimeo can power live streaming holograms - Vimeo Blog](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms) / [Medium](https://medium.com/vimeo-engineering-blog/how-vimeo-can-power-live-streaming-holograms-f650337f3c6b)**
