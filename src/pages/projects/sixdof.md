@@ -1,6 +1,6 @@
 ---
 path: "/sixdof"
-date: "2018-04-22T22:11:03.284Z"
+date: "2018-04-22T22:12:03.284Z"
 title: "6DoF.js"
 tags: ["Augmented Reality", "Virtual Reality", "Tools"]
 thumbnail: "https://i.imgur.com/yZcbtIq.gif"
