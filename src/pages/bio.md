@@ -267,6 +267,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **prosthetic knowledge** - [Tzina](http://prostheticknowledge.tumblr.com/post/158715900671/tzina-symphony-of-longing-webvr-documentary-by)
 - **Channel 1** - [Tzina](https://www.youtube.com/watch?v=lQYHgwWs1ro)
 - **Ynet - Pnai Plus** - [Interview about interactive filmmaking](https://drive.google.com/file/d/1WmxFaRDpv9NX-fPubLF4MVO425RQaJ1D/view?usp=sharing)
+- **Future News** - [The New York Times' early AI explorations](https://www.news-future.com/2020/04/future-news-22-new-york-times-early-ai.html)  
 - **Dot And Line** - [Judging at Anilouge 2015](http://dotandline.blog.hu/2015/11/30/europai_animaciokat_dijaztak_a_13_anilogue-on)
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
