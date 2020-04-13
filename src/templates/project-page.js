@@ -83,21 +83,21 @@ export default class Template extends Component {
                       case 'code':
                         return (
                           <p key={node.toString()} className="bold">
-                            <FontAwesomeIcon className="component_icon" icon={faCode} />
+                            {/* <FontAwesomeIcon className="component_icon" icon={faCode} /> */}
                             <span className="component"> {node[1]}</span>
                           </p>
                         )
                       case 'software':
                         return (
                           <p key={node.toString()} className="bold">
-                            <FontAwesomeIcon className="component_icon" icon={faCodeBranch} />
+                            {/* <FontAwesomeIcon className="component_icon" icon={faCodeBranch} /> */}
                             <span className="component"> {node[1]}</span>
                           </p>
                         )
                       case '3d':
                         return (
                           <p key={node.toString()} className="bold">
-                            <FontAwesomeIcon className="component_icon" icon={faCubes} />
+                            {/* <FontAwesomeIcon className="component_icon" icon={faCubes} /> */}
                             <span className="component"> {node[1]}</span>
                           </p>
                         )
@@ -107,7 +107,7 @@ export default class Template extends Component {
                         )
                         return (
                           <p key={node.toString()} className="bold">
-                            <FontAwesomeIcon className="component_icon" icon={faWrench} />
+                            {/* <FontAwesomeIcon className="component_icon" icon={faWrench} /> */}
                             <span className="component"> {node[1]}</span>
                           </p>
                         )
