@@ -291,6 +291,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[three.js](https://threejs.org/examples/?q=webxr#webxr_vr_panorama_depth)** - A 6DoF panorama example using 360 images and depth maps
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[ffmpeg-libav-tutorial](https://github.com/leandromoreira/ffmpeg-libav-tutorial/)**
+- **[The New York Times - Blender in Docker](https://github.com/nytimes/rd-blender-docker)** - A collection of Docker containers for running Blender headless or distributed  
 - **[Vimeo - Unity SDK](https://github.com/vimeo/vimeo-unity-sdk)** - Easily stream your Vimeo videos into Unity or record and publish out to Vimeo.
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
