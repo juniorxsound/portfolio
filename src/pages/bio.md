@@ -272,6 +272,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **[Rendered Newsletter](https://rendered.substack.com/p/rendered-1)**  
 - **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
 - **[Almost Human: Goodbye Uncanny Valley - Immerse](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad)**
 - **[Almost Human: Goodbye Uncanny Valley - VRRRoom](https://vrroom.buzz/vr-news/trends/almost-human-goodbye-uncanny-valley)**
@@ -310,4 +311,5 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[Image Extraction from EXIF Metadata](https://github.com/juniorxsound/EXIF-Metadata-Image-Extraction)** - Jupyter notebooks showing how to extract images from EXIF metadata
 - **[libav RTMP Streaming](https://github.com/juniorxsound/libav-RTMP-Streaming)** - A C++ app that streams a video to an RTMP endpoint using libav  
 - **[now](https://github.com/juniorxsound/now)** - A slim FFMPEG wrapper to easily transcode videos to multiple resolutions using Nvidia GPUs  
-- **[THREE.SixDOF](https://github.com/juniorxsound/THREE.SixDOF)** - Plugin for rendering 6DOF equirectangular 360 images and videos with depthmaps  
+- **[THREE.SixDOF](https://github.com/juniorxsound/THREE.SixDOF)** - Plugin for rendering 6DOF equirectangular 360 images and videos with depthmaps 
+- **[TS Library Starter](https://github.com/juniorxsound/TS-Library-Starter)** - Boilerplate Typescript library template  
