@@ -1,8 +1,8 @@
 ---
 path: "/coronavirus-transmission-cough-6-feet-ar"
-date: "2018-05-01T22:12:03.284Z"
+date: "2018-20-01T22:12:03.284Z"
 title: "Coronavirus Transmission"
-tags: ["Augmented Reality"]
+tags: ["WebGL", "Augmented Reality"]
 thumbnail: "https://i.imgur.com/6pM2pfo.gif"
 cover: "covid19_cover.jpg"
 embed: ''

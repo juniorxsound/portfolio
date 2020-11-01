@@ -2,7 +2,7 @@
 path: "/aframe"
 date: "2018-04-16T22:12:03.284Z"
 title: "DepthKit for AFrame"
-tags: ["Virtual Reality", "Tools"]
+tags: ["WebGL", "Virtual Reality", "Tools"]
 thumbnail: "https://i.imgur.com/QoxC1xD.gif"
 cover: "aframe_cover.jpg"
 embed: ''

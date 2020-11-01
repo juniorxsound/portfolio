@@ -2,7 +2,7 @@
 path: "/tzina"
 date: "2018-04-29T22:12:03.284Z"
 title: "Tzina"
-tags: ["Virtual Reality"]
+tags: ["WebGL", "Virtual Reality"]
 thumbnail: "https://i.imgur.com/ejOHbO0.gif"
 cover: ""
 embed: '<iframe width="100%" height="500" src="https://www.youtube.com/embed/msnwH6hCtO4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'

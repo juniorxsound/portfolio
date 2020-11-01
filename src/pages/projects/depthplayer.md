@@ -2,7 +2,7 @@
 path: "/depth-player"
 date: "2018-04-27T22:12:03.284Z"
 title: "Vimeo Volumetric Video"
-tags: ["Experiment", "Tools"]
+tags: ["WebGL", "Experiment", "Tools"]
 thumbnail: "https://i.imgur.com/TMOGIv6.gif"
 cover: ""
 embed: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/281703500" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'
