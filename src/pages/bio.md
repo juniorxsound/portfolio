@@ -105,7 +105,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
   
 ### **Workshops & talks**
 
-- **NYC Media Lab - Guest Speaker** - [*The New York Times* (2020)](https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge)
+- **The Machine Learning Center at Georgia Tech** - [*The New York Times R&D* (2020)](https://mlatgt.blog/2020/10/07/nyt-rd-team-to-discuss-technologys-impact-on-journalism-in-live-virtual-event/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
+
+- **NYC Media Lab - Guest Speaker** - [*The New York Times R&D* (2020)](https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge)
 
 -  **Volumetric Accessibility with Vimeo** - *Volumetric Filmmaking Meetup* (2018)  
 [This talk](https://vimeo.com/280815263) (2:08:40) by Casey Pugh, head of Creator Labs at Vimeo, presents the work we have been doing in volumetric video distribution and live streaming.
