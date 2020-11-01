@@ -2,7 +2,7 @@
 path: "/depthkit-js"
 date: "2018-04-25T22:12:03.284Z"
 title: "DepthKit.js"
-tags: ["Augmented Reality", "Virtual Reality", "Tools"]
+tags: ["WebGL", "Tools"]
 thumbnail: "https://i.imgur.com/TPAgkmL.gif"
 cover: "depthkitjs_cover.png"
 embed: ''

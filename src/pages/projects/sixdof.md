@@ -2,7 +2,7 @@
 path: "/sixdof"
 date: "2018-04-22T22:12:03.284Z"
 title: "6DoF.js"
-tags: ["Augmented Reality", "Virtual Reality", "Tools"]
+tags: ["WebGL", "Tools"]
 thumbnail: "https://i.imgur.com/yZcbtIq.gif"
 cover: "sixdof_cover.jpg"
 embed: ''

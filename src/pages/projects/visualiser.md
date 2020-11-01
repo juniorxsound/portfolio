@@ -2,7 +2,7 @@
 path: "/visualizer"
 date: "2018-04-14T22:12:03.284Z"
 title: "Visualizer"
-tags: ["Experiment"]
+tags: ["WebGL", "Experiment"]
 thumbnail: "https://i.imgur.com/qpAr8GX.gif"
 cover: "visualizer.png"
 embed: ''
