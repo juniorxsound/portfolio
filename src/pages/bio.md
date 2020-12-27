@@ -274,6 +274,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **[Video format classification and metadata injection using machine learning - Patent Pending](https://patents.google.com/patent/US20200372255A1/en?inventor=Or+Fleisher&assignee=Vimeo)**
 - **[Rendered Newsletter](https://rendered.substack.com/p/rendered-1)**  
 - **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
 - **[Almost Human: Goodbye Uncanny Valley - Immerse](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad)**
