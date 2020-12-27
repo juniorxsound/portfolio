@@ -30,6 +30,9 @@
     "global": "^4.3.2",
     "react-scrollable-anchor": "^0.6.1"
   },
+  "resolutions": {
+    "sharp": "0.22.1"
+  },
   "devDependencies": {
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-analytics": "^1.0.24",
