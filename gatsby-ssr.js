@@ -1,4 +1,4 @@
-import Helmet from "react-helmet"
+const Helmet = require('react-helmet').default;
 
 exports.onRenderBody = (
   { setHeadComponents, setHtmlAttributes, setBodyAttributes },

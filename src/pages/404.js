@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Section from '../components/Section'
 import Button from '../components/Button'
 import Helmet from 'react-helmet'
-import './style.scss'
+// import './style.scss'
 
 export default class NotFoundRedirect extends Component {
   constructor(props) {

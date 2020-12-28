@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
-import './style.scss'
+import React from 'react'
+import styled from 'styled-components'
 
-export default class Section extends Component {
-  render() {
-    return (
-      <div className="section">
-        <h6 className="bold">{this.props.title}</h6>
-        <div className="section-units">{this.props.children}</div>
-      </div>
-    )
+const SectionWrapper = styled.section`
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  h2 {
+    margin-top: 15px;
   }
-}
+`
+
+const Section = React.forwardRef(({ title, children }, ref) => (
+  <SectionWrapper ref={ref}>
+    <h2>{title}</h2>
+    {children}
+  </SectionWrapper>
+))
+
+export default Section

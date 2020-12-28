@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `open sans\:300,600`,
+          `open sans\:300,400,600`,
         ]
       }
     },

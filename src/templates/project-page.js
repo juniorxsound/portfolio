@@ -10,7 +10,6 @@ import {
   faCodeBranch,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons'
-import '../pages/style.scss'
 
 export default class Template extends Component {
   constructor(props) {
@@ -40,7 +39,7 @@ export default class Template extends Component {
           <Helmet title={`Or Fleisher | ${title}`}>
             <html lang="en" />
           </Helmet>
-          <BackArrow />
+          <BackArrow route={'/'} />
           <h3 className="bold">{title}</h3>
           <p style={{ marginTop: '-14px' }} className="bold gray_text">
             {tags}
@@ -78,7 +77,7 @@ export default class Template extends Component {
                     return <h4 className="bold">Components</h4>
                 })()}
                 <ul>
-                  {post.frontmatter.components.map(node => {
+                  {post.frontmatter.components.map((node) => {
                     switch (node[0]) {
                       case 'code':
                         return (
@@ -128,7 +127,7 @@ export default class Template extends Component {
                     return <h4 className="bold">Links</h4>
                 })()}
                 <div className="row">
-                  {post.frontmatter.links.map(node => {
+                  {post.frontmatter.links.map((node) => {
                     return (
                       <Button
                         key={node.toString()}
@@ -155,7 +154,7 @@ export default class Template extends Component {
                         <br />
                         <h4 className="bold row">Recognition</h4>
                         <span>{' • '}</span>
-                        {post.frontmatter.press.map(node => {
+                        {post.frontmatter.press.map((node) => {
                           return (
                             <span key={node.toString()}>
                               <a target="_blank" href={node[1]}>

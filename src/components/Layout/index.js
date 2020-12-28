@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import './style.scss'
+// import './style.scss'
 
-import profileImage from '../assets/images/profile.jpg'
-import profileFacebookImage from '../assets/images/profile_facebook.jpg'
-import favicon16 from '../assets/favicons/favicon-16x16.png'
-import favicon32 from '../assets/favicons/favicon-32x32.png'
+import profileImage from '../../assets/images/profile.jpg'
+import profileFacebookImage from '../../assets/images/profile_facebook.jpg'
+import favicon16 from '../../assets/favicons/favicon-16x16.png'
+import favicon32 from '../../assets/favicons/favicon-32x32.png'
 
 export default class TemplateWrapper extends Component {
   constructor(props) {
@@ -124,7 +124,7 @@ export default class TemplateWrapper extends Component {
           </script>
         </Helmet>
 
-        <div className="template-wrapper-children">{children()}</div>
+        <div className="template-wrapper-children">{children}</div>
       </div>
     )
   }

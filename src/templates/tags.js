@@ -15,7 +15,7 @@ export default class Tags extends Component {
           <span>Posts about {tagName};</span>
 
           <ul>
-            {posts.map(post => {
+            {posts.map((post) => {
               return (
                 <li>
                   <Link to={post.frontmatter.path}>

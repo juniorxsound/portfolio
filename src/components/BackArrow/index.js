@@ -1,26 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Link from 'gatsby-link'
 import Arrow from '../../assets/images/ui/left-arrow.svg'
+import styled from 'styled-components'
 
-export default class BackArrow extends Component {
-  constructor(props) {
-    super(props)
-  }
+const BackArrowWrapper = styled.div`
+  width: 20px;
 
-  render() {
-    return (
-      <div>
-        <Link to="/">
-          <img
-            alt="Home button"
-            style={{
-              top: '66px',
-              width: '20px',
-            }}
-            src={Arrow}
-          />
-        </Link>
-      </div>
-    )
+  img {
+    width: 20px;
+    position: relative;
+    margin-top: 15px;
   }
-}
+`
+
+const BackArrow = ({ route, alt }) => (
+  <BackArrowWrapper>
+    <Link to={route}>
+      <img alt={alt} src={Arrow} />
+    </Link>
+  </BackArrowWrapper>
+)
+
+export default BackArrow

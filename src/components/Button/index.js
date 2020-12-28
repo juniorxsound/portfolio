@@ -1,62 +1,51 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Link from 'gatsby-link'
-import './style.scss'
+import styled from 'styled-components'
 
-export default class Button extends Component {
-  constructor(props) {
-    super(props)
-    this.showAlert = this.showAlert.bind(this)
+const ButtonWrapper = styled.button`
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: none;
+  border: 1px solid #404040;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  margin-right: 10px;
+
+  .link {
+    color: #404040;
+    text-decoration: none;
   }
 
-  showAlert(e) {
-    console.log(e)
+  &:hover {
+    color: #000;
+    border: 1px solid #000;
+    box-shadow: 0px 5px 18px 0px rgba(0, 0, 0, 0.1);
   }
+`
 
-  render() {
-    const concatanatedClassName = `col-xs-${this.props.mobileWidth} col-sm-${
-      this.props.smallWidth
-    } col-md-${this.props.mediumWidth}`
-
-    return (
-      <div className={concatanatedClassName}>
-        {/* External button - i.e goes to new tab */}
-        {(() => {
-          if (this.props.externalLink)
-            return (
-              <div>
-                <a
-                  href={this.props.externalLink}
-                  style={{ textDecoration: 'none' }}
-                  target="_blank"
-                >
-                  <div className="btn">{this.props.text}</div>
-                </a>
-              </div>
-            )
-        })()}
-
-        {/* Internal button - i.e goes to React-Router */}
-        {(() => {
-          if (this.props.link)
-            return (
-              <div>
-                <Link to={this.props.link} style={{ textDecoration: 'none' }}>
-                  <div className="btn">{this.props.text}</div>
-                </Link>
-              </div>
-            )
-        })()}
-
-        {/* Scroll button */}
-        {(() => {
-          if (!this.props.link && !this.props.externalLink)
-            return (
-              <div onClick={this.showAlert} className="btn">
-                {this.props.text}
-              </div>
-            )
-        })()}
-      </div>
-    )
-  }
+const Button = ({
+  showAlert,
+  link,
+  externalLink,
+  text,
+  mobileWidth,
+  smallWidth,
+  mediumWidth,
+}) => {
+  return (
+    <ButtonWrapper>
+      {externalLink ? (
+        <a className="link" href={externalLink}>
+          {text}
+        </a>
+      ) : (
+        <Link className="link" to={link}>
+          {text}
+        </Link>
+      )}
+    </ButtonWrapper>
+  )
 }
+
+export default Button
