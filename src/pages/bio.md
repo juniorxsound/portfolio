@@ -168,6 +168,8 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 
 ### **Awards**
 
+- **SND - Silver Medal Information graphics — Health/Coronavirus** - [*3-D Simulation*](https://www.snd.org/bodd/2021/02/25/2020-silver-and-gold-medals/)
+- **SND - Silver Medal Line of Coverage: Coronavirus** - [*Masks Work, 3-D Simulation*](https://www.snd.org/bodd/2021/02/25/2020-silver-and-gold-medals/)
 - **WorldFest- NASA Remi Award winner** - *Livyatanim: MYTH*
 - **UrbamMediaMakers Best Interactive Award** - *Livyatanim: MYTH*
 - **FWA - Website of the Day** - *Livyatanim: MYTH*
@@ -291,6 +293,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 ### **Open Source**
 
+- **[Blender in Docker](https://github.com/nytimes/rd-blender-docker)** -  A collection of Docker containers for running Blender headless or distributed
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a threaded depth cleaner project to the community examples section
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/3820)** - Contributed a depth viewer project to the community examples section
 - **[three.js](https://threejs.org/examples/?q=webxr#webxr_vr_panorama_depth)** - A 6DoF panorama example using 360 images and depth maps
