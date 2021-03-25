@@ -42,7 +42,7 @@ Based in NYC, Or Fleisher is an award-winning developer, interactive creator and
 
 Or's career started as a sound designer and musician. After working in audio post-production he attended Tel Aviv University's film school and started coding, designing and releasing interactive storytelling driven experiences that fuse film and gaming.
 
-Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, and has previously worked at Vimeo and Viacom.
+Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, and has previously worked at Vimeo and Viacom. Currently, Or is a Lead R&D Engineer at The New York Times.
 
 
 
@@ -70,7 +70,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 ### **Work experience**
 
-- **Sr. Engineer, Research & Development** - *The New York Times* (2019 - current)
+- **Lead Engineer, Research & Development** - *The New York Times* (2021 - current)
+
+- **Sr. Engineer, Research & Development** - *The New York Times* (2019 - 2021)
 
 - **Sr. Engineer, Emerging Technology** - *Vimeo* (2019)
   - Establish and implement immersive player product roadmap
