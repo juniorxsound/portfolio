@@ -107,6 +107,8 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
   
 ### **Workshops & talks**
 
+- **Brown Institute at Columbia Journalism School** - [*The New York Times R&D* (2020)](https://brown.columbia.edu/event/applying-emerging-technologies-in-service-of-journalism/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
+
 - **The Machine Learning Center at Georgia Tech** - [*The New York Times R&D* (2020)](https://mlatgt.blog/2020/10/07/nyt-rd-team-to-discuss-technologys-impact-on-journalism-in-live-virtual-event/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
 
 - **NYC Media Lab - Guest Speaker** - [*The New York Times R&D* (2020)](https://www.nycmedialab.org/recent-projects/the-new-york-times-spatial-computing-for-news-challenge)
