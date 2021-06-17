@@ -172,6 +172,11 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 
 ### **Awards**
 
+- **Malofiej - Gold - Digital Features** - [Masks Work. Really. We’ll Show You How](https://twitter.com/malofiej/status/1405547000674852864)
+- **Malofiej - Silver - Innovation Format** - [Masks Work. Really. We’ll Show You How](https://drive.google.com/file/d/1c_NuU7gtlLu7z2i61eRy8Q1YiMj5wK5R/view)
+- **Malofiej - Silver - Print Features** - [Social Distancing: Why 6 Feet?](https://drive.google.com/file/d/1c_NuU7gtlLu7z2i61eRy8Q1YiMj5wK5R/view)
+- **Malofiej - Bronze - Digital Features** - [This 3-D Simulation Shows Why Social Distancing Is So Important](https://drive.google.com/file/d/1c_NuU7gtlLu7z2i61eRy8Q1YiMj5wK5R/view)
+- **SABEW 2020 - Innovation – Large and medium divisions** - [Designed to deceive](https://sabew.org/best-in-business/)  
 - **SND - Silver Medal Information graphics — Health/Coronavirus** - [*3-D Simulation*](https://www.snd.org/bodd/2021/02/25/2020-silver-and-gold-medals/)
 - **SND - Silver Medal Line of Coverage: Coronavirus** - [*Masks Work, 3-D Simulation*](https://www.snd.org/bodd/2021/02/25/2020-silver-and-gold-medals/)
 - **WorldFest- NASA Remi Award winner** - *Livyatanim: MYTH*
