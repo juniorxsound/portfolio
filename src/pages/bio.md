@@ -107,7 +107,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
   
 ### **Workshops & talks**
 
-- **Brown Institute at Columbia Journalism School** - [*The New York Times R&D* (2020)](https://brown.columbia.edu/event/applying-emerging-technologies-in-service-of-journalism/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
+- **Adobe Research** - [*The New York Times R&D* (2021)](https://research.adobe.com/lecture/members-of-the-new-york-times-rd-team/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
+
+- **Brown Institute at Columbia Journalism School** - [*The New York Times R&D* (2021)](https://brown.columbia.edu/event/applying-emerging-technologies-in-service-of-journalism/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
 
 - **The Machine Learning Center at Georgia Tech** - [*The New York Times R&D* (2020)](https://mlatgt.blog/2020/10/07/nyt-rd-team-to-discuss-technologys-impact-on-journalism-in-live-virtual-event/) - Applying Emerging Technologies In Service of Journalism at The New York Times.
 
@@ -156,9 +158,10 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 - Graphics programmer experienced with *WebGL*, *2D Canvas*, *OpenGL* and advanced *shader programming (GLSL, HLSL)*.
 - Extensive knowledge in *Virtual and Augmented Reality* content development (WebVR, WebAR, ARKit, Unity for Rift, Vive and GearVR).
 - Graphics Libraries: Three.js, openFrameworks, GLEW, GLFW, JUCE
+- Front-end & Web Development Libraries: React, Redux, GraphQL, Express, Node
 - Software: Unity, TouchDesigner, Nuke, Avid MC, Adobe Creative Cloud, Blender, Octane Renderer, Vue, Pro-Tools, Ableton Live, Max/MSP/Jitter.
-- Programming languages: Javascript (ES5/ES6), C++, C#, Swift, python, HTML5, CSS3D
-- Further knowledge in Depth sensing and 3D scanning, Frontend development, Node.js, Express.js, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML), PCB design, electronics.
+- Programming languages: Javascript (ES5/ES6), Typescript, C++, C#, Swift, python, HTML5, CSS3D
+- Further knowledge in Depth sensing and 3D scanning, Frontend development, Websockets, Arduino programming, Raspberry Pi programming, Machine learning (tensorflow, CoreML, Jupyter, Matplotlib, OpenCV), PCB design, electronics.
 
 ### **Community**
 - **New York University ITP (2019)** - Master's thesis reviewer
