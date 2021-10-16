@@ -306,6 +306,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 
 ### **Open Source**
 
+- **[Theatre.js](https://github.com/AriaMinaei/theatre)**
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a threaded depth cleaner project to the community examples section
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/3820)** - Contributed a depth viewer project to the community examples section
 - **[three.js](https://threejs.org/examples/?q=webxr#webxr_vr_panorama_depth)** - A 6DoF panorama example using 360 images and depth maps
