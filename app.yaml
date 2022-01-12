@@ -192,35 +192,3 @@ handlers:
     upload: public/index.html
     expiration: "15m"
     secure: always
-
-skip_files:
-  - ^(.*/)?app\.yaml
-  - ^(.*/)?app\.yml
-  - ^(.*/)?#.*#
-  - ^(.*/)?.*~
-  - ^(.*/)?.*\.py[co]
-  - ^(.*/)?.*/RCS/.*
-  - ^(.*/)?\..*
-  - ^(.*/)?tests$
-  - ^(.*/)?test$
-  - ^test/(.*/)?
-  - ^COPYING.LESSER
-  - ^README\..*
-  - \.gitignore
-  - \.travis.yml
-  - \gae.json.enc
-  - ^(.*/)?.lock
-  - ^(.*/)?.log
-  - \gatsby-config.js
-  - \gatsby-node.js
-  - \gatsby-ssr.js
-  - \README.md
-  - \LICENSE
-  - ^\.git/.*
-  - \.*\.lint$
-  - ^fabfile\.py
-  - ^testrunner\.py
-  - ^grunt\.js
-  - ^node_modules/(.*/)?
-  - ^src/(.*/)?
-  - ^.cache/(.*/)?
