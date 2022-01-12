@@ -289,6 +289,8 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **AudioKit Pro** - [detune](https://audiokitpro.com/detune-play-music-with-your-face/)
 
 ### **Publications**
+- **[Simulation of Flow and Pathogen Transport in a Narrow-Body Airplane Cabin
+](https://arc.aiaa.org/doi/10.2514/6.2022-0334)**
 - **[Video format classification and metadata injection using machine learning - Patent Pending](https://patents.google.com/patent/US20200372255A1/en?inventor=Or+Fleisher&assignee=Vimeo)**
 - **[Rendered Newsletter](https://rendered.substack.com/p/rendered-1)**  
 - **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
