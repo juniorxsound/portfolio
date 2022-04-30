@@ -175,6 +175,12 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 
 ### **Awards**
 
+- **SABW - Innovation** - [Immersive 3-D Storytelling](https://sabew.org/best-in-business/#:~:text=%E2%80%A2%20Winner%20%E2%80%93%20The%20New%20York%20Times%3B%20Immersive%203%2DD%20Storytelling)
+- **SND - Award of Excellence** - [How Safe Are You From Covid When You Fly?](https://airtable.com/shrMLVqYbqJ5nOxel/tblcwLDp60XQygKbq/viwb5v6acVmfP9fnd/recbeLU61MI8JtaiK?backgroundColor=gray&viewControls=on)
+- **SND - Gold - Design: Sport** - [
+Sunisa Lee, Gymnast and Uneven Bars Expert, Has a Shot at Olympic Gold](https://airtable.com/shrMLVqYbqJ5nOxel/tblcwLDp60XQygKbq/viwb5v6acVmfP9fnd/reck7n2qI0Wu3zadt?backgroundColor=gray&viewControls=on)
+- **SND - Award of Excellence** - [Why the Empire State Building, and New York, May Never Be the Same](https://airtable.com/shrMLVqYbqJ5nOxel/tblcwLDp60XQygKbq/viwb5v6acVmfP9fnd/recgmb4U1MlIUdeHG?backgroundColor=gray&viewControls=on)
+- **SND - Award of Excellence** - [Why the Empire State Building, and New York, May Never Be the Same](https://airtable.com/shrMLVqYbqJ5nOxel/tblcwLDp60XQygKbq/viwb5v6acVmfP9fnd/recIKWlBvLvBzeme0?backgroundColor=gray&viewControls=on)
 - **SPD - Gold - Web: Information Graphics** - [Masks Work. Really. We’ll Show You How](https://static1.squarespace.com/static/59a4a351197aea9d17f6bc13/t/60d0e2de9316397b513ddc1e/1624302303242/SPD+56+Winners+Press+Release.pdf)  
 - **Malofiej - Gold - Digital Features** - [Masks Work. Really. We’ll Show You How](https://twitter.com/malofiej/status/1405547000674852864)
 - **Malofiej - Silver - Innovation Format** - [Masks Work. Really. We’ll Show You How](https://drive.google.com/file/d/1c_NuU7gtlLu7z2i61eRy8Q1YiMj5wK5R/view)
