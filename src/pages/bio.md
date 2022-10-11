@@ -78,7 +78,7 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
   - Establish and implement immersive player product roadmap
   - Analyze usage data using analytics tools to inform decisions and trends
   - Implement and maintain spatial playback features such as WebVR into the Vimeo web player
-  - Research and develop internal tools and IP in machine learning and computer vision such as video classification and metadata injection, currently patent pending
+  - Research and develop [internal tools and IP](https://patents.google.com/patent/US20200372255A1/en?inventor=Or+Fleisher&assignee=Vimeo) in machine learning and computer vision such as video classification and metadata injection
 
 - **Principle Creative Technologist** - *Vimeo* (2018-2019)
   - Lead development and maintainence of open-source integrations including [Unity SDK](https://github.com/vimeo/vimeo-unity-sdk), [three.js](https://github.com/vimeo/vimeo-threejs-player), [A-Frame component](https://github.com/vimeo/aframe-vimeo-component), [RealSense Depth Viewer](https://github.com/vimeo/vimeo-depth-viewer) and [Volumetric video player](https://github.com/vimeo/vimeo-depth-player)
@@ -175,6 +175,10 @@ During Anilouge Animation Festival I conducted a workshop in Budapest University
 
 ### **Awards**
 
+- **Leob Award** - [How Safe Are You From
+Covid When You Fly? / Why the Empire State Building, and New York, May Never Be the Same](https://www.nytco.com/press/times-wins-3-loeb-awards-2/)
+- **Lowell Thomas Award** - [How Safe Are You From Covid When You Fly?](https://www.nytco.com/press/times-wins-10-lowell-thomas-awards/)
+- **SABEW 2021 - Innovation - Large and medium divisions** - [Immersive 3-D Storytelling](https://sabew.org/best-in-business/)
 - **SPD - Gold - Web: Information Graphics** - [Masks Work. Really. We’ll Show You How](https://static1.squarespace.com/static/59a4a351197aea9d17f6bc13/t/60d0e2de9316397b513ddc1e/1624302303242/SPD+56+Winners+Press+Release.pdf)  
 - **Malofiej - Gold - Digital Features** - [Masks Work. Really. We’ll Show You How](https://twitter.com/malofiej/status/1405547000674852864)
 - **Malofiej - Silver - Innovation Format** - [Masks Work. Really. We’ll Show You How](https://drive.google.com/file/d/1c_NuU7gtlLu7z2i61eRy8Q1YiMj5wK5R/view)
@@ -291,7 +295,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 ### **Publications**
 - **[Simulation of Flow and Pathogen Transport in a Narrow-Body Airplane Cabin
 ](https://arc.aiaa.org/doi/10.2514/6.2022-0334)**
-- **[Video format classification and metadata injection using machine learning - Patent Pending](https://patents.google.com/patent/US20200372255A1/en?inventor=Or+Fleisher&assignee=Vimeo)**
+- **[Video format classification and metadata injection using machine learning](https://patents.google.com/patent/US20200372255A1/en?inventor=Or+Fleisher&assignee=Vimeo)**
 - **[Rendered Newsletter](https://rendered.substack.com/p/rendered-1)**  
 - **[Volumetric Cinematography in the Age of Learning Machines - UnMediated Issue 2, Journal of Politics and Communication](http://unmediatedjournal.com/)**
 - **[Almost Human: Goodbye Uncanny Valley - Immerse](https://immerse.news/almost-human-goodbye-uncanny-valley-94eb4e602fad)**
