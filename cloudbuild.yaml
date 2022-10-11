@@ -1,11 +1,11 @@
 steps:
-  - name: node:10.15.1
+  - name: node:12
     entrypoint: yarn
     args: ["install"]
-  - name: node:10.15.1
+  - name: node:12
     entrypoint: yarn
     args: ["format"]
-  - name: node:10.15.1
+  - name: node:12
     entrypoint: yarn
     args: ["build_prefixed_static"]
   - name: "gcr.io/cloud-builders/gcloud"
