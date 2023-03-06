@@ -42,7 +42,7 @@ Based in NYC, Or Fleisher is an award-winning developer, interactive creator and
 
 Or's career started as a sound designer and musician. After working in audio post-production he attended Tel Aviv University's film school and started coding, designing and releasing interactive storytelling driven experiences that fuse film and gaming.
 
-Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, and has previously worked at Vimeo and Viacom. Currently, Or is a [Staff R&D Engineer at The New York Times](https://www.nytimes.com/by/or-fleisher).
+Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an award-winning visual effects and interaction design studio. At Phenomena Labs he worked as a creative and technical director designing, developing and publishing interactive brand and experimental experiences. Or is a graduate of the Tisch School of the Arts, and has previously worked at [The New York Times](https://www.nytimes.com/by/or-fleisher), [Vimeo](https://vimeo.com/blog/post/how-vimeo-can-power-live-streaming-holograms/) and [Viacom](https://vrscout.com/news/viacom-music-vr-fellowship/). Currently, Or is a Principal Front End Engineer at Nike Virtual Studios.
 
 
 
@@ -70,7 +70,9 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 ### **Work experience**
 
-- **Staff Engineer, Research & Development** - *The New York Times* (2021 - current)
+- **Principal Front End Engineer, Virtual Studios** - *Nike* (2023 - current)
+
+- **Staff Engineer, Research & Development** - *The New York Times* (2021 - 2023)
 
 - **Sr. Engineer, Research & Development** - *The New York Times* (2019 - 2021)
 
@@ -324,6 +326,7 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - **[three.js](https://github.com/mrdoob/three.js/pull/14479)** - An interactive depth displacement effect for images using depth maps
 - **[ffmpeg-libav-tutorial](https://github.com/leandromoreira/ffmpeg-libav-tutorial/)**
 - **[The New York Times - Blender in Docker](https://github.com/nytimes/rd-blender-docker)** - A collection of Docker containers for running Blender headless or distributed  
+- **[The New York Times - Bundler 3D Plugins](https://github.com/nytimes/rd-bundler-3d-plugins)** - Bundler plugins for optimizing glTF 3D models (.gltf and .glb files).
 - **[Vimeo - Unity SDK](https://github.com/vimeo/vimeo-unity-sdk)** - Easily stream your Vimeo videos into Unity or record and publish out to Vimeo.
 - **[Vimeo - Depth Viewer](http://github.com/vimeo/vimeo-depth-viewer)** - An OpenGL depth viewer and cleaner with a fully modular GUI
 - **[Vimeo - Depth Player](http://github.com/vimeo/vimeo-depth-player)** - A WebGL volumetric video renderer for video hosted on Vimeo
