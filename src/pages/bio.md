@@ -72,9 +72,23 @@ Upon graduation, Or co-founded [Phenomena Labs](http://phenomenalabs.com) an awa
 
 - **Principal Front End Engineer, Virtual Studios** - *Nike* (2023 - current)
 
+- **Adjunct Professor, ITP** - *New York University* (Fall 2023)
+  - [Visual Journalism Technical 3D web programming sections](https://github.com/juniorxsound/itp-visual-journalism-fall-2023) (Co-taught with Yuliya Parshina-Kottas)
+
 - **Staff Engineer, Research & Development** - *The New York Times* (2021 - 2023)
+  - Establish and lead development of a realtime in-browser 3D visual editor tool and roadmap in collabration with the Graphics desk (used in [Winter Olympics](https://orfleisher.com/oly-eileen-gu-halfpipe-ski), [Super Bowl](https://orfleisher.com/superbowl), [World Cup](https://orfleisher.com/world-cup) and other published 3D interactives)
+  - Write technical documentation and CI/CD templates used across engineers on the R&D team to increase developer experience and productivety
+  - Establish team vision for open sourcing internal tools and IP and contribute to tools and documentation published (examples include [1](https://rd.nytimes.com/projects/optimizing-3d-gltf-assets-for-interactive-journalism), [2](https://github.com/nytimes/rd-blender-docker), [3](https://github.com/nytimes/three-story-controls))
+  - Mentor engineers across the R&D team and help identify professional growth oppurtonitues
+  - Participate in public speaking engagements (examples include [1](https://research.adobe.com/lecture/applying-emerging-technologies-in-service-of-journalism-at-the-new-york-times/), [2](https://brown.columbia.edu/event/applying-emerging-technologies-in-service-of-journalism/), [3](https://mlatgt.blog/2020/10/07/nyt-rd-team-to-discuss-technologys-impact-on-journalism-in-live-virtual-event/)) and [publications related to internal R&D work](https://arc.aiaa.org/doi/10.2514/6.2022-0334)
+  - Help establish and contribute to internal augmented reality engineering team focused on [building 3D experiments and tools](https://rd.nytimes.com/projects/augmented-reality-storytelling) in collabration with the newsroom
 
 - **Sr. Engineer, Research & Development** - *The New York Times* (2019 - 2021)
+  - Implement 3D rendering, data processing and 3D reconstruction techniques used in published interactives in collabration with other departments across the organization (examples include [1](https://orfleisher.com/coronavirus-transmission-cough-6-feet-ar), [2](https://orfleisher.com/masks-work), [3](https://orfleisher.com/empire-state-building-reopening-new-york))
+  - Develop computer vision based cloud pipelines for analyzing data [used in Summer Olympics coverage](https://orfleisher.com/oly-tracking)
+  - Research and develop [internal tools and IP](https://patents.google.com/patent/US20230169729A1/en?q=(%22Or+Fleisher%22)&oq=%22Or+Fleisher%22) in 3D cartography and map tile creation (patent pending)
+  - Help establish and contribute to an Open Source Community of Practice - setting organization wide Open Source guides and standards
+  - Contribute to the development, maintainence and content writing of [R&D's public facing site](https://rd.nytimes.com/)
 
 - **Sr. Engineer, Emerging Technology** - *Vimeo* (2019)
   - Establish and implement immersive player product roadmap
