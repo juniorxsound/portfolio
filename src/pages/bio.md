@@ -331,8 +331,8 @@ Presented [Sound Objects](http://orfleisher.com/portfolio-item/sound-objects/), 
 - [**Value precption in immersive art**](https://medium.com/@camillamarcal/value-perception-in-multissensorial-art-experiences-90a721b21f6b?email=fleisher.or%40gmail.com&g-recaptcha-response=03AJpayVFbTUx0I_WB55GNs5DnVNaWEGTX4hMXgLm4Mo9aHeBxoqwSTy_8H5eSOsyESTim3OGnraC0hCJAVPb3yOEiexyq9_u9ba3WM6-1MSSgXnEdC-_tSuFUtxk4zkXsYAlleIkKfklRa_T986RH2xOHVFKmkVBZRFFbT5DtfuwJvF1C2nEzsV97nbPeis0MjQRLwEs2RXTOiNB5WPvTabgFR4cpQcgyhaGeepLR9Cwb-nGsZuRoZZXn0wDMjnr49hD-v11o0fasL-rFWeNxgp9AL_CyC8JUVLs659aDQcudvwnk913C6WhE1yCfomt-SgoEXfMS3K5ZUJ2a1PNgaoFSDoz_EsPRjnhLjO5OXKdrSPd9uzN5QIXC6nuPfauNE1j1hZL3slz3QvbNSwlp59C_PlskTQmUtFS_fVOfjd7X_aj-YWZQfnykLSxrtFJ9ETSyBAdXaJcL)
 - [**UXPin - Web Design Book of Trends for 2017 (Page 63)**](https://issuu.com/hminhnhut/docs/uxpin_web_design_book_of_trends_201)
 
-### **Open Source**
-
+### **Open Source**  
+- **[@react-three/drei](https://github.com/pmndrs/drei/pull/1876)**  
 - **[Theatre.js](https://github.com/AriaMinaei/theatre)**
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/2898)** - Contributed a threaded depth cleaner project to the community examples section
 - **[librealsense](https://github.com/IntelRealSense/librealsense/pull/3820)** - Contributed a depth viewer project to the community examples section
