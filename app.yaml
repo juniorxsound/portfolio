@@ -1,7 +1,6 @@
 service: default
 runtime: python312
 api_version: 1
-threadsafe: true
 
 default_expiration: "30d"
 
