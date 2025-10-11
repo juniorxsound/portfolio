@@ -3,7 +3,9 @@ import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { Project } from '@/types'
+
+import type { Project } from '@/types'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -18,7 +20,7 @@ export async function generateMetadata() {
 async function getProjects(): Promise<Project[]> {
   const projectsDir = path.join(process.cwd(), 'data/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
-  const posts = files
+  const projects = files
     .map((file) => {
       const fullPath = path.join(projectsDir, file)
       const { data } = matter.read(fullPath)
@@ -31,11 +33,11 @@ async function getProjects(): Promise<Project[]> {
       return dateB.getTime() - dateA.getTime()
     })
 
-  return posts
+  return projects
 }
 
 export default async function HomePage() {
-  const posts = await getProjects()
+  const projects = await getProjects()
 
   return (
     <div className="min-h-screen">
@@ -71,8 +73,8 @@ export default async function HomePage() {
             Recent work
           </h2>
           <div className="row">
-            {posts.map((post) => {
-              const fm = post.frontmatter
+            {projects.map((project) => {
+              const fm = project.frontmatter
               const tags = Array.isArray(fm.tags) ? fm.tags.join(' / ') : ''
               return (
                 <div
