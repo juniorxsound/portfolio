@@ -1,51 +1,10 @@
 service: default
 runtime: nodejs20
 
-# Static file serving for Next.js export
+# Simple static file serving - let Next.js handle everything
 handlers:
-  # Static assets with proper caching
-  - url: /_next/static/(.*)
-    static_files: out/_next/static/\1
-    upload: out/_next/static/.*
-    expiration: '365d'
-
-  - url: /(.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
-    static_files: out/\1
-    upload: out/.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
-    expiration: '365d'
-
-  # Images and media files
-  - url: /(.*\.(webp|mp4|webm|ogg|mp3|wav))
-    static_files: out/\1
-    upload: out/.*\.(webp|mp4|webm|ogg|mp3|wav)
-    expiration: '30d'
-
-  - static_files: out/index.html
-    upload: out/index.html
-
+  # Serve all static files from the out directory
   - url: /(.*)
     static_files: out/\1
-    upload: out/(.*)
-
-  # Handle RSC data files first (before HTML routes)
-  # - url: /(.*)\.txt
-  #   static_files: out/\1.txt
-  #   upload: out/.*\.txt
-  #   expiration: '0m'
-
-  # # Handle specific Next.js routes
-  # - url: /bio
-  #   static_files: out/bio/index.html
-  #   upload: out/bio/index.html
-  #   expiration: '0m'
-
-  # - url: /projects/(.*)
-  #   static_files: out/projects/\1/index.html
-  #   upload: out/projects/.*/index.html
-  #   expiration: '0m'
-
-  # # Fallback to index.html for client-side routing
-  # - url: /.*
-  #   static_files: out/index.html
-  #   upload: out/index.html
-  #   expiration: '0m'
+    upload: out/.*
+    expiration: '0m'
