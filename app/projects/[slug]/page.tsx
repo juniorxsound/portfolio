@@ -37,13 +37,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }): Promise<Metadata> {
-  const projectPath = path.join(
-    process.cwd(),
-    'data/projects',
-    `${params.slug}.mdx`
-  )
+  const { slug } = await params
+  const projectPath = path.join(process.cwd(), 'data/projects', `${slug}.mdx`)
 
   if (!fs.existsSync(projectPath)) {
     return {
@@ -112,9 +109,10 @@ async function processProjectFile(
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const project = await getProject(params.slug)
+  const { slug } = await params
+  const project = await getProject(slug)
 
   if (!project) {
     notFound()
