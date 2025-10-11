@@ -1,0 +1,79 @@
+import './globals.css'
+import React from 'react'
+import { Metadata } from 'next'
+import { Barriecito, Gotu } from 'next/font/google'
+
+const barriecito = Barriecito({
+  subsets: ['latin'],
+  weight: ['400'],
+})
+
+const gotu = Gotu({
+  subsets: ['latin'],
+  weight: ['400'],
+})
+
+export const metadata: Metadata = {
+  title: 'Or Fleisher',
+  description:
+    'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+  keywords:
+    'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
+  openGraph: {
+    title: 'Or Fleisher',
+    description:
+      'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+    url: 'https://orfleisher.com',
+    siteName: 'Or Fleisher',
+    images: [
+      {
+        url: '/assets/images/profile_facebook.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Or Fleisher',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@juniorxsound',
+    creator: '@juniorxsound',
+    title: 'Or Fleisher',
+    description:
+      'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+    images: ['https://i.imgur.com/Gu2tbUp.png'],
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className={gotu.className}>
+      <head>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/favicons/favicon-16x16.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/favicons/favicon-32x32.png"
+        />
+        <link rel="canonical" href="https://orfleisher.com" />
+      </head>
+      <body>
+        <div className="template-wrapper">
+          <div className="template-wrapper-children">{children}</div>
+        </div>
+      </body>
+    </html>
+  )
+}

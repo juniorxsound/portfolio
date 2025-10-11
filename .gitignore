@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 yarn.lock
+package-lock.json
 gae.json
 
 
@@ -67,3 +68,7 @@ static/
 public/*
 !app.yaml
 yarn-error.log
+*.tsbuildinfo
+.next/
+.turbo/
+.yarn
