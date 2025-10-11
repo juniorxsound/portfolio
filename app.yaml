@@ -1,192 +1,27 @@
 service: default
-runtime: python312
+runtime: nodejs20
 
-default_expiration: "30d"
-
+# Static file serving for Next.js export
 handlers:
-  - url: /(.*\.(appcache|manifest))
-    mime_type: text/cache-manifest
-    static_files: public/\1
-    upload: public/(.*\.(appcache|manifest))
-    expiration: "0m"
+  # Static assets with proper caching
+  - url: /_next/static/(.*)
+    static_files: out/_next/static/\1
+    upload: out/_next/static/.*
+    expiration: '1y'
 
-  - url: /(.*\.(webmanifest))
-    static_files: public/\1
-    upload: public/(.*\.(webmanifest))
-    expiration: "0m"
+  - url: /(.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
+    static_files: out/\1
+    upload: out/.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
+    expiration: '1y'
 
-  - url: /(.*\.atom)
-    mime_type: application/atom+xml
-    static_files: public/\1
-    upload: public/(.*\.atom)
-    expiration: "1h"
+  # Images and media files
+  - url: /(.*\.(webp|mp4|webm|ogg|mp3|wav))
+    static_files: out/\1
+    upload: out/.*\.(webp|mp4|webm|ogg|mp3|wav)
+    expiration: '30d'
 
-  - url: /(.*\.crx)
-    mime_type: application/x-chrome-extension
-    static_files: public/\1
-    upload: public/(.*\.crx)
-
-  - url: /(.*\.css)
-    mime_type: text/css
-    static_files: public/\1
-    upload: public/(.*\.css)
-
-  - url: /(.*\.eot)
-    mime_type: application/vnd.ms-fontobject
-    static_files: public/\1
-    upload: public/(.*\.eot)
-
-  - url: /(.*\.htc)
-    mime_type: text/x-component
-    static_files: public/\1
-    upload: public/(.*\.htc)
-
-  - url: /(.*\.html)
-    mime_type: text/html
-    static_files: public/\1
-    upload: public/(.*\.html)
-    expiration: "1h"
-
-  - url: /(.*\.ico)
-    mime_type: image/x-icon
-    static_files: public/\1
-    upload: public/(.*\.ico)
-    expiration: "7d"
-
-  - url: /(.*\.js)
-    mime_type: text/javascript
-    static_files: public/\1
-    upload: public/(.*\.js)
-
-  - url: /(.*\.json)
-    mime_type: application/json
-    static_files: public/\1
-    upload: public/(.*\.json)
-    expiration: "1h"
-
-  - url: /(.*\.m4v)
-    mime_type: video/m4v
-    static_files: public/\1
-    upload: public/(.*\.m4v)
-
-  - url: /(.*\.mp4)
-    mime_type: video/mp4
-    static_files: public/\1
-    upload: public/(.*\.mp4)
-
-  - url: /(.*\.(ogg|oga))
-    mime_type: audio/ogg
-    static_files: public/\1
-    upload: public/(.*\.(ogg|oga))
-
-  - url: /(.*\.ogv)
-    mime_type: video/ogg
-    static_files: public/\1
-    upload: public/(.*\.ogv)
-
-  - url: /(.*\.otf)
-    mime_type: font/opentype
-    static_files: public/\1
-    upload: public/(.*\.otf)
-
-  - url: /(.*\.rss)
-    mime_type: application/rss+xml
-    static_files: public/\1
-    upload: public/(.*\.rss)
-    expiration: "1h"
-
-  - url: /(.*\.safariextz)
-    mime_type: application/octet-stream
-    static_files: public/\1
-    upload: public/(.*\.safariextz)
-
-  - url: /(.*\.(svg|svgz))
-    mime_type: images/svg+xml
-    static_files: public/\1
-    upload: public/(.*\.(svg|svgz))
-
-  - url: /(.*\.swf)
-    mime_type: application/x-shockwave-flash
-    static_files: public/\1
-    upload: public/(.*\.swf)
-
-  - url: /(.*\.ttf)
-    mime_type: font/truetype
-    static_files: public/\1
-    upload: public/(.*\.ttf)
-
-  - url: /(.*\.txt)
-    mime_type: text/plain
-    static_files: public/\1
-    upload: public/(.*\.txt)
-
-  - url: /(.*\.unity3d)
-    mime_type: application/vnd.unity
-    static_files: public/\1
-    upload: public/(.*\.unity3d)
-
-  - url: /(.*\.webm)
-    mime_type: video/webm
-    static_files: public/\1
-    upload: public/(.*\.webm)
-
-  - url: /(.*\.webp)
-    mime_type: image/webp
-    static_files: public/\1
-    upload: public/(.*\.webp)
-
-  - url: /(.*\.woff)
-    mime_type: application/x-font-woff
-    static_files: public/\1
-    upload: public/(.*\.woff)
-
-  - url: /(.*\.xml)
-    mime_type: application/xml
-    static_files: public/\1
-    upload: public/(.*\.xml)
-    expiration: "1h"
-
-  - url: /(.*\.xpi)
-    mime_type: application/x-xpinstall
-    static_files: public/\1
-    upload: public/(.*\.xpi)
-
-  # image files
-  - url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
-    static_files: public/\1
-    upload: public/(.*\.(bmp|gif|ico|jpeg|jpg|png))
-
-  # audio files
-  - url: /(.*\.(mid|midi|mp3|wav))
-    static_files: public/\1
-    upload: public/(.*\.(mid|midi|mp3|wav))
-
-  # windows files
-  - url: /(.*\.(doc|exe|ppt|rtf|xls))
-    static_files: public/\1
-    upload: public/(.*\.(doc|exe|ppt|rtf|xls))
-
-  # compressed files
-  - url: /(.*\.(bz2|gz|rar|tar|tgz|zip))
-    static_files: public/\1
-    upload: public/(.*\.(bz2|gz|rar|tar|tgz|zip))
-
-  # index files
-  - url: /(.+)/?
-    static_files: public/\1/index.html
-    upload: public/(.+)/index.html
-    expiration: "15m"
-    secure: always
-
-  - url: /(.+)
-    static_files: public/\1/index.html
-    upload: public/(.+)/index.html
-    expiration: "15m"
-    secure: always
-
-  # site root
-  - url: /
-    static_files: public/index.html
-    upload: public/index.html
-    expiration: "15m"
-    secure: always
+  # All other requests go to index.html for client-side routing
+  - url: /.*
+    static_files: out/index.html
+    upload: out/index.html
+    expiration: '0m'
