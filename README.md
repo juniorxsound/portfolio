@@ -7,7 +7,9 @@ A minimalist portfolio built using React and Gatsby.
 ![Screenshot](https://i.imgur.com/mOOcWFd.png)
 
 ### Project template
+
 Project pages are auto-generated from `.md` files placed in `/src/pages/projects/`.
+
 ```
 ---
 path: "/my-project"
@@ -27,6 +29,7 @@ excerpt: "Predict how long people have to live in augmented reality."
 ```
 
 ### Development commands
+
 - `yarn run develop` - Run Gatsby in development mode
 - `yarn run build` - Run Gatsby build static site
 - `yarn run format` - Use prettier to format the code
