@@ -20,12 +20,16 @@ handlers:
     upload: out/.*\.(webp|mp4|webm|ogg|mp3|wav)
     expiration: '30d'
 
-  # Handle Next.js dynamic routes - try to serve the specific file first
-  - url: /(.*)/?
-    static_files: out/\1/index.html
-    upload: out/\1/index.html
+  # Handle specific Next.js routes
+  - url: /bio
+    static_files: out/bio/index.html
+    upload: out/bio/index.html
     expiration: '0m'
-    require_matching_file: true
+
+  - url: /projects/(.*)
+    static_files: out/projects/\1/index.html
+    upload: out/projects/.*/index.html
+    expiration: '0m'
 
   # Fallback to index.html for client-side routing
   - url: /.*
