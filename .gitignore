@@ -65,7 +65,6 @@ typings/
 .cache/
 .vscode/
 static/
-public/*
 !app.yaml
 yarn-error.log
 *.tsbuildinfo
