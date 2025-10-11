@@ -13,12 +13,12 @@ steps:
       - '-c'
       - |
         # Get all versions except the latest 5, sorted by creation time (oldest first)
-        OLD_VERSIONS=$(gcloud app versions list --format="value(version.id)" --sort-by="~creationTime" | tail -n +6)
+        OLD_VERSIONS=$$(gcloud app versions list --format="value(version.id)" --sort-by="~creationTime" | tail -n +6)
 
         # Delete old versions if any exist
-        if [ ! -z "$OLD_VERSIONS" ]; then
-          echo "Deleting old versions: $OLD_VERSIONS"
-          echo "$OLD_VERSIONS" | xargs -I {} gcloud app versions delete {} --quiet
+        if [ ! -z "$$OLD_VERSIONS" ]; then
+          echo "Deleting old versions: $$OLD_VERSIONS"
+          echo "$$OLD_VERSIONS" | xargs -I {} gcloud app versions delete {} --quiet
         else
           echo "No old versions to delete"
         fi
