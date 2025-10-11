@@ -7,12 +7,12 @@ handlers:
   - url: /_next/static/(.*)
     static_files: out/_next/static/\1
     upload: out/_next/static/.*
-    expiration: '1y'
+    expiration: '365d'
 
   - url: /(.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
     static_files: out/\1
     upload: out/.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
-    expiration: '1y'
+    expiration: '365d'
 
   # Images and media files
   - url: /(.*\.(webp|mp4|webm|ogg|mp3|wav))
