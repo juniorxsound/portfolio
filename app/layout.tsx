@@ -1,16 +1,22 @@
-import './globals.css'
 import React from 'react'
 import { Metadata } from 'next'
-import { Barriecito, Gotu } from 'next/font/google'
+import { Open_Sans, Merriweather } from 'next/font/google'
+import { cn } from '@/lib/utils'
 
-const barriecito = Barriecito({
+import './globals.css'
+
+const open_sans = Open_Sans({
   subsets: ['latin'],
-  weight: ['400'],
+  display: 'swap',
+  variable: '--font-sans',
+  weight: ['400', '700'],
 })
 
-const gotu = Gotu({
+const merriweather = Merriweather({
   subsets: ['latin'],
-  weight: ['400'],
+  display: 'swap',
+  variable: '--font-serif',
+  weight: ['400', '700'],
 })
 
 export const metadata: Metadata = {
@@ -36,6 +42,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  metadataBase: new URL('https://orfleisher.com'),
   twitter: {
     card: 'summary_large_image',
     site: '@juniorxsound',
@@ -53,7 +60,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={gotu.className}>
+    <html lang="en" className={cn(open_sans.className, merriweather.className)}>
       <head>
         <link
           rel="icon"
@@ -69,11 +76,7 @@ export default function RootLayout({
         />
         <link rel="canonical" href="https://orfleisher.com" />
       </head>
-      <body>
-        <div className="template-wrapper">
-          <div className="template-wrapper-children">{children}</div>
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
