@@ -5,13 +5,13 @@ import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Project } from '@/types'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
+import { Hero } from '@/components/hero'
 
 export async function generateStaticParams() {
-  const projectsDir = path.join(process.cwd(), 'data/projects')
+  const projectsDir = path.join(process.cwd(), 'content/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
 
   const params = []
@@ -40,7 +40,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const projectPath = path.join(process.cwd(), 'data/projects', `${slug}.mdx`)
+  const projectPath = path.join(
+    process.cwd(),
+    'content/projects',
+    `${slug}.mdx`
+  )
 
   if (!fs.existsSync(projectPath)) {
     return {
@@ -60,7 +64,7 @@ export async function generateMetadata({
 }
 
 async function getProject(slug: string): Promise<Project | null> {
-  const projectsDir = path.join(process.cwd(), 'data/projects')
+  const projectsDir = path.join(process.cwd(), 'content/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
 
   // First, try to find by matching the path field in frontmatter
@@ -91,9 +95,6 @@ async function processProjectFile(
   filePath: string,
   frontmatter: any
 ): Promise<Project> {
-  const fileContents = fs.readFileSync(filePath, 'utf8')
-  const { content } = matter(fileContents)
-
   return {
     frontmatter: {
       ...frontmatter,
@@ -102,8 +103,15 @@ async function processProjectFile(
       press: frontmatter.press || [],
       links: frontmatter.links || [],
     } as Project['frontmatter'],
-    content: content,
+    filePath: filePath,
   }
+}
+
+function getCoverImagePath(frontmatter: Project['frontmatter']) {
+  if (frontmatter.cover) {
+    return `/assets/images/headers/${frontmatter.cover}`
+  }
+  return ''
 }
 
 export default async function ProjectPage({
@@ -118,16 +126,37 @@ export default async function ProjectPage({
     notFound()
   }
 
-  const { frontmatter, content } = project
+  const { frontmatter, filePath } = project
   const tags = Array.isArray(frontmatter.tags)
     ? frontmatter.tags.join(' / ')
     : ''
   const hasCoverImage = frontmatter.cover && frontmatter.cover.length > 0
 
+  // Dynamic import of the MDX component
+  const fileName = path.basename(filePath, '.mdx')
+  const ProjectComponent = await import(
+    `@/content/projects/${fileName}.mdx`
+  ).then((mod) => mod.default)
+
   return (
     <div className="min-h-screen">
+      <div className="absolute top-4 left-4 z-20">
+        <Link href="/">
+          <Button variant="ghost" size="sm" className="gap-2">
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Button>
+        </Link>
+      </div>
+      <Hero
+        title={frontmatter.title || 'Untitled Project'}
+        subtitle={tags}
+        background="accent"
+        backgroundImage={getCoverImagePath(frontmatter)}
+        className="px-8 text-balance"
+      />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="mb-6">
+        <div className="mb-6 z-10">
           <Link href="/">
             <Button variant="ghost" size="sm" className="gap-2">
               <ArrowLeft className="h-4 w-4" />
@@ -149,10 +178,10 @@ export default async function ProjectPage({
         <div>
           <div dangerouslySetInnerHTML={{ __html: frontmatter.embed || '' }} />
           <div className="markdownContent">
-            <MDXRemote source={content || ''} />
+            <ProjectComponent />
           </div>
-          <div className="row mt-12">
-            <div className="col-xs-12 col-sm-4 col-md-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div className="col-span-1">
               {frontmatter.about && frontmatter.about.length > 0 && (
                 <>
                   <h4 className="font-semibold text-lg mb-4">About</h4>
@@ -160,7 +189,7 @@ export default async function ProjectPage({
                 </>
               )}
             </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
+            <div className="col-span-1">
               {frontmatter.components && frontmatter.components.length > 0 && (
                 <>
                   <h4 className="font-semibold text-lg mb-4">Components</h4>
@@ -174,7 +203,7 @@ export default async function ProjectPage({
                 </>
               )}
             </div>
-            <div className="col-xs-12 col-sm-4 col-md-4">
+            <div className="col-span-1">
               {frontmatter.links && frontmatter.links.length > 0 && (
                 <>
                   <h4 className="font-semibold text-lg mb-4">Links</h4>
@@ -195,7 +224,7 @@ export default async function ProjectPage({
                 </>
               )}
             </div>
-            <div className="col-xs-12 col-sm-8 col-md-8 mt-8">
+            <div className="col-span-1 sm:col-span-2 lg:col-span-2 mt-8">
               {frontmatter.press && frontmatter.press.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-lg mb-4">Recognition</h4>
@@ -217,7 +246,7 @@ export default async function ProjectPage({
                 </div>
               )}
             </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 mt-8">
+            <div className="col-span-1 mt-8">
               {frontmatter.credits && frontmatter.credits.length > 0 && (
                 <div>
                   <h4 className="font-semibold text-lg mb-4">Credits</h4>

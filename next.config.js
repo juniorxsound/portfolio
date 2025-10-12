@@ -1,19 +1,9 @@
 const path = require('path')
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
+const createMDX = require('@next/mdx')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   webpack: config => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -21,7 +11,14 @@ const nextConfig = {
     }
     return config
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  // Configure `pageExtensions` to include markdown and MDX files
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 }
 
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  extension: /\.(md|mdx)$/,
+})
+
+// Merge MDX config with Next.js config
 module.exports = withMDX(nextConfig)

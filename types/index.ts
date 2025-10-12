@@ -13,10 +13,27 @@ export interface Project {
     press?: [string, string][]
     links?: [string, string][]
     excerpt?: string
+    category?: string
+    year?: number
     [key: string]: any // Allow additional properties from frontmatter
   }
-  content?: string
+  filePath: string
 }
+
+export interface FilterOption {
+  id: string
+  label: string
+  count: number
+  active: boolean
+}
+
+export interface ProjectFilters {
+  tags: string[]
+  categories: string[]
+  years: number[]
+}
+
+export type FilterType = 'tags' | 'categories' | 'years'
 
 // Component interfaces removed - using shadcn/ui and Tailwind directly
 
