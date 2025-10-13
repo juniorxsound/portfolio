@@ -164,7 +164,7 @@ export default async function ProjectPage({
         background="accent"
         className="px-8 text-balance"
       >
-        <div className="flex flex-col md:flex-row gap-2">
+        <div className="flex flex-row flex-wrap gap-2">
           {metadata.links.map((link: [string, string]) => {
             return (
               <Button key={link[0]} asChild>
