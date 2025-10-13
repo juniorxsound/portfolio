@@ -1,15 +1,132 @@
----
-path: "/volume"
-date: "2018-05-01T22:12:03.284Z"
-title: "Volume"
-tags: ["Augmented Reality", "Machine Learning", "Virtual Reality", "Tools"]
-thumbnail: "https://i.imgur.com/t8tIxk2.gif"
-cover: "volume_cover.jpg"
-embed: ''
-about: "Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch."
-links: [['Github', 'https://github.com/Volume-GL'], ['Presskit', 'https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud'], ['Presentation', 'https://vimeo.com/270479574']]
-components: [['code', 'Python, Javascript, GLSL, C#, HLSL'], ['software', 'Three.js, Unity3D, Unreal Engine, Blender'], ['3d', 'Tensorflow, Heroku, Firebase']]
-credits: 'Developed with <a target="_blank" href="https://shirin.works">~shirin anlen</a>'
-press: [['SIGGRAPH 2018', 'http://bit.ly/siggraph-volume'], ['The Next Web', 'https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/'], ['Discovery Channel', 'https://www.youtube.com/watch?v=Zi4yof2yy04'], ['prosthetic knowledge', 'http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning'], ['Tecmundo', 'https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm']]
-excerpt: "Reconstruct 2D images and video in 3D using machine learning."
----
+export const metadata = {
+  path: '/volume',
+  date: '2018-05-01T22:12:03.284Z',
+  title: 'Volume',
+  tags: ['Augmented Reality', 'Machine Learning', 'Virtual Reality', 'Tools'],
+  thumbnail: 'https://i.imgur.com/t8tIxk2.gif',
+  cover: 'volume_cover.jpg',
+  embed: '',
+  about:
+    'Volume is a tool for reconstructing a single 2D image or video in 3D space. Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view. Volume is currently under development and is being built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments. Volume is intended to encourage easy prototyping in virtual, augmented and mixed reality platforms. Volume was used to create the Inside Pulp Fiction project, and ReTouch.',
+  links: [
+    ['Github', 'https://github.com/Volume-GL'],
+    ['SIGGRAPH', 'http://bit.ly/siggraph-volume'],
+  ],
+  components: [
+    ['code', 'Python, Javascript, GLSL, C#, HLSL'],
+    ['software', 'Three.js, Unity3D, Unreal Engine, Blender'],
+    ['3d', 'Tensorflow, Heroku, Firebase'],
+  ],
+  credits:
+    'Developed with <a target="_blank" href="https://shirin.works">~shirin anlen</a>',
+  press: [
+    ['SIGGRAPH 2018', 'http://bit.ly/siggraph-volume'],
+    [
+      'The Next Web',
+      'https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/',
+    ],
+    ['Discovery Channel', 'https://www.youtube.com/watch?v=Zi4yof2yy04'],
+    [
+      'prosthetic knowledge',
+      'http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning',
+    ],
+    [
+      'Tecmundo',
+      'https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm',
+    ],
+  ],
+  excerpt: 'Reconstruct 2D images and video in 3D using machine learning.',
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Python, Javascript, GLSL, C#, HLSL'],
+    ['software', 'Three.js, Unity3D, Unreal Engine, Blender, Tensorflow'],
+    ['3d', 'Heroku, Firebase'],
+  ]}
+  size="md"
+/>
+
+### About
+
+Volume is a tool for reconstructing a single 2D image or video in 3D space.
+
+Using state-of-the-art machine learning research, Volume is able to generate a 3D asset from a single view.
+
+Volume was my graduate school thesis in ITP at NYU, which I developed with Shirin Anlen.
+
+**Machine Learning**: Based on state-of-the-art machine learning research, Volume is included a fine tuned monocular depth estimation model that is used to reconstruct a single 2D image or video in 3D space.
+
+**API/volume.gl**: Volume was built as an end-to-end solution allowing anyone to easily generate a 3D asset and use it in 3D environments using either our inference API or make.volume web app.
+
+### Thesis Presentation
+
+<iframe
+  src="https://player.vimeo.com/video/270190550?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+  frameBorder="0"
+  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+  title="ITP Thesis Week 2018 - Or Fleisher - Volume"
+  style={{
+    width: '100%',
+    height: '400px',
+  }}
+/>
+
+### Experiments
+
+In the process of developing Volume, I built a number of experiments to explore the capabilities of using depth estimation to reconstruct archival footage.
+
+**JFK speech**
+
+<iframe
+  width="100%"
+  height="400px"
+  src="https://www.youtube.com/embed/Lz1FKRoJKdY?si=6gzXjJPDlMVFXN_l"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+/>
+
+**Inside Pulp Fiction**
+
+Inside Pulp Fiction is an experiment that uses Volume to reconstruct Pulp Fiction's iconic dance scene in Augmented Reality.
+
+<iframe
+  width="100%"
+  height="400px"
+  src="https://www.youtube.com/embed/iwJt4DM6mJA?si=NBWDUdR2iW8Lkqui"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+/>
+
+[Github Repository](https://github.com/Volume-GL/Pulp-Fiction-ARKit)
+
+**ReTouch**
+
+ReTouch is an OpenGL application that enables editing and retouching of images using depth-maps in 2.5D.
+
+![ReTouch](https://github.com/juniorxsound/ReTouch/blob/master/resources/editor.gif?raw=true)
+
+[Github Repository](https://github.com/juniorxsound/ReTouch)
+
+### Press
+
+- [SIGGRAPH 2018](http://bit.ly/siggraph-volume)
+- [The Next Web](https://thenextweb.com/artificial-intelligence/2018/03/08/try-this-ai-experiment-that-converts-2d-images-to-3d/)
+- [Discovery Channel](https://www.youtube.com/watch?v=Zi4yof2yy04)
+- [prosthetic knowledge](http://prostheticknowledge.tumblr.com/post/171637247736/volume-online-update-update-to-machine-learning)
+- [Tecmundo](https://www.tecmundo.com.br/software/127998-ia-transforma-qualquer-foto-modelo-3d-teste.htm)
+
+### Credits
+
+Developed with <a target="_blank" href="https://shirin.works">~shirin anlen</a>
+
+### Additional Links
+
+- [Presskit](https://drive.google.com/drive/folders/1XBQgptNAchJr0kUSD0LhzUzxdKnZ4Rud)

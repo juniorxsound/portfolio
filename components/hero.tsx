@@ -66,11 +66,15 @@ export function Hero({
       }
     >
       {/* overlay for better text readability */}
-      {backgroundImage && <div className="absolute inset-0 backdrop-blur-xs" />}
+      {backgroundImage && (
+        <div
+          className={`absolute inset-0 ${backgroundClasses[background]}/70`}
+        />
+      )}
 
       <div
         className={cn(
-          'container mx-auto px-8 py-12 max-w-6xl relative z-10',
+          'container mx-auto max-w-6xl relative z-10',
           alignmentClasses[alignment]
         )}
       >

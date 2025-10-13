@@ -1,50 +1,83 @@
----
-path: "/adam-ondra-climbing"
-date: "2020-09-30T22:12:03.284Z"
-title: "Adam Ondra The Climber"
-tags: ["3D", "Tools", "Augmented Reality"]
-thumbnail: "https://i.imgur.com/w7W6t2J.gif"
-cover: "ondra.jpg"
-embed: ''
-about: "An interactive explaining the athlete mechanics in 3-D using motion capture data acquired during training sessions."
-links: [['The New York Times', 'https://www.nytimes.com/interactive/2021/sports/olympics/adam-ondra-climbing.html']]
-components: [['code', 'Javascript'], ['software', 'Blender, Autodesk Maya']]
-credits: '<b>Producers</b><br/>
-Joe Ward,
-Larry Buchanan,
-Paula Ceballos Delgado,
-Mika Gröndahl,
-Or Fleisher,
-Karthik Patanjali,
-Emily Rhyne,
-Bedel Saget
-<br/>
-<b>Design and development</b><br/>
-Umi Syam,
-Jeremy White
-<br/>
-<b>Cinematography</b><br/>
-Jochen Schmoll,
-Emily Rhyne
-<br/>
-<b>Animators</b><br/>
-Aaron Byrd,
-Ren-Hsien Hsu,
-Carlos Sandoval
-<br/>
-<b>Project editors</b><br/>
-Kenan Davis,
-Destinée-Charisse Royal,
-Matt Ruby,
-Mike Schmidt
-<br/>
-<b>Additional production</b><br/>
-Mint Boonyapanachoti,
-Tony Cenicola,
-Gabriel Gianordoli,
-Lingdong Huang,
+export const metadata = {
+  path: '/adam-ondra-climbing',
+  date: '2020-09-30T22:12:03.284Z',
+  title: 'Adam Ondra The Climber',
+  tags: ['3D', 'Tools', 'Augmented Reality'],
+  thumbnail: 'https://i.imgur.com/w7W6t2J.gif',
+  cover: 'ondra.jpg',
+  embed: '',
+  about:
+    "A video scrollytelling project that explores Adam Ondra's climbing techniques through 3D motion capture data and Maya-rendered visualizations. This interactive piece examines the world's best climber's approach to speed climbing, lead climbing, and bouldering as he prepared for climbing's Olympic debut in Tokyo.",
+  links: [
+    [
+      'nytimes.com',
+      'https://www.nytimes.com/interactive/2021/sports/olympics/adam-ondra-climbing.html',
+    ],
+  ],
+  components: [
+    ['code', 'Javascript, WebGL'],
+    ['3d', 'Autodesk Maya, Motion Capture'],
+    ['software', 'Blender, Three.js'],
+    ['video', 'Scrollytelling, AR'],
+  ],
+  credits:
+    '<b>Producers</b><br/> Joe Ward, Larry Buchanan, Paula Ceballos Delgado, Mika Gröndahl, Or Fleisher, Karthik Patanjali, Emily Rhyne, Bedel Saget <br/> <b>Design and development</b><br/> Umi Syam, Jeremy White <br/> <b>Cinematography</b><br/> Jochen Schmoll, Emily Rhyne <br/> <b>Animators</b><br/> Aaron Byrd, Ren-Hsien Hsu, Carlos Sandoval <br/> <b>Project editors</b><br/> Kenan Davis, Destinée-Charisse Royal, Matt Ruby, Mike Schmidt <br/> <b>Additional production</b><br/> Mint Boonyapanachoti, Tony Cenicola, Gabriel Gianordoli, Lingdong Huang, Benjamin Wilhelm <br /> ',
+  excerpt:
+    'To visualize the athletes’ movements, we used video and data captured during training sessions to create 3-D models.',
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Javascript, WebGL'],
+    ['3d', 'Autodesk Maya, Motion Capture'],
+    ['software', 'Blender, SparkAR'],
+    ['video', 'Scrollytelling, AR'],
+  ]}
+  size="md"
+/>
+
+### About
+
+This video scrollytelling project explores Adam Ondra's climbing techniques through 3D motion capture data and Maya-rendered visualizations. As climbing made its Olympic debut in Tokyo, we examined the world's best climber's approach to the three Olympic disciplines: speed climbing, lead climbing, and bouldering.
+
+**Motion Capture Technology**: We used a motion-capture system by Captury to record 3D data of Adam Ondra's movements during his training sessions in Brno, Czech Republic. This data was then processed and rendered in Autodesk Maya to create detailed 3D visualizations of his climbing techniques.
+
+**Three Climbing Disciplines**: The project breaks down Ondra's approach to each Olympic climbing format:
+
+- **Speed Climbing**: A 15-meter vertical sprint where athletes race head-to-head on identical routes. Despite being Ondra's weakest event, we captured his training techniques and compared his 7.46-second best time to the world record of 5.20 seconds.
+
+- **Lead Climbing**: Ondra's strongest discipline, where he has won three of the past four world championships. We visualized complex moves like the "drop knee" and "ninja kick" (dyno moves) that require extraordinary strength and flexibility.
+
+- **Bouldering**: A ropeless, acrobatic scramble where climbers solve four "problems" in four minutes each. We captured Ondra working through challenging routes, including one designed to replicate a problem he failed at the 2019 world championships.
+
+**Technical Implementation**: The project combines video scrollytelling with 3D visualizations, allowing readers to explore Ondra's movements from multiple angles. The motion capture data was processed to create smooth, detailed animations that reveal the biomechanics behind elite climbing performance.
+
+**Augmented Reality**: The piece includes an AR component that lets users view Ondra's climbing techniques in their own space through Instagram, bringing the 3D visualizations into the real world.
+
+### Credits
+
+**Producers**
+
+Joe Ward, Larry Buchanan, Paula Ceballos Delgado, Mika Gröndahl, Or Fleisher, Karthik Patanjali, Emily Rhyne, Bedel Saget
+
+**Design and development**
+
+Umi Syam, Jeremy White
+
+**Cinematography**
+
+Jochen Schmoll, Emily Rhyne
+
+**Animators**
+
+Aaron Byrd, Ren-Hsien Hsu, Carlos Sandoval
+
+**Project editors**
+
+Kenan Davis, Destinée-Charisse Royal, Matt Ruby, Mike Schmidt
+
+**Additional production**
+
+Mint Boonyapanachoti, Tony Cenicola, Gabriel Gianordoli, Lingdong Huang,
 Benjamin Wilhelm
-<br />
-'
-excerpt: "To visualize the athletes’ movements, we used video and data captured during training sessions to create 3-D models."
----

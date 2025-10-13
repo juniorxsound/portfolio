@@ -1,14 +1,55 @@
----
-path: "/oly-eileen-gu-halfpipe-ski"
-date: "2020-10-30T23:12:03.284Z"
-title: "See the Jumps, Twists and Grabs That Brought Eileen Gu Three Olympic Medals"
-tags: ["WebGL", "Tools", "3D"]
-thumbnail: "https://i.imgur.com/w7W6t2J.gif"
-cover: "halfpipe_header.jpg"
-embed: ''
-about: "Take a deeper look at Eileen Gu's signature moves at Beijing 2022, which won her the gold in the big air and halfpipe competitions and a silver in slopestyle."
-links: [['nytimes.com', 'https://www.nytimes.com/interactive/2022/02/17/sports/olympics/eileen-gu-halfpipe-ski.html']]
-components: [['code', 'Javascript, GLSL'], ['software', 'three.js, Blender']]
-credits: 'By John Branch, Alexandre Devaux, Or Fleisher, Eleanor Lutz, Mark McKeague, Miles Peyton, Emily Rhyne, Bedel Saget, Joe Ward, Jeremy White and Josh Williams'
-excerpt: "Take a deeper look at Eileen Gu's signature moves at Beijing 2022."
----
+export const metadata = {
+  path: '/oly-eileen-gu-halfpipe-ski',
+  date: '2020-10-30T23:12:03.284Z',
+  title:
+    'See the Jumps, Twists and Grabs That Brought Eileen Gu Three Olympic Medals',
+  tags: ['WebGL', 'Tools', '3D'],
+  thumbnail: 'https://i.imgur.com/w7W6t2J.gif',
+  cover: 'halfpipe_header.jpg',
+  embed: '',
+  about:
+    "Take a deeper look at Eileen Gu's signature moves at Beijing 2022, which won her the gold in the big air and halfpipe competitions and a silver in slopestyle.",
+  links: [
+    [
+      'nytimes.com',
+      'https://www.nytimes.com/interactive/2022/02/17/sports/olympics/eileen-gu-halfpipe-ski.html',
+    ],
+  ],
+  components: [
+    ['code', 'Javascript, GLSL'],
+    ['software', 'three.js, Blender'],
+  ],
+  credits:
+    'By John Branch, Alexandre Devaux, Or Fleisher, Eleanor Lutz, Mark McKeague, Miles Peyton, Emily Rhyne, Bedel Saget, Joe Ward, Jeremy White and Josh Williams',
+  excerpt: "Take a deeper look at Eileen Gu's signature moves at Beijing 2022.",
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Javascript, GLSL'],
+    ['software', 'three.js, Blender'],
+  ]}
+  size="md"
+/>
+
+### About
+
+Using machine learning and 3D reconstruction, we analyzed Eileen Gu's signature moves at Beijing 2022, which won her gold in big air and halfpipe competitions and silver in slopestyle.
+
+**Real-Time Workflow**: Photographers at the Olympic venues captured high-speed bursts of Gu's performances, transmitting key moments to our team in real-time. We had to publish complete interactive stories within 6-8 hours of each event, requiring a streamlined workflow from photo capture to publication.
+
+**3D Reconstruction**: We used the ICON machine learning model to reconstruct Gu's complex aerial maneuvers in 3D from Olympic broadcast footage. The model analyzed her body positioning, rotation angles, and grab techniques across different competition events, enabling rapid 3D scene creation under tight deadlines.
+
+**Threebird Browser Editor**: The final interactive stories were assembled using Threebird, our collaborative web-based 3D editor. This in-browser tool allowed multiple journalists to work simultaneously on 3D scenes, animating models, editing shaders, and creating camera paths without the file-passing bottlenecks of traditional 3D software.
+
+**Interactive Visualization**: The reconstructed moves are presented in an interactive 3D environment, allowing viewers to examine Gu's techniques from multiple angles and understand the complexity of the maneuvers that earned her Olympic medals.
+
+### Additional articles
+
+- [Zoi Sadowski Synott](https://www.nytimes.com/interactive/2022/02/06/sports/olympics/zoi-sadowski-synott-gold-snowboarding.html)
+- [Eileen Gu Big Air](https://www.nytimes.com/interactive/2022/02/08/sports/olympics/eileen-gu-big-air.html)
+
+### Credits
+
+By John Branch, Alexandre Devaux, Or Fleisher, Eleanor Lutz, Mark McKeague, Miles Peyton, Emily Rhyne, Bedel Saget, Joe Ward, Jeremy White and Josh Williams
