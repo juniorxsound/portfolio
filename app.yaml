@@ -28,13 +28,13 @@ handlers:
 
   # Handle specific Next.js routes
   - url: /bio
-    static_files: out/bio/index.html
-    upload: out/bio/index.html
+    static_files: out/bio.html
+    upload: out/bio.html
     expiration: '0m'
 
   - url: /projects/(.*)
-    static_files: out/projects/\1/index.html
-    upload: out/projects/.*/index.html
+    static_files: out/projects/\1.html
+    upload: out/projects/.*\.html
     expiration: '0m'
 
   # Fallback to index.html for client-side routing
