@@ -1,15 +1,53 @@
----
-path: "/flying-plane-covid-19-safety"
-date: "2020-06-01T22:12:03.284Z"
-title: "How Safe Are You From Covid When You Fly?"
-tags: ["3D", "Tools"]
-thumbnail: "https://i.imgur.com/TMOGIv6.gif"
-cover: "airplane-header.jpg"
-embed: ''
-about: "An interactive explaining how risky it may be to board a flight now and how air circulates in a plane."
-links: [['The New York Times', 'https://www.nytimes.com/interactive/2021/04/17/travel/flying-plane-covid-19-safety.html']]
-components: [['code', 'Javascript'], ['software', 'Maya Python API, Paraview, VTK'], ['3d', 'Maya']]
-credits: 'By Mika Gröndahl, Tariro Mzezewa, Or Fleisher and Jeremy White.'
-press: []
-excerpt: "To understand how risky it may be to board a flight now, start with how air circulates in a plane."
----
+export const metadata = {
+  path: '/flying-plane-covid-19-safety',
+  date: '2020-06-01T22:12:03.284Z',
+  title: 'How Safe Are You From Covid When You Fly?',
+  tags: ['3D', 'Tools'],
+  thumbnail: 'https://i.imgur.com/TMOGIv6.gif',
+  cover: 'airplane-header.jpg',
+  embed: '',
+  about:
+    'An interactive explaining how risky it may be to board a flight now and how air circulates in a plane.',
+  links: [
+    [
+      'nytimes.com',
+      'https://www.nytimes.com/interactive/2021/04/17/travel/flying-plane-covid-19-safety.html',
+    ],
+    [
+      'AIAA Research Publication',
+      'https://arc.aiaa.org/doi/10.2514/6.2022-0334',
+    ],
+  ],
+  components: [
+    ['code', 'Javascript'],
+    ['software', 'Maya Python API, Paraview, VTK'],
+    ['3d', 'Maya'],
+  ],
+  credits: 'By Mika Gröndahl, Tariro Mzezewa, Or Fleisher and Jeremy White.',
+  press: [],
+  excerpt:
+    'To understand how risky it may be to board a flight now, start with how air circulates in a plane.',
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Javascript'],
+    ['software', 'Maya Python API, Paraview, VTK'],
+  ]}
+  size="md"
+/>
+
+### About
+
+To understand how risky it may be to board a flight now, start with how air circulates in a plane.
+
+**Air Circulation**: We used air circulation modelling to understand how risky it may be to board a flight now.
+
+**Maya Addon**: We created a custom Maya addon that's able to parse VTK particle simulation datasets and convert them into Maya particles for visualization.
+
+**Interactive Visualization**: We used an interactive visualization to understand how risky it may be to board a flight now.
+
+### Credits
+
+By Mika Gröndahl, Tariro Mzezewa, Or Fleisher and Jeremy White.

@@ -4,32 +4,37 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
-import matter from 'gray-matter'
 import { Project } from '@/types'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft } from 'lucide-react'
 import { Hero } from '@/components/hero'
+import { BackButton } from '@/components/back-button'
+import { Container } from '@/components/container'
+import { ExternalLink } from 'lucide-react'
 
 export async function generateStaticParams() {
   const projectsDir = path.join(process.cwd(), 'content/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
 
-  const params = []
+  const params = await Promise.all(
+    files.map(async (file) => {
+      const fileName = path.basename(file, '.mdx')
 
-  for (const file of files) {
-    const fullPath = path.join(projectsDir, file)
-    const { data: frontmatter } = matter.read(fullPath)
+      try {
+        const module = await import(`@/content/projects/${fileName}.mdx`)
+        const metadata = module.metadata
 
-    if (frontmatter.path) {
-      // Remove leading slash from path to get the slug
-      const slug = frontmatter.path.replace(/^\//, '')
-      params.push({ slug })
-    } else {
-      // Fallback to filename if no path in frontmatter
-      const slug = file.replace('.md', '')
-      params.push({ slug })
-    }
-  }
+        if (metadata.path) {
+          const slug = metadata.path.replace(/^\//, '')
+          return { slug }
+        } else {
+          return { slug: fileName }
+        }
+      } catch (error) {
+        console.error(`Error loading project ${fileName}:`, error)
+        return { slug: fileName }
+      }
+    })
+  )
 
   return params
 }
@@ -40,26 +45,20 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const projectPath = path.join(
-    process.cwd(),
-    'content/projects',
-    `${slug}.mdx`
-  )
+  const project = await getProject(slug)
 
-  if (!fs.existsSync(projectPath)) {
+  if (!project) {
     return {
-      title: 'Project Not Found',
+      title: 'Project Not Found - Or Fleisher',
+      description: 'The requested project could not be found.',
     }
   }
 
-  const fileContents = fs.readFileSync(projectPath, 'utf8')
-  const { data: frontmatter } = matter(fileContents)
-
   return {
-    title: `${frontmatter.title} - Or Fleisher`,
+    title: `${project.frontmatter.title} - Or Fleisher`,
     description:
-      frontmatter.excerpt ||
-      `Learn more about ${frontmatter.title} by Or Fleisher`,
+      project.frontmatter.excerpt ||
+      `Learn more about ${project.frontmatter.title} by Or Fleisher`,
   }
 }
 
@@ -67,16 +66,32 @@ async function getProject(slug: string): Promise<Project | null> {
   const projectsDir = path.join(process.cwd(), 'content/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
 
-  // First, try to find by matching the path field in frontmatter
+  // First, try to find by matching the path field in metadata
   for (const file of files) {
+    const fileName = path.basename(file, '.mdx')
     const fullPath = path.join(projectsDir, file)
-    const { data: frontmatter } = matter.read(fullPath)
 
-    if (frontmatter.path) {
-      const frontmatterSlug = frontmatter.path.replace(/^\//, '')
-      if (frontmatterSlug === slug) {
-        return await processProjectFile(fullPath, frontmatter)
+    try {
+      const module = await import(`@/content/projects/${fileName}.mdx`)
+      const metadata = module.metadata
+
+      if (metadata.path) {
+        const metadataSlug = metadata.path.replace(/^\//, '')
+        if (metadataSlug === slug) {
+          return {
+            frontmatter: {
+              ...metadata,
+              tags: metadata.tags || [],
+              components: metadata.components || [],
+              press: metadata.press || [],
+              links: metadata.links || [],
+            } as Project['frontmatter'],
+            filePath: fullPath,
+          }
+        }
       }
+    } catch (error) {
+      console.error(`Error loading project ${fileName}:`, error)
     }
   }
 
@@ -84,27 +99,26 @@ async function getProject(slug: string): Promise<Project | null> {
   const projectPath = path.join(projectsDir, `${slug}.mdx`)
 
   if (fs.existsSync(projectPath)) {
-    const { data: frontmatter } = matter.read(projectPath)
-    return await processProjectFile(projectPath, frontmatter)
+    try {
+      const module = await import(`@/content/projects/${slug}.mdx`)
+      const metadata = module.metadata
+
+      return {
+        frontmatter: {
+          ...metadata,
+          tags: metadata.tags || [],
+          components: metadata.components || [],
+          press: metadata.press || [],
+          links: metadata.links || [],
+        } as Project['frontmatter'],
+        filePath: projectPath,
+      }
+    } catch (error) {
+      console.error(`Error loading project ${slug}:`, error)
+    }
   }
 
   return null
-}
-
-async function processProjectFile(
-  filePath: string,
-  frontmatter: any
-): Promise<Project> {
-  return {
-    frontmatter: {
-      ...frontmatter,
-      tags: frontmatter.tags || [],
-      components: frontmatter.components || [],
-      press: frontmatter.press || [],
-      links: frontmatter.links || [],
-    } as Project['frontmatter'],
-    filePath: filePath,
-  }
 }
 
 function getCoverImagePath(frontmatter: Project['frontmatter']) {
@@ -130,136 +144,46 @@ export default async function ProjectPage({
   const tags = Array.isArray(frontmatter.tags)
     ? frontmatter.tags.join(' / ')
     : ''
-  const hasCoverImage = frontmatter.cover && frontmatter.cover.length > 0
 
   // Dynamic import of the MDX component
   const fileName = path.basename(filePath, '.mdx')
-  const ProjectComponent = await import(
-    `@/content/projects/${fileName}.mdx`
-  ).then((mod) => mod.default)
+  const module = await import(`@/content/projects/${fileName}.mdx`).then(
+    (mod) => mod
+  )
+  const ProjectComponent = module.default
+  const metadata = module.metadata
 
   return (
     <div className="min-h-screen">
-      <div className="absolute top-4 left-4 z-20">
-        <Link href="/">
-          <Button variant="ghost" size="sm" className="gap-2">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Button>
-        </Link>
-      </div>
+      <BackButton />
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
-        background="accent"
         backgroundImage={getCoverImagePath(frontmatter)}
+        height="xl"
+        background="accent"
         className="px-8 text-balance"
-      />
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="mb-6 z-10">
-          <Link href="/">
-            <Button variant="ghost" size="sm" className="gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              Back to Home
-            </Button>
-          </Link>
+      >
+        <div className="flex flex-col md:flex-row gap-2">
+          {metadata.links.map((link: [string, string]) => {
+            return (
+              <Button key={link[0]} asChild>
+                <Link
+                  href={link[1]}
+                  target="_blank"
+                  className="flex flex-row gap-1"
+                >
+                  {link[0]}
+                  <ExternalLink className="w-3" />
+                </Link>
+              </Button>
+            )
+          })}
         </div>
-        <h1 className="text-3xl md:text-4xl font-light mb-2">
-          {frontmatter.title || 'Untitled Project'}
-        </h1>
-        <p className="font-semibold text-muted-foreground mb-8">{tags}</p>
-        {hasCoverImage && (
-          <img
-            alt={frontmatter.title || 'Project cover image'}
-            className="w-full rounded-lg mb-8"
-            src={`/assets/images/headers/${frontmatter.cover}`}
-          />
-        )}
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: frontmatter.embed || '' }} />
-          <div className="markdownContent">
-            <ProjectComponent />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <div className="col-span-1">
-              {frontmatter.about && frontmatter.about.length > 0 && (
-                <>
-                  <h4 className="font-semibold text-lg mb-4">About</h4>
-                  <p className="text-muted-foreground">{frontmatter.about}</p>
-                </>
-              )}
-            </div>
-            <div className="col-span-1">
-              {frontmatter.components && frontmatter.components.length > 0 && (
-                <>
-                  <h4 className="font-semibold text-lg mb-4">Components</h4>
-                  <ul className="space-y-2">
-                    {frontmatter.components.map((node, index) => (
-                      <li key={index} className="font-semibold">
-                        <span className="text-sm"> {node[1]}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </div>
-            <div className="col-span-1">
-              {frontmatter.links && frontmatter.links.length > 0 && (
-                <>
-                  <h4 className="font-semibold text-lg mb-4">Links</h4>
-                  <div className="space-y-2">
-                    {frontmatter.links.map((node, index) => (
-                      <a
-                        key={index}
-                        href={node[1]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant="outline" className="w-full">
-                          {node[0]}
-                        </Button>
-                      </a>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="col-span-1 sm:col-span-2 lg:col-span-2 mt-8">
-              {frontmatter.press && frontmatter.press.length > 0 && (
-                <div>
-                  <h4 className="font-semibold text-lg mb-4">Recognition</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {frontmatter.press.map((node, index) => (
-                      <span key={index} className="text-sm">
-                        <a
-                          target="_blank"
-                          href={node[1]}
-                          rel="noreferrer"
-                          className="text-foreground underline hover:text-muted-foreground transition-colors"
-                        >
-                          {node[0]}
-                        </a>
-                        {' • '}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            <div className="col-span-1 mt-8">
-              {frontmatter.credits && frontmatter.credits.length > 0 && (
-                <div>
-                  <h4 className="font-semibold text-lg mb-4">Credits</h4>
-                  <p
-                    className="text-muted-foreground"
-                    dangerouslySetInnerHTML={{ __html: frontmatter.credits }}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      </Hero>
+      <Container>
+        <ProjectComponent />
+      </Container>
     </div>
   )
 }

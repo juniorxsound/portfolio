@@ -2,13 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
-import matter from 'gray-matter'
 
 import type { Project } from '@/types'
 
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { FilteredProjects } from '@/components/filtered-projects'
+import { Container } from '@/components/container'
 
 export async function generateMetadata() {
   return {
@@ -21,23 +21,36 @@ export async function generateMetadata() {
 async function getProjects(): Promise<Project[]> {
   const projectsDir = path.join(process.cwd(), 'content/projects')
   const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
-  const projects = files
-    .map((file) => {
+
+  const projects = await Promise.all(
+    files.map(async (file) => {
+      const fileName = path.basename(file, '.mdx')
       const fullPath = path.join(projectsDir, file)
-      const { data } = matter.read(fullPath)
-      return {
-        frontmatter: data as Project['frontmatter'],
-        filePath: fullPath,
+
+      try {
+        // Dynamic import to get the metadata export
+        const module = await import(`@/content/projects/${fileName}.mdx`)
+        const metadata = module.metadata
+
+        return {
+          frontmatter: metadata as Project['frontmatter'],
+          filePath: fullPath,
+        }
+      } catch (error) {
+        console.error(`Error loading project ${fileName}:`, error)
+        return null
       }
     })
+  )
+
+  // Filter out null results and sort by date
+  return projects
+    .filter((project): project is Project => project !== null)
     .sort((a, b) => {
-      // Sort by date in descending order (newest first)
       const dateA = new Date(a.frontmatter.date || '')
       const dateB = new Date(b.frontmatter.date || '')
       return dateB.getTime() - dateA.getTime()
     })
-
-  return projects
 }
 
 export default async function HomePage() {
@@ -57,11 +70,11 @@ export default async function HomePage() {
           </Link>
         </Button>
       </Hero>
-      <div className="container mx-auto px-8 py-12 max-w-6xl">
+      <Container>
         <section id="work">
           <FilteredProjects projects={projects} />
         </section>
-      </div>
+      </Container>
     </div>
   )
 }

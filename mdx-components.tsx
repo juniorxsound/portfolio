@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
-import Image, { ImageProps } from 'next/image'
+import { ProjectComponents } from '@/components/project-components'
+import { AutoComponentsTable } from '@/components/auto-components-table'
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -8,6 +9,7 @@ import Image, { ImageProps } from 'next/image'
 
 const components: MDXComponents = {
   // Allows customizing built-in components, e.g. to add styling.
+  wrapper: ({ children }) => <div className="prose">{children}</div>,
   h1: ({ children }) => (
     <h1 className="text-3xl font-bold mb-4 text-foreground">{children}</h1>
   ),
@@ -67,12 +69,11 @@ const components: MDXComponents = {
     <td className="border border-border px-4 py-2">{children}</td>
   ),
   img: (props) => (
-    <Image
-      sizes="100vw"
-      style={{ width: '100%', height: 'auto' }}
-      {...(props as ImageProps)}
-    />
+    <img sizes="100vw" style={{ width: '100%', height: 'auto' }} {...props} />
   ),
+  // Custom components for MDX
+  ProjectComponents,
+  AutoComponentsTable,
 } satisfies MDXComponents
 
 export function useMDXComponents(): MDXComponents {

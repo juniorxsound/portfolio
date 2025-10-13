@@ -1,25 +1,66 @@
----
-path: "/world-cup"
-date: "2021-09-30T22:12:03.284Z"
-title: "World Cup 3D Moments"
-tags: ["Computer Vision", "WebGL", "3D", "Machine Learning"]
-thumbnail: "https://i.imgur.com/I68x9DP.gif"
-cover: "world-cup.jpg"
-embed: ''
-about: "For The Times’s analysis of the 2022 FIFA World Cup, R&D and The New York Times graphics desk collaborated on a series of interactive articles that enable a viewer to see key plays in 3D. To accomplish this, R&D developed a workflow to swiftly create 3D models of athletes in action from a single photograph.
+export const metadata = {
+  path: '/world-cup',
+  date: '2021-09-30T22:12:03.284Z',
+  title: 'World Cup 3D Moments',
+  tags: ['Computer Vision', 'WebGL', '3D', 'Machine Learning'],
+  thumbnail: 'https://i.imgur.com/I68x9DP.gif',
+  cover: 'world-cup.jpg',
+  embed: '',
+  about:
+    'For The Times’s analysis of the 2022 FIFA World Cup, R&D and The New York Times graphics desk collaborated on a series of interactive articles that enable a viewer to see key plays in 3D. To accomplish this, R&D developed a workflow to swiftly create 3D models of athletes in action from a single photograph.\nThis new method, assisted by a computer vision machine learning model, allowed us to model a 3D scene in just a few hours and publish an immersive story on a news deadline.',
+  links: [
+    [
+      'nytimes.com',
+      'https://www.nytimes.com/interactive/2022/12/03/sports/world-cup/richarlison-messi-pulisic-world-cup-goals.html',
+    ],
+    [
+      'R&D Blog',
+      'https://rd.nytimes.com/projects/modeling-key-world-cup-moments-with-machine-learning',
+    ],
+  ],
+  components: [
+    ['code', 'Python, WebGL, GLSL, JavaScript'],
+    ['ml', 'ICON (3D pose estimation)'],
+    ['3d', 'Blender, Threebird'],
+    ['software', 'GCP, Jupyter, Theatre.js'],
+  ],
+  credits:
+    'This series of stories was created and produced by Weiyi Cai, Kenan Davis, Chloé Desaulles, Alexandre Devaux, Or Fleisher, Malika Khurana, Eleanor Lutz, Allison McCann, Mark McKeague, Karthik Patanjali, Scott Reinhard and Bedel Saget.',
+  excerpt: 'See key World Cup plays in 3D from a single photograph.',
+}
 
-This new method, assisted by a computer vision machine learning model, allowed us to model a 3D scene in just a few hours and publish an immersive story on a news deadline."
-links: [
-    ['USA-Wales', 'https://www.nytimes.com/interactive/2022/11/21/sports/world-cup/wales-usmnt-world-cup-goal-pulisic.html'],
-    ['Belguim-Canada', 'https://www.nytimes.com/interactive/2022/11/23/sports/world-cup/canada-belgium-world-cup-goal-batshuayi.html'], 
-    ['Germany-Spain', 'https://www.nytimes.com/interactive/2022/11/27/sports/world-cup/spain-germany-world-cup-goal.html'], 
-    ['US-Iran', 'https://www.nytimes.com/interactive/2022/11/29/sports/world-cup/iran-usa-world-cup-goal-pulisic.html'], 
-    ['Three Stunning Goals Frozen in Time', 'https://www.nytimes.com/interactive/2022/12/03/sports/world-cup/richarlison-messi-pulisic-world-cup-goals.html'], 
-    ['Process', 'https://rd.nytimes.com/projects/modeling-key-world-cup-moments-with-machine-learning']
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Python, WebGL, GLSL, JavaScript'],
+    ['ml', 'ICON (3D pose estimation)'],
+    ['3d', 'Blender, Threebird'],
+    ['software', 'GCP, Jupyter, Theatre.js'],
+  ]}
+  size="md"
+/>
 
-]
-components: [['code', 'Python, WebGL, GLSL'], ['software', 'Blender, GCP, Jupyter']]
-credits: 'This series of stories was created and produced by Weiyi Cai, Kenan Davis, Chloé Desaulles, Alexandre Devaux, Or Fleisher, Malika Khurana, Eleanor Lutz, Allison McCann, Mark McKeague, Karthik Patanjali, Scott Reinhard and Bedel Saget.
-'
-excerpt: "See key World Cup plays in 3D from a single photograph."
----
+### About
+
+For The Times's analysis of the 2022 FIFA World Cup, R&D and The New York Times graphics desk collaborated on a series of interactive articles that enable viewers to see key plays in 3D. This project developed a complete workflow to create 3D models of athletes in action from a single photograph, enabling publication within hours of each match.
+
+**Technical Workflow**: The process begins with journalists photographing matches in Qatar using high-speed bursts to capture key moments. We calculate the 3D camera position using standard goal and penalty area dimensions as geometric guides, then project the image onto 3D field geometry.
+
+**Machine Learning Integration**: Each player is cropped from the photograph and processed through ICON, an open-source machine learning model from the Max Planck Institute that generates 3D player models from single images. The models are manually corrected against broadcast replays and additional photographs to ensure accuracy.
+
+**Collaborative 3D Publishing**: The final stories are assembled using Threebird, our internal collaborative web-based tool for designing 3D interactive graphics. Built on Three.js and Theatre.js, Threebird allows multiple journalists to work simultaneously on 3D scenes, dramatically reducing collaboration friction compared to traditional 3D authoring software.
+
+**Visual Design**: Players are represented as illustrated sketches rather than photorealistic figures to signal that these are analytical representations, not attempts at lifelike reconstruction. This approach maintains journalistic integrity while providing clear visual analysis.
+
+The workflow enabled us to publish immersive 3D analysis within hours of each match, bringing contextual analysis to readers while the games remained fresh in their minds.
+
+### Additional articles
+
+- [USA-Wales](https://www.nytimes.com/interactive/2022/11/21/sports/world-cup/wales-usmnt-world-cup-goal-pulisic.html)
+- [Belgium-Canada](https://www.nytimes.com/interactive/2022/11/23/sports/world-cup/canada-belgium-world-cup-goal-batshuayi.html)
+- [Germany-Spain](https://www.nytimes.com/interactive/2022/11/27/sports/world-cup/spain-germany-world-cup-goal.html)
+- [US-Iran](https://www.nytimes.com/interactive/2022/11/29/sports/world-cup/iran-usa-world-cup-goal-pulisic.html)
+
+### Credits
+
+This series of stories was created and produced by Weiyi Cai, Kenan Davis, Chloé Desaulles, Alexandre Devaux, Or Fleisher, Malika Khurana, Eleanor Lutz, Allison McCann, Mark McKeague, Karthik Patanjali, Scott Reinhard and Bedel Saget.

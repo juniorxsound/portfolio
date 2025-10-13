@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Bio from '@/content/bio.mdx'
+import { Container } from '@/components/container'
 
 export const metadata: Metadata = {
   title: 'Bio - Or Fleisher',
@@ -11,11 +12,11 @@ export const metadata: Metadata = {
 export default function BioPage() {
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <Container maxWidth="4xl" size="md">
         <div className="markdownContent">
           <Bio />
         </div>
-      </div>
+      </Container>
     </div>
   )
 }
