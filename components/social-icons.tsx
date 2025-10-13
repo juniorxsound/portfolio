@@ -1,6 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
 import { Button } from './ui/button'
-import { Link } from 'lucide-react'
 
 interface SocialLink {
   name: string
@@ -43,30 +43,32 @@ const socialLinks: SocialLink[] = [
 
 export function SocialIcons() {
   return (
-    <div className="flex flex-row gap-3">
-      {socialLinks.map((link) => (
-        <Button
-          key={link.name}
-          variant="outline"
-          asChild
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 p-2 px-3 rounded-lg hover:bg-muted transition-colors group"
-          aria-label={`Visit ${link.name} profile`}
-        >
-          <Link href={link.url} target="_blank">
-            <img
-              src={link.icon}
-              alt=""
-              width={24}
-              height={24}
-              className="flex-shrink-0"
-            />
-            <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
-              {link.name}
-            </span>
-          </Link>
-        </Button>
-      ))}
+    <div className="overflow-x-auto">
+      <div className="flex flex-row gap-3 min-w-max">
+        {socialLinks.map((link) => (
+          <Button
+            key={link.name}
+            variant="outline"
+            asChild
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-2 px-3 rounded-lg hover:bg-muted transition-colors group flex-shrink-0"
+            aria-label={`Visit ${link.name} profile`}
+          >
+            <Link href={link.url} target="_blank">
+              <img
+                src={link.icon}
+                alt=""
+                width={24}
+                height={24}
+                className="flex-shrink-0"
+              />
+              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+                {link.name}
+              </span>
+            </Link>
+          </Button>
+        ))}
+      </div>
     </div>
   )
 }
