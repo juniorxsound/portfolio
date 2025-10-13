@@ -68,7 +68,10 @@ export function Hero({
       {/* overlay for better text readability */}
       {backgroundImage && (
         <div
-          className={`absolute inset-0 ${backgroundClasses[background]}/70`}
+          className={cn(
+            'absolute inset-0',
+            `${backgroundClasses[background]} opacity-70`
+          )}
         />
       )}
 
