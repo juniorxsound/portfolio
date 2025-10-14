@@ -70,6 +70,23 @@ export async function generateMetadata({
         },
       ],
     },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@juniorxsound',
+      creator: '@juniorxsound',
+      title: `${project.frontmatter.title} - Or Fleisher`,
+      description:
+        project.frontmatter.excerpt ||
+        `Learn more about ${project.frontmatter.title} by Or Fleisher`,
+      images: [
+        {
+          url: project.frontmatter.thumbnail || '',
+          width: 420,
+          height: 230,
+          alt: project.frontmatter.title,
+        },
+      ],
+    },
     description:
       project.frontmatter.excerpt ||
       `Learn more about ${project.frontmatter.title} by Or Fleisher`,

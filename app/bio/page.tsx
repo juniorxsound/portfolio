@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   title: 'Bio - Or Fleisher',
   description:
     'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
+  openGraph: {
+    title: 'Bio - Or Fleisher',
+    description:
+      'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bio - Or Fleisher',
+    description:
+      'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
+  },
 }
 
 export default function BioPage() {

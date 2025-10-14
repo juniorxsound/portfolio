@@ -15,6 +15,27 @@ export async function generateMetadata() {
     title: 'Or Fleisher',
     description:
       'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+
+    openGraph: {
+      images: [
+        {
+          url: '/assets/images/gifs/myth.gif',
+          width: 420,
+          height: 230,
+          alt: 'Myth',
+        },
+      ],
+    },
+    twitter: {
+      images: [
+        {
+          url: '/assets/images/gifs/myth.gif',
+          width: 420,
+          height: 230,
+          alt: 'Myth',
+        },
+      ],
+    },
   }
 }
 
