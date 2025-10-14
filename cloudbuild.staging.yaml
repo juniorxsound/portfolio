@@ -6,7 +6,7 @@ steps:
     entrypoint: npm
     args: ['run', 'build']
     env:
-      - 'APP_ENV=production'
+      - 'APP_ENV=staging'
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
   - name: 'gcr.io/cloud-builders/gcloud'

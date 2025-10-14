@@ -8,6 +8,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { Footer } from '@/components/footer'
 
 import './globals.css'
+import { BASE_URL } from '@/lib/constants'
 
 const open_sans = Open_Sans({
   subsets: ['latin'],
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Or Fleisher',
     description:
       'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
-    url: 'https://orfleisher.com',
+    url: BASE_URL,
     siteName: 'Or Fleisher',
     images: [
       {
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  metadataBase: new URL('https://orfleisher-staging.ue.r.appspot.com'),
+  metadataBase: new URL(BASE_URL),
   twitter: {
     card: 'summary_large_image',
     site: '@juniorxsound',
