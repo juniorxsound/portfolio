@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import { ProjectComponents } from '@/components/project-components'
 import { AutoComponentsTable } from '@/components/auto-components-table'
+import { Collapsible } from '@/components/ui/collapsible'
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
@@ -74,6 +75,7 @@ const components: MDXComponents = {
   // Custom components for MDX
   ProjectComponents,
   AutoComponentsTable,
+  Collapsible,
 } satisfies MDXComponents
 
 export function useMDXComponents(): MDXComponents {
