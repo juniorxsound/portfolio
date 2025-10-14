@@ -62,6 +62,21 @@ export default async function HomePage() {
         title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
         height="xl"
         background="accent"
+        videoSources={[
+          {
+            src: '/videos/hero/placeholder-720p.webm',
+            type: 'video/webm',
+          },
+          {
+            src: '/videos/hero/placeholder-720p.mp4',
+            type: 'video/mp4',
+          },
+          {
+            src: '/videos/hero/placeholder-720p-av1.mp4',
+            type: 'video/mp4; codecs=av01',
+          },
+        ]}
+        videoPoster="/images/headers/placeholder.jpg"
         className="px-8 text-balance"
       >
         <Button variant="default" asChild>
