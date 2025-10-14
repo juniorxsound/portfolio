@@ -19,8 +19,8 @@ npm run dev
 
 ## Deployment
 
-- **Staging**: `gcloud app deploy app-staging.yaml --project=orfleisher-staging`
-- **Production**: `gcloud app deploy --project=orfleisher-production`
+- **Staging**: Automatically deployed to staging environment on every push to the `dev` branch
+- **Production**: Automatically deployed to production environment on every push to the `master` branch
 
 ## Project Structure
 
