@@ -79,11 +79,18 @@ export default async function HomePage() {
         videoPoster="/images/headers/placeholder.jpg"
         className="px-8 text-balance"
       >
-        <Button variant="default" asChild>
-          <Link href="/bio" prefetch={true}>
-            Learn More
-          </Link>
-        </Button>
+        <div className="flex flex-row gap-2">
+          <Button variant="default" asChild>
+            <Link href="/bio" prefetch={true}>
+              Learn More
+            </Link>
+          </Button>
+          <Button variant="default" asChild>
+            <Link href="#footer" prefetch={true}>
+              Contact
+            </Link>
+          </Button>
+        </div>
       </Hero>
       <Container>
         <section id="featured-work">

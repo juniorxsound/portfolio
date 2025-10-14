@@ -5,7 +5,7 @@ import { SocialIconsMinimal } from './social-icons-minimal'
 
 export function Footer() {
   return (
-    <footer className="bg-accent font-sans">
+    <footer className="bg-accent font-sans" id="footer">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center space-y-6">
           {/* Navigation Links */}
