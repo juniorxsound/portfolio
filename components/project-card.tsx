@@ -19,12 +19,21 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           href={`/projects/${fm.path ? fm.path.replace(/^\//, '') : ''}`}
           className="block"
         >
-          <div className="overflow-hidden rounded-t-lg">
+          <div className="overflow-hidden rounded-t-lg relative">
             <img
               alt={fm.path || 'project'}
               src={`/assets/images/gifs${fm.path || ''}.gif`}
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
+            {fm.badge && (
+              <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
+                <img
+                  src={fm.badge}
+                  alt="Project badge"
+                  className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
+                />
+              </div>
+            )}
           </div>
           <CardHeader className="pb-2">
             <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">

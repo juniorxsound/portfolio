@@ -76,7 +76,6 @@ export default async function HomePage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
-        videoPoster="/images/headers/placeholder.jpg"
         className="px-8 text-balance"
       >
         <div className="flex flex-row gap-2">
