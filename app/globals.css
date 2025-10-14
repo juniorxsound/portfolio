@@ -125,6 +125,18 @@ p {
   display: none; /* Safari and Chrome */
 }
 
+/* app/globals.css */
+h1,
+h2,
+h3,
+h4 {
+  scroll-margin-top: 96px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Markdown content styling is now handled in mdx-components.tsx */
 
 @theme inline {
