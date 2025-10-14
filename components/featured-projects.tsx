@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { Project } from '@/types'
 import { ProjectCard } from './project-card'
@@ -13,7 +13,13 @@ export function FeaturedProjects({
   projects,
   limit = 6,
 }: FeaturedProjectsProps) {
-  const featuredProjects = projects.slice(0, limit)
+  const featuredProjects = useMemo(
+    () =>
+      projects
+        .filter((project) => project.frontmatter.featured)
+        .slice(0, limit),
+    [projects, limit]
+  )
 
   return (
     <div className="space-y-8">
