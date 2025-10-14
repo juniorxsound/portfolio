@@ -9,6 +9,9 @@ interface HeroProps {
   height?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
   background?: 'default' | 'accent' | 'muted' | 'primary' | 'secondary'
   backgroundImage?: string
+  videoSrc?: string
+  videoSources?: { src: string; type: string }[]
+  videoPoster?: string
   alignment?: 'left' | 'center' | 'right'
   children?: React.ReactNode
 }
@@ -43,13 +46,16 @@ export function Hero({
   height = 'xl',
   background = 'accent',
   backgroundImage,
+  videoSrc,
+  videoSources,
+  videoPoster,
   alignment = 'left',
   children,
 }: HeroProps) {
   return (
     <div
       className={cn(
-        'flex flex-col justify-center items-center relative',
+        'flex flex-col justify-center items-center relative overflow-hidden',
         heightClasses[height],
         backgroundClasses[background],
         className
@@ -65,8 +71,26 @@ export function Hero({
           : undefined
       }
     >
+      {(videoSrc || (videoSources && videoSources.length > 0)) && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={videoPoster}
+        >
+          {videoSources?.map((source) => (
+            <source key={source.src} src={source.src} type={source.type} />
+          ))}
+          {/* Fallback single source for backwards compatibility */}
+          {videoSrc ? <source src={videoSrc} /> : null}
+        </video>
+      )}
       {/* overlay for better text readability */}
-      {backgroundImage && (
+      {(backgroundImage ||
+        videoSrc ||
+        (videoSources && videoSources.length > 0)) && (
         <div
           className={cn(
             'absolute inset-0',
