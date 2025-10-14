@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   description:
     'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
   keywords:
-    'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebVR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, אור, אור פליישר, פליישר',
+    'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebXR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, nytimes, vimeo, viacom, nike, nike virtual studios',
   openGraph: {
     title: 'Or Fleisher',
     description:

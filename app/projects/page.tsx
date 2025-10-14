@@ -10,11 +10,39 @@ import { Hero } from '@/components/hero'
 import { FilteredProjects } from '@/components/filtered-projects'
 import { Container } from '@/components/container'
 import { BackButton } from '@/components/back-button'
+import { Metadata } from 'next'
 
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Projects - Or Fleisher',
     description: 'Projects by Or Fleisher',
+    openGraph: {
+      title: 'Projects - Or Fleisher',
+      description: 'Projects by Or Fleisher',
+      images: [
+        {
+          url: '/assets/images/gifs/skeletron.gif',
+          width: 420,
+          height: 230,
+          alt: 'Skeletron',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@juniorxsound',
+      creator: '@juniorxsound',
+      title: 'Projects - Or Fleisher',
+      description: 'Projects by Or Fleisher',
+      images: [
+        {
+          url: '/assets/images/gifs/skeletron.gif',
+          width: 420,
+          height: 230,
+          alt: 'Skeletron',
+        },
+      ],
+    },
   }
 }
 
