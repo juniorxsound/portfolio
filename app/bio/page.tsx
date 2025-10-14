@@ -13,12 +13,30 @@ export const metadata: Metadata = {
     title: 'Bio - Or Fleisher',
     description:
       'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
+    images: [
+      {
+        url: '/assets/images/profile_facebook.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Or Fleisher',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@juniorxsound',
+    creator: '@juniorxsound',
     title: 'Bio - Or Fleisher',
     description:
       'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
+    images: [
+      {
+        url: '/assets/images/profile_facebook.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Or Fleisher',
+      },
+    ],
   },
 }
 
