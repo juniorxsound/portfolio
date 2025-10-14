@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function BioPage() {
   return (
-    <div className="min-h-screen">
+    <div>
       <BackButton />
       <Hero
         title="About"

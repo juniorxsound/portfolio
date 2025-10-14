@@ -32,6 +32,11 @@ handlers:
     upload: out/bio.html
     expiration: '0m'
 
+  - url: /projects
+    static_files: out/projects.html
+    upload: out/projects.html
+    expiration: '0m'
+
   - url: /projects/(.*)
     static_files: out/projects/\1.html
     upload: out/projects/.*\.html

@@ -45,16 +45,18 @@ export function HorizontalFilters({
             )}
           />
         </button>
-        {hasActiveFilters && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClearFilters}
-            className="text-xs h-6 px-2"
-          >
-            Clear filters
-          </Button>
-        )}
+        <div className="h-6">
+          {hasActiveFilters && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onClearFilters}
+              className="text-xs h-6 px-2"
+            >
+              Clear filters
+            </Button>
+          )}
+        </div>
       </div>
 
       {/* Collapsible Content */}

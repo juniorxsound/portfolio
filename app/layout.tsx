@@ -2,6 +2,9 @@ import React from 'react'
 import { Metadata } from 'next'
 import { Open_Sans, Merriweather } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { Footer } from '@/components/footer'
 
 import './globals.css'
 
@@ -60,7 +63,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn(open_sans.className, merriweather.className)}>
+    <html
+      lang="en"
+      className={cn(open_sans.className, merriweather.className)}
+      suppressHydrationWarning
+    >
       <head>
         <link
           rel="icon"
@@ -76,7 +83,22 @@ export default function RootLayout({
         />
         <link rel="canonical" href="https://orfleisher.com" />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative min-h-screen flex flex-col">
+            <div className="absolute top-4 right-4 z-50">
+              <ThemeToggle />
+            </div>
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
