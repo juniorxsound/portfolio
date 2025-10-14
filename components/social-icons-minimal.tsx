@@ -27,7 +27,7 @@ const socialLinks: SocialLink[] = [
   {
     name: 'Twitter',
     url: 'http://twitter.com/juniorxsound',
-    icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptNi4wNjYgOS42NDVjLjE4MyA0LjA0LTIuODMgOC41NDQtOC4xNjQgOC41NDQtMS42MjIgMC0zLjEzMS0uNDc2LTQuNDAyLTEuMjkxIDEuNTI0LjE4IDMuMDQ1LS4yNDQgNC4yNTItMS4xODktMS4yNTYtLjAyMy0yLjMxNy0uODU0LTIuNjg0LTEuOTk1LjQ1MS4wODYuODk1LjA2MSAxLjI5OC0uMDQ5LTEuMzgxLS4yNzgtMi4zMzUtMS41MjItMi4zMDQtMi44NTMuMzg4LjIxNS44My4zNDQgMS4zMDEuMzU5LTEuMjc5LS44NTUtMS42NDEtMi41NDQtLjg4OS0zLjgzNSAxLjQxNiAxLjczOCAzLjUzMyAyLjg4MSA1LjkyIDMuMDAxLS40MTktMS43OTYuOTQ0LTMuNTI3IDIuNzk5LTMuNTI3LjgyNSAwIDEuNTcyLjM0OSAyLjA5Ni45MDcuNjU0LS4xMjggMS4yNy0uMzY4IDEuODI0LS42OTctLjIxNS42NzEtLjY3IDEuMjMzLTEuMjYzIDEuNTg5LjU4MS0uMDcgMS4xMzUtLjIyNCAxLjY0OS0uNDUzLS4zODQuNTc4LS44NyAxLjA4NC0xLjQzMyAxLjQ4OXoiLz48L3N2Zz4=',
+    icon: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptNi4wNjYgOS42NDVjLjE4MyA0LjA0LTIuODMgOC41NDQtOC4xNjQgOC41NDQtMS42MjIgMC0zLjEzMS0uNDc2LTQuNDAyLTEuMjkxIDEuNTI0LjE4IDMuMDQ1LS4yNDQgNC4yNTItMS4xODktMS4yNTYtLjAyMy0yLjMxNy0uODU0LTIuNjg0LTEuOTk1LjQ1MS4wODYuODk1LjA2MSAxLjI5OC0uMDQ5LTEuMzgxLS4yNzgtMi4zMzUtMS41MjItMi4zMDQtMi44NTMuMzg4LjIxNS44My4zNDQgMS4zMDEuMzU5LTEuMjc5LS44NTUtMS42NDEtMi41NDQtLjg5LTMuODM1IDEuNDE2IDEuNzM4IDMuNTMzIDIuODgxIDUuOTIgMy4wMDEtLjQxOS0xLjc5Ni45NDQtMy41MjcgMi43OTktMy41MjcuODI1IDAgMS41NzIuMzQ5IDIuMDk2LjkwNy42NTQtLjEyOCAxLjI3LS4zNjggMS44MjQtLjY5Ny0uMjE1LjY3MS0uNjcgMS4yMzMtMS4yNjMgMS41ODkuNTgxLS4wNyAxLjEzNS0uMjI0IDEuNjQ5LS40NTMtLjM4NC41NzgtLjg3IDEuMDg0LTEuNDMzIDEuNDg5eiIvPjwvc3ZnPg==',
   },
   {
     name: 'YouTube',
@@ -46,34 +46,30 @@ const socialLinks: SocialLink[] = [
   },
 ]
 
-export function SocialIcons() {
+export function SocialIconsMinimal() {
   return (
-    <div className="overflow-x-auto">
-      <div className="flex flex-row gap-3 min-w-max">
-        {socialLinks.map((link) => (
-          <Button
-            key={link.name}
-            variant="outline"
-            asChild
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 p-2 px-3 rounded-lg hover:bg-muted transition-colors group flex-shrink-0"
-            aria-label={`Visit ${link.name} profile`}
-          >
-            <Link href={link.url} target="_blank">
-              <img
-                src={link.icon}
-                alt=""
-                width={24}
-                height={24}
-                className="flex-shrink-0 dark:invert"
-              />
-              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
-                {link.name}
-              </span>
-            </Link>
-          </Button>
-        ))}
-      </div>
+    <div className="flex flex-row gap-2">
+      {socialLinks.map((link) => (
+        <Button
+          key={link.name}
+          variant="ghost"
+          size="icon"
+          asChild
+          rel="noopener noreferrer"
+          className="h-8 w-8 p-0 hover:bg-muted transition-colors"
+          aria-label={`Visit ${link.name} profile`}
+        >
+          <Link href={link.url} target="_blank">
+            <img
+              src={link.icon}
+              alt=""
+              width={20}
+              height={20}
+              className="opacity-70 hover:opacity-100 transition-opacity dark:invert"
+            />
+          </Link>
+        </Button>
+      ))}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (.dark &);
 @plugin "@tailwindcss/typography";
 
 h1 {

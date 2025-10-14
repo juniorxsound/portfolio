@@ -1,15 +1,19 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
+
+// Types
 import { Project } from '@/types'
+
+// Components
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { BackButton } from '@/components/back-button'
 import { Container } from '@/components/container'
-import { ExternalLink } from 'lucide-react'
 
 export async function generateStaticParams() {
   const projectsDir = path.join(process.cwd(), 'content/projects')
@@ -56,6 +60,16 @@ export async function generateMetadata({
 
   return {
     title: `${project.frontmatter.title} - Or Fleisher`,
+    openGraph: {
+      images: [
+        {
+          url: project.frontmatter.thumbnail || '',
+          width: 420,
+          height: 230,
+          alt: project.frontmatter.title,
+        },
+      ],
+    },
     description:
       project.frontmatter.excerpt ||
       `Learn more about ${project.frontmatter.title} by Or Fleisher`,
@@ -147,15 +161,13 @@ export default async function ProjectPage({
 
   // Dynamic import of the MDX component
   const fileName = path.basename(filePath, '.mdx')
-  const module = await import(`@/content/projects/${fileName}.mdx`).then(
-    (mod) => mod
-  )
+  const module = await import(`@/content/projects/${fileName}.mdx`)
   const ProjectComponent = module.default
   const metadata = module.metadata
 
   return (
-    <div className="min-h-screen">
-      <BackButton />
+    <div>
+      <BackButton href="/projects" children="Back to Projects" />
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}

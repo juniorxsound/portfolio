@@ -7,14 +7,14 @@ import type { Project } from '@/types'
 
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
-import { FeaturedProjects } from '@/components/featured-projects'
+import { FilteredProjects } from '@/components/filtered-projects'
 import { Container } from '@/components/container'
+import { BackButton } from '@/components/back-button'
 
 export async function generateMetadata() {
   return {
-    title: 'Or Fleisher',
-    description:
-      'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+    title: 'Projects - Or Fleisher',
+    description: 'Projects by Or Fleisher',
   }
 }
 
@@ -53,27 +53,28 @@ async function getProjects(): Promise<Project[]> {
     })
 }
 
-export default async function HomePage() {
+export default async function ProjectsPage() {
   const projects = await getProjects()
 
   return (
     <div>
+      <BackButton />
       <Hero
-        title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
+        title="Projects"
         height="xl"
         background="accent"
         className="px-8 text-balance"
-      >
-        <Button variant="default" asChild>
-          <Link href="/bio" prefetch={true}>
-            Learn More
-          </Link>
-        </Button>
-      </Hero>
-      <Container>
-        <section id="featured-work">
-          <FeaturedProjects projects={projects} />
+      />
+      <Container className="space-y-8">
+        <section id="work">
+          <FilteredProjects projects={projects} />
         </section>
+
+        <div className="text-center">
+          <Button asChild>
+            <Link href="/bio">Learn More</Link>
+          </Button>
+        </div>
       </Container>
     </div>
   )
