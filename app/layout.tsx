@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import { GoogleTagManager } from '@next/third-parties/google'
 import { Open_Sans, Merriweather } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -68,21 +69,8 @@ export default function RootLayout({
       className={cn(open_sans.className, merriweather.className)}
       suppressHydrationWarning
     >
-      <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/assets/favicons/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/assets/favicons/favicon-32x32.png"
-        />
-        <link rel="canonical" href="https://orfleisher.com" />
-      </head>
+      <GoogleTagManager gtmId="UA-123776962-1" />
+
       <body>
         <ThemeProvider
           attribute="class"
