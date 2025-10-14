@@ -3,6 +3,9 @@ import { BASE_URL } from '@/lib/constants'
 import fs from 'fs'
 import path from 'path'
 
+// Required for static export
+export const dynamic = 'force-static'
+
 // Function to get all MDX files from content/projects directory
 function getProjectFiles() {
   const projectsDir = path.join(process.cwd(), 'content/projects')
