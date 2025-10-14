@@ -20,6 +20,12 @@ handlers:
     upload: out/.*\.(webp|mp4|webm|ogg|mp3|wav)
     expiration: '30d'
 
+  # Sitemap
+  - url: /sitemap.xml
+    static_files: out/sitemap.xml
+    upload: out/sitemap.xml
+    expiration: '0m'
+
   # Handle RSC data files first (before HTML routes)
   - url: /(.*)\.txt
     static_files: out/\1.txt
