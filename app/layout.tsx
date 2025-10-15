@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Open_Sans, Merriweather } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -70,7 +70,7 @@ export default function RootLayout({
       className={cn(open_sans.className, merriweather.className)}
       suppressHydrationWarning
     >
-      <GoogleTagManager gtmId="UA-123776962-1" />
+      <GoogleAnalytics gaId="UA-123776962-1" />
 
       <body>
         <ThemeProvider
