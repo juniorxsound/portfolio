@@ -1,7 +1,3 @@
-import Image from 'next/image'
-
-import collectionImage from '@/public/images/montage_of1.png'
-
 export const metadata = {
   path: '/our-force-1',
   date: '2023-04-17T00:00:00.000Z',
@@ -58,12 +54,12 @@ I helped build a cloud pipeline that would render the permutations and upload th
 
 Lastly, here is what the entire collection looks like very zoomed out
 
-<Image
-  src={collectionImage}
+<img
+  src="/images/montage_of1.png"
   alt="Our Force 1 collection"
-  width={1000}
-  height={1000}
-  placeholder="blur"
+  width="100%"
+  height="auto"
+  loading="lazy"
 />
 
 ### Listing page
