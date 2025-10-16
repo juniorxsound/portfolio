@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
+import Picture from 'next-export-optimize-images/picture'
 
 interface HeroProps {
   title: string
@@ -60,17 +61,18 @@ export function Hero({
         backgroundClasses[background],
         className
       )}
-      style={
-        backgroundImage
-          ? {
-              backgroundImage: `url(${backgroundImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }
-          : undefined
-      }
     >
+      {backgroundImage && (
+        <Picture
+          src={backgroundImage}
+          alt=""
+          sizes="100vw"
+          width={1920}
+          height={1080}
+          priority
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        />
+      )}
       {(videoSrc || (videoSources && videoSources.length > 0)) && (
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"

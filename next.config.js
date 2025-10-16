@@ -1,10 +1,11 @@
 const path = require('path')
 const createMDX = require('@next/mdx')
+const withExportImages = require('next-export-optimize-images')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  webpack: config => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       '@': path.resolve(__dirname, '.'),
@@ -20,5 +21,7 @@ const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
 })
 
-// Merge MDX config with Next.js config
-module.exports = withMDX(nextConfig)
+// Merge MDX config with Image optimization and Next.js config
+module.exports = withExportImages(withMDX(nextConfig), {
+  generateFormats: ['avif', 'webp'],
+})

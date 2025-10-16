@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Project } from '@/types'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import Picture from 'next-export-optimize-images/picture'
 
 interface ProjectCardProps {
   project: Project
@@ -20,9 +21,11 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           className="block"
         >
           <div className="overflow-hidden rounded-t-lg relative">
-            <img
+            <Picture
               alt={fm.path || 'project'}
               src={`/assets/images/gifs${fm.path || ''}.gif`}
+              width={768}
+              height={384}
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
             {fm.badge && (
