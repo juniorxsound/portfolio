@@ -114,6 +114,16 @@ p {
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
   }
+
+  /* Make MDX iframes responsive and fill container on desktop */
+  .prose :where(iframe) {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+  }
 }
 
 /* Hide scrollbar for horizontal scroll */
