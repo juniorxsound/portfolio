@@ -47,7 +47,7 @@ export default function BioPage() {
       <Hero
         title="About"
         background="accent"
-        height="xl"
+        height="sm"
         className="px-8 text-balance"
       ></Hero>
       <Container maxWidth="4xl" size="md">

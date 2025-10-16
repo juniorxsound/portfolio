@@ -3,11 +3,12 @@ import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
 
-import type { Project } from '@/types'
+import type { Project, Writing } from '@/types'
 
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { FeaturedProjects } from '@/components/featured-projects'
+import { FeaturedWriting } from '@/components/featured-writing'
 import { Container } from '@/components/container'
 
 export async function generateMetadata() {
@@ -74,8 +75,51 @@ async function getProjects(): Promise<Project[]> {
     })
 }
 
+async function getWriting(): Promise<Writing[]> {
+  const writingDir = path.join(process.cwd(), 'content/writing')
+
+  // Check if writing directory exists
+  if (!fs.existsSync(writingDir)) {
+    return []
+  }
+
+  const files = fs.readdirSync(writingDir).filter((f) => f.endsWith('.mdx'))
+
+  const writing = await Promise.all(
+    files.map(async (file) => {
+      const fileName = path.basename(file, '.mdx')
+      const fullPath = path.join(writingDir, file)
+
+      try {
+        // Dynamic import to get the metadata export
+        const module = await import(`@/content/writing/${fileName}.mdx`)
+        const metadata = module.metadata
+
+        return {
+          frontmatter: metadata as Writing['frontmatter'],
+          filePath: fullPath,
+        }
+      } catch (error) {
+        console.error(`Error loading writing ${fileName}:`, error)
+        return null
+      }
+    })
+  )
+
+  // Filter out null results, only show featured articles, and sort by date
+  return writing
+    .filter((article): article is Writing => article !== null)
+    .filter((article) => article.frontmatter.featured === true)
+    .sort((a, b) => {
+      const dateA = new Date(a.frontmatter.date || '')
+      const dateB = new Date(b.frontmatter.date || '')
+      return dateB.getTime() - dateA.getTime()
+    })
+}
+
 export default async function HomePage() {
   const projects = await getProjects()
+  const writing = await getWriting()
 
   return (
     <div>
@@ -106,7 +150,7 @@ export default async function HomePage() {
             </Link>
           </Button>
           <Button variant="default" asChild>
-            <Link href="#footer" prefetch={true}>
+            <Link href="mailto:contact@orfleisher.com" prefetch={true}>
               Contact
             </Link>
           </Button>
@@ -116,6 +160,12 @@ export default async function HomePage() {
         <section id="featured-work">
           <FeaturedProjects projects={projects} />
         </section>
+
+        {writing.length > 0 && (
+          <section id="writing" className="mt-16">
+            <FeaturedWriting writing={writing} />
+          </section>
+        )}
       </Container>
     </div>
   )

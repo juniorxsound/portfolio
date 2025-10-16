@@ -20,6 +20,23 @@ export interface Project {
   filePath: string
 }
 
+export interface Writing {
+  frontmatter: {
+    title?: string
+    date?: string
+    tags?: string[]
+    thumbnail?: string
+    cover?: string
+    excerpt?: string
+    href?: string
+    badge?: string
+    featured?: boolean
+    links?: [string, string][]
+    [key: string]: any // Allow additional properties from frontmatter
+  }
+  filePath: string
+}
+
 export interface FilterOption {
   id: string
   label: string
