@@ -4,7 +4,10 @@ const createMDX = require('@next/mdx')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  webpack: config => {
+  images: {
+    unoptimized: true,
+  },
+  webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       '@': path.resolve(__dirname, '.'),

@@ -1,0 +1,76 @@
+import Image from 'next/image'
+
+import collectionImage from '@/public/images/montage_of1.png'
+
+export const metadata = {
+  path: '/our-force-1',
+  date: '2023-04-17T00:00:00.000Z',
+  title: 'Our Force 1',
+  tags: ['WebGL', '3D', 'Tools'],
+  thumbnail: '/images/gifs/our-force-1.gif',
+  cover: 'our_force_1_header.jpg',
+  links: [
+    ['Collection', 'https://www.swoosh.nike/gallery/collections/our-force-1'],
+    [
+      'Nike Blog',
+      'https://about.nike.com/en/newsroom/releases/swoosh-drops-first-virtual-collection',
+    ],
+  ],
+  excerpt: '.SWOOSH first virtual collection DROP',
+  badge: '/images/logos/nike.svg',
+  featured: true,
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'Python, TypeScript'],
+    ['software', 'AWS, Jupyter, Puppeteer'],
+    ['3d', 'Blender, Three.js'],
+  ]}
+  size="md"
+/>
+
+### About
+
+I joined Nike Virtual Studios in 2023 as a Principal Front End Engineer. Right around that time, we were tasked with building the web experience and tooling needed to power the first virtual collection for .SWOOSH, called Our Force 1.
+
+The Our Force 1 collection is a virtual collection of NFTs that are all unique and have a different designs and traits. The journey to the OF1 collection begins with a choice between two digital “boxes,” the Classic Remix box and the New Wave box. Each box is priced at $19.82 USD and contains an Our Force 1, a digital version of one of the most iconic Air Force 1s. In the Classic Remix box, .SWOOSH Members get a shot at picking up a favorite classic archive AF1 released from 1982 to 2006. Or it could be a more unique, custom AF1 with a nostalgic twist. In the New Wave box, members could unlock a classic archive from 2007 or later, or an expressive, custom AF1 with a more futuristic twist.
+
+I helped architect the web experience and worked on two parts of the project in particular:
+
+### Cloud capturing and rendering
+
+A portion of the Our Force 1 collection was the generative part, and made by mixing and matching a set of design traits to create all possible permutations of the Air Force 1.
+
+These permutations were made using a custom tool built with React Three Fiber, since one of the goals was to allow designers to easily create new permutations and test them in the listing page. However, since there was a need for static assets for the gallery page, we needed a way to render images, animation videos and the trait combo of each permutation, 30,000 of them.
+
+<video controls playsInline autoPlay muted loop>
+  <source src="/videos/hero/ec2.webm" type="video/webm; codecs=vp9" />
+  <source src="/videos/hero/ec2_h264.mp4" type="video/mp4;" />
+</video>
+
+I helped build a cloud pipeline that would render the permutations and upload the assets to a S3 bucket. Each instance ran a pool of Puppeteer instances to render the permutations in parallel via a headless browser running on an EC2 instance with a GPU. In total, we rendered ~30k permutations (that is 30k images, 30k animation videos and 30k trait combo JSON files).
+
+<video controls playsInline autoPlay muted loop>
+  <source src="/videos/hero/nw_h264.mp4" type="video/mp4;" />
+</video>
+
+Lastly, here is what the entire collection looks like very zoomed out
+
+<Image
+  src={collectionImage}
+  alt="Our Force 1 collection"
+  width={1000}
+  height={1000}
+  placeholder="blur"
+/>
+
+### Listing page
+
+The listing page, was the page that allowed users to view and interact with their boxes and NFTs. It was built using React and React Three Fiber, and had an interactive 3D model of the Air Force 1, which upon click, would play back the special animation for that particular NFT.
+
+<video controls playsInline autoPlay muted loop>
+  <source src="/videos/hero/tlp.webm" type="video/webm; codecs=vp9" />
+  <source src="/videos/hero/tlp_h264.mp4" type="video/mp4;" />
+</video>

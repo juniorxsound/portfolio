@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
     images: [
       {
-        url: '/assets/images/profile_facebook.jpg',
+        url: '/images/profile_facebook.jpg',
         width: 1200,
         height: 630,
         alt: 'Or Fleisher',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       'Learn more about Or Fleisher, a creative technologist working at the intersection of technology and storytelling.',
     images: [
       {
-        url: '/assets/images/profile_facebook.jpg',
+        url: '/images/profile_facebook.jpg',
         width: 1200,
         height: 630,
         alt: 'Or Fleisher',

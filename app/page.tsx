@@ -20,7 +20,7 @@ export async function generateMetadata() {
     openGraph: {
       images: [
         {
-          url: '/assets/images/gifs/myth.gif',
+          url: '/images/gifs/myth.gif',
           width: 420,
           height: 230,
           alt: 'Myth',
@@ -30,7 +30,7 @@ export async function generateMetadata() {
     twitter: {
       images: [
         {
-          url: '/assets/images/gifs/myth.gif',
+          url: '/images/gifs/myth.gif',
           width: 420,
           height: 230,
           alt: 'Myth',

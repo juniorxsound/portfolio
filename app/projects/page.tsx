@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'Projects by Or Fleisher',
       images: [
         {
-          url: '/assets/images/gifs/skeletron.gif',
+          url: '/images/gifs/skeletron.gif',
           width: 420,
           height: 230,
           alt: 'Skeletron',
@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: 'Projects by Or Fleisher',
       images: [
         {
-          url: '/assets/images/gifs/skeletron.gif',
+          url: '/images/gifs/skeletron.gif',
           width: 420,
           height: 230,
           alt: 'Skeletron',

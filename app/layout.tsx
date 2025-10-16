@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Or Fleisher',
     images: [
       {
-        url: '/assets/images/profile_facebook.jpg',
+        url: '/images/profile_facebook.jpg',
         width: 1200,
         height: 630,
         alt: 'Or Fleisher',

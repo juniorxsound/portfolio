@@ -154,7 +154,7 @@ async function getProject(slug: string): Promise<Project | null> {
 
 function getCoverImagePath(frontmatter: Project['frontmatter']) {
   if (frontmatter.cover) {
-    return `/assets/images/headers/${frontmatter.cover}`
+    return `/images/headers/${frontmatter.cover}`
   }
   return ''
 }

@@ -22,7 +22,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           <div className="overflow-hidden rounded-t-lg relative">
             <img
               alt={fm.path || 'project'}
-              src={`/assets/images/gifs${fm.path || ''}.gif`}
+              src={`/images/gifs${fm.path || ''}.gif`}
               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             />
             {fm.badge && (
