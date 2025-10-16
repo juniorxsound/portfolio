@@ -1,11 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
-import { X, ChevronDown } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
+import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { FilterOption } from '@/types'
+import { useScrollFades } from '@/hooks/use-scroll-fades'
 
 interface HorizontalFiltersProps {
   filterOptions: {
@@ -28,6 +28,7 @@ export function HorizontalFilters({
   hasActiveFilters,
 }: HorizontalFiltersProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const { showLeftFade, showRightFade, scrollContainerRef } = useScrollFades()
 
   return (
     <div className="space-y-4 font-sans">
@@ -65,14 +66,21 @@ export function HorizontalFilters({
           {/* Tag Filters */}
           <div className="space-y-2">
             <div className="relative">
-              {/* Left gradient fade */}
-              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+              {/* Left gradient fade - only shows when scrolled */}
+              {showLeftFade && (
+                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none transition-opacity duration-200" />
+              )}
 
-              {/* Right gradient fade */}
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+              {/* Right gradient fade - shows when not at end */}
+              {showRightFade && (
+                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none transition-opacity duration-200" />
+              )}
 
               {/* Scrollable tags container */}
-              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+              <div
+                ref={scrollContainerRef}
+                className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth"
+              >
                 {filterOptions.tags.map((tag) => (
                   <button
                     key={tag.id}

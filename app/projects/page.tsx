@@ -89,7 +89,7 @@ export default async function ProjectsPage() {
       <BackButton />
       <Hero
         title="Projects"
-        height="xl"
+        height="sm"
         background="accent"
         className="px-8 text-balance"
       />
