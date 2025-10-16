@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Picture from 'next-export-optimize-images/picture'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface StaticRecommendedProjectsProps {
@@ -79,7 +79,7 @@ export function RecommendedProjects({
             className="group rounded-lg border bg-card hover:shadow-lg transition-shadow duration-300"
           >
             <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
-              <Picture
+              <Image
                 src={project.thumbnail}
                 alt={project.title}
                 width={400}
