@@ -1,0 +1,68 @@
+export const metadata = {
+  path: '/yu-gi-oh',
+  date: '2025-09-12T00:00:00.000Z',
+  title: 'Nike x Yu-Gi-Oh!',
+  tags: ['WebGL', '3D'],
+  thumbnail: '/images/gifs/yu-gi-oh.gif',
+  cover: 'nike-x-yu-gi-oh-header.jpeg',
+  links: [
+    [
+      'swoosh.nike',
+      'https://www.swoosh.nike/drops/nike-air-max-95-qs-ygo-joey',
+    ],
+    [
+      'Nike Blog',
+      'https://about.nike.com/en/newsroom/releases/nike-air-max-95-qs-ygo-official-images',
+    ],
+  ],
+  excerpt: 'Scroll into the Nike x Yu-Gi-Oh! collaboration in 3D.',
+  badge: '/images/logos/nike.svg',
+  featured: true,
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'TypeScript'],
+    ['software', 'React, Three.js, Next.js'],
+    ['3d', 'Blender'],
+  ]}
+  size="md"
+/>
+
+### About
+
+In anticipation of the upcoming Nike x Yu-Gi-Oh! collaboration, we built a 3D web experience that allows users to scroll through the footwear and appearal collection.
+
+### Architecture
+
+The web experience was built with React, React Three Fiber and Next.js. The 3D models were created in Blender and exported as glTF files. To improve the workflow between 3D design and web development, we built metadata into the 3D model which allowed us to easily add interactivity to the 3D models.
+
+Our requirements were
+
+- As you scroll down, text slides appear containing authorable headline, description and optional call to actions
+- Some animations needed to be driven by the scroll position
+- Some animations needed to play back seperate of scroll when a certain slide is in view
+
+<img src="/images/ygo-arch.jpg" alt="Architecture" loading="lazy" />
+
+After sketching out the architecture, we created a simple prototype in Storybook to test the concept, and started building out the experience.
+
+### Portals
+
+The physical footwear product shipped with a special Nike x Yu-Gi-Oh! card. We knew from the outset, that we'd have to tie the 3D experience to card.
+
+We decided to levrage portals and built a quick proof of concept using [Drei's MeshPortalMaterial](https://drei.docs.pmnd.rs/portals/mesh-portal-material).
+
+<video controls playsInline autoPlay muted loop>
+  <source src="/videos/hero/portal_poc_h264.mp4" type="video/mp4" />
+  <source src="/videos/hero/portal_poc.webm" type="video/webm" />
+</video>
+
+After much trial and error, we were able to get the portals working, however as the scene grew, and became more complex we started feeling the overhead of using portals (which required extra render passes). To get around it, we ended using a stencil buffer to mask the portal content from the rest of the scene, this created the effect we wanted, and was a performant solution that didn't require extra render passes.
+
+### Final Experience
+
+<video controls playsInline autoPlay muted loop>
+  <source src="/videos/hero/ygo_experience_h264.mp4" type="video/mp4" />
+</video>
