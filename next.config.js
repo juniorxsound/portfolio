@@ -5,8 +5,8 @@ const createMDX = require('@next/mdx')
 const nextConfig = {
   images: {
     remotePatterns: [
-      'https://orfleisher.com',
-      'https://orfleisher-staging.ue.r.appspot.com/',
+      new URL('https://orfleisher.com/**'),
+      new URL('https://orfleisher-staging.ue.r.appspot.com/**'),
     ],
   },
   // Serverful deployment on App Engine: use Next.js built-in image optimization
