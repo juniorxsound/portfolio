@@ -1,6 +1,14 @@
 service: default
 runtime: nodejs20
 
+automatic_scaling:
+  min_idle_instances: 1 # keep 1 idle instance warm (low-cost)
+  max_idle_instances: 2
+  target_throughput_utilization: 0.7
+  max_concurrent_requests: 80
+inbound_services:
+  - warmup
+
 # Run the Next.js server so we can leverage SSR/SSG and next/image optimization
 entrypoint: npm start
 
