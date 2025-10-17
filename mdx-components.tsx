@@ -1,3 +1,4 @@
+import Image, { ImageProps } from 'next/image'
 import type { MDXComponents } from 'mdx/types'
 import { ProjectComponents } from '@/components/project-components'
 import { AutoComponentsTable } from '@/components/auto-components-table'
@@ -69,8 +70,8 @@ const components: MDXComponents = {
   td: ({ children }) => (
     <td className="border border-border px-4 py-2">{children}</td>
   ),
-  img: (props) => (
-    <img sizes="100vw" style={{ width: '100%', height: 'auto' }} {...props} />
+  OptimizedImage: (props: ImageProps) => (
+    <Image loading="lazy" placeholder="blur" {...props} />
   ),
   // Custom components for MDX
   ProjectComponents,

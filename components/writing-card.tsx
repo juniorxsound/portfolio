@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import { Writing } from '@/types'
+import Image from 'next/image'
 
 interface WritingCardProps {
   writing: Writing
@@ -38,11 +39,7 @@ export function WritingCard({ writing, className }: WritingCardProps) {
         <CardWrapper>
           <div className="overflow-hidden rounded-t-lg relative">
             {fm.thumbnail && (
-              <img
-                alt={fm.title || 'writing article'}
-                src={fm.thumbnail}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+              <Image placeholder="blur" src={fm.thumbnail} alt="" />
             )}
             {fm.badge && (
               <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">

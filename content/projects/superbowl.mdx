@@ -1,3 +1,5 @@
+import coverImage from '@/public/images/headers/superbowl.jpg'
+
 export const metadata = {
   path: '/superbowl',
   date: '2021-10-30T22:12:03.284Z',
@@ -5,7 +7,7 @@ export const metadata = {
   category: 'Data Visualization',
   tags: ['Computer Vision', 'WebGL', '3D', 'Machine Learning'],
   thumbnail: '/images/gifs/superbowl.gif',
-  cover: 'superbowl.jpg',
+  cover: coverImage,
   embed: '',
   about:
     "As part of The Times's coverage of Super Bowl LVII, R&D and The New York Times Graphics Desk collaborated to offer readers a 3D perspective on a decisive moment of the game — when Kansas City receiver Kadarius Toney slipped past Philadelphia Eagles receiver Zach Pascal during a late game punt return.\n\nThis project pushed the boundaries of real-time 3D sports journalism through three key technical innovations:\n\n**Machine Learning 3D Reconstruction**: We used the ICON machine learning model (developed by Yuliang Xiu, Jinlong Yang, Dimitrios Tzionas, Michael J. Black and the Max Planck Institute) to generate accurate 3D player models from single photographs. The model worked remarkably well even with football helmets and padding, though required manual refinement in post-production to ensure anatomical accuracy.\n\n**OpenCV.js Camera Alignment Tool**: I developed a browser-based camera calibration tool using OpenCV.js that leveraged NFL field regulation dimensions to automatically calculate camera positions in 3D space. By annotating key field markings in photographs, the tool could quickly generate accurate 3D geometry and align player models precisely. This approach was significantly faster and more accurate than our previous manual methods, especially with football fields' abundant markings compared to soccer fields.\n\n**Threebird Collaborative Editor**: We built Threebird, a collaborative web-based visual tool for designing 3D interactive graphics that brought animation editing, shader development, camera path creation, and real-time visualization directly into the browser. This eliminated the need for constant file exports from 3D authoring software while maintaining compatibility with our existing 3D asset pipeline, enabling rapid iteration and real-time collaboration on complex WebGL experiences.\n\nThe workflow optimized for football's unique challenges: more players per frame, increased positional overlap, and the need to focus on key athletes rather than modeling every player. This work built upon our previous FIFA World Cup coverage methods, demonstrating the versatility of our computer vision approach across different sports.",

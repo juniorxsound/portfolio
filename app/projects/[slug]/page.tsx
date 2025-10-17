@@ -188,7 +188,7 @@ export default async function ProjectPage({
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
-        backgroundImage={getCoverImagePath(frontmatter)}
+        backgroundImage={frontmatter.cover}
         height="xl"
         background="accent"
         className="px-8 text-balance"

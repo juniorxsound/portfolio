@@ -1,10 +1,13 @@
+import coverImage from '@/public/images/headers/nike-x-yu-gi-oh-header.jpeg'
+import archImage from '@/public/images/ygo-arch.jpg'
+
 export const metadata = {
   path: '/yu-gi-oh',
   date: '2025-09-12T00:00:00.000Z',
   title: 'Nike x Yu-Gi-Oh!',
   tags: ['WebGL', '3D'],
   thumbnail: '/images/gifs/yu-gi-oh.gif',
-  cover: 'nike-x-yu-gi-oh-header.jpeg',
+  cover: coverImage,
   links: [
     [
       'swoosh.nike',
@@ -44,7 +47,7 @@ Our requirements were
 - Some animations needed to be driven by the scroll position
 - Some animations needed to play back seperate of scroll when a certain slide is in view
 
-<img src="/images/ygo-arch.jpg" alt="Architecture" loading="lazy" />
+<OptimizedImage src={archImage} alt="Architecture" />
 
 After sketching out the architecture, we created a simple prototype in Storybook to test the concept, and started building out the experience.
 
