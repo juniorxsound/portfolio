@@ -46,14 +46,14 @@ A portion of the Our Force 1 collection was the generative part, and made by mix
 
 These permutations were made using a custom tool built with React Three Fiber, since one of the goals was to allow designers to easily create new permutations and test them in the listing page. However, since there was a need for static assets for the gallery page, we needed a way to render images, animation videos and the trait combo of each permutation, 30,000 of them.
 
-<video controls playsInline autoPlay muted loop>
+<video playsInline autoPlay muted loop>
   <source src="/videos/hero/ec2.webm" type="video/webm; codecs=vp9" />
   <source src="/videos/hero/ec2_h264.mp4" type="video/mp4;" />
 </video>
 
 I helped build a cloud pipeline that would render the permutations and upload the assets to a S3 bucket. Each instance ran a pool of Puppeteer instances to render the permutations in parallel via a headless browser running on an EC2 instance with a GPU. In total, we rendered ~30k permutations (that is 30k images, 30k animation videos and 30k trait combo JSON files).
 
-<video controls playsInline autoPlay muted loop>
+<video playsInline autoPlay muted loop>
   <source src="/videos/hero/nw_h264.mp4" type="video/mp4;" />
 </video>
 
@@ -65,7 +65,7 @@ Lastly, here is what the entire collection looks like very zoomed out
 
 The listing page, was the page that allowed users to view and interact with their boxes and NFTs. It was built using React and React Three Fiber, and had an interactive 3D model of the Air Force 1, which upon click, would play back the special animation for that particular NFT.
 
-<video controls playsInline autoPlay muted loop>
+<video playsInline autoPlay muted loop>
   <source src="/videos/hero/tlp.webm" type="video/webm; codecs=vp9" />
   <source src="/videos/hero/tlp_h264.mp4" type="video/mp4;" />
 </video>
