@@ -1,5 +1,6 @@
 const path = require('path')
 const createMDX = require('@next/mdx')
+const fs = require('fs')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
