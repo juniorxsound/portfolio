@@ -1,4 +1,5 @@
 import React from 'react'
+import Image, { StaticImageData } from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface HeroProps {
@@ -8,7 +9,7 @@ interface HeroProps {
   className?: string
   height?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
   background?: 'default' | 'accent' | 'muted' | 'primary' | 'secondary'
-  backgroundImage?: string
+  backgroundImage?: StaticImageData
   videoSrc?: string
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
@@ -52,6 +53,8 @@ export function Hero({
   alignment = 'left',
   children,
 }: HeroProps) {
+  const DEFAULT_BLUR =
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
   return (
     <div
       className={cn(
@@ -60,17 +63,22 @@ export function Hero({
         backgroundClasses[background],
         className
       )}
-      style={
-        backgroundImage
-          ? {
-              backgroundImage: `url(${backgroundImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-            }
-          : undefined
-      }
     >
+      {/* Optimized background image (when no background video is provided) */}
+      {backgroundImage &&
+      !(videoSrc || (videoSources && videoSources.length > 0)) ? (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          sizes="100vw"
+          priority
+          fetchPriority="high"
+          placeholder="blur"
+          className="absolute inset-0 object-cover z-0"
+        />
+      ) : null}
+
       {(videoSrc || (videoSources && videoSources.length > 0)) && (
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"

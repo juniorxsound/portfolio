@@ -1,0 +1,90 @@
+import thumbnailImage from '@/public/images/thumbnails/ipg.png'
+import coverImage from '@/public/images/headers/ipg_header.png'
+import blenderPluginImage from '@/public/images/blender_addon.png'
+
+export const metadata = {
+  path: '/interactive-product-gallery',
+  date: '2024-04-17T00:00:00.000Z',
+  title: 'Interactive Product Gallery',
+  tags: ['WebGL', '3D', 'Tools'],
+  thumbnail: thumbnailImage,
+  animatedThumbnail: '/images/gifs/ipg.gif',
+  cover: coverImage,
+  links: [
+    ['Big Head Mode', 'https://www.swoosh.nike/drops/big-head-mode'],
+    ['Big Head Origins', 'https://www.swoosh.nike/drops/big-head-origins'],
+    ['Low Poly Adventure', 'https://www.swoosh.nike/drops/low-poly-adventure'],
+  ],
+  excerpt: 'Authorable 3D interactive product gallery for Nike products',
+  badge: '/images/logos/nike.svg',
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'TypeScript'],
+    ['software', 'React, Three.js, Next.js'],
+    ['3d', 'Blender, Contentful'],
+  ]}
+  size="md"
+/>
+
+### About
+
+To support product launches on swoosh.nike, we built an interactive product gallery component that allows users to view and interact with the product in 3D.
+
+The initial desire for the component was to encourage interaction and product discovery, but keeps authoring and opreational simplicity in mind.
+
+### Requirements
+
+The gallery is built with React, React Three Fiber and Next.js. The initial requirements were
+
+- Support for multiple products
+- Support for multiple variants of each product
+- Support for (n) number of content tabs, with markdown content support for each tab
+- Ability to author camera angles tied to each content tab, with smooth transitions between angles
+- Ability to trigger animations tied to each content tab (with support for looping)
+- Retain content authoring in Contentful (our CMS) but allow 3D model authoring in Blender (to reduce friction for designers and digital ops)
+
+### Implementation
+
+In order to seperate content authoring from 3D model authoring, we decided to extend the glTF format to include metadata for the product gallery. This allowed us to author the content in Contentful and the 3D model in Blender.
+
+To ease the burden on designers, I built a Blender plugin that allows them to author the special animations and 3D behaviors for each product directly in Blender, and the plugin would take care of exporting the metadata embedded in the glTF file.
+
+<OptimizedImage src={blenderPluginImage} alt="Blender Plugin" />
+
+Once the files are exported, they are handed off to Contentful authoring, which adds the content for each tab.
+
+On the frontend, I built a React component that leavrages the special metadata embedded in the glTF file to trigger the animations and 3D behaviors for each product, making it easy to author, scale and maintain.
+
+### Examples
+
+The Interactive Product Gallery component was used in a number of product launches on swoosh.nike without requiring additional engineering effort.
+
+### Big Head Mode
+
+[View Page →](https://www.swoosh.nike/drops/big-head-mode)
+
+<video playsInline autoPlay muted loop>
+  <source src="/videos/hero/mode.webm" type="video/webm; codecs=vp9" />
+  <source src="/videos/hero/mode_h264.mp4" type="video/mp4;" />
+</video>
+
+### Low Poly Adventure
+
+[View Page →](https://www.swoosh.nike/drops/low-poly-adventure)
+
+<video playsInline autoPlay muted loop>
+  <source src="/videos/hero/adventure.webm" type="video/webm; codecs=vp9" />
+  <source src="/videos/hero/adventure_h264.mp4" type="video/mp4;" />
+</video>
+
+### Big Head Origins
+
+[View Page →](https://www.swoosh.nike/drops/big-head-origins)
+
+<video playsInline autoPlay muted loop>
+  <source src="/videos/hero/origins.webm" type="video/webm; codecs=vp9" />
+  <source src="/videos/hero/origins_h264.mp4" type="video/mp4;" />
+</video>

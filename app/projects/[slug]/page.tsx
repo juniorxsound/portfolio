@@ -63,7 +63,13 @@ export async function generateMetadata({
     openGraph: {
       images: [
         {
-          url: project.frontmatter.thumbnail || '',
+          url: project.frontmatter.animatedThumbnail || '',
+          width: 420,
+          height: 230,
+          alt: project.frontmatter.title,
+        },
+        {
+          url: project.frontmatter.thumbnail?.src || '',
           width: 420,
           height: 230,
           alt: project.frontmatter.title,
@@ -80,7 +86,13 @@ export async function generateMetadata({
         `Learn more about ${project.frontmatter.title} by Or Fleisher`,
       images: [
         {
-          url: project.frontmatter.thumbnail || '',
+          url: project.frontmatter.animatedThumbnail || '',
+          width: 420,
+          height: 230,
+          alt: project.frontmatter.title,
+        },
+        {
+          url: project.frontmatter.thumbnail?.src || '',
           width: 420,
           height: 230,
           alt: project.frontmatter.title,
@@ -188,7 +200,7 @@ export default async function ProjectPage({
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
-        backgroundImage={getCoverImagePath(frontmatter)}
+        backgroundImage={frontmatter.cover}
         height="xl"
         background="accent"
         className="px-8 text-balance"

@@ -1,10 +1,15 @@
+import thumbnailImage from '@/public/images/thumbnails/ygo.png'
+import coverImage from '@/public/images/headers/nike-x-yu-gi-oh-header.jpeg'
+import archImage from '@/public/images/ygo-arch.jpg'
+
 export const metadata = {
   path: '/yu-gi-oh',
   date: '2025-09-12T00:00:00.000Z',
   title: 'Nike x Yu-Gi-Oh!',
   tags: ['WebGL', '3D'],
-  thumbnail: '/images/gifs/yu-gi-oh.gif',
-  cover: 'nike-x-yu-gi-oh-header.jpeg',
+  thumbnail: thumbnailImage,
+  animatedThumbnail: '/images/gifs/yu-gi-oh.gif',
+  cover: coverImage,
   links: [
     [
       'swoosh.nike',
@@ -44,7 +49,7 @@ Our requirements were
 - Some animations needed to be driven by the scroll position
 - Some animations needed to play back seperate of scroll when a certain slide is in view
 
-<img src="/images/ygo-arch.jpg" alt="Architecture" loading="lazy" />
+<OptimizedImage src={archImage} alt="Architecture" />
 
 After sketching out the architecture, we created a simple prototype in Storybook to test the concept, and started building out the experience.
 
@@ -54,14 +59,14 @@ The physical footwear product shipped with a special Nike x Yu-Gi-Oh! card. We k
 
 We decided to levrage portals and built a quick proof of concept using [Drei's MeshPortalMaterial](https://drei.docs.pmnd.rs/portals/mesh-portal-material).
 
-<video controls playsInline autoPlay muted loop>
+<video playsInline autoPlay muted loop>
   <source src="/videos/hero/portal_poc_h264.mp4" type="video/mp4" />
   <source src="/videos/hero/portal_poc.webm" type="video/webm" />
 </video>
 
 After much trial and error, we were able to get the portals working, however as the scene grew, and became more complex we started feeling the overhead of using portals (which required extra render passes). To get around it, we ended using a stencil buffer to mask the portal content from the rest of the scene, this created the effect we wanted, and was a performant solution that didn't require extra render passes.
 
-### Final Experience
+### Final Experience Video
 
 <video controls playsInline autoPlay muted loop>
   <source src="/videos/hero/ygo_experience_h264.mp4" type="video/mp4" />

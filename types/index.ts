@@ -1,11 +1,14 @@
+import type { StaticImageData } from 'next/image'
+
 export interface Project {
   frontmatter: {
     title?: string
     date?: string
     path?: string
     tags?: string[]
-    thumbnail?: string
-    cover?: string
+    thumbnail?: StaticImageData
+    animatedThumbnail?: string
+    cover?: StaticImageData
     embed?: string
     about?: string
     credits?: string
