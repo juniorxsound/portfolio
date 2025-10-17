@@ -1,64 +1,29 @@
 service: default
 runtime: nodejs20
 
-# Static file serving for Next.js export
+# Run the Next.js server so we can leverage SSR/SSG and next/image optimization
+entrypoint: npm start
+
 handlers:
-  # Static assets with proper caching
-  - url: /_next/static/(.*)
-    static_files: out/_next/static/\1
-    upload: out/_next/static/.*
+  # Serve Next.js built client assets directly with long cache
+  - url: /_next/static
+    static_dir: .next/static
+    secure: always
     expiration: '365d'
+
+  # Let Next.js handle image optimization endpoint
+  - url: /_next/image
+    script: auto
     secure: always
 
-  - url: /(.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))
-    static_files: out/\1
-    upload: out/.*\.(css|js|ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)
-    expiration: '365d'
-    secure: always
-
-  # Images and media files
-  - url: /(.*\.(webp|mp4|webm|ogg|mp3|wav))
-    static_files: out/\1
-    upload: out/.*\.(webp|mp4|webm|ogg|mp3|wav)
+  # Serve everything under public/ as static
+  - url: /(.*\.(css|js|ico|png|jpg|jpeg|gif|svg|webp|mp4|webm|ogg|mp3|wav|woff|woff2|ttf|eot))
+    static_files: public/\1
+    upload: public/.*\.(css|js|ico|png|jpg|jpeg|gif|svg|webp|mp4|webm|ogg|mp3|wav|woff|woff2|ttf|eot)
     expiration: '30d'
     secure: always
 
-  # Sitemap
-  - url: /sitemap.xml
-    static_files: out/sitemap.xml
-    upload: out/sitemap.xml
-    expiration: '0m'
-    secure: always
-
-  # Handle RSC data files first (before HTML routes)
-  - url: /(.*)\.txt
-    static_files: out/\1.txt
-    upload: out/.*\.txt
-    expiration: '0m'
-    secure: always
-
-  # Handle specific Next.js routes
-  - url: /bio
-    static_files: out/bio.html
-    upload: out/bio.html
-    expiration: '0m'
-    secure: always
-
-  - url: /projects
-    static_files: out/projects.html
-    upload: out/projects.html
-    expiration: '0m'
-    secure: always
-
-  - url: /projects/(.*)
-    static_files: out/projects/\1.html
-    upload: out/projects/.*\.html
-    expiration: '0m'
-    secure: always
-
-  # Fallback to index.html for client-side routing
+  # All other routes handled by the Node server (Next.js)
   - url: /.*
-    static_files: out/index.html
-    upload: out/index.html
-    expiration: '0m'
+    script: auto
     secure: always

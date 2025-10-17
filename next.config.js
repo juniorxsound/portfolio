@@ -3,10 +3,14 @@ const createMDX = require('@next/mdx')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      'https://orfleisher.com',
+      'https://orfleisher-staging.ue.r.appspot.com/',
+    ],
   },
+  // Serverful deployment on App Engine: use Next.js built-in image optimization
+  // and allow SSG/SSR via `next start`.
   webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
