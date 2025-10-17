@@ -6,7 +6,8 @@ export interface Project {
     date?: string
     path?: string
     tags?: string[]
-    thumbnail?: string
+    thumbnail?: StaticImageData
+    animatedThumbnail?: string
     cover?: StaticImageData
     embed?: string
     about?: string

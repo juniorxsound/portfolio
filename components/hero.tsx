@@ -73,6 +73,7 @@ export function Hero({
           fill
           sizes="100vw"
           priority
+          fetchPriority="high"
           placeholder="blur"
           className="absolute inset-0 object-cover z-0"
         />
