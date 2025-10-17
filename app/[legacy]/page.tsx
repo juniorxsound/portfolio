@@ -47,6 +47,12 @@ function buildLegacySet(): LegacySet {
 // Build once at module load; Node runtime on App Engine allows FS access.
 const legacySet = buildLegacySet()
 
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return Array.from(legacySet).map((legacy) => ({ legacy }))
+}
+
 export default function LegacyRedirect({
   params,
 }: {

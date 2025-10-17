@@ -145,11 +145,11 @@ export default async function HomePage() {
       >
         <div className="flex flex-row gap-2">
           <Button variant="default" asChild>
-            <Link href="/bio" prefetch={true}>
+            <Link href="/bio" aria-label="Learn More">
               Learn More
             </Link>
           </Button>
-          <Button variant="default" asChild>
+          <Button variant="default" asChild aria-label="Contact">
             <Link href="mailto:contact@orfleisher.com" prefetch={true}>
               Contact
             </Link>
