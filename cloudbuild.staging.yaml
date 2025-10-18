@@ -18,9 +18,6 @@ steps:
   - name: node:20
     entrypoint: npm
     args: ['run', 'build']
-    env:
-      - 'APP_ENV=staging'
-      - 'NODE_ENV=production'
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
   - name: 'gcr.io/cloud-builders/gcloud'
