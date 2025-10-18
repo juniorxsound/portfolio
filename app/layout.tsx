@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  metadataBase: new URL('https://orfleisher.com'),
+  metadataBase: new URL(BASE_URL),
   twitter: {
     card: 'summary_large_image',
     site: '@juniorxsound',
