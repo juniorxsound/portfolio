@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL('https://orfleisher.com'),
   twitter: {
     card: 'summary_large_image',
     site: '@juniorxsound',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: 'Or Fleisher',
     description:
       'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
-    images: ['https://i.imgur.com/Gu2tbUp.png'],
+    images: ['/images/profile_facebook.jpg'],
   },
 }
 
