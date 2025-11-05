@@ -60,6 +60,9 @@ export async function generateMetadata({
 
   return {
     title: `${project.frontmatter.title} - Or Fleisher`,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
     openGraph: {
       images: [
         {
