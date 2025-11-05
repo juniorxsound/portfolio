@@ -2,6 +2,8 @@ import React from 'react'
 import { Metadata } from 'next'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Open_Sans, Merriweather } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -87,6 +89,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
