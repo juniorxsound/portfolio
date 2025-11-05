@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/next'
 import { Open_Sans, Merriweather } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -72,8 +72,6 @@ export default function RootLayout({
       className={cn(open_sans.className, merriweather.className)}
       suppressHydrationWarning
     >
-      <GoogleAnalytics gaId="UA-123776962-1" />
-
       <body>
         <ThemeProvider
           attribute="class"
@@ -89,6 +87,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+
+        <Analytics />
         <SpeedInsights />
       </body>
     </html>
