@@ -91,6 +91,20 @@ export default async function ProjectsPage() {
         title="Projects"
         height="sm"
         background="accent"
+        videoSources={[
+          {
+            src: '/videos/hero/placeholder-720p.webm',
+            type: 'video/webm',
+          },
+          {
+            src: '/videos/hero/placeholder-720p.mp4',
+            type: 'video/mp4',
+          },
+          {
+            src: '/videos/hero/placeholder-720p-av1.mp4',
+            type: 'video/mp4; codecs=av01',
+          },
+        ]}
         className="px-8 text-balance"
       />
       <Container className="space-y-8">

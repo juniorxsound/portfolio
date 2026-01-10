@@ -146,7 +146,12 @@ export default async function HomePage() {
         <div className="flex flex-row gap-2">
           <Button variant="default" asChild>
             <Link href="/bio" aria-label="Learn More">
-              Learn More
+              About
+            </Link>
+          </Button>
+          <Button variant="default" asChild>
+            <Link href="/projects" aria-label="Projects">
+              Work
             </Link>
           </Button>
           <Button variant="default" asChild aria-label="Contact">
