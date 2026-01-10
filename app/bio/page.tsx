@@ -49,6 +49,16 @@ export default function BioPage() {
         background="accent"
         height="sm"
         className="px-8 text-balance"
+        videoSources={[
+          {
+            src: '/videos/hero/about_vp9.webm',
+            type: 'video/webm',
+          },
+          {
+            src: '/videos/hero/about_h264.mp4',
+            type: 'video/mp4',
+          },
+        ]}
       ></Hero>
       <Container maxWidth="4xl" size="md">
         <div className="markdownContent">
