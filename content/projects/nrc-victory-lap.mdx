@@ -1,0 +1,71 @@
+import thumbnailImage from '@/public/images/thumbnails/nrc.png'
+import coverImage from '@/public/images/headers/nrc_victory_lap_header.png'
+import designImage from '@/public/images/nrc_figma.png'
+
+export const metadata = {
+  path: '/nrc-victory-lap',
+  date: '2026-01-21T22:12:03.284Z',
+  title: 'Your Victory Lap',
+  tags: ['WebGL', '3D'],
+  thumbnail: thumbnailImage,
+  animatedThumbnail: '/images/gifs/nrc_experience.gif',
+  cover: coverImage,
+  embed: '',
+  about:
+    "Web experience celebrating Nike Run Club runners' achievements during 2025.",
+  links: [
+    ['Visit Experience', 'https://www.nike.com/nrc/yourvictorylap/2025/'],
+  ],
+  excerpt: 'Celebrate your Nike Run Club achievements during 2025',
+  badge: '/images/logos/nike.svg',
+  featured: true,
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'TypeScript'],
+    ['software', 'React, Three.js, Next.js'],
+    ['3d', 'Blender'],
+    ['design', 'Figma'],
+  ]}
+  size="md"
+/>
+
+### About
+
+Your Victory Lap is a web experience that celebrates Nike Run Club users who ran with the NRC app during 2025. It pulls user data from upstream services and presents it as a slide-based story, walking runners (no pun intended) through their biggest moments of the year: total distance, achievements earned, challenges completed, personal bests, and more.
+
+The project kicked off in late October 2025 and launched in January 2026. That's about 12 weeks from first ideation conversation to production, with active development compressed into roughly 6 to 7 weeks after final designs locked in. I led the prototyping, and development, working closely with product, design and brand throughout to reduce waterfalls and optimize for shipping.
+
+<OptimizedImage src={designImage} alt="NRC Victory Lap Designs" />
+
+### Rapid Prototyping
+
+Before we touched the production codebase, we spun up a separate repo with zero regard for deployment or CI/CD. This was intentional. The goal was simple: try things visually and see if they work. Each prototype took about a day, but because it had no dependencies on real data fetching, deployments, or external factors, it made it easy to pursue parallel paths and inform our decisions as we ironed out the details and architecture for the production app. Some of the early prototypes included data explorations, different visualization approaches, and different interaction patterns.
+
+<video playsInline autoPlay muted loop>
+  <source src="/videos/nrc_prototype.webm" type="video/webm" />
+  <source src="/videos/nrc_prototype.mp4" type="video/mp4" />
+</video>
+
+### Architecture
+
+The app is a TypeScript, React, Next.js application deployed via the Nike Enterprise Stack. It's completely client-side rendered, which meant our backend work focused on BFF endpoints that fetch data from multiple upstream services and format it for the frontend to visualize.
+
+We levraged
+
+- React Three Fiber for the 3D Globe and distance route visualizations
+- Recharts for data visualization
+- Motion for animations
+
+## Experience
+
+<video playsInline autoPlay muted loop controls>
+  <source src="/videos/nrc_experience.webm" type="video/webm" />
+  <source src="/videos/nrc_experience.mp4" type="video/mp4" />
+</video>
+
+### Credits
+
+Gillean Yuen, Jett House, Chris Alatorre, Kacie Wise, Surajit Biswas, Dave Nunez, Brad Alan, Amar Dadiala, Stephen Duncan, Benjamin Drucker, Miles Brown.
