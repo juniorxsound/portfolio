@@ -36,6 +36,11 @@ export const metadata = {
 
 Your Victory Lap is a web experience that celebrates Nike Run Club users who ran with the NRC app during 2025. It pulls user data from upstream services and presents it as a slide-based story, walking runners (no pun intended) through their biggest moments of the year: total distance, achievements earned, challenges completed, personal bests, and more.
 
+<video playsInline autoPlay muted loop controls>
+  <source src="/videos/nrc_experience.webm" type="video/webm" />
+  <source src="/videos/nrc_experience.mp4" type="video/mp4" />
+</video>
+
 The project kicked off in late October 2025 and launched in January 2026. That's about 12 weeks from first ideation conversation to production, with active development compressed into roughly 6 to 7 weeks after final designs locked in. I led the prototyping, and development, working closely with product, design and brand throughout to reduce waterfalls and optimize for shipping.
 
 <OptimizedImage src={designImage} alt="NRC Victory Lap Designs" />
@@ -53,18 +58,11 @@ Before we touched the production codebase, we spun up a separate repo with zero 
 
 The app is a TypeScript, React, Next.js application deployed via the Nike Enterprise Stack. It's completely client-side rendered, which meant our backend work focused on BFF endpoints that fetch data from multiple upstream services and format it for the frontend to visualize.
 
-We levraged
+We leveraged
 
 - React Three Fiber for the 3D Globe and distance route visualizations
 - Recharts for data visualization
 - Motion for animations
-
-## Experience
-
-<video playsInline autoPlay muted loop controls>
-  <source src="/videos/nrc_experience.webm" type="video/webm" />
-  <source src="/videos/nrc_experience.mp4" type="video/mp4" />
-</video>
 
 ### Credits
 
