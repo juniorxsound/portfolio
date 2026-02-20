@@ -30,17 +30,6 @@ export function Footer() {
             </Link>
           </nav>
 
-          {/* Email Contact */}
-          <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-muted-foreground" />
-            <a
-              href="mailto:contact@orfleisher.com"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              contact@orfleisher.com
-            </a>
-          </div>
-
           <SocialIconsMinimal />
         </div>
 
