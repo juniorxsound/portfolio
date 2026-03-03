@@ -1,46 +1,9 @@
 import type { MetadataRoute } from 'next'
 import { BASE_URL } from '@/lib/constants'
-import fs from 'fs'
-import path from 'path'
+import { getProjectSlugs } from '@/lib/content'
 
 // Required for static export
 export const dynamic = 'force-static'
-
-// Function to get all project slugs from MDX files
-async function getProjectSlugs() {
-  const projectsDir = path.join(process.cwd(), 'content/projects')
-
-  try {
-    const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
-
-    const slugs = await Promise.all(
-      files.map(async (file) => {
-        const fileName = path.basename(file, '.mdx')
-
-        try {
-          const module = await import(`@/content/projects/${fileName}.mdx`)
-          const metadata = module.metadata
-
-          if (metadata.path) {
-            // Remove leading slash if present
-            return metadata.path.replace(/^\//, '')
-          } else {
-            // Fallback to filename if no path metadata
-            return fileName
-          }
-        } catch (error) {
-          console.error(`Error loading project ${fileName}:`, error)
-          return fileName
-        }
-      })
-    )
-
-    return slugs
-  } catch (error) {
-    console.warn('Could not read projects directory:', error)
-    return []
-  }
-}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectSlugs = await getProjectSlugs()
