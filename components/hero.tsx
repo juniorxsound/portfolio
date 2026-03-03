@@ -81,12 +81,13 @@ export function Hero({
 
       {(videoSrc || (videoSources && videoSources.length > 0)) && (
         <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
           autoPlay
           muted
           loop
           playsInline
           poster={videoPoster}
+          aria-hidden="true"
         >
           {videoSources?.map((source) => (
             <source key={source.src} src={source.src} type={source.type} />

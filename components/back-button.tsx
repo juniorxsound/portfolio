@@ -35,12 +35,12 @@ export function BackButton({
 
   return (
     <div className={cn(positionClasses[position], className)}>
-      <Link href={href}>
-        <Button variant={variant} size={size} className="gap-2">
-          <ArrowLeft className="h-4 w-4" />
+      <Button variant={variant} size={size} className="gap-2" asChild>
+        <Link href={href}>
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           {children}
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     </div>
   )
 }
