@@ -4,43 +4,17 @@ import { notFound } from 'next/navigation'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import path from 'path'
-import fs from 'fs'
-
-// Types
-import { Project } from '@/types'
 
 // Components
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { BackButton } from '@/components/back-button'
 import { Container } from '@/components/container'
+import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
 
 export async function generateStaticParams() {
-  const projectsDir = path.join(process.cwd(), 'content/projects')
-  const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
-
-  const params = await Promise.all(
-    files.map(async (file) => {
-      const fileName = path.basename(file, '.mdx')
-
-      try {
-        const module = await import(`@/content/projects/${fileName}.mdx`)
-        const metadata = module.metadata
-
-        if (metadata.path) {
-          const slug = metadata.path.replace(/^\//, '')
-          return { slug }
-        } else {
-          return { slug: fileName }
-        }
-      } catch (error) {
-        console.error(`Error loading project ${fileName}:`, error)
-        return { slug: fileName }
-      }
-    })
-  )
-
-  return params
+  const slugs = await getProjectSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -49,7 +23,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const project = await getProject(slug)
+  const project = await getProjectBySlug(slug)
 
   if (!project) {
     return {
@@ -108,79 +82,13 @@ export async function generateMetadata({
   }
 }
 
-async function getProject(slug: string): Promise<Project | null> {
-  const projectsDir = path.join(process.cwd(), 'content/projects')
-  const files = fs.readdirSync(projectsDir).filter((f) => f.endsWith('.mdx'))
-
-  // First, try to find by matching the path field in metadata
-  for (const file of files) {
-    const fileName = path.basename(file, '.mdx')
-    const fullPath = path.join(projectsDir, file)
-
-    try {
-      const module = await import(`@/content/projects/${fileName}.mdx`)
-      const metadata = module.metadata
-
-      if (metadata.path) {
-        const metadataSlug = metadata.path.replace(/^\//, '')
-        if (metadataSlug === slug) {
-          return {
-            frontmatter: {
-              ...metadata,
-              tags: metadata.tags || [],
-              components: metadata.components || [],
-              press: metadata.press || [],
-              links: metadata.links || [],
-            } as Project['frontmatter'],
-            filePath: fullPath,
-          }
-        }
-      }
-    } catch (error) {
-      console.error(`Error loading project ${fileName}:`, error)
-    }
-  }
-
-  // Fallback: try to find by filename
-  const projectPath = path.join(projectsDir, `${slug}.mdx`)
-
-  if (fs.existsSync(projectPath)) {
-    try {
-      const module = await import(`@/content/projects/${slug}.mdx`)
-      const metadata = module.metadata
-
-      return {
-        frontmatter: {
-          ...metadata,
-          tags: metadata.tags || [],
-          components: metadata.components || [],
-          press: metadata.press || [],
-          links: metadata.links || [],
-        } as Project['frontmatter'],
-        filePath: projectPath,
-      }
-    } catch (error) {
-      console.error(`Error loading project ${slug}:`, error)
-    }
-  }
-
-  return null
-}
-
-function getCoverImagePath(frontmatter: Project['frontmatter']) {
-  if (frontmatter.cover) {
-    return `/images/headers/${frontmatter.cover}`
-  }
-  return ''
-}
-
 export default async function ProjectPage({
   params,
 }: {
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = await getProject(slug)
+  const project = await getProjectBySlug(slug)
 
   if (!project) {
     notFound()
@@ -195,7 +103,6 @@ export default async function ProjectPage({
   const fileName = path.basename(filePath, '.mdx')
   const module = await import(`@/content/projects/${fileName}.mdx`)
   const ProjectComponent = module.default
-  const metadata = module.metadata
 
   return (
     <div>
@@ -209,16 +116,17 @@ export default async function ProjectPage({
         className="px-8 text-balance"
       >
         <div className="flex flex-row flex-wrap gap-2">
-          {metadata.links.map((link: [string, string]) => {
+          {(frontmatter.links || []).map((link: [string, string]) => {
             return (
               <Button key={link[0]} asChild>
                 <Link
                   href={link[1]}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex flex-row gap-1"
                 >
                   {link[0]}
-                  <ExternalLink className="w-3" />
+                  <ExternalLink className="w-3" aria-hidden="true" />
                 </Link>
               </Button>
             )

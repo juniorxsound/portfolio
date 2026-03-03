@@ -31,9 +31,13 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             )}
             {fm.badge && (
               <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
-                <img
+                <Image
                   src={fm.badge}
                   alt="Project badge"
+                  width={80}
+                  height={20}
+                  loading="lazy"
+                  unoptimized
                   className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
                 />
               </div>

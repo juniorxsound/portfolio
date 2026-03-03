@@ -48,16 +48,20 @@ export function WritingCard({ writing, className }: WritingCardProps) {
             )}
             {fm.badge && (
               <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
-                <img
+                <Image
                   src={fm.badge}
                   alt="Publication badge"
+                  width={80}
+                  height={20}
+                  loading="lazy"
+                  unoptimized
                   className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
                 />
               </div>
             )}
             {isExternal && (
               <div className="absolute top-4 right-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
-                <ExternalLink className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
               </div>
             )}
           </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from './ui/button'
 
 interface SocialLink {
@@ -60,11 +61,13 @@ export function SocialIcons() {
             aria-label={`Visit ${link.name} profile`}
           >
             <Link href={link.url} target="_blank">
-              <img
+              <Image
                 src={link.icon}
                 alt=""
                 width={24}
                 height={24}
+                loading="lazy"
+                unoptimized
                 className="flex-shrink-0 dark:invert"
               />
               <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
