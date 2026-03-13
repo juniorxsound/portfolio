@@ -1,13 +1,36 @@
+import React from 'react'
 import Image, { ImageProps } from 'next/image'
 import type { MDXComponents } from 'mdx/types'
 import { ProjectComponents } from '@/components/project-components'
 import { AutoComponentsTable } from '@/components/auto-components-table'
 import { Collapsible } from '@/components/ui/collapsible'
+import { HeadingAnchorCopy } from '@/components/heading-anchor-copy'
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including inline styles,
 // components from other libraries, and more.
+
+function extractText(node: React.ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') {
+    return String(node)
+  }
+  if (Array.isArray(node)) {
+    return node.map(extractText).join(' ')
+  }
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
+    return extractText(node.props.children)
+  }
+  return ''
+}
+
+function slugifyHeading(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+}
 
 const components: MDXComponents = {
   // Allows customizing built-in components, e.g. to add styling.
@@ -18,9 +41,20 @@ const components: MDXComponents = {
   h2: ({ children }) => (
     <h2 className="text-2xl font-bold mb-3 text-foreground">{children}</h2>
   ),
-  h3: ({ children }) => (
-    <h3 className="text-xl font-bold mb-2 text-foreground">{children}</h3>
-  ),
+  h3: ({ children, id }) => {
+    const headingId =
+      id || slugifyHeading(extractText(children)) || 'section-heading'
+
+    return (
+      <h3
+        id={headingId}
+        className="group flex items-center gap-2 text-xl font-bold mb-2 text-foreground scroll-mt-24"
+      >
+        <span>{children}</span>
+        <HeadingAnchorCopy id={headingId} />
+      </h3>
+    )
+  },
   h4: ({ children }) => (
     <h4 className="text-lg font-bold mb-1 text-foreground">{children}</h4>
   ),

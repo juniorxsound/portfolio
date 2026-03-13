@@ -49,6 +49,9 @@ export default async function HomePage() {
         title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
         height="xl"
         background="accent"
+        mediaParallax
+        parallaxSpeed={0.45}
+        parallaxMaxOffset={140}
         videoSources={[
           {
             src: '/videos/hero/placeholder-720p.webm',
@@ -74,11 +77,6 @@ export default async function HomePage() {
           <Button variant="default" asChild>
             <Link href="/projects" aria-label="Projects">
               Work
-            </Link>
-          </Button>
-          <Button variant="default" asChild aria-label="Contact">
-            <Link href="mailto:contact@orfleisher.com">
-              Contact
             </Link>
           </Button>
         </div>

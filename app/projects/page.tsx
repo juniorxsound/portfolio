@@ -53,6 +53,9 @@ export default async function ProjectsPage() {
         title="Projects"
         height="sm"
         background="accent"
+        mediaParallax
+        parallaxSpeed={0.45}
+        parallaxMaxOffset={140}
         videoSources={[
           {
             src: '/videos/hero/placeholder-720p.webm',

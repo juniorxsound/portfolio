@@ -113,6 +113,9 @@ export default async function ProjectPage({
         backgroundImage={frontmatter.cover}
         height="xl"
         background="accent"
+        mediaParallax
+        parallaxSpeed={0.45}
+        parallaxMaxOffset={140}
         className="px-8 text-balance"
       >
         <div className="flex flex-row flex-wrap gap-2">

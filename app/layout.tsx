@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
 import { Open_Sans, Merriweather } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Button } from '@/components/ui/button'
 
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -73,12 +74,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
-        <a
-          href="#main-content"
+        <Button
+          variant="ghost"
+          asChild
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground focus:shadow-md"
         >
-          Skip to main content
-        </a>
+          <a href="#main-content">Skip to main content</a>
+        </Button>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

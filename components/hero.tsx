@@ -1,6 +1,7 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import { cn } from '@/lib/utils'
+import { HeroParallaxMedia } from './hero-parallax-media'
 
 interface HeroProps {
   title: string
@@ -14,6 +15,11 @@ interface HeroProps {
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
   alignment?: 'left' | 'center' | 'right'
+  fadeToBackground?: boolean
+  mediaParallax?: boolean
+  videoParallax?: boolean
+  parallaxSpeed?: number
+  parallaxMaxOffset?: number
   children?: React.ReactNode
 }
 
@@ -51,10 +57,20 @@ export function Hero({
   videoSources,
   videoPoster,
   alignment = 'left',
+  fadeToBackground = false,
+  mediaParallax = true,
+  videoParallax = true,
+  parallaxSpeed = 0.5,
+  parallaxMaxOffset = 60,
   children,
 }: HeroProps) {
-  const DEFAULT_BLUR =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
+  const hasVideo = Boolean(
+    videoSrc || (videoSources && videoSources.length > 0)
+  )
+  const hasImage = Boolean(backgroundImage) && !hasVideo
+  const hasMedia = hasVideo || hasImage
+  const shouldParallax = mediaParallax ?? videoParallax
+
   return (
     <div
       className={cn(
@@ -64,53 +80,38 @@ export function Hero({
         className
       )}
     >
-      {/* Optimized background image (when no background video is provided) */}
-      {backgroundImage &&
-      !(videoSrc || (videoSources && videoSources.length > 0)) ? (
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          sizes="100vw"
-          priority
-          fetchPriority="high"
-          placeholder="blur"
-          className="absolute inset-0 object-cover z-0"
+      {hasMedia && (
+        <HeroParallaxMedia
+          className="z-0"
+          imageSrc={hasImage ? backgroundImage : undefined}
+          videoPoster={videoPoster}
+          videoSources={videoSources}
+          videoSrc={videoSrc}
+          enabled={shouldParallax}
+          speed={parallaxSpeed}
+          maxOffset={parallaxMaxOffset}
         />
-      ) : null}
-
-      {(videoSrc || (videoSources && videoSources.length > 0)) && (
-        <video
-          className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={videoPoster}
-          aria-hidden="true"
-        >
-          {videoSources?.map((source) => (
-            <source key={source.src} src={source.src} type={source.type} />
-          ))}
-          {/* Fallback single source for backwards compatibility */}
-          {videoSrc ? <source src={videoSrc} /> : null}
-        </video>
       )}
       {/* overlay for better text readability */}
-      {(backgroundImage ||
-        videoSrc ||
-        (videoSources && videoSources.length > 0)) && (
+      {hasMedia && (
         <div
           className={cn(
-            'absolute inset-0',
+            'absolute inset-0 z-10',
             `${backgroundClasses[background]} opacity-70`
           )}
         />
       )}
 
+      {fadeToBackground && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[15] h-28 bg-gradient-to-b from-transparent via-background/70 to-background md:h-40"
+        />
+      )}
+
       <div
         className={cn(
-          'container mx-auto max-w-6xl relative z-10',
+          'container mx-auto max-w-6xl relative z-20',
           alignmentClasses[alignment]
         )}
       >
