@@ -60,9 +60,16 @@ export function HeroParallaxMedia({
         return
       }
 
-      // Element-relative offset keeps motion subtle and bounded.
+      // Map movement across the full viewport pass to avoid early clamping.
       const rect = container.getBoundingClientRect()
-      const rawOffset = -rect.top * speed
+      const travelDistance = window.innerHeight + rect.height
+      const progress = clamp(
+        (window.innerHeight - rect.top) / travelDistance,
+        0,
+        1
+      )
+      const centeredProgress = progress * 2 - 1
+      const rawOffset = centeredProgress * maxOffset * speed
       const offset = clamp(rawOffset, -maxOffset, maxOffset)
       media.style.transform = `translate3d(0, ${offset}px, 0) scale(1.08)`
     }
