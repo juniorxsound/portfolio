@@ -57,7 +57,7 @@ export function Hero({
   videoSources,
   videoPoster,
   alignment = 'left',
-  fadeToBackground = false,
+  fadeToBackground = true,
   mediaParallax = true,
   videoParallax = true,
   parallaxSpeed = 0.5,
