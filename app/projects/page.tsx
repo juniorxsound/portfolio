@@ -48,38 +48,45 @@ export default async function ProjectsPage() {
 
   return (
     <div>
-      <BackButton />
-      <Hero
-        title="Projects"
-        height="sm"
-        background="accent"
-        videoSources={[
-          {
-            src: '/videos/hero/placeholder-720p.webm',
-            type: 'video/webm',
-          },
-          {
-            src: '/videos/hero/placeholder-720p.mp4',
-            type: 'video/mp4',
-          },
-          {
-            src: '/videos/hero/placeholder-720p-av1.mp4',
-            type: 'video/mp4; codecs=av01',
-          },
-        ]}
-        className="px-8 text-balance"
-      />
-      <Container className="space-y-8">
-        <section id="work">
-          <FilteredProjects projects={projects} />
-        </section>
+      {/* Hero pinned behind the scrolling card */}
+      <div className="sticky top-0 h-content">
+        <BackButton />
+        <Hero
+          title="Projects"
+          height="sm"
+          background="accent"
+          videoSources={[
+            {
+              src: '/videos/hero/placeholder-720p.webm',
+              type: 'video/webm',
+            },
+            {
+              src: '/videos/hero/placeholder-720p.mp4',
+              type: 'video/mp4',
+            },
+            {
+              src: '/videos/hero/placeholder-720p-av1.mp4',
+              type: 'video/mp4; codecs=av01',
+            },
+          ]}
+          className="px-8 text-balance"
+        />
+      </div>
 
-        <div className="text-center">
-          <Button asChild>
-            <Link href="/bio">Learn More</Link>
-          </Button>
-        </div>
-      </Container>
+      {/* Scrolling card that slides over the pinned hero */}
+      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+        <Container className="space-y-8">
+          <section id="work">
+            <FilteredProjects projects={projects} />
+          </section>
+
+          <div className="text-center">
+            <Button asChild>
+              <Link href="/bio">Learn More</Link>
+            </Button>
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }

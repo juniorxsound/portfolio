@@ -106,36 +106,43 @@ export default async function ProjectPage({
 
   return (
     <div>
-      <BackButton href="/projects" children="Back to Projects" />
-      <Hero
-        title={frontmatter.title || 'Untitled Project'}
-        subtitle={tags}
-        backgroundImage={frontmatter.cover}
-        height="xl"
-        background="accent"
-        className="px-8 text-balance"
-      >
-        <div className="flex flex-row flex-wrap gap-2">
-          {(frontmatter.links || []).map((link: [string, string]) => {
-            return (
-              <Button key={link[0]} asChild>
-                <Link
-                  href={link[1]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-row gap-1"
-                >
-                  {link[0]}
-                  <ExternalLink className="w-3" aria-hidden="true" />
-                </Link>
-              </Button>
-            )
-          })}
-        </div>
-      </Hero>
-      <Container>
-        <ProjectComponent />
-      </Container>
+      {/* Hero pinned behind the scrolling card */}
+      <div className="sticky top-0 h-content">
+        <BackButton href="/projects" children="Back to Projects" />
+        <Hero
+          title={frontmatter.title || 'Untitled Project'}
+          subtitle={tags}
+          backgroundImage={frontmatter.cover}
+          height="xl"
+          background="accent"
+          className="px-8 text-balance"
+        >
+          <div className="flex flex-row flex-wrap gap-2">
+            {(frontmatter.links || []).map((link: [string, string]) => {
+              return (
+                <Button key={link[0]} asChild>
+                  <Link
+                    href={link[1]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-row gap-1"
+                  >
+                    {link[0]}
+                    <ExternalLink className="w-3" aria-hidden="true" />
+                  </Link>
+                </Button>
+              )
+            })}
+          </div>
+        </Hero>
+      </div>
+
+      {/* Scrolling card that slides over the pinned hero */}
+      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+        <Container>
+          <ProjectComponent />
+        </Container>
+      </div>
     </div>
   )
 }

@@ -43,28 +43,35 @@ export const metadata: Metadata = {
 export default function BioPage() {
   return (
     <div>
-      <BackButton />
-      <Hero
-        title="About"
-        background="accent"
-        height="sm"
-        className="px-8 text-balance"
-        videoSources={[
-          {
-            src: '/videos/hero/about_vp9.webm',
-            type: 'video/webm',
-          },
-          {
-            src: '/videos/hero/about_h264.mp4',
-            type: 'video/mp4',
-          },
-        ]}
-      ></Hero>
-      <Container maxWidth="4xl" size="md">
-        <div className="markdownContent">
-          <Bio />
-        </div>
-      </Container>
+      {/* Hero pinned behind the scrolling card */}
+      <div className="sticky top-0 h-content">
+        <BackButton />
+        <Hero
+          title="About"
+          background="accent"
+          height="sm"
+          className="px-8 text-balance"
+          videoSources={[
+            {
+              src: '/videos/hero/about_vp9.webm',
+              type: 'video/webm',
+            },
+            {
+              src: '/videos/hero/about_h264.mp4',
+              type: 'video/mp4',
+            },
+          ]}
+        />
+      </div>
+
+      {/* Scrolling card that slides over the pinned hero */}
+      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+        <Container maxWidth="4xl" size="md">
+          <div className="markdownContent">
+            <Bio />
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }

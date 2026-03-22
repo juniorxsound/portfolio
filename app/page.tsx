@@ -44,56 +44,58 @@ export default async function HomePage() {
   ])
 
   return (
-    <div>
-      <Hero
-        title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
-        height="xl"
-        background="accent"
-        videoSources={[
-          {
-            src: '/videos/hero/placeholder-720p.webm',
-            type: 'video/webm',
-          },
-          {
-            src: '/videos/hero/placeholder-720p.mp4',
-            type: 'video/mp4',
-          },
-          {
-            src: '/videos/hero/placeholder-720p-av1.mp4',
-            type: 'video/mp4; codecs=av01',
-          },
-        ]}
-        className="px-8 text-balance"
-      >
-        <div className="flex flex-row gap-2">
-          <Button variant="default" asChild>
-            <Link href="/bio" aria-label="Learn More">
-              About
-            </Link>
-          </Button>
-          <Button variant="default" asChild>
-            <Link href="/projects" aria-label="Projects">
-              Work
-            </Link>
-          </Button>
-          <Button variant="default" asChild aria-label="Contact">
-            <Link href="mailto:contact@orfleisher.com">
-              Contact
-            </Link>
-          </Button>
-        </div>
-      </Hero>
-      <Container>
-        <section id="featured-work">
-          <FeaturedProjects projects={projects} />
-        </section>
+    <>
+      {/* Hero pinned behind the scrolling card */}
+      <div className="sticky top-0 h-content">
+        <Hero
+          title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
+          height="xl"
+          background="accent"
+          videoSources={[
+            {
+              src: '/videos/hero/placeholder-720p.webm',
+              type: 'video/webm',
+            },
+            {
+              src: '/videos/hero/placeholder-720p.mp4',
+              type: 'video/mp4',
+            },
+            {
+              src: '/videos/hero/placeholder-720p-av1.mp4',
+              type: 'video/mp4; codecs=av01',
+            },
+          ]}
+          className="px-8 text-balance"
+        >
+          <div className="flex flex-row gap-2">
+            <Button variant="default" asChild>
+              <Link href="/bio" aria-label="Learn More">
+                About
+              </Link>
+            </Button>
+            <Button variant="default" asChild>
+              <Link href="/projects" aria-label="Projects">
+                Work
+              </Link>
+            </Button>
+          </div>
+        </Hero>
+      </div>
 
-        {writing.length > 0 && (
-          <section id="writing" className="mt-16">
-            <FeaturedWriting writing={writing} />
+      {/* Scrolling card that slides over the pinned hero */}
+      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+        <Container>
+          <section id="featured-work">
+            <FeaturedProjects projects={projects} />
           </section>
-        )}
-      </Container>
-    </div>
+
+          {writing.length > 0 && (
+            <section id="writing" className="mt-16">
+              <FeaturedWriting writing={writing} />
+            </section>
+          )}
+        </Container>
+      </div>
+    </>
   )
 }
