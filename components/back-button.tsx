@@ -28,7 +28,7 @@ export function BackButton({
   position = 'absolute',
 }: BackButtonProps) {
   const positionClasses = {
-    absolute: 'absolute top-4 left-4 z-20',
+    absolute: 'absolute top-20 left-4 z-20',
     relative: 'relative',
     static: 'static',
   }

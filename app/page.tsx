@@ -6,6 +6,7 @@ import { Hero } from '@/components/hero'
 import { FeaturedProjects } from '@/components/featured-projects'
 import { FeaturedWriting } from '@/components/featured-writing'
 import { Container } from '@/components/container'
+import { ScrollCard } from '@/components/scroll-card'
 import { getFeaturedWriting, getProjects } from '@/lib/content'
 
 export async function generateMetadata() {
@@ -45,8 +46,8 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero pinned behind the scrolling card */}
-      <div className="sticky top-0 h-content">
+      {/* Hero pinned behind the scrolling card — pulls up behind the fixed navbar */}
+      <div className="sticky top-0 h-content -mt-16">
         <Hero
           title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
           height="xl"
@@ -70,12 +71,7 @@ export default async function HomePage() {
           <div className="flex flex-row gap-2">
             <Button variant="default" asChild>
               <Link href="/bio" aria-label="Learn More">
-                About
-              </Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link href="/projects" aria-label="Projects">
-                Work
+                Learn More
               </Link>
             </Button>
           </div>
@@ -83,9 +79,9 @@ export default async function HomePage() {
       </div>
 
       {/* Scrolling card that slides over the pinned hero */}
-      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+      <ScrollCard>
         <Container>
-          <section id="featured-work">
+          <section id="featured-work" className="pt-8">
             <FeaturedProjects projects={projects} />
           </section>
 
@@ -95,7 +91,7 @@ export default async function HomePage() {
             </section>
           )}
         </Container>
-      </div>
+      </ScrollCard>
     </>
   )
 }

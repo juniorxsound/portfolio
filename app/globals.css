@@ -246,6 +246,7 @@ p {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
 /* Filter scroll container - using Tailwind scroll-smooth instead */
 
 @layer base {

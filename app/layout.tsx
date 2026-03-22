@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
 import './globals.css'
@@ -86,10 +86,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen flex flex-col">
-            <div className="absolute top-4 right-4 z-50">
-              <ThemeToggle />
-            </div>
-            <main id="main-content" className="flex-1">
+            <Navbar />
+            {/* pt-16 clears the fixed navbar on all pages; home page hero
+                compensates with -mt-16 to slide behind the transparent bar */}
+            <main id="main-content" className="flex-1 pt-16">
               {children}
             </main>
             <Footer />

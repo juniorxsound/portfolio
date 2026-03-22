@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { FilteredProjects } from '@/components/filtered-projects'
 import { Container } from '@/components/container'
-import { BackButton } from '@/components/back-button'
+import { ScrollCard } from '@/components/scroll-card'
 import { Metadata } from 'next'
 import { getProjects } from '@/lib/content'
 
@@ -49,8 +49,7 @@ export default async function ProjectsPage() {
   return (
     <div>
       {/* Hero pinned behind the scrolling card */}
-      <div className="sticky top-0 h-content">
-        <BackButton />
+      <div className="sticky top-0 h-content -mt-16">
         <Hero
           title="Projects"
           height="sm"
@@ -74,7 +73,7 @@ export default async function ProjectsPage() {
       </div>
 
       {/* Scrolling card that slides over the pinned hero */}
-      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
+      <ScrollCard>
         <Container className="space-y-8">
           <section id="work">
             <FilteredProjects projects={projects} />
@@ -86,7 +85,7 @@ export default async function ProjectsPage() {
             </Button>
           </div>
         </Container>
-      </div>
+      </ScrollCard>
     </div>
   )
 }

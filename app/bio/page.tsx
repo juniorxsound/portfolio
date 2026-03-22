@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Bio from '@/content/bio.mdx'
 import { Container } from '@/components/container'
 import { Hero } from '@/components/hero'
-import { BackButton } from '@/components/back-button'
+import { ScrollCard } from '@/components/scroll-card'
 
 export const metadata: Metadata = {
   title: 'Bio - Or Fleisher',
@@ -44,8 +44,7 @@ export default function BioPage() {
   return (
     <div>
       {/* Hero pinned behind the scrolling card */}
-      <div className="sticky top-0 h-content">
-        <BackButton />
+      <div className="sticky top-0 h-content -mt-16">
         <Hero
           title="About"
           background="accent"
@@ -65,13 +64,13 @@ export default function BioPage() {
       </div>
 
       {/* Scrolling card that slides over the pinned hero */}
-      <div className="relative z-10 bg-background shadow-[0_-12px_40px_rgba(0,0,0,0.4)]">
-        <Container maxWidth="4xl" size="md">
+      <ScrollCard>
+        <Container maxWidth="4xl" size="md" className="pt-16">
           <div className="markdownContent">
             <Bio />
           </div>
         </Container>
-      </div>
+      </ScrollCard>
     </div>
   )
 }

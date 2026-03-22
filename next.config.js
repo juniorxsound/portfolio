@@ -7,6 +7,7 @@ const nextConfig = {
   images: {
     remotePatterns: [new URL('https://orfleisher.com/**')],
   },
+  typedRoutes: true,
   webpack: (config) => {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
