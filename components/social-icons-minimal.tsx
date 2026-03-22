@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from './ui/button'
 
@@ -65,7 +64,7 @@ export function SocialIconsMinimal() {
           className="h-8 w-8 p-0 hover:bg-muted transition-colors"
           aria-label={`Visit ${link.name} profile`}
         >
-          <Link href={link.url} target="_blank">
+          <a href={link.url} target="_blank" rel="noopener noreferrer">
             <Image
               src={link.icon}
               alt=""
@@ -75,7 +74,7 @@ export function SocialIconsMinimal() {
               unoptimized
               className="opacity-70 hover:opacity-100 transition-opacity dark:invert"
             />
-          </Link>
+          </a>
         </Button>
       ))}
     </div>

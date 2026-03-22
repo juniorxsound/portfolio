@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from './ui/button'
 
@@ -60,7 +59,7 @@ export function SocialIcons() {
             className="flex items-center gap-3 p-2 px-3 rounded-lg hover:bg-muted transition-colors group flex-shrink-0"
             aria-label={`Visit ${link.name} profile`}
           >
-            <Link href={link.url} target="_blank">
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
               <Image
                 src={link.icon}
                 alt=""
@@ -73,7 +72,7 @@ export function SocialIcons() {
               <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
                 {link.name}
               </span>
-            </Link>
+            </a>
           </Button>
         ))}
       </div>

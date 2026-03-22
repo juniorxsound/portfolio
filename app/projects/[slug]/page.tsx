@@ -2,7 +2,6 @@ import React from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { ExternalLink } from 'lucide-react'
-import Link from 'next/link'
 import path from 'path'
 
 // Components
@@ -120,7 +119,7 @@ export default async function ProjectPage({
             {(frontmatter.links || []).map((link: [string, string]) => {
               return (
                 <Button key={link[0]} asChild>
-                  <Link
+                  <a
                     href={link[1]}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -128,7 +127,7 @@ export default async function ProjectPage({
                   >
                     {link[0]}
                     <ExternalLink className="w-3" aria-hidden="true" />
-                  </Link>
+                  </a>
                 </Button>
               )
             })}
