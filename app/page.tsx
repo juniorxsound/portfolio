@@ -67,15 +67,7 @@ export default async function HomePage() {
             },
           ]}
           className="px-8 text-balance"
-        >
-          <div className="flex flex-row gap-2">
-            <Button variant="default" asChild>
-              <Link href="/bio" aria-label="Learn More">
-                Learn More
-              </Link>
-            </Button>
-          </div>
-        </Hero>
+        />
       </div>
 
       {/* Scrolling card that slides over the pinned hero */}

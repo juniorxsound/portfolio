@@ -81,7 +81,7 @@ export default async function ProjectsPage() {
 
           <div className="text-center">
             <Button asChild>
-              <Link href="/bio">Learn More</Link>
+              <Link href="/bio">Read My Story</Link>
             </Button>
           </div>
         </Container>

@@ -53,8 +53,6 @@ export function Hero({
   alignment = 'left',
   children,
 }: HeroProps) {
-  const DEFAULT_BLUR =
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
   return (
     <div
       className={cn(

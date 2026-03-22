@@ -79,7 +79,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {fm.thumbnail && (
               <Image
                 src={fm.thumbnail}
-                alt={fm.path || 'project'}
+                  alt={fm.title || 'Project thumbnail'}
                 placeholder="blur"
                 className={cn(
                   'w-full h-48 object-cover motion-safe:transition-opacity motion-safe:duration-300',

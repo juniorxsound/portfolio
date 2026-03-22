@@ -8,12 +8,6 @@ export function Footer() {
     <footer className="bg-background font-sans" id="footer">
       <div className="container mx-auto px-4 py-8">
         <SocialIconsMinimal />
-
-        {/* Copyright */}
-        <div className="mt-6 text-center text-xs text-muted-foreground">
-          Made with <span className="dark:hidden">🖤</span>
-          <span className="hidden dark:inline">🤍</span> in NYC
-        </div>
       </div>
     </footer>
   )

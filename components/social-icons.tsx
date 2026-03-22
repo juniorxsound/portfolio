@@ -49,7 +49,7 @@ const socialLinks: SocialLink[] = [
 export function SocialIcons() {
   return (
     <div className="overflow-x-auto">
-      <div className="flex flex-row gap-3 min-w-max">
+      <div className="flex flex-row justify-center gap-3 min-w-max">
         {socialLinks.map((link) => (
           <Button
             key={link.name}

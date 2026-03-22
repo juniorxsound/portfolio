@@ -53,7 +53,7 @@ const socialLinks: SocialLink[] = [
 
 export function SocialIconsMinimal() {
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex justify-center flex-row gap-2">
       {socialLinks.map((link) => (
         <Button
           key={link.name}
