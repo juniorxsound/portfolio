@@ -46,7 +46,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title="Or Fleisher is an award-winning creative technologist, developer and artist working at the intersection of technology and storytelling."
+        title="Creative technologist working at the intersection of technology and storytelling"
         height="xl"
         background="accent"
         videoSources={[
@@ -77,9 +77,7 @@ export default async function HomePage() {
             </Link>
           </Button>
           <Button variant="default" asChild aria-label="Contact">
-            <Link href="mailto:contact@orfleisher.com">
-              Contact
-            </Link>
+            <Link href="mailto:contact@orfleisher.com">Contact</Link>
           </Button>
         </div>
       </Hero>

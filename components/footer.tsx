@@ -32,12 +32,6 @@ export function Footer() {
 
           <SocialIconsMinimal />
         </div>
-
-        {/* Copyright */}
-        <div className="mt-6 text-center text-xs text-muted-foreground">
-          Made with <span className="dark:hidden">🖤</span>
-          <span className="hidden dark:inline">🤍</span> in NYC
-        </div>
       </div>
     </footer>
   )
