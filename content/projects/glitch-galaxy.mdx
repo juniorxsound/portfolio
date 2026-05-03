@@ -1,0 +1,54 @@
+import thumbnailImage from '@/public/images/thumbnails/glitch-galaxy-thumbnail.jpg'
+import coverImage from '@/public/images/headers/404.jpg'
+
+export const metadata = {
+  path: '/glitch-galaxy',
+  date: '2024-04-10T00:00:00.000Z',
+  title: 'Glitch Galaxy',
+  tags: ['WebGL', '3D'],
+  cover: coverImage,
+  thumbnail: thumbnailImage,
+  animatedThumbnail: '/images/gifs/glitch-galaxy.gif',
+  links: [
+    [
+      'The 411 on 404 Blog',
+      'https://blog.swoosh.nike/the-411-on-404-258f2912f08c',
+    ],
+    ['X.com Post', 'https://x.com/dotSWOOSH/status/1783164201025843401'],
+  ],
+  excerpt: 'Unlock access to sneakers by playing an 8-bit game on swoosh.nike.',
+  badge: '/images/logos/nike.svg',
+}
+
+<AutoComponentsTable
+  title="Stack"
+  components={[
+    ['code', 'TypeScript'],
+    ['software', 'React, Next.js'],
+    ['3d', 'Three.js, R3F, Blender'],
+  ]}
+  size="md"
+/>
+
+### About
+
+Glitch Galaxy was the mini game I led the development on for the .SWOOSH 404 campaign. The game was the unlock path for the 404 Error special pair.
+
+The campaign started with the member-exclusive Air Force 1 Low "404". The shoe was built around internet culture, and the whole thing leaned into that idea pretty hard. We had billboards, a site takeover, a hacked SNKRS Live episode, and then the 404 Error special pair that was unlocked through the game.
+
+<video playsInline autoPlay muted loop controls>
+  <source src="/videos/glitch_galaxy_vp9.webm" type="video/webm" />
+  <source src="/videos/glitch_galaxy_h264.mp4" type="video/mp4" />
+</video>
+
+### Glitch Galaxy
+
+We prototyped a few different ideas first, including a top down maze and the 8-bit spacecraft game. The spacecraft version won out pretty quickly because it was the better fit for the brief and it kept the scope focused.
+
+The game itself was built to work across mobile and desktop, so touch controls and keyboard controls both had to feel fine. The interactions were simple on purpose. The main things were item spawning, collision handling, sprite animation, and making sure the game stayed responsive without doing more work than it needed to on each frame.
+
+I also spent time on the data flow and game state, since the game had to support a clean start and end flow, a single playthrough per user, and a backend that could be trusted without relying on client state. That part mattered because the game was not just an isolated mini game, it was the unlock path for the product.
+
+On the .SWOOSH side, we also needed the surrounding experience to hold together. The homepage takeover and product pages had to feel connected to the game so the whole thing read as one campaign instead of separate pieces.
+
+The game was built with Three.js and React Three Fiber. One nice byproduct of working on it was finding a small visual shake issue in the SpriteAnimator component we were using from @react-three/drei. [I put together a fix and got it merged upstream pretty quickly](https://github.com/pmndrs/drei/pull/1876), which was good because it helped the project and also helped other people using the same component.
