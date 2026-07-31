@@ -32,7 +32,7 @@ export function CompanyLogos() {
   return (
     <section
       aria-label="Organizations I’ve worked with"
-      className="relative left-1/2 -mt-4 w-screen -translate-x-1/2 pb-1.5 sm:mt-0 sm:pt-1 sm:pb-2"
+      className="relative left-1/2 w-screen -translate-x-1/2"
     >
       <div className="mx-auto hidden max-w-[1448px] items-center justify-between gap-8 px-8 md:flex">
         {companies.map((company) => (

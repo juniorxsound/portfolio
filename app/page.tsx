@@ -64,7 +64,7 @@ export default async function HomePage() {
               type: 'video/mp4; codecs=av01',
             },
           ]}
-          className="text-balance"
+        className="!h-[calc(100svh-5rem)] text-balance"
         >
           <div className="flex flex-row gap-2">
             <Button variant="secondary" asChild>
@@ -81,7 +81,7 @@ export default async function HomePage() {
       </Hero>
 
       <div className="relative z-10 isolate bg-background">
-        <Container>
+        <Container padding="none" className="flex h-20 items-center px-8">
           <CompanyLogos />
         </Container>
 

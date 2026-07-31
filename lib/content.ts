@@ -22,6 +22,40 @@ function slugFromProject(project: Project): string {
   return path.basename(project.filePath, '.mdx')
 }
 
+export function getRelatedProjects(
+  currentProject: Project,
+  projects: Project[],
+  limit = 3
+): Project[] {
+  const currentTags = new Set(
+    (currentProject.frontmatter.tags || []).map((tag) => tag.toLowerCase())
+  )
+  const currentCategory = currentProject.frontmatter.category
+  const currentBadge = currentProject.frontmatter.badge
+
+  return projects
+    .filter((project) => slugFromProject(project) !== slugFromProject(currentProject))
+    .map((project) => {
+      const sharedTags = (project.frontmatter.tags || []).filter((tag) =>
+        currentTags.has(tag.toLowerCase())
+      ).length
+      const sharedCategory =
+        currentCategory && project.frontmatter.category === currentCategory ? 1 : 0
+      const sharedCompany =
+        currentBadge && project.frontmatter.badge === currentBadge ? 1 : 0
+
+      return { project, score: sharedTags * 3 + sharedCategory * 2 + sharedCompany }
+    })
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        new Date(b.project.frontmatter.date || 0).getTime() -
+          new Date(a.project.frontmatter.date || 0).getTime()
+    )
+    .slice(0, limit)
+    .map(({ project }) => project)
+}
+
 export const getProjects = cache(async (): Promise<Project[]> => {
   let files: string[] = []
   try {

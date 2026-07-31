@@ -152,10 +152,18 @@ p {
   mix-blend-mode: exclusion;
 }
 
+@media (max-width: 767px) {
+  .hero-title-reveal {
+    mix-blend-mode: normal;
+    text-shadow: 0 2px 20px rgb(0 0 0 / 45%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-title-reveal {
     color: var(--foreground);
     mix-blend-mode: normal;
+    text-shadow: none;
   }
 }
 

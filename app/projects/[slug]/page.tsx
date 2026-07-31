@@ -9,7 +9,13 @@ import path from 'path'
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { Container } from '@/components/container'
-import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
+import { ProjectCard } from '@/components/project-card'
+import {
+  getProjectBySlug,
+  getProjectSlugs,
+  getProjects,
+  getRelatedProjects,
+} from '@/lib/content'
 
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs()
@@ -87,7 +93,10 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = await getProjectBySlug(slug)
+  const [project, projects] = await Promise.all([
+    getProjectBySlug(slug),
+    getProjects(),
+  ])
 
   if (!project) {
     notFound()
@@ -97,6 +106,7 @@ export default async function ProjectPage({
   const tags = Array.isArray(frontmatter.tags)
     ? frontmatter.tags.join(' / ')
     : ''
+  const relatedProjects = getRelatedProjects(project, projects)
 
   // Dynamic import of the MDX component
   const fileName = path.basename(filePath, '.mdx')
@@ -151,6 +161,23 @@ export default async function ProjectPage({
       <div className="relative z-10 bg-background">
         <Container>
           <ProjectComponent />
+
+          {relatedProjects.length > 0 && (
+            <section className="mt-16" aria-labelledby="more-projects-heading">
+              <h2 id="more-projects-heading" className="mb-6">
+                More projects
+              </h2>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {relatedProjects.map((relatedProject) => (
+                  <ProjectCard
+                    key={relatedProject.frontmatter.path || relatedProject.filePath}
+                    project={relatedProject}
+                    compact
+                  />
+                ))}
+              </div>
+            </section>
+          )}
         </Container>
       </div>
     </div>
