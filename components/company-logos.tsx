@@ -50,7 +50,7 @@ export function CompanyLogos() {
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-24"
         />
         <div className="flex w-max animate-company-logo-scroll items-center">
-          {[0, 1, 2].map((sequence) => (
+          {[0, 1].map((sequence) => (
             <div
               key={sequence}
               className="flex items-center gap-10 pr-10 sm:gap-14 sm:pr-14"

@@ -57,7 +57,7 @@ export function Hero({
   eyebrow,
   titleClassName =
     'hero-title-reveal !text-[2.5rem] md:!text-6xl lg:!text-7xl !font-bold',
-  overlayClassName = 'opacity-0',
+  overlayClassName = 'bg-black/40 dark:bg-white/40',
   children,
 }: HeroProps) {
   const DEFAULT_BLUR =
@@ -108,12 +108,11 @@ export function Hero({
       {(backgroundImage ||
         videoSrc ||
         (videoSources && videoSources.length > 0)) && (
-        <div
-          className={cn(
-            'absolute inset-0',
-            backgroundClasses[background],
-            overlayClassName
-          )}
+          <div
+            className={cn(
+              'absolute inset-0',
+              overlayClassName
+            )}
         />
       )}
 
@@ -124,7 +123,11 @@ export function Hero({
         )}
       >
         {eyebrow && <div className="mb-4 flex h-6 items-center">{eyebrow}</div>}
-        {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
+        {subtitle && (
+          <p className="mb-2 !text-[#a3a3a3] dark:!text-[#737373]">
+            {subtitle}
+          </p>
+        )}
         <h1
           className={cn(
             'mb-4 max-w-6xl font-light leading-tight',

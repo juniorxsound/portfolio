@@ -32,7 +32,7 @@ p {
 
   @keyframes company-logo-scroll {
     to {
-      transform: translateX(-33.333333%);
+      transform: translateX(-50%);
     }
   }
 
@@ -154,8 +154,14 @@ p {
 
 @media (max-width: 767px) {
   .hero-title-reveal {
+    color: white;
     mix-blend-mode: normal;
-    text-shadow: 0 2px 20px rgb(0 0 0 / 45%);
+    text-shadow: 0 2px 24px rgb(0 0 0 / 65%);
+  }
+
+  .dark .hero-title-reveal {
+    color: black;
+    text-shadow: 0 2px 24px rgb(255 255 255 / 50%);
   }
 }
 
