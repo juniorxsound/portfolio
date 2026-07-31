@@ -135,9 +135,11 @@ export default async function ProjectPage({
           })}
         </div>
       </Hero>
-      <Container>
-        <ProjectComponent />
-      </Container>
+      <div className="relative z-10 bg-background">
+        <Container>
+          <ProjectComponent />
+        </Container>
+      </div>
     </div>
   )
 }

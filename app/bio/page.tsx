@@ -58,11 +58,13 @@ export default function BioPage() {
           },
         ]}
       ></Hero>
-      <Container maxWidth="4xl" size="md">
-        <div className="markdownContent">
-          <Bio />
-        </div>
-      </Container>
+      <div className="relative z-10 bg-background">
+        <Container maxWidth="4xl" size="md">
+          <div className="markdownContent">
+            <Bio />
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }

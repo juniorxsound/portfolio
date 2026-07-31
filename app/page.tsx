@@ -46,8 +46,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="relative flex min-h-0 flex-1 flex-col justify-center">
-        <Hero
+      <Hero
           title="Creative technologist working at the intersection of technology and storytelling"
           height="xl"
           background="accent"
@@ -79,23 +78,25 @@ export default async function HomePage() {
               </Link>
             </Button>
           </div>
-        </Hero>
+      </Hero>
+
+      <div className="relative z-10 isolate bg-background">
         <Container>
           <CompanyLogos />
         </Container>
-      </section>
 
-      <Container>
-        <section id="featured-work">
-          <FeaturedProjects projects={projects} />
-        </section>
-
-        {writing.length > 0 && (
-          <section id="writing" className="mt-16">
-            <FeaturedWriting writing={writing} />
+        <Container>
+          <section id="featured-work">
+            <FeaturedProjects projects={projects} />
           </section>
-        )}
-      </Container>
+
+          {writing.length > 0 && (
+            <section id="writing" className="mt-16">
+              <FeaturedWriting writing={writing} />
+            </section>
+          )}
+        </Container>
+      </div>
     </div>
   )
 }

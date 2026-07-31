@@ -63,7 +63,7 @@ export function Hero({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center items-center relative overflow-hidden',
+        'relative z-0 flex flex-col items-center justify-center overflow-hidden sticky top-0',
         heightClasses[height],
         backgroundClasses[background],
         className

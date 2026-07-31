@@ -65,12 +65,13 @@ export default async function ProjectsPage() {
         ]}
         className="px-8 text-balance"
       />
-      <Container className="space-y-8">
-        <section id="work">
-          <FilteredProjects projects={projects} />
-        </section>
-
-      </Container>
+      <div className="relative z-10 bg-background">
+        <Container className="space-y-8">
+          <section id="work">
+            <FilteredProjects projects={projects} />
+          </section>
+        </Container>
+      </div>
     </div>
   )
 }
