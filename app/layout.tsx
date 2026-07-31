@@ -1,30 +1,19 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { Open_Sans, Merriweather } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
+import { GeistPixelSquare } from 'geist/font/pixel'
 
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Footer } from '@/components/footer'
+import { SiteNav } from '@/components/site-nav'
 
 import './globals.css'
 import { BASE_URL } from '@/lib/constants'
-
-const open_sans = Open_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-  weight: ['400', '700'],
-})
-
-const merriweather = Merriweather({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-serif',
-  weight: ['400', '700'],
-})
 
 export const metadata: Metadata = {
   title: 'Or Fleisher',
@@ -69,7 +58,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(open_sans.className, merriweather.className)}
+      className={cn(
+        GeistSans.className,
+        GeistSans.variable,
+        GeistMono.variable,
+        GeistPixelSquare.variable
+      )}
       suppressHydrationWarning
     >
       <body>
@@ -86,9 +80,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen flex flex-col">
-            <div className="absolute top-4 right-4 z-50">
-              <ThemeToggle />
-            </div>
+            <header className="sticky top-0 z-50 -mb-[72px] text-foreground">
+              <div className="mx-auto flex max-w-[1448px] items-center justify-between px-4 py-4 sm:px-8">
+                <SiteNav />
+                <ThemeToggle />
+              </div>
+            </header>
             <main id="main-content" className="flex-1">
               {children}
             </main>

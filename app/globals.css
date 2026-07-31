@@ -4,31 +4,41 @@
 @plugin "@tailwindcss/typography";
 
 h1 {
-  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
-  font-family: var(--font-merriweather);
+  @apply text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl;
+  line-height: 1.1;
 }
 
 h2 {
-  @apply text-lg md:text-xl lg:text-2xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-lg font-semibold tracking-tight md:text-xl lg:text-2xl;
+  line-height: 1.2;
 }
 
 h3 {
-  @apply text-base md:text-lg lg:text-xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-base font-semibold tracking-tight md:text-lg lg:text-xl;
+  line-height: 1.3;
 }
 
 h4 {
-  @apply text-lg md:text-xl lg:text-2xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-lg font-semibold tracking-tight md:text-xl lg:text-2xl;
+  line-height: 1.3;
 }
 
 p {
-  @apply text-base;
-  font-family: var(--font-merriweather);
+  @apply text-base leading-6;
 }
 
 @theme {
+  --animate-company-logo-scroll: company-logo-scroll 24s linear infinite;
+
+  @keyframes company-logo-scroll {
+    to {
+      transform: translateX(-33.333333%);
+    }
+  }
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-geist-pixel-square);
   --color-background: 0 0% 100%;
   --color-foreground: 0 0% 3.9%;
   --color-card: 0 0% 100%;
@@ -91,6 +101,8 @@ p {
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
@@ -135,6 +147,18 @@ p {
   display: none; /* Safari and Chrome */
 }
 
+.hero-title-reveal {
+  color: white;
+  mix-blend-mode: difference;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title-reveal {
+    color: var(--foreground);
+    mix-blend-mode: normal;
+  }
+}
+
 /* Markdown content styling is now handled in mdx-components.tsx */
 
 @theme inline {
@@ -176,8 +200,6 @@ p {
 }
 
 :root {
-  --font-open-sans: 'Open Sans', sans-serif;
-  --font-merriweather: 'Merriweather', serif;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -254,5 +276,6 @@ p {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
 }

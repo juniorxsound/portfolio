@@ -3,7 +3,6 @@ import { Metadata } from 'next'
 import Bio from '@/content/bio.mdx'
 import { Container } from '@/components/container'
 import { Hero } from '@/components/hero'
-import { BackButton } from '@/components/back-button'
 
 export const metadata: Metadata = {
   title: 'Bio - Or Fleisher',
@@ -43,7 +42,6 @@ export const metadata: Metadata = {
 export default function BioPage() {
   return (
     <div>
-      <BackButton />
       <Hero
         title="About"
         background="accent"

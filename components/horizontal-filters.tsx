@@ -86,7 +86,7 @@ export function HorizontalFilters({
                     key={tag.id}
                     onClick={() => onToggleFilter('tags', tag.id)}
                     className={cn(
-                      'px-3 py-1 rounded-full text-sm transition-colors border flex-shrink-0',
+                      'h-8 rounded-full border px-3 text-sm font-medium transition-colors flex-shrink-0',
                       tag.active
                         ? 'bg-primary text-primary-foreground border-primary'
                         : 'bg-background text-foreground border-border hover:bg-accent hover:text-accent-foreground'

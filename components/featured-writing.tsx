@@ -26,6 +26,7 @@ export function FeaturedWriting({ writing, limit = 6 }: FeaturedWritingProps) {
             key={article.frontmatter.title || 'unknown'}
             writing={article}
             className="col-span-1"
+            compact
           />
         ))}
       </div>

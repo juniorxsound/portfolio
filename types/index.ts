@@ -29,6 +29,7 @@ export interface Writing {
     date?: string
     tags?: string[]
     thumbnail?: string
+    animatedThumbnail?: string
     cover?: string
     excerpt?: string
     href?: string

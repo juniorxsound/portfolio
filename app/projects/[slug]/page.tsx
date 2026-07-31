@@ -8,7 +8,6 @@ import path from 'path'
 // Components
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
-import { BackButton } from '@/components/back-button'
 import { Container } from '@/components/container'
 import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
 
@@ -106,7 +105,6 @@ export default async function ProjectPage({
 
   return (
     <div>
-      <BackButton href="/projects" children="Back to Projects" />
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
@@ -118,7 +116,11 @@ export default async function ProjectPage({
         <div className="flex flex-row flex-wrap gap-2">
           {(frontmatter.links || []).map((link: [string, string]) => {
             return (
-              <Button key={link[0]} asChild>
+              <Button
+                key={link[0]}
+                className="bg-white text-black hover:bg-white/90"
+                asChild
+              >
                 <Link
                   href={link[1]}
                   target="_blank"

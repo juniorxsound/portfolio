@@ -23,7 +23,7 @@ export function FeaturedProjects({
 
   return (
     <div className="space-y-8">
-      <h2 className="text-2xl font-bold">Featured Work</h2>
+      <h2 className="text-2xl font-bold">Featured Projects</h2>
       {/* Projects Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {featuredProjects.map((project) => (
@@ -31,15 +31,16 @@ export function FeaturedProjects({
             key={project.frontmatter.path || 'unknown'}
             project={project}
             className="col-span-1"
+            compact
           />
         ))}
       </div>
 
       {/* View All Button */}
       {projects.length > limit && (
-        <div className="text-center">
+        <div className="text-left">
           <Button asChild>
-            <Link href="/projects">View All Work</Link>
+            <Link href="/projects">View All Projects</Link>
           </Button>
         </div>
       )}

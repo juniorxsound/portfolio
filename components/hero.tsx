@@ -14,6 +14,8 @@ interface HeroProps {
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
   alignment?: 'left' | 'center' | 'right'
+  titleClassName?: string
+  overlayClassName?: string
   children?: React.ReactNode
 }
 
@@ -21,7 +23,7 @@ const heightClasses = {
   sm: 'h-[40vh]',
   md: 'h-[50vh]',
   lg: 'h-[60vh]',
-  xl: 'h-[70vh]',
+  xl: 'h-[90vh]',
   full: 'h-screen',
 }
 
@@ -51,6 +53,9 @@ export function Hero({
   videoSources,
   videoPoster,
   alignment = 'left',
+  titleClassName =
+    'hero-title-reveal !text-5xl md:!text-6xl lg:!text-7xl !font-bold',
+  overlayClassName = 'opacity-0',
   children,
 }: HeroProps) {
   const DEFAULT_BLUR =
@@ -103,19 +108,27 @@ export function Hero({
         <div
           className={cn(
             'absolute inset-0',
-            `${backgroundClasses[background]} opacity-70`
+            backgroundClasses[background],
+            overlayClassName
           )}
         />
       )}
 
       <div
         className={cn(
-          'container mx-auto max-w-6xl relative z-10',
+          'container mx-auto max-w-[1448px] relative',
           alignmentClasses[alignment]
         )}
       >
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
-        <h1 className="font-light leading-tight mb-4">{title}</h1>
+        <h1
+          className={cn(
+            'mb-4 max-w-6xl font-light leading-tight',
+            titleClassName
+          )}
+        >
+          {title}
+        </h1>
         {description && (
           <p className="text-muted-foreground leading-relaxed">{description}</p>
         )}

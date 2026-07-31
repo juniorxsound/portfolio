@@ -10,9 +10,14 @@ import Image from 'next/image'
 interface WritingCardProps {
   writing: Writing
   className?: string
+  compact?: boolean
 }
 
-export function WritingCard({ writing, className }: WritingCardProps) {
+export function WritingCard({
+  writing,
+  className,
+  compact = false,
+}: WritingCardProps) {
   const fm = writing.frontmatter
   const tags = Array.isArray(fm.tags) ? fm.tags.join(' / ') : ''
   const isExternal = Boolean(fm.href)
@@ -35,7 +40,7 @@ export function WritingCard({ writing, className }: WritingCardProps) {
 
   return (
     <div className={className}>
-      <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
+      <Card className="h-full group transition-[border-color,box-shadow] duration-200 hover:border-foreground/20 hover:shadow-sm">
         <CardWrapper>
           <div className="overflow-hidden rounded-t-lg relative">
             {fm.thumbnail && (
@@ -46,16 +51,24 @@ export function WritingCard({ writing, className }: WritingCardProps) {
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               />
             )}
+            {fm.animatedThumbnail && (
+              <Image
+                src={fm.animatedThumbnail}
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized
+                className="object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:hidden"
+              />
+            )}
             {fm.badge && (
               <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
-                <Image
+                <img
                   src={fm.badge}
                   alt="Publication badge"
                   width={80}
                   height={20}
-                  loading="lazy"
-                  unoptimized
-                  className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
+                  className="h-auto max-h-5 w-auto max-w-20 invert dark:invert-0"
                 />
               </div>
             )}
@@ -72,7 +85,7 @@ export function WritingCard({ writing, className }: WritingCardProps) {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="text-sm text-muted-foreground mb-2">{tags}</div>
-            {fm.date && (
+            {!compact && fm.date && (
               <div className="text-xs text-muted-foreground mt-2">
                 {new Date(fm.date).toLocaleDateString('en-US', {
                   year: 'numeric',

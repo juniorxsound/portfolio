@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
+import { CompanyLogos } from '@/components/company-logos'
 import { FeaturedProjects } from '@/components/featured-projects'
 import { FeaturedWriting } from '@/components/featured-writing'
 import { Container } from '@/components/container'
@@ -45,42 +46,45 @@ export default async function HomePage() {
 
   return (
     <div>
-      <Hero
-        title="Creative technologist working at the intersection of technology and storytelling"
-        height="xl"
-        background="accent"
-        videoSources={[
-          {
-            src: '/videos/hero/placeholder-720p.webm',
-            type: 'video/webm',
-          },
-          {
-            src: '/videos/hero/placeholder-720p.mp4',
-            type: 'video/mp4',
-          },
-          {
-            src: '/videos/hero/placeholder-720p-av1.mp4',
-            type: 'video/mp4; codecs=av01',
-          },
-        ]}
-        className="px-8 text-balance"
-      >
-        <div className="flex flex-row gap-2">
-          <Button variant="default" asChild>
-            <Link href="/bio" aria-label="Learn More">
-              About
-            </Link>
-          </Button>
-          <Button variant="default" asChild>
-            <Link href="/projects" aria-label="Projects">
-              Work
-            </Link>
-          </Button>
-          <Button variant="default" asChild aria-label="Contact">
-            <Link href="mailto:contact@orfleisher.com">Contact</Link>
-          </Button>
-        </div>
-      </Hero>
+      <section className="relative flex min-h-0 flex-1 flex-col justify-center">
+        <Hero
+          title="Creative technologist working at the intersection of technology and storytelling"
+          height="xl"
+          background="accent"
+          videoSources={[
+            {
+              src: '/videos/hero/placeholder-720p.webm',
+              type: 'video/webm',
+            },
+            {
+              src: '/videos/hero/placeholder-720p.mp4',
+              type: 'video/mp4',
+            },
+            {
+              src: '/videos/hero/placeholder-720p-av1.mp4',
+              type: 'video/mp4; codecs=av01',
+            },
+          ]}
+          className="px-8 text-balance"
+        >
+          <div className="flex flex-row gap-2">
+            <Button variant="secondary" asChild>
+              <Link href="/bio" aria-label="Learn More">
+                About
+              </Link>
+            </Button>
+            <Button variant="secondary" asChild>
+              <Link href="/projects" aria-label="Projects">
+                Projects
+              </Link>
+            </Button>
+          </div>
+        </Hero>
+        <Container>
+          <CompanyLogos />
+        </Container>
+      </section>
+
       <Container>
         <section id="featured-work">
           <FeaturedProjects projects={projects} />
