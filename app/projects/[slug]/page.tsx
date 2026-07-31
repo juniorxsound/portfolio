@@ -108,17 +108,30 @@ export default async function ProjectPage({
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
+        eyebrow={
+          frontmatter.badge ? (
+            <span className="inline-flex items-center justify-center gap-1 rounded-md border border-border bg-muted px-2 py-1">
+              <img
+                src={frontmatter.badge}
+                alt=""
+                width={80}
+                height={20}
+                className="h-auto max-h-5 w-auto max-w-20 invert dark:invert-0"
+              />
+            </span>
+          ) : undefined
+        }
         backgroundImage={frontmatter.cover}
         height="xl"
         background="accent"
-        className="px-8 text-balance"
+        className="text-balance"
       >
         <div className="flex flex-row flex-wrap gap-2">
           {(frontmatter.links || []).map((link: [string, string]) => {
             return (
               <Button
                 key={link[0]}
-                className="bg-white text-black hover:bg-white/90"
+                variant="secondary"
                 asChild
               >
                 <Link

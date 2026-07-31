@@ -22,7 +22,7 @@ export function ThemeToggle() {
           <Button
             variant="default"
             size="icon"
-            className="h-9 w-9 bg-white text-black hover:bg-white/90 dark:bg-black dark:text-white dark:hover:bg-black/90"
+            className="h-9 w-9 bg-white text-black shadow-sm hover:bg-white/90 dark:bg-black dark:text-white dark:hover:bg-black/90"
           >
             <Sun
               className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0"

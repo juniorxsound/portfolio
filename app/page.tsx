@@ -64,7 +64,7 @@ export default async function HomePage() {
               type: 'video/mp4; codecs=av01',
             },
           ]}
-          className="px-8 text-balance"
+          className="text-balance"
         >
           <div className="flex flex-row gap-2">
             <Button variant="secondary" asChild>

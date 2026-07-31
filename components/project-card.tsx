@@ -45,7 +45,7 @@ export function ProjectCard({
               />
             )}
             {fm.badge && (
-              <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
+              <div className="absolute top-4 left-4 flex items-center justify-center gap-1 rounded-md border border-border bg-muted px-2 py-1">
                 <img
                   src={fm.badge}
                   alt="Project badge"

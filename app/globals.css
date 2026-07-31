@@ -149,7 +149,7 @@ p {
 
 .hero-title-reveal {
   color: white;
-  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
 }
 
 @media (prefers-reduced-motion: reduce) {

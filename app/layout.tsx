@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Footer } from '@/components/footer'
-import { SiteNav } from '@/components/site-nav'
+import { HistoryBackButton } from '@/components/history-back-button'
 
 import './globals.css'
 import { BASE_URL } from '@/lib/constants'
@@ -81,8 +81,10 @@ export default function RootLayout({
         >
           <div className="relative min-h-screen flex flex-col">
             <header className="sticky top-0 z-50 -mb-[72px] text-foreground">
-              <div className="mx-auto flex max-w-[1448px] items-center justify-between px-4 py-4 sm:px-8">
-                <SiteNav />
+              <div className="relative mx-auto flex max-w-[1448px] items-center justify-end px-4 py-4 sm:px-8">
+                <div className="absolute left-4 sm:left-8">
+                  <HistoryBackButton />
+                </div>
                 <ThemeToggle />
               </div>
             </header>

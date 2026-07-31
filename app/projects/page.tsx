@@ -63,7 +63,7 @@ export default async function ProjectsPage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
-        className="px-8 text-balance"
+        className="text-balance"
       />
       <div className="relative z-10 bg-background">
         <Container className="space-y-8">

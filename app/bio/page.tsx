@@ -46,7 +46,7 @@ export default function BioPage() {
         title="About"
         background="accent"
         height="sm"
-        className="px-8 text-balance"
+        className="text-balance"
         videoSources={[
           {
             src: '/videos/hero/about_vp9.webm',

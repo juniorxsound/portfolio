@@ -20,7 +20,7 @@ export function AutoComponentsTable({
 
   return (
     <div className={className}>
-      <h3 className="mb-4 text-foreground">{title}</h3>
+      {title !== 'Stack' && <h3 className="mb-4 text-foreground">{title}</h3>}
       <ProjectComponents components={components} size={size} />
     </div>
   )

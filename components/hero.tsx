@@ -14,6 +14,7 @@ interface HeroProps {
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
   alignment?: 'left' | 'center' | 'right'
+  eyebrow?: React.ReactNode
   titleClassName?: string
   overlayClassName?: string
   children?: React.ReactNode
@@ -53,6 +54,7 @@ export function Hero({
   videoSources,
   videoPoster,
   alignment = 'left',
+  eyebrow,
   titleClassName =
     'hero-title-reveal !text-[2.5rem] md:!text-6xl lg:!text-7xl !font-bold',
   overlayClassName = 'opacity-0',
@@ -62,6 +64,7 @@ export function Hero({
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
   return (
     <div
+      data-site-hero
       className={cn(
         'relative z-0 flex flex-col items-center justify-center overflow-hidden sticky top-0',
         heightClasses[height],
@@ -116,10 +119,11 @@ export function Hero({
 
       <div
         className={cn(
-          'container mx-auto max-w-[1448px] relative',
+          'container relative mx-auto max-w-[1448px] px-8',
           alignmentClasses[alignment]
         )}
       >
+        {eyebrow && <div className="mb-4 flex h-6 items-center">{eyebrow}</div>}
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
         <h1
           className={cn(
