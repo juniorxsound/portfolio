@@ -54,7 +54,7 @@ export function Hero({
   videoPoster,
   alignment = 'left',
   titleClassName =
-    'hero-title-reveal !text-5xl md:!text-6xl lg:!text-7xl !font-bold',
+    'hero-title-reveal !text-[2.5rem] md:!text-6xl lg:!text-7xl !font-bold',
   overlayClassName = 'opacity-0',
   children,
 }: HeroProps) {
