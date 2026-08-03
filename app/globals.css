@@ -57,9 +57,12 @@ p {
 }
 
 .company-logo-marquee {
-  --company-logo-gap: 2.5rem;
-  display: flex;
-  gap: var(--company-logo-gap);
+  --company-logo-item-width: 10rem;
+  --company-logo-item-height: 1.75rem;
+  --company-logo-duration: 24s;
+  --company-logo-offset: calc(60rem + 100%);
+  position: relative;
+  block-size: var(--company-logo-item-height);
   overflow: hidden;
   user-select: none;
   mask-image: linear-gradient(
@@ -78,31 +81,47 @@ p {
   );
 }
 
-.company-logo-marquee-group {
+.company-logo-marquee-item {
+  position: absolute;
+  inset-inline-start: var(--company-logo-offset);
   display: flex;
-  min-width: max-content;
-  flex-shrink: 0;
   align-items: center;
-  gap: var(--company-logo-gap);
-  animation: company-logo-scroll 24s linear infinite;
-  will-change: transform;
+  justify-content: center;
+  inline-size: var(--company-logo-item-width);
+  block-size: var(--company-logo-item-height);
+  animation: company-logo-scroll var(--company-logo-duration) linear
+    var(--company-logo-delay) infinite;
+  transform: translateX(-50%);
+  will-change: inset-inline-start;
 }
 
 @keyframes company-logo-scroll {
   to {
-    transform: translate3d(-50%, 0, 0);
+    inset-inline-start: calc(0rem - var(--company-logo-item-width));
   }
 }
 
 @media (min-width: 640px) {
   .company-logo-marquee {
-    --company-logo-gap: 3.5rem;
+    --company-logo-item-width: 11rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .company-logo-marquee-group {
-    animation-play-state: paused;
+  .company-logo-marquee {
+    display: flex;
+    block-size: auto;
+    gap: 2.5rem;
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .company-logo-marquee-item {
+    position: static;
+    flex: 0 0 var(--company-logo-item-width);
+    animation: none;
+    transform: none;
   }
 }
 

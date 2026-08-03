@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { cn } from '@/lib/utils'
 
 const companies = [
@@ -81,11 +81,21 @@ export function CompanyLogos() {
       </div>
 
       <div className="company-logo-marquee md:hidden">
-        <div className="company-logo-marquee-group">
-          {companies.map((company) => (
-            <CompanyLogo key={company.name} company={company} />
-          ))}
-        </div>
+        {companies.map((company, index) => (
+          <div
+            key={company.name}
+            className="company-logo-marquee-item"
+            style={
+              {
+                '--company-logo-delay': `-${
+                  ((companies.length - index - 1) * 24) / companies.length
+                }s`,
+              } as CSSProperties
+            }
+          >
+            <CompanyLogo company={company} />
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -97,9 +107,7 @@ function CompanyLogo({
   company: (typeof companies)[number]
 }) {
   return (
-    <div
-      className="flex h-6 shrink-0 items-center justify-center"
-    >
+    <div className="flex h-6 shrink-0 items-center justify-center">
       <img
         src={company.src}
         alt={company.name}
