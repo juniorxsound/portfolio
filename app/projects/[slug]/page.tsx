@@ -113,7 +113,7 @@ export default async function ProjectPage({
         backgroundImage={frontmatter.cover}
         height="xl"
         background="accent"
-        className="px-8 text-balance"
+        className="text-balance"
       >
         <div className="flex flex-row flex-wrap gap-2">
           {(frontmatter.links || []).map((link: [string, string]) => {

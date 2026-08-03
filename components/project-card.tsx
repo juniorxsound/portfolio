@@ -29,6 +29,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               />
             )}
+            {fm.animatedThumbnail && (
+              <Image
+                src={fm.animatedThumbnail}
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized
+                className="object-cover opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:hidden"
+              />
+            )}
             {fm.badge && (
               <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
                 <Image

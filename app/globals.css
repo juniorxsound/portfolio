@@ -29,6 +29,14 @@ p {
 }
 
 @theme {
+  --animate-company-logo-scroll: company-logo-scroll 24s linear infinite;
+
+  @keyframes company-logo-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   --color-background: 0 0% 100%;
   --color-foreground: 0 0% 3.9%;
   --color-card: 0 0% 100%;

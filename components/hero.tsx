@@ -110,7 +110,7 @@ export function Hero({
 
       <div
         className={cn(
-          'container mx-auto max-w-6xl relative z-10',
+          'container relative z-10 mx-auto max-w-6xl px-8',
           alignmentClasses[alignment]
         )}
       >

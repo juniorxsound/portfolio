@@ -67,7 +67,7 @@ export default async function ProjectsPage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
-        className="px-8 text-balance"
+        className="text-balance"
       />
       <Container className="space-y-8">
         <section id="work">

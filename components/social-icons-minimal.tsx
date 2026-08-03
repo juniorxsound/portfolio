@@ -73,7 +73,7 @@ export function SocialIconsMinimal() {
               height={20}
               loading="lazy"
               unoptimized
-              className="opacity-70 hover:opacity-100 transition-opacity dark:invert"
+              className="transition-opacity hover:opacity-60 dark:invert"
             />
           </Link>
         </Button>
