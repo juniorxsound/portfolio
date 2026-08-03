@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { FeaturedProjects } from '@/components/featured-projects'
 import { FeaturedWriting } from '@/components/featured-writing'
+import { CompanyLogos } from '@/components/company-logos'
 import { Container } from '@/components/container'
 import { getFeaturedWriting, getProjects } from '@/lib/content'
 
@@ -63,7 +64,7 @@ export default async function HomePage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
-        className="px-8 text-balance"
+        className="text-balance"
       >
         <div className="flex flex-row gap-2">
           <Button variant="default" asChild>
@@ -73,7 +74,7 @@ export default async function HomePage() {
           </Button>
           <Button variant="default" asChild>
             <Link href="/projects" aria-label="Projects">
-              Work
+              Projects
             </Link>
           </Button>
           <Button variant="default" asChild aria-label="Contact">
@@ -82,6 +83,9 @@ export default async function HomePage() {
         </div>
       </Hero>
       <Container>
+        <div className="mb-12">
+          <CompanyLogos />
+        </div>
         <section id="featured-work">
           <FeaturedProjects projects={projects} />
         </section>
