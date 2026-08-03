@@ -60,7 +60,7 @@ p {
   --company-logo-item-width: 8rem;
   --company-logo-item-height: 1.75rem;
   --company-logo-duration: 24s;
-  --company-logo-offset: calc(40rem + 100%);
+  --company-logo-offset: calc(25rem + 100%);
   position: relative;
   block-size: var(--company-logo-item-height);
   overflow: hidden;
