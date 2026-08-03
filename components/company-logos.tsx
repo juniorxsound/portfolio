@@ -80,29 +80,10 @@ export function CompanyLogos() {
         ))}
       </div>
 
-      <div className="relative overflow-hidden px-8 sm:px-12 md:hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-24"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-24"
-        />
-        <div className="flex w-max animate-company-logo-scroll items-center motion-reduce:animate-none">
-          {[0, 1].map((sequence) => (
-            <div
-              key={sequence}
-              className="flex items-center gap-10 pr-10 sm:gap-14 sm:pr-14"
-            >
-              {companies.map((company) => (
-                <CompanyLogo
-                  key={`${company.name}-${sequence}`}
-                  company={company}
-                  decorative={sequence > 0}
-                />
-              ))}
-            </div>
+      <div className="company-logo-marquee md:hidden">
+        <div className="company-logo-marquee-group">
+          {companies.map((company) => (
+            <CompanyLogo key={company.name} company={company} />
           ))}
         </div>
       </div>
@@ -112,22 +93,19 @@ export function CompanyLogos() {
 
 function CompanyLogo({
   company,
-  decorative = false,
 }: {
   company: (typeof companies)[number]
-  decorative?: boolean
 }) {
   return (
     <div
       className="flex h-6 shrink-0 items-center justify-center"
-      aria-hidden={decorative}
     >
       <img
         src={company.src}
-        alt={decorative ? '' : company.name}
+        alt={company.name}
         width={company.width}
         height={24}
-        loading="lazy"
+        loading="eager"
         decoding="async"
         style={{
           width: 'auto',
