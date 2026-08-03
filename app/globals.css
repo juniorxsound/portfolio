@@ -57,10 +57,10 @@ p {
 }
 
 .company-logo-marquee {
-  --company-logo-item-width: 10rem;
+  --company-logo-item-width: 8rem;
   --company-logo-item-height: 1.75rem;
   --company-logo-duration: 24s;
-  --company-logo-offset: calc(60rem + 100%);
+  --company-logo-offset: calc(40rem + 100%);
   position: relative;
   block-size: var(--company-logo-item-height);
   overflow: hidden;
@@ -103,7 +103,7 @@ p {
 
 @media (min-width: 640px) {
   .company-logo-marquee {
-    --company-logo-item-width: 11rem;
+    --company-logo-item-width: 9rem;
   }
 }
 
