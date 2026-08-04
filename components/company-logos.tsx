@@ -1,4 +1,14 @@
-const companies = [
+type Company = {
+  name: string
+  src: string
+  width: number
+  monochrome?: boolean
+  maxWidth?: number
+  maxHeight?: number
+  compactMaxWidth?: number
+}
+
+const companies: Company[] = [
   {
     name: 'Nike',
     src: '/images/logos/nike-company.svg',
@@ -26,6 +36,7 @@ const companies = [
     src: '/images/logos/viacom.svg',
     width: 120,
     maxWidth: 80,
+    compactMaxWidth: 60,
   },
   {
     name: 'New York University',
@@ -60,7 +71,7 @@ function CompanyLogo({
   company,
   compact = false,
 }: {
-  company: (typeof companies)[number]
+  company: Company
   compact?: boolean
 }) {
   return (
@@ -80,6 +91,9 @@ function CompanyLogo({
           width: 'auto',
           height: 'auto',
           ...(company.maxWidth ? { maxWidth: company.maxWidth } : {}),
+          ...(compact && company.compactMaxWidth
+            ? { maxWidth: company.compactMaxWidth }
+            : {}),
           ...(company.maxHeight ? { maxHeight: company.maxHeight } : {}),
         }}
         className={`h-auto w-auto max-w-full ${
