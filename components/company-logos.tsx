@@ -1,8 +1,3 @@
-'use client'
-
-import { useEffect, useState, type CSSProperties } from 'react'
-import { cn } from '@/lib/utils'
-
 const companies = [
   {
     name: 'Nike',
@@ -41,38 +36,10 @@ const companies = [
 ]
 
 export function CompanyLogos() {
-  const [logosReady, setLogosReady] = useState(false)
-
-  useEffect(() => {
-    let cancelled = false
-
-    Promise.all(
-      companies.map(
-        ({ src }) =>
-          new Promise<void>((resolve) => {
-            const image = new Image()
-            image.onload = () => resolve()
-            image.onerror = () => resolve()
-            image.src = src
-            if (image.complete) resolve()
-          })
-      )
-    ).then(() => {
-      if (!cancelled) setLogosReady(true)
-    })
-
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
   return (
     <section
       aria-label="Organizations I’ve worked with"
-      className={cn(
-        'relative left-1/2 w-screen -translate-x-1/2 transition-opacity duration-150 ease-out motion-reduce:transition-none',
-        logosReady ? 'opacity-100' : 'opacity-0'
-      )}
+      className="relative left-1/2 w-screen -translate-x-1/2"
     >
       <div className="mx-auto hidden max-w-6xl items-center justify-between gap-8 px-8 md:flex">
         {companies.map((company) => (
@@ -80,21 +47,9 @@ export function CompanyLogos() {
         ))}
       </div>
 
-      <div className="company-logo-marquee md:hidden">
-        {companies.map((company, index) => (
-          <div
-            key={company.name}
-            className="company-logo-marquee-item"
-            style={
-              {
-                '--company-logo-delay': `-${
-                  ((companies.length - index - 1) * 24) / companies.length
-                }s`,
-              } as CSSProperties
-            }
-          >
-            <CompanyLogo company={company} />
-          </div>
+      <div className="mx-auto grid max-w-sm grid-cols-2 items-center gap-x-8 gap-y-8 px-8 md:hidden">
+        {companies.map((company) => (
+          <CompanyLogo key={company.name} company={company} />
         ))}
       </div>
     </section>
