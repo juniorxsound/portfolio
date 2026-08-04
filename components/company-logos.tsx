@@ -47,9 +47,9 @@ export function CompanyLogos() {
         ))}
       </div>
 
-      <div className="mx-auto grid max-w-sm grid-cols-2 items-center gap-x-8 gap-y-8 px-8 md:hidden">
+      <div className="mx-auto grid max-w-sm grid-cols-3 items-center gap-x-6 gap-y-7 px-6 md:hidden">
         {companies.map((company) => (
-          <CompanyLogo key={company.name} company={company} />
+          <CompanyLogo key={company.name} company={company} compact />
         ))}
       </div>
     </section>
@@ -58,11 +58,17 @@ export function CompanyLogos() {
 
 function CompanyLogo({
   company,
+  compact = false,
 }: {
   company: (typeof companies)[number]
+  compact?: boolean
 }) {
   return (
-    <div className="flex h-6 shrink-0 items-center justify-center">
+    <div
+      className={`flex shrink-0 items-center justify-center ${
+        compact ? 'h-5' : 'h-6'
+      }`}
+    >
       <img
         src={company.src}
         alt={company.name}
@@ -76,7 +82,9 @@ function CompanyLogo({
           ...(company.maxWidth ? { maxWidth: company.maxWidth } : {}),
           ...(company.maxHeight ? { maxHeight: company.maxHeight } : {}),
         }}
-        className={`h-auto max-h-6 w-auto max-w-full ${
+        className={`h-auto w-auto max-w-full ${
+          compact ? 'max-h-5' : 'max-h-6'
+        } ${
           company.monochrome
             ? 'invert dark:invert-0'
             : 'brightness-0 dark:invert'
