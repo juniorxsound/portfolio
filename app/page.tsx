@@ -13,7 +13,7 @@ export async function generateMetadata() {
   return {
     title: 'Or Fleisher',
     description:
-      'Creative technologist, developer and artist working at the intersection of technology and storytelling.',
+      'Creative Technologist and Developer working at the intersection of technology and storytelling.',
 
     openGraph: {
       images: [
@@ -47,7 +47,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title="Creative technologist working at the intersection of technology and storytelling"
+        title="Creative technologist, developer and artist working at the intersection of technology and storytelling"
         height="xl"
         background="accent"
         videoSources={[

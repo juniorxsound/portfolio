@@ -50,9 +50,9 @@ export function CompanyLogos() {
   return (
     <section
       aria-label="Organizations I’ve worked with"
-      className="relative left-1/2 w-screen -translate-x-1/2"
+      className="w-full"
     >
-      <div className="mx-auto hidden max-w-6xl items-center justify-between gap-8 px-8 md:flex">
+      <div className="mx-auto hidden max-w-6xl grid-cols-6 items-center gap-8 px-8 md:grid">
         {companies.map((company) => (
           <CompanyLogo key={company.name} company={company} />
         ))}
