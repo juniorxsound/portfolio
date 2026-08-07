@@ -55,6 +55,7 @@ export function WritingCard({ writing, className }: WritingCardProps) {
                   height={20}
                   loading="lazy"
                   unoptimized
+                  style={{ width: 'auto', height: 'auto' }}
                   className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
                 />
               </div>

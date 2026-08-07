@@ -29,13 +29,13 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: 'Or Fleisher',
   description:
-    'Creative Technologist and Developer working at the intersection of technology and storytelling.',
+    'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
   keywords:
-    'VR, AR, ML, AI, Virtual Reality, Augmented Reality, WebXR, WebAR, WebGL, three.js, Machine Learning, Or, Or Fleisher, Fleisher, Creative Technologist, Developer, nytimes, vimeo, viacom, nike, nike virtual studios',
+    'Engineer, Creative Technologist, Computer Graphics, Computer Vision, Data Visualization, WebGL, WebGPU, Three.js, Machine Learning, Or Fleisher, New York',
   openGraph: {
     title: 'Or Fleisher',
     description:
-      'Creative Technologist and Developer working at the intersection of technology and storytelling.',
+      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
     url: BASE_URL,
     siteName: 'Or Fleisher',
     images: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     creator: '@juniorxsound',
     title: 'Or Fleisher',
     description:
-      'Creative Technologist and Developer working at the intersection of technology and storytelling.',
+      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
     images: ['/images/profile_facebook.jpg'],
   },
 }

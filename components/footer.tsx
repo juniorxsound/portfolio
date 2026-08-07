@@ -27,6 +27,13 @@ export function Footer() {
             >
               About
             </Link>
+            <Link
+              href="/resume"
+              prefetch={false}
+              className="text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Résumé
+            </Link>
           </nav>
 
           <SocialIconsMinimal />

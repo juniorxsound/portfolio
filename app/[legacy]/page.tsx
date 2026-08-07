@@ -53,12 +53,13 @@ export async function generateStaticParams() {
   return Array.from(legacySet).map((legacy) => ({ legacy }))
 }
 
-export default function LegacyRedirect({
+export default async function LegacyRedirect({
   params,
 }: {
-  params: { legacy: string }
+  params: Promise<{ legacy: string }>
 }) {
-  const legacySeg = (params.legacy || '').trim()
+  const { legacy } = await params
+  const legacySeg = (legacy || '').trim()
   if (legacySeg && legacySet.has(legacySeg)) {
     permanentRedirect(`/projects/${legacySeg}`)
   }
