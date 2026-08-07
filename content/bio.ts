@@ -63,10 +63,10 @@ export const bioData = {
           title: 'Staff Engineer',
           dates: '2021–2023',
           highlights: [
-            'Built a real-time 3D editor in the browser for live Winter Olympics, Super Bowl, and World Cup coverage.',
+            'Built a real-time 3D editor that enabled visual editors to publish live 3D sports coverage for the first time, including the Winter Olympics, Super Bowl, and World Cup.',
             'Created CI/CD templates and technical documentation that standardized delivery workflows across the R&D engineering team.',
             'Open-sourced The Times’s 3D toolchain for asset optimization, headless Blender rendering, and camera control. The projects earned hundreds of GitHub stars and hundreds of thousands of downloads.',
-            'Spoke about R&D work at Adobe Research, Columbia University, and Georgia Tech; mentored engineers across the team.',
+            'Presented on behalf of the R&D team at Adobe Research, Columbia University, and Georgia Tech; mentored engineers across the team.',
           ],
         },
         {
