@@ -9,6 +9,8 @@ export interface Project {
     thumbnail?: StaticImageData
     animatedThumbnail?: string
     cover?: StaticImageData
+    badge?: string
+    heroVideoSources?: { src: string; type: string }[]
     embed?: string
     about?: string
     credits?: string

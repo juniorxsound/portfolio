@@ -12,6 +12,15 @@ import { BackButton } from '@/components/back-button'
 import { Container } from '@/components/container'
 import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
 
+const organizationNamesByLogo: Record<string, string> = {
+  '/images/logos/google.svg': 'Google',
+  '/images/logos/nike.svg': 'Nike',
+  '/images/logos/nyt.svg': 'The New York Times',
+  '/images/logos/nyu.svg': 'New York University',
+  '/images/logos/viacom.svg': 'Viacom',
+  '/images/logos/vimeo.svg': 'Vimeo',
+}
+
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs()
   return slugs.map((slug) => ({ slug }))
@@ -110,7 +119,16 @@ export default async function ProjectPage({
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}
+        organizationLogo={
+          frontmatter.badge
+            ? {
+                src: frontmatter.badge,
+                alt: organizationNamesByLogo[frontmatter.badge] || '',
+              }
+            : undefined
+        }
         backgroundImage={frontmatter.cover}
+        videoSources={frontmatter.heroVideoSources}
         height="xl"
         background="accent"
         className="text-balance"

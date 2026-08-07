@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 interface HeroProps {
   title: string
   subtitle?: string
+  organizationLogo?: { src: string; alt: string }
   description?: string
   className?: string
   height?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
@@ -42,6 +43,7 @@ const alignmentClasses = {
 export function Hero({
   title,
   subtitle,
+  organizationLogo,
   description,
   className,
   height = 'xl',
@@ -55,6 +57,9 @@ export function Hero({
 }: HeroProps) {
   const DEFAULT_BLUR =
     'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII='
+  const hasBackgroundVideo =
+    Boolean(videoSrc) || Boolean(videoSources && videoSources.length > 0)
+
   return (
     <div
       className={cn(
@@ -64,9 +69,8 @@ export function Hero({
         className
       )}
     >
-      {/* Optimized background image (when no background video is provided) */}
-      {backgroundImage &&
-      !(videoSrc || (videoSources && videoSources.length > 0)) ? (
+      {/* With video, keep the cover exclusively as the reduced-motion fallback. */}
+      {backgroundImage ? (
         <Image
           src={backgroundImage}
           alt=""
@@ -75,11 +79,14 @@ export function Hero({
           priority
           fetchPriority="high"
           placeholder="blur"
-          className="absolute inset-0 object-cover z-0"
+          className={cn(
+            'absolute inset-0 object-cover z-0',
+            hasBackgroundVideo && 'hidden motion-reduce:block'
+          )}
         />
       ) : null}
 
-      {(videoSrc || (videoSources && videoSources.length > 0)) && (
+      {hasBackgroundVideo && (
         <video
           className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
           autoPlay
@@ -97,9 +104,7 @@ export function Hero({
         </video>
       )}
       {/* overlay for better text readability */}
-      {(backgroundImage ||
-        videoSrc ||
-        (videoSources && videoSources.length > 0)) && (
+      {(backgroundImage || hasBackgroundVideo) && (
         <div
           className={cn(
             'absolute inset-0',
@@ -114,6 +119,18 @@ export function Hero({
           alignmentClasses[alignment]
         )}
       >
+        {organizationLogo && (
+          <div className="relative mb-3 h-6 w-32">
+            <Image
+              src={organizationLogo.src}
+              alt={organizationLogo.alt}
+              fill
+              sizes="128px"
+              unoptimized
+              className="object-contain object-left invert dark:invert-0"
+            />
+          </div>
+        )}
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
         <h1 className="font-light leading-tight mb-4">{title}</h1>
         {description && (
