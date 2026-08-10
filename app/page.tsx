@@ -72,18 +72,15 @@ export default async function HomePage() {
               About
             </Link>
           </Button>
-          <Button variant="default" asChild>
+          <Button variant="inverse" asChild>
             <Link href="/projects" aria-label="Projects">
               Projects
             </Link>
           </Button>
-          <Button variant="default" asChild aria-label="Contact">
-            <Link href="mailto:contact@orfleisher.com">Contact</Link>
-          </Button>
         </div>
       </Hero>
       <Container>
-        <div className="mb-12">
+        <div className="mb-16">
           <CompanyLogos />
         </div>
         <section id="featured-work">
@@ -91,7 +88,7 @@ export default async function HomePage() {
         </section>
 
         {writing.length > 0 && (
-          <section id="writing" className="mt-16">
+          <section id="writing" className="mt-24">
             <FeaturedWriting writing={writing} />
           </section>
         )}

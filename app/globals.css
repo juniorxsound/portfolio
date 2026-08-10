@@ -4,28 +4,27 @@
 @plugin "@tailwindcss/typography";
 
 h1 {
-  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
-  font-family: var(--font-merriweather);
+  @apply text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight;
+}
+
+h1.hero-title {
+  font-weight: 400;
 }
 
 h2 {
-  @apply text-lg md:text-xl lg:text-2xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-xl md:text-2xl font-normal tracking-tight;
 }
 
 h3 {
-  @apply text-base md:text-lg lg:text-xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-lg md:text-xl font-normal tracking-tight;
 }
 
 h4 {
-  @apply text-lg md:text-xl lg:text-2xl font-bold;
-  font-family: var(--font-open-sans);
+  @apply text-base md:text-lg font-normal;
 }
 
 p {
-  @apply text-base;
-  font-family: var(--font-merriweather);
+  @apply text-base leading-7;
 }
 
 @theme {
@@ -91,11 +90,38 @@ p {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans), sans-serif;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  code, kbd, pre {
+    font-family: var(--font-geist-mono), monospace;
   }
 }
 
 /* Enhanced gradient blur for header */
 @layer components {
+  .portfolio-mosaic-media {
+    aspect-ratio: 3 / 2;
+    transition: box-shadow 300ms ease, transform 300ms ease;
+  }
+
+  .portfolio-mosaic-grid > *:hover .portfolio-mosaic-media {
+    box-shadow: 0 16px 36px rgb(0 0 0 / 0.16);
+  }
+
+  .portfolio-mosaic-copy {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 5rem 1.25rem 1.25rem;
+    color: white;
+    background: linear-gradient(to top, rgb(0 0 0 / 0.82), rgb(0 0 0 / 0));
+  }
+
+  .portfolio-mosaic-meta {
+    color: rgb(255 255 255 / 0.72);
+  }
+
   .header-gradient-blur {
     background: linear-gradient(
       to bottom,
@@ -124,6 +150,17 @@ p {
     height: auto;
     border: 0;
   }
+}
+
+@media (max-width: 767px) {
+  .portfolio-mosaic-copy {
+    padding: 4rem 1rem 1rem;
+  }
+
+}
+
+.dark .portfolio-mosaic-grid > *:hover .portfolio-mosaic-media {
+  box-shadow: 0 16px 36px rgb(0 0 0 / 0.45);
 }
 
 /* Hide scrollbar for horizontal scroll */
@@ -176,27 +213,27 @@ p {
 }
 
 :root {
-  --font-open-sans: 'Open Sans', sans-serif;
-  --font-merriweather: 'Merriweather', serif;
-  --radius: 0.625rem;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --radius: 0.5rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.16 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.91 0 0);
+  --ring: oklch(0 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -213,24 +250,24 @@ p {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.07 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.07 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.15 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
+  --muted: oklch(0.15 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.15 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --border: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 22%);
+  --ring: oklch(1 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);

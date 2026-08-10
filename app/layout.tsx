@@ -1,29 +1,27 @@
 import React from 'react'
 import { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { Open_Sans, Merriweather } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ThemeToggle } from '@/components/theme-toggle'
 import { Footer } from '@/components/footer'
+import { SiteHeader } from '@/components/site-header'
 
 import './globals.css'
 import { BASE_URL } from '@/lib/constants'
 
-const open_sans = Open_Sans({
+const geist = Geist({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-sans',
-  weight: ['400', '700'],
+  variable: '--font-geist-sans',
 })
 
-const merriweather = Merriweather({
+const geist_mono = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-serif',
-  weight: ['400', '700'],
+  variable: '--font-geist-mono',
 })
 
 export const metadata: Metadata = {
@@ -69,7 +67,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(open_sans.className, merriweather.className)}
+      className={cn(geist.variable, geist_mono.variable)}
       suppressHydrationWarning
     >
       <body>
@@ -86,9 +84,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative min-h-screen flex flex-col">
-            <div className="absolute top-4 right-4 z-50">
-              <ThemeToggle />
-            </div>
+            <SiteHeader />
             <main id="main-content" className="flex-1">
               {children}
             </main>

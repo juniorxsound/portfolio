@@ -24,7 +24,7 @@ const sizeClasses = {
   sm: 'px-4 py-6',
   md: 'px-6 py-8',
   lg: 'px-8 py-10',
-  xl: 'px-8 py-12',
+  xl: 'px-8 py-12 md:px-10 md:py-16',
   full: 'px-4 py-4',
 }
 

@@ -8,7 +8,6 @@ import path from 'path'
 // Components
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
-import { BackButton } from '@/components/back-button'
 import { Container } from '@/components/container'
 import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
 
@@ -115,7 +114,6 @@ export default async function ProjectPage({
 
   return (
     <div>
-      <BackButton href="/projects" children="Back to Projects" />
       <Hero
         title={frontmatter.title || 'Untitled Project'}
         subtitle={tags}

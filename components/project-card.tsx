@@ -15,18 +15,20 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
 
   return (
     <div className={className}>
-      <Card className="h-full hover:shadow-lg transition-shadow duration-300 group">
+      <Card className="h-full border-0 bg-transparent p-0 shadow-none group">
         <Link
           href={`/projects/${fm.path ? fm.path.replace(/^\//, '') : ''}`}
           className="block"
         >
-          <div className="overflow-hidden rounded-t-lg relative">
+          <div className="portfolio-mosaic-media relative overflow-hidden rounded-2xl bg-muted">
             {fm.thumbnail && (
               <Image
                 src={fm.thumbnail}
                 alt={fm.path || 'project'}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 placeholder="blur"
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             )}
             {fm.animatedThumbnail && (
@@ -40,7 +42,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
               />
             )}
             {fm.badge && (
-              <div className="absolute top-4 left-4 bg-accent/95 rounded-md px-2 py-1 flex items-center justify-center gap-1">
+              <div className="absolute left-4 top-4 flex items-center justify-center gap-1 rounded-full bg-background/90 px-2.5 py-1 backdrop-blur-sm">
                 <Image
                   src={fm.badge}
                   alt="Project badge"
@@ -53,16 +55,15 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                 />
               </div>
             )}
+            <div className="portfolio-mosaic-copy">
+              <h3 className="text-lg font-normal tracking-tight">
+                {fm.title || 'Untitled Project'}
+              </h3>
+              <div className="portfolio-mosaic-meta mt-1 text-sm">
+                {tags}
+              </div>
+            </div>
           </div>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">
-              {fm.title || 'Untitled Project'}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="text-sm text-muted-foreground mb-2">{tags}</div>
-            <div className="text-sm text-foreground">{fm.excerpt || ''}</div>
-          </CardContent>
         </Link>
       </Card>
     </div>
