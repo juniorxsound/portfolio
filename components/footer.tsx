@@ -15,7 +15,7 @@ export async function Footer() {
 
   return (
     <footer className="bg-background font-sans text-foreground" id="footer">
-      <div className="container mx-auto px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto w-full px-6 py-16 md:px-10 md:py-24">
         <nav className="hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid md:grid-cols-4">
           <div>
             <Link

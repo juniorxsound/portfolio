@@ -13,7 +13,6 @@ interface WritingCardProps {
 
 export function WritingCard({ writing, className }: WritingCardProps) {
   const fm = writing.frontmatter
-  const tags = Array.isArray(fm.tags) ? fm.tags.join(' / ') : ''
   const isExternal = Boolean(fm.href)
 
   const CardWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -70,9 +69,6 @@ export function WritingCard({ writing, className }: WritingCardProps) {
               <h3 className="text-lg font-normal tracking-tight">
                 {fm.title || 'Untitled Article'}
               </h3>
-              <div className="portfolio-mosaic-meta mt-1 text-sm">
-                {tags}
-              </div>
               {fm.date && (
                 <div className="portfolio-mosaic-meta mt-2 text-xs">
                   {new Date(fm.date).toLocaleDateString('en-US', {

@@ -20,7 +20,7 @@ export function SiteHeader() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/45 via-black/15 to-transparent md:h-32"
       />
-      <div className="container relative z-10 mx-auto flex h-14 items-center justify-between px-6 md:px-10">
+      <div className="relative z-10 mx-auto flex h-14 w-full items-center justify-between px-6 md:px-10">
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
           {links.map((link) => (
             <Link
