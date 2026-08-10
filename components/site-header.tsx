@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
 import { useState } from 'react'
+import { ThemeToggle } from '@/components/theme-toggle'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -25,7 +26,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] text-white transition-opacity hover:opacity-70"
+              className="text-[13px] text-foreground transition-opacity hover:opacity-70"
             >
               {link.label}
             </Link>
@@ -49,13 +50,13 @@ export function SiteHeader() {
         >
           <span
             aria-hidden="true"
-            className={`absolute h-px w-4 bg-current transition-transform duration-200 ${
+            className={`absolute h-[1.5px] w-4 bg-current transition-transform duration-150 ease-out ${
               open ? 'rotate-45' : '-translate-y-1'
             }`}
           />
           <span
             aria-hidden="true"
-            className={`absolute h-px w-4 bg-current transition-transform duration-200 ${
+            className={`absolute h-[1.5px] w-4 bg-current transition-transform duration-150 ease-out ${
               open ? '-rotate-45' : 'translate-y-1'
             }`}
           />
@@ -65,14 +66,14 @@ export function SiteHeader() {
       {open && (
         <nav
           id="mobile-navigation"
-          className="relative z-10 mx-6 rounded-2xl bg-background/95 px-4 py-3 shadow-lg ring-1 ring-border/60 md:hidden"
+          className="absolute inset-x-0 top-0 z-0 animate-in rounded-b-2xl border-b border-border/60 bg-background/95 px-6 pb-5 pt-16 shadow-lg fade-in slide-in-from-top-4 duration-300 md:hidden"
           aria-label="Mobile navigation"
         >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="block py-2 text-sm text-foreground transition-opacity hover:opacity-70"
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -85,6 +86,9 @@ export function SiteHeader() {
           >
             Contact <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
+          <div className="mt-4 flex justify-center">
+            <ThemeToggle />
+          </div>
         </nav>
       )}
     </header>
