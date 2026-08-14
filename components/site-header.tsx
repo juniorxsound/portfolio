@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { type CSSProperties, useEffect, useState } from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 const links = [
@@ -10,6 +10,30 @@ const links = [
   { href: '/bio', label: 'About' },
   { href: '/projects', label: 'Projects' },
 ]
+
+function AnimatedNavLabel({ children }: { children: string }) {
+  return (
+    <span className="nav-label" aria-hidden="true">
+      {children.split('').map((letter, index) => (
+        <span
+          key={`${letter}-${index}`}
+          className="nav-label-letter"
+          style={
+            {
+              '--letter-enter-delay': `${index * 20}ms`,
+              '--letter-exit-delay': `${(children.length - index - 1) * 20}ms`,
+            } as CSSProperties
+          }
+        >
+          <span className="nav-label-letter-track">
+            <span>{letter}</span>
+            <span>{letter}</span>
+          </span>
+        </span>
+      ))}
+    </span>
+  )
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -22,13 +46,24 @@ export function SiteHeader() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!open) return
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [open])
+
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50 w-full bg-transparent">
-      <div className="relative z-10 mx-auto flex h-14 w-full max-w-[1600px] items-center justify-between px-6 md:px-10">
+      <div className="relative z-10 mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-8">
         <nav
-          className={`hidden items-center gap-8 rounded-full px-4 py-2 transition-[background-color,box-shadow,backdrop-filter] duration-300 md:flex ${
+          className={`hidden h-8 items-center gap-8 rounded-full px-3 py-1 transition-[background-color,box-shadow,backdrop-filter] duration-300 md:flex ${
             scrolled
-              ? 'bg-primary text-primary-foreground'
+              ? 'bg-primary-foreground/80 text-primary backdrop-blur-sm'
               : ''
           }`}
           aria-label="Main navigation"
@@ -37,26 +72,29 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[13px] transition-opacity hover:opacity-70 ${
+              aria-label={link.label}
+              className={`nav-link text-[13px] transition-opacity hover:opacity-70 ${
                 scrolled
-                  ? 'text-primary-foreground'
+                  ? 'text-primary'
                   : 'text-foreground'
               }`}
             >
-              {link.label}
+              <AnimatedNavLabel>{link.label}</AnimatedNavLabel>
             </Link>
           ))}
         </nav>
 
         <a
           href="mailto:contact@orfleisher.com"
-          className={`hidden h-9 items-center gap-1 rounded-full px-3 py-1 text-[13px] font-medium transition-colors md:inline-flex ${
+          aria-label="Contact"
+          className={`nav-link hidden h-8 items-center gap-1 rounded-full px-3 py-1 text-[13px] transition-colors md:inline-flex ${
             scrolled
               ? 'bg-primary text-primary-foreground hover:bg-primary/90'
               : 'bg-transparent text-foreground hover:opacity-70'
           }`}
         >
-          Contact <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          <AnimatedNavLabel>Contact</AnimatedNavLabel>
+          <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
 
         <button
@@ -85,14 +123,14 @@ export function SiteHeader() {
       {open && (
         <nav
           id="mobile-navigation"
-          className="absolute inset-x-0 top-0 z-0 animate-in rounded-b-2xl border-b border-border/60 bg-background/95 px-6 pb-5 pt-16 shadow-lg fade-in slide-in-from-top-4 duration-300 md:hidden"
+          className="fixed inset-0 z-0 flex min-h-dvh flex-col animate-in bg-background/95 px-6 pb-8 pt-20 shadow-lg fade-in slide-in-from-top-4 duration-300 md:hidden"
           aria-label="Mobile navigation"
         >
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="block py-2 text-sm text-foreground transition-opacity hover:opacity-70"
+              className="block py-3 text-2xl leading-tight text-foreground transition-opacity hover:opacity-70"
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -100,12 +138,12 @@ export function SiteHeader() {
           ))}
           <a
             href="mailto:contact@orfleisher.com"
-            className="mt-2 flex h-9 items-center justify-center gap-1 rounded-full bg-primary px-3 py-1 text-[13px] font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="mt-3 flex items-center gap-1 py-3 text-2xl leading-tight text-foreground transition-opacity hover:opacity-70"
             onClick={() => setOpen(false)}
           >
             Contact <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
-          <div className="mt-4 flex justify-center">
+          <div className="mt-auto flex justify-center">
             <ThemeToggle />
           </div>
         </nav>

@@ -101,6 +101,38 @@ p {
 
 /* Enhanced gradient blur for header */
 @layer components {
+  .nav-label {
+    display: inline-flex;
+    overflow: hidden;
+    line-height: 1.2;
+  }
+
+  .nav-label-letter {
+    display: inline-block;
+    height: 1.2em;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .nav-label-letter-track {
+    display: block;
+    transition: transform 180ms ease-out;
+    transition-delay: var(--letter-exit-delay);
+    will-change: transform;
+  }
+
+  .nav-label-letter-track > span {
+    display: block;
+    height: 1.2em;
+    line-height: 1.2em;
+  }
+
+  .nav-link:hover .nav-label-letter-track,
+  .nav-link:focus-visible .nav-label-letter-track {
+    transform: translate3d(0, -1.2em, 0);
+    transition-delay: var(--letter-enter-delay);
+  }
+
   .portfolio-mosaic-media {
     aspect-ratio: 3 / 2;
     transition: box-shadow 300ms ease, transform 300ms ease;
@@ -149,6 +181,12 @@ p {
     aspect-ratio: 16 / 9;
     height: auto;
     border: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-label-letter-track {
+    transition: none;
   }
 }
 
