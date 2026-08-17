@@ -3,7 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Project } from '@/types'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 import Image from 'next/image'
 
 interface ProjectCardProps {
@@ -34,7 +34,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {fm.thumbnail && (
               <Image
                 src={fm.thumbnail}
-                alt={fm.path || 'project'}
+                alt=""
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 placeholder="blur"
@@ -69,9 +69,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
               <h3 className="text-lg font-normal tracking-tight">
                 {fm.title || 'Untitled Project'}
               </h3>
-              <div className="portfolio-mosaic-meta mt-1 text-sm">
-                {tags}
-              </div>
+              <div className="portfolio-mosaic-meta mt-1 text-sm">{tags}</div>
             </div>
           </div>
         </Link>

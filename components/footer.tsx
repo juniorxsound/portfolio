@@ -6,18 +6,25 @@ import { ResumeLink } from './resume-link'
 import { getFeaturedWriting, getProjects } from '@/lib/content'
 
 export async function Footer() {
-  const featuredProjects = (await getProjects())
+  const [projects, writing] = await Promise.all([
+    getProjects(),
+    getFeaturedWriting(),
+  ])
+  const featuredProjects = projects
     .filter((project) => project.frontmatter.featured === true)
     .filter((project) => project.frontmatter.title && project.frontmatter.path)
     .slice(0, 5)
-  const featuredWriting = (await getFeaturedWriting())
+  const featuredWriting = writing
     .filter((article) => article.frontmatter.title && article.frontmatter.href)
     .slice(0, 5)
 
   return (
     <footer className="bg-background font-sans text-foreground" id="footer">
       <div className="mx-auto w-full max-w-[1600px] px-6 py-16 md:px-10 md:py-24">
-        <nav className="hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid md:grid-cols-4">
+        <nav
+          className="hidden grid-cols-2 gap-x-8 gap-y-12 sm:grid md:grid-cols-4"
+          aria-label="Footer navigation"
+        >
           <div>
             <Link
               href="/"
@@ -33,8 +40,11 @@ export async function Footer() {
             >
               About
             </Link>
-            <nav className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
-              <Link href="/bio" className="transition-colors hover:text-foreground">
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
+              <Link
+                href="/bio"
+                className="transition-colors hover:text-foreground"
+              >
                 Bio
               </Link>
               <ResumeLink
@@ -43,7 +53,7 @@ export async function Footer() {
               >
                 Résumé
               </ResumeLink>
-            </nav>
+            </div>
           </div>
           <div>
             <Link
@@ -52,7 +62,7 @@ export async function Footer() {
             >
               Projects
             </Link>
-            <nav className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
               {featuredProjects.map((project) => (
                 <Link
                   key={project.frontmatter.path}
@@ -62,7 +72,7 @@ export async function Footer() {
                   {project.frontmatter.title}
                 </Link>
               ))}
-            </nav>
+            </div>
           </div>
           <div>
             <Link
@@ -71,7 +81,7 @@ export async function Footer() {
             >
               Writing
             </Link>
-            <nav className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
+            <div className="mt-4 flex flex-col items-start gap-3 text-sm text-muted-foreground">
               {featuredWriting.map((article) => (
                 <a
                   key={article.frontmatter.href}
@@ -83,7 +93,7 @@ export async function Footer() {
                   {article.frontmatter.title}
                 </a>
               ))}
-            </nav>
+            </div>
           </div>
         </nav>
 

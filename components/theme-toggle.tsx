@@ -27,7 +27,7 @@ export function ThemeToggle() {
         size="icon"
         className="h-7 w-7"
         onClick={() => setTheme('system')}
-        aria-pressed={activeTheme === 'system'}
+        aria-pressed={mounted ? activeTheme === 'system' : undefined}
         aria-label="Use system theme"
       >
         <Monitor className="h-3.5 w-3.5" aria-hidden="true" />
@@ -37,7 +37,7 @@ export function ThemeToggle() {
         size="icon"
         className="h-7 w-7"
         onClick={() => setTheme('light')}
-        aria-pressed={activeTheme === 'light'}
+        aria-pressed={mounted ? activeTheme === 'light' : undefined}
         aria-label="Use light theme"
       >
         <Sun className="h-3.5 w-3.5" aria-hidden="true" />
@@ -47,7 +47,7 @@ export function ThemeToggle() {
         size="icon"
         className="h-7 w-7"
         onClick={() => setTheme('dark')}
-        aria-pressed={activeTheme === 'dark'}
+        aria-pressed={mounted ? activeTheme === 'dark' : undefined}
         aria-label="Use dark theme"
       >
         <Moon className="h-3.5 w-3.5" aria-hidden="true" />
