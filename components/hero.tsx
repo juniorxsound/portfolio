@@ -108,7 +108,7 @@ export function Hero({
         <div
           className={cn(
             'absolute inset-0',
-            `${backgroundClasses[background]} opacity-35`
+            `${backgroundClasses[background]} opacity-50`
           )}
         />
       )}
