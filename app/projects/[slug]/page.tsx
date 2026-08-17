@@ -9,7 +9,8 @@ import path from 'path'
 import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { Container } from '@/components/container'
-import { getProjectBySlug, getProjectSlugs } from '@/lib/content'
+import { MoreProjects } from '@/components/more-projects'
+import { getProjectBySlug, getProjects, getProjectSlugs } from '@/lib/content'
 
 const organizationNamesByLogo: Record<string, string> = {
   '/images/logos/google.svg': 'Google',
@@ -96,7 +97,10 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const project = await getProjectBySlug(slug)
+  const [project, projects] = await Promise.all([
+    getProjectBySlug(slug),
+    getProjects(),
+  ])
 
   if (!project) {
     notFound()
@@ -151,6 +155,7 @@ export default async function ProjectPage({
       </Hero>
       <Container>
         <ProjectComponent />
+        <MoreProjects project={project} projects={projects} />
       </Container>
     </div>
   )

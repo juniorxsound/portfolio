@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Bio from '@/content/bio.mdx'
 import { Container } from '@/components/container'
+import { ResumeLink } from '@/components/resume-link'
 import { Hero } from '@/components/hero'
 import { Button } from '@/components/ui/button'
 
@@ -51,15 +52,14 @@ export default function BioPage() {
         className="text-balance"
       >
         <Button variant="default" asChild>
-          <Link
-            href="/resume"
-            prefetch={false}
+          <ResumeLink
+            source="bio"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open PDF résumé"
           >
             Open PDF résumé
-          </Link>
+          </ResumeLink>
         </Button>
       </Hero>
       <Container maxWidth="4xl" size="md">

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { SocialIconsMinimal } from './social-icons-minimal'
 import { ThemeToggle } from './theme-toggle'
+import { ResumeLink } from './resume-link'
 import { getFeaturedWriting, getProjects } from '@/lib/content'
 
 export async function Footer() {
@@ -36,13 +37,12 @@ export async function Footer() {
               <Link href="/bio" className="transition-colors hover:text-foreground">
                 Bio
               </Link>
-              <Link
-                href="/resume"
-                prefetch={false}
+              <ResumeLink
+                source="footer"
                 className="transition-colors hover:text-foreground"
               >
                 Résumé
-              </Link>
+              </ResumeLink>
             </nav>
           </div>
           <div>
@@ -85,27 +85,6 @@ export async function Footer() {
               ))}
             </nav>
           </div>
-        </nav>
-
-        <nav className="flex flex-wrap items-center justify-between gap-4 text-sm text-foreground sm:hidden">
-          <Link href="/" className="transition-colors hover:text-muted-foreground">
-            Home
-          </Link>
-          <Link href="/bio" className="transition-colors hover:text-muted-foreground">
-            About
-          </Link>
-          <Link
-            href="/projects"
-            className="transition-colors hover:text-muted-foreground"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/#writing"
-            className="transition-colors hover:text-muted-foreground"
-          >
-            Writing
-          </Link>
         </nav>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-4 sm:mt-16 sm:flex-row sm:items-center sm:gap-6 sm:pt-6">
