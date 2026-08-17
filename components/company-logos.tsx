@@ -58,7 +58,27 @@ export function CompanyLogos() {
         ))}
       </div>
 
-      <div className="mx-auto grid max-w-sm grid-cols-3 items-center gap-x-6 gap-y-7 px-6 md:hidden">
+      <div className="company-logo-marquee motion-reduce:hidden md:hidden">
+        <div className="company-logo-marquee-track">
+          {[false, true].map((isDuplicate) => (
+            <div
+              key={isDuplicate ? 'duplicate' : 'original'}
+              className="company-logo-marquee-group"
+              aria-hidden={isDuplicate || undefined}
+            >
+              {companies.map((company) => (
+                <CompanyLogo
+                  key={company.name}
+                  company={company}
+                  compact
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto hidden max-w-sm grid-cols-3 items-center gap-x-6 gap-y-7 px-6 motion-reduce:grid md:hidden">
         {companies.map((company) => (
           <CompanyLogo key={company.name} company={company} compact />
         ))}
@@ -77,7 +97,7 @@ function CompanyLogo({
   return (
     <div
       className={`flex shrink-0 items-center justify-center ${
-        compact ? 'h-5' : 'h-6'
+        compact ? 'h-5 w-fit justify-self-center' : 'h-6'
       }`}
     >
       <img

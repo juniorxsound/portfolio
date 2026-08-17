@@ -22,10 +22,10 @@ export function FeaturedProjects({
   )
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <h2 className="text-2xl font-bold">Projects</h2>
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="portfolio-mosaic-grid grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
         {featuredProjects.map((project) => (
           <ProjectCard
             key={project.frontmatter.path || 'unknown'}

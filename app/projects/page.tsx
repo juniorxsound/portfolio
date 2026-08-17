@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button'
 import { Hero } from '@/components/hero'
 import { FilteredProjects } from '@/components/filtered-projects'
 import { Container } from '@/components/container'
-import { BackButton } from '@/components/back-button'
 import { Metadata } from 'next'
 import { getProjects } from '@/lib/content'
 
@@ -48,7 +47,6 @@ export default async function ProjectsPage() {
 
   return (
     <div>
-      <BackButton />
       <Hero
         title="Projects"
         height="sm"

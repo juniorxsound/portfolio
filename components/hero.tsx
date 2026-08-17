@@ -108,7 +108,7 @@ export function Hero({
         <div
           className={cn(
             'absolute inset-0',
-            `${backgroundClasses[background]} opacity-70`
+            `${backgroundClasses[background]} opacity-35`
           )}
         />
       )}
@@ -131,8 +131,10 @@ export function Hero({
             />
           </div>
         )}
+        <h1 className="hero-title mb-4 max-w-4xl text-2xl leading-tight md:text-3xl lg:text-4xl">
+          {title}
+        </h1>
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
-        <h1 className="font-light leading-tight mb-4">{title}</h1>
         {description && (
           <p className="text-muted-foreground leading-relaxed">{description}</p>
         )}
