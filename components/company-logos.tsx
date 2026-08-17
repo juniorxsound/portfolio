@@ -97,7 +97,7 @@ function CompanyLogo({
   return (
     <div
       className={`flex shrink-0 items-center justify-center ${
-        compact ? 'h-5' : 'h-6'
+        compact ? 'h-5 w-fit justify-self-center' : 'h-6'
       }`}
     >
       <img
