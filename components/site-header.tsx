@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ExternalLink } from 'lucide-react'
-import { type CSSProperties, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 const links = [
@@ -10,30 +10,6 @@ const links = [
   { href: '/bio', label: 'About' },
   { href: '/projects', label: 'Projects' },
 ]
-
-function AnimatedNavLabel({ children }: { children: string }) {
-  return (
-    <span className="nav-label" aria-hidden="true">
-      {children.split('').map((letter, index) => (
-        <span
-          key={`${letter}-${index}`}
-          className="nav-label-letter"
-          style={
-            {
-              '--letter-enter-delay': `${index * 20}ms`,
-              '--letter-exit-delay': `${(children.length - index - 1) * 20}ms`,
-            } as CSSProperties
-          }
-        >
-          <span className="nav-label-letter-track">
-            <span>{letter}</span>
-            <span>{letter}</span>
-          </span>
-        </span>
-      ))}
-    </span>
-  )
-}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -79,7 +55,7 @@ export function SiteHeader() {
                   : 'text-foreground'
               }`}
             >
-              <AnimatedNavLabel>{link.label}</AnimatedNavLabel>
+              {link.label}
             </Link>
           ))}
         </nav>
@@ -93,7 +69,7 @@ export function SiteHeader() {
               : 'bg-transparent text-foreground hover:opacity-70'
           }`}
         >
-          <AnimatedNavLabel>Contact</AnimatedNavLabel>
+          Contact
           <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
         </a>
 

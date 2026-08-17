@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { Project } from '@/types'
@@ -10,8 +12,15 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, className }: ProjectCardProps) {
+  const [hasHovered, setHasHovered] = React.useState(false)
   const fm = project.frontmatter
   const tags = Array.isArray(fm.tags) ? fm.tags.join(' / ') : ''
+
+  const handleMouseEnter = () => {
+    if (window.matchMedia('(hover: hover)').matches) {
+      setHasHovered(true)
+    }
+  }
 
   return (
     <div className={className}>
@@ -19,6 +28,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <Link
           href={`/projects/${fm.path ? fm.path.replace(/^\//, '') : ''}`}
           className="block"
+          onMouseEnter={handleMouseEnter}
         >
           <div className="portfolio-mosaic-media relative overflow-hidden rounded-2xl bg-muted">
             {fm.thumbnail && (
@@ -31,7 +41,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             )}
-            {fm.animatedThumbnail && (
+            {hasHovered && fm.animatedThumbnail && (
               <Image
                 src={fm.animatedThumbnail}
                 alt=""
