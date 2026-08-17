@@ -47,7 +47,15 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title="An engineer who solves complex visual problems with code, specializing in computer graphics, computer vision, and data visualization"
+        title={
+          <>
+            An <span className="hero-title-exclusion">engineer</span> who solves
+            complex visual problems with code, specializing in{' '}
+            <span className="hero-title-exclusion">
+              computer graphics, computer vision, and data visualization
+            </span>
+          </>
+        }
         height="xl"
         background="accent"
         videoSources={[
@@ -64,6 +72,7 @@ export default async function HomePage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
+        overlayClassName="opacity-35"
         className="text-balance"
       >
         <div className="flex flex-row gap-2">

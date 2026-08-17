@@ -11,6 +11,13 @@ h1.hero-title {
   font-weight: 400;
 }
 
+@supports (mix-blend-mode: exclusion) {
+  .hero-title-exclusion {
+    color: white;
+    mix-blend-mode: exclusion;
+  }
+}
+
 h2 {
   @apply text-xl md:text-2xl font-normal tracking-tight;
 }
@@ -91,10 +98,14 @@ p {
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-geist-sans), sans-serif;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
-  code, kbd, pre {
+  code,
+  kbd,
+  pre {
     font-family: var(--font-geist-mono), monospace;
   }
 }
@@ -137,7 +148,9 @@ p {
 
   .portfolio-mosaic-media {
     aspect-ratio: 3 / 2;
-    transition: box-shadow 300ms ease, transform 300ms ease;
+    transition:
+      box-shadow 300ms ease,
+      transform 300ms ease;
   }
 
   .portfolio-mosaic-grid > *:hover .portfolio-mosaic-media {
@@ -196,7 +209,6 @@ p {
   .portfolio-mosaic-copy {
     padding: 4rem 1rem 1rem;
   }
-
 }
 
 .dark .portfolio-mosaic-grid > *:hover .portfolio-mosaic-media {

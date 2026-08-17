@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface HeroProps {
-  title: string
+  title: React.ReactNode
   subtitle?: string
   organizationLogo?: { src: string; alt: string }
   description?: string
@@ -14,6 +14,7 @@ interface HeroProps {
   videoSrc?: string
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
+  overlayClassName?: string
   alignment?: 'left' | 'center' | 'right'
   children?: React.ReactNode
 }
@@ -52,6 +53,7 @@ export function Hero({
   videoSrc,
   videoSources,
   videoPoster,
+  overlayClassName,
   alignment = 'left',
   children,
 }: HeroProps) {
@@ -63,7 +65,7 @@ export function Hero({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center items-center relative overflow-hidden',
+        'flex flex-col justify-center items-center relative isolate overflow-hidden',
         heightClasses[height],
         backgroundClasses[background],
         className
@@ -80,7 +82,7 @@ export function Hero({
           fetchPriority="high"
           placeholder="blur"
           className={cn(
-            'absolute inset-0 object-cover z-0',
+            'absolute inset-0 object-cover',
             hasBackgroundVideo && 'hidden motion-reduce:block'
           )}
         />
@@ -88,7 +90,7 @@ export function Hero({
 
       {hasBackgroundVideo && (
         <video
-          className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
+          className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
           autoPlay
           muted
           loop
@@ -108,14 +110,15 @@ export function Hero({
         <div
           className={cn(
             'absolute inset-0',
-            `${backgroundClasses[background]} opacity-70`
+            `${backgroundClasses[background]} opacity-70`,
+            overlayClassName
           )}
         />
       )}
 
       <div
         className={cn(
-          'container relative z-10 mx-auto max-w-6xl px-8',
+          'container relative mx-auto max-w-6xl px-8',
           alignmentClasses[alignment]
         )}
       >
@@ -131,7 +134,7 @@ export function Hero({
             />
           </div>
         )}
-        <h1 className="hero-title mb-4 max-w-4xl text-2xl leading-tight md:text-3xl lg:text-4xl mix-blend-difference">
+        <h1 className="hero-title mb-4 max-w-4xl text-2xl leading-tight md:text-3xl lg:text-4xl">
           {title}
         </h1>
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}
