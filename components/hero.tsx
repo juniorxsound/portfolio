@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface HeroProps {
-  title: React.ReactNode
+  title: string
   subtitle?: string
   organizationLogo?: { src: string; alt: string }
   description?: string
@@ -65,7 +65,7 @@ export function Hero({
   return (
     <div
       className={cn(
-        'flex flex-col justify-center items-center relative isolate overflow-hidden',
+        'flex flex-col justify-center items-center relative overflow-hidden',
         heightClasses[height],
         backgroundClasses[background],
         className
@@ -82,7 +82,7 @@ export function Hero({
           fetchPriority="high"
           placeholder="blur"
           className={cn(
-            'absolute inset-0 object-cover',
+            'absolute inset-0 object-cover z-0',
             hasBackgroundVideo && 'hidden motion-reduce:block'
           )}
         />
@@ -90,7 +90,7 @@ export function Hero({
 
       {hasBackgroundVideo && (
         <video
-          className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+          className="absolute inset-0 w-full h-full object-cover z-0 motion-reduce:hidden"
           autoPlay
           muted
           loop
@@ -118,7 +118,7 @@ export function Hero({
 
       <div
         className={cn(
-          'container relative mx-auto max-w-6xl px-8',
+          'container relative z-10 mx-auto max-w-6xl px-8',
           alignmentClasses[alignment]
         )}
       >

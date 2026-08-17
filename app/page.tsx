@@ -47,15 +47,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title={
-          <>
-            An <span className="hero-title-exclusion">engineer</span> who solves
-            complex visual problems with code, specializing in{' '}
-            <span className="hero-title-exclusion">
-              computer graphics, computer vision, and data visualization
-            </span>
-          </>
-        }
+        title="An engineer who solves complex visual problems with code, specializing in computer graphics, computer vision, and data visualization"
         height="xl"
         background="accent"
         videoSources={[

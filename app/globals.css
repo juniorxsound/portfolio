@@ -11,13 +11,6 @@ h1.hero-title {
   font-weight: 400;
 }
 
-@supports (mix-blend-mode: exclusion) {
-  .hero-title-exclusion {
-    color: white;
-    mix-blend-mode: exclusion;
-  }
-}
-
 h2 {
   @apply text-xl md:text-2xl font-normal tracking-tight;
 }
