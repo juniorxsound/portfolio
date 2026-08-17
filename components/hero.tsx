@@ -14,7 +14,6 @@ interface HeroProps {
   videoSrc?: string
   videoSources?: { src: string; type: string }[]
   videoPoster?: string
-  overlayClassName?: string
   alignment?: 'left' | 'center' | 'right'
   children?: React.ReactNode
 }
@@ -53,7 +52,6 @@ export function Hero({
   videoSrc,
   videoSources,
   videoPoster,
-  overlayClassName,
   alignment = 'left',
   children,
 }: HeroProps) {
@@ -110,8 +108,7 @@ export function Hero({
         <div
           className={cn(
             'absolute inset-0',
-            `${backgroundClasses[background]} opacity-70`,
-            overlayClassName
+            `${backgroundClasses[background]} opacity-35`
           )}
         />
       )}

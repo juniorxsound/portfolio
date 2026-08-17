@@ -64,7 +64,6 @@ export default async function HomePage() {
             type: 'video/mp4; codecs=av01',
           },
         ]}
-        overlayClassName="opacity-35"
         className="text-balance"
       >
         <div className="flex flex-row gap-2">
