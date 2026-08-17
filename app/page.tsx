@@ -47,7 +47,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title="An engineer who solves complex visual problems with code, specializing in computer graphics, computer vision, and data visualization"
+        title="An engineer solving complex visual problems, specializing in computer graphics, computer vision, and data visualization."
         height="xl"
         background="accent"
         videoSources={[

@@ -25,7 +25,7 @@ export const bioData = {
     { label: '+1 (347) 339-9440', href: 'tel:+13473399440' },
   ] satisfies BioLink[],
   summary:
-    'Principal engineer who solves complex visual problems with code, specializing in computer graphics, computer vision, and data visualization.',
+    'Principal engineer solving complex visual problems, specializing in computer graphics, computer vision, and data visualization.',
   work: [
     {
       company: 'Nike',
