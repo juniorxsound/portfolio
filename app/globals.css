@@ -103,8 +103,111 @@ p {
   }
 }
 
-/* Enhanced gradient blur for header */
 @layer components {
+  .header-progressive-blur {
+    position: absolute;
+    inset: 0 0 auto;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .header-progressive-blur__layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .header-progressive-blur__layer--1 {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      black 60%,
+      black 80%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      black 60%,
+      black 80%,
+      transparent 100%
+    );
+  }
+
+  .header-progressive-blur__layer--2 {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 20%,
+      black 40%,
+      black 60%,
+      transparent 80%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 20%,
+      black 40%,
+      black 60%,
+      transparent 80%,
+      transparent 100%
+    );
+  }
+
+  .header-progressive-blur__layer--3 {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 20%,
+      black 40%,
+      transparent 60%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 20%,
+      black 40%,
+      transparent 60%,
+      transparent 100%
+    );
+  }
+
+  .header-progressive-blur__layer--4 {
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 20%,
+      transparent 40%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      black 20%,
+      transparent 40%,
+      transparent 100%
+    );
+  }
+
+  .header-progressive-blur__layer--5 {
+    mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      transparent 20%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 0%,
+      transparent 20%,
+      transparent 100%
+    );
+  }
+
   .company-logo-marquee {
     width: 100%;
     overflow: hidden;

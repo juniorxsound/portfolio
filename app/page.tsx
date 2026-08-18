@@ -46,39 +46,41 @@ export default async function HomePage() {
 
   return (
     <div>
-      <Hero
-        title="An engineer building at the intersection of computer graphics, computer vision, and data visualization."
-        height="xl"
-        background="accent"
-        videoSources={[
-          {
-            src: '/videos/hero/placeholder-720p.webm',
-            type: 'video/webm',
-          },
-          {
-            src: '/videos/hero/placeholder-720p.mp4',
-            type: 'video/mp4',
-          },
-          {
-            src: '/videos/hero/placeholder-720p-av1.mp4',
-            type: 'video/mp4; codecs=av01',
-          },
-        ]}
-        className="text-balance"
-      >
-        <div className="flex flex-row gap-2">
-          <Button variant="default" asChild>
-            <Link href="/bio" aria-label="Learn More">
-              About
-            </Link>
-          </Button>
-          <Button variant="inverse" asChild>
-            <Link href="/projects" aria-label="Projects">
-              Projects
-            </Link>
-          </Button>
-        </div>
-      </Hero>
+      <div data-home-hero>
+        <Hero
+          title="An engineer building at the intersection of computer graphics, computer vision, and data visualization."
+          height="xl"
+          background="accent"
+          videoSources={[
+            {
+              src: '/videos/hero/placeholder-720p.webm',
+              type: 'video/webm',
+            },
+            {
+              src: '/videos/hero/placeholder-720p.mp4',
+              type: 'video/mp4',
+            },
+            {
+              src: '/videos/hero/placeholder-720p-av1.mp4',
+              type: 'video/mp4; codecs=av01',
+            },
+          ]}
+          className="text-balance"
+        >
+          <div className="flex flex-row gap-2">
+            <Button variant="default" asChild>
+              <Link href="/bio" aria-label="Learn More">
+                About
+              </Link>
+            </Button>
+            <Button variant="inverse" asChild>
+              <Link href="/projects" aria-label="Projects">
+                Projects
+              </Link>
+            </Button>
+          </div>
+        </Hero>
+      </div>
       <Container>
         <div className="mb-16">
           <CompanyLogos />
