@@ -13,7 +13,7 @@ export async function generateMetadata() {
   return {
     title: 'Or Fleisher',
     description:
-      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
+      'Or Fleisher is a New York-based engineer building at the intersection of computer graphics, computer vision, and data visualization.',
 
     openGraph: {
       images: [
@@ -47,7 +47,7 @@ export default async function HomePage() {
   return (
     <div>
       <Hero
-        title="An engineer solving complex visual problems, specializing in computer graphics, computer vision, and data visualization."
+        title="An engineer building at the intersection of computer graphics, computer vision, and data visualization."
         height="xl"
         background="accent"
         videoSources={[
