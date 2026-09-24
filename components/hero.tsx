@@ -115,7 +115,7 @@ export function Hero({
 
       <div
         className={cn(
-          'container relative z-10 mx-auto max-w-6xl px-8',
+          'relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-10',
           alignmentClasses[alignment]
         )}
       >
@@ -131,7 +131,7 @@ export function Hero({
             />
           </div>
         )}
-        <h1 className="hero-title mb-4 max-w-4xl text-2xl leading-tight md:text-3xl lg:text-4xl">
+        <h1 className="hero-title mb-4 text-2xl leading-tight md:text-3xl lg:text-4xl">
           {title}
         </h1>
         {subtitle && <p className="text-muted-foreground mb-2">{subtitle}</p>}

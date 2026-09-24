@@ -83,12 +83,12 @@ export function SiteHeader() {
     <header
       className={`site-header fixed inset-x-0 top-0 z-50 w-full bg-transparent transition-transform duration-300 ease-out motion-reduce:transition-none ${
         desktopHeaderOffscreen
-          ? 'translate-y-0 md:-translate-y-[7.5rem]'
+          ? 'translate-y-0 md:-translate-y-full'
           : 'translate-y-0'
       }`}
     >
       <div
-        className="header-progressive-blur hidden h-[7.5rem] md:block"
+        className="header-progressive-blur hidden h-full md:block"
         aria-hidden="true"
       >
         <span className="header-progressive-blur__layer header-progressive-blur__layer--1 backdrop-blur-[4px]" />
@@ -99,7 +99,7 @@ export function SiteHeader() {
         <span className="absolute inset-0 z-[1] bg-gradient-to-b from-background/45 via-background/15 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-8">
+      <div className="relative z-10 mx-auto flex h-16 w-screen max-w-[1600px] items-center justify-between px-6 md:w-full md:px-10">
         <nav
           className="hidden items-center gap-1 md:flex"
           aria-label="Main navigation"
@@ -147,13 +147,13 @@ export function SiteHeader() {
         >
           <span
             aria-hidden="true"
-            className={`absolute h-[1.5px] w-4 bg-current transition-transform duration-150 ease-out ${
+            className={`absolute left-1/2 top-1/2 -ml-2 -mt-[0.75px] h-[1.5px] w-4 origin-center bg-current transition-transform duration-150 ease-out ${
               open ? 'rotate-45' : '-translate-y-1'
             }`}
           />
           <span
             aria-hidden="true"
-            className={`absolute h-[1.5px] w-4 bg-current transition-transform duration-150 ease-out ${
+            className={`absolute left-1/2 top-1/2 -ml-2 -mt-[0.75px] h-[1.5px] w-4 origin-center bg-current transition-transform duration-150 ease-out ${
               open ? '-rotate-45' : 'translate-y-1'
             }`}
           />

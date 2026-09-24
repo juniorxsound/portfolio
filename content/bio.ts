@@ -28,6 +28,17 @@ export const bioData = {
     'Principal engineer solving complex visual problems, specializing in computer graphics, computer vision, and data visualization.',
   work: [
     {
+      company: 'Google',
+      location: 'New York, NY',
+      roles: [
+        {
+          title: 'Creative Technologist · Contract',
+          dates: '2026–Present',
+          highlights: [],
+        },
+      ],
+    },
+    {
       company: 'Nike',
       location: 'New York, NY',
       roles: [

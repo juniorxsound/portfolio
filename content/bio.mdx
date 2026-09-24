@@ -1,5 +1,8 @@
 import { SocialIconsMinimal } from '@/components/social-icons-minimal'
 
+<div className="grid gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
+<nav aria-label="Table of contents" className="self-start lg:sticky lg:top-24 lg:max-h-[calc(100dvh-7rem)] lg:overflow-y-auto [&>ol]:mt-0 [&>ol]:pl-6">
+
 1. **[Short Bio](#short-bio)**
 1. **[Work](#work)**
 1. **[Education](#education)**
@@ -13,9 +16,14 @@ import { SocialIconsMinimal } from '@/components/social-icons-minimal'
 
 <SocialIconsMinimal />
 
+</nav>
+<article className="min-w-0 [&>h3:first-child]:mt-0">
+
 <h3 id="short-bio">**Short bio**</h3>
 
 Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization, building rendering systems, creative tools and interactive work for Nike, [The New York Times](https://www.nytimes.com/by/or-fleisher), Vimeo and Viacom.
+
+He is currently a Creative Technologist at Google on contract, based in New York since 2026.
 
 Before writing code, Or worked as a sound designer and musician. He studied film at Tel Aviv University, where he began making interactive projects that sat somewhere between film and games.
 
@@ -24,6 +32,10 @@ After graduating, Or co-founded [Phenomena Labs](http://phenomenalabs.com), an a
 **Things to know** - advanced coffee drinker, cat aficionado and hobbyist musician. He is especially interested in computational photography and [open source software](#open-source).
 
 <h3 id="work">**Work**</h3>
+
+<div className="flex w-full items-center py-2 text-left font-medium text-foreground">
+  <span>Creative Technologist - Google · Contract (2026 - Present)</span>
+</div>
 
 <Collapsible title="Principal Front End Engineer - Nike (2023 - 2026)">
   <ul>
@@ -652,3 +664,6 @@ After graduating, Or co-founded [Phenomena Labs](http://phenomenalabs.com), an a
 - **[now](https://github.com/juniorxsound/now)** - A slim FFMPEG wrapper to easily transcode videos to multiple resolutions using Nvidia GPUs
 - **[THREE.SixDOF](https://github.com/juniorxsound/THREE.SixDOF)** - Plugin for rendering 6DOF equirectangular 360 images and videos with depthmaps
 - **[TS Library Starter](https://github.com/juniorxsound/TS-Library-Starter)** - Boilerplate Typescript library template
+
+</article>
+</div>
