@@ -5,6 +5,9 @@ const createMDX = require('@next/mdx')
 const nextConfig = {
   reactCompiler: true,
   serverExternalPackages: ['pdfkit'],
+  experimental: {
+    agentUpgrade: 'security',
+  },
   images: {
     remotePatterns: [new URL('https://orfleisher.com/**')],
   },

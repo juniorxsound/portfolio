@@ -13,7 +13,7 @@ export async function generateMetadata() {
   return {
     title: 'Or Fleisher',
     description:
-      'Or Fleisher is a New York-based engineer building at the intersection of computer graphics, computer vision, and data visualization.',
+      'Or Fleisher is a New York-based engineer building at the intersection of computer graphics and data visualization.',
 
     openGraph: {
       images: [
