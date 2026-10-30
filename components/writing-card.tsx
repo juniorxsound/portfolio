@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Writing } from '@/types'
 import Image from 'next/image'
+import { BadgeLogo } from '@/components/badge-logo'
 
 interface WritingCardProps {
   writing: Writing
@@ -46,15 +47,9 @@ export function WritingCard({ writing, className }: WritingCardProps) {
             )}
             {fm.badge && (
               <div className="absolute left-4 top-4 flex items-center justify-center gap-1 rounded-full bg-background/90 px-2.5 py-1 backdrop-blur-sm">
-                <Image
+                <BadgeLogo
                   src={fm.badge}
                   alt="Publication badge"
-                  width={80}
-                  height={20}
-                  loading="lazy"
-                  unoptimized
-                  style={{ width: 'auto', height: 'auto' }}
-                  className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
                 />
               </div>
             )}

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Project } from '@/types'
 import { Card } from '@/components/ui/card'
 import Image from 'next/image'
+import { BadgeLogo } from '@/components/badge-logo'
 
 interface ProjectCardProps {
   project: Project
@@ -53,15 +54,9 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             )}
             {fm.badge && (
               <div className="absolute left-4 top-4 flex items-center justify-center gap-1 rounded-full bg-background/90 px-2.5 py-1 backdrop-blur-sm">
-                <Image
+                <BadgeLogo
                   src={fm.badge}
                   alt="Project badge"
-                  width={80}
-                  height={20}
-                  loading="lazy"
-                  unoptimized
-                  style={{ width: 'auto', height: 'auto' }}
-                  className="max-h-5 max-w-20 w-auto h-auto invert dark:invert-0"
                 />
               </div>
             )}
