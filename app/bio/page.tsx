@@ -9,11 +9,11 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'Bio - Or Fleisher',
   description:
-    'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
+    'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics and data visualization.',
   openGraph: {
     title: 'Bio - Or Fleisher',
     description:
-      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
+      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics and data visualization.',
     images: [
       {
         url: '/images/profile_facebook.jpg',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     creator: '@juniorxsound',
     title: 'Bio - Or Fleisher',
     description:
-      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics, computer vision and data visualization.',
+      'Or Fleisher is a New York-based engineer and creative technologist who solves complex visual problems with code. He specializes in computer graphics and data visualization.',
     images: [
       {
         url: '/images/profile_facebook.jpg',

@@ -48,7 +48,7 @@ export default async function HomePage() {
     <div>
       <div data-home-hero>
         <Hero
-          title="An engineer building at the intersection of computer graphics, computer vision, and data visualization."
+          title="An engineer building at the intersection of computer graphics and data visualization."
           height="xl"
           background="accent"
           videoSources={[
